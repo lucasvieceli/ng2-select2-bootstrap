@@ -1,6 +1,6 @@
 {
   "name": "ng2-select2-bootstrap",
-  "version": "0.1.17",
+  "version": "0.1.20",
   "scripts": {
     "build": "ngc -p tsconfig.json",
     "lint": "tslint ../src/**/*.ts",
@@ -10,14 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/username/repo"
+    "url": "https://github.com/lucasvieceli/ng2-select2-bootstrap"
   },
   "author": {
     "name": "lucas vieceli",
     "email": "vieceli46@hotmail.com"
   },
   "keywords": [
-    "angular"
+    "angular2",
+    "select2",
+    "bootstrap"
   ],
   "license": "MIT",
   "bugs": {

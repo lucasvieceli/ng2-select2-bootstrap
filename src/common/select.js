@@ -45,6 +45,8 @@ var Select = (function () {
     };
     Select.prototype.buscar = function () {
     };
+    Select.prototype.abrir = function () {
+    };
     /**
      * quando está marcado para exibir resultado completo
      */

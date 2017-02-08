@@ -3,7 +3,7 @@
     npm install ng2-select2-bootstrap --save
 ```
 
-> Adicione os arquivos de css ao html: "select2min.css",
+> Adicione os arquivos de css ao html: "select.2min.css",
 > "select2.bootstrap.min.css" que estão na pasta
 > "node_modules/ng2-select2-bootstrap"
 

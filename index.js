@@ -14,10 +14,10 @@ var forms_1 = require("@angular/forms");
 var component_1 = require("./src/component");
 var directive_1 = require("./src/directive");
 var service_1 = require("./src/service");
-__export(require('./src/component'));
-__export(require('./src/common'));
-__export(require('./src/directive'));
-__export(require('./src/service'));
+__export(require('./src/component/index'));
+__export(require('./src/common/index'));
+__export(require('./src/directive/index'));
+__export(require('./src/service/index'));
 var Ng2Select2BootstrapModule = (function () {
     function Ng2Select2BootstrapModule() {
     }

@@ -64,6 +64,9 @@ export class Select  implements ControlValueAccessor{
     buscar(){
         
     }
+    abrir(){
+        
+    }
 
     /**
      * quando está marcado para exibir resultado completo 

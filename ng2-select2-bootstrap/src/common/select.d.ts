@@ -31,6 +31,7 @@ export declare class Select implements ControlValueAccessor {
     selecionar(item: any): void;
     keyup(valor: any): any;
     buscar(): void;
+    abrir(): void;
     /**
      * quando está marcado para exibir resultado completo
      */

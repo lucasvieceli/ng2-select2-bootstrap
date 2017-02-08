@@ -10,10 +10,10 @@ import {
 import {InnerTemplateDirective, HighlightDirective,InfiniteScrollDirective} from "./src/directive";
 import {SelectService} from "./src/service";
 
-export * from './src/component';
-export * from './src/common';
-export * from './src/directive';
-export * from './src/service';
+export * from './src/component/index';
+export * from './src/common/index';
+export * from './src/directive/index';
+export * from './src/service/index';
 
 @NgModule({
   imports     : [
