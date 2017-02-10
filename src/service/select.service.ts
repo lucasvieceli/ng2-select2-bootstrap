@@ -26,7 +26,6 @@ export class SelectService {
     return this.http
                .get(url,{headers:this.headers, search : informar})
                .map(res=>res.json())
-               .catch(erro=> erro);
   }
 
 }

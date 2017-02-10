@@ -53,7 +53,7 @@ import {SelectService} from "../service/select.service";
                             <li [hidden]="buscando || valoresExibir.length > 0" class="select2-results__option select2-results__message" aria-live="assertive">
                                 <span  [inner-template]="templateSemResultado || templateSemResultadoInterno" [item]="{pesquisa:valorPesquisado}"></span>
                             </li>
-                            <li [hidden]="!buscando && exibirMensagemCaracteresMinimo">
+                            <li [hidden]="!buscando">
                                 <span [inner-template]="templateBuscando || templateBuscandoInterno"></span>
                             </li>
                         </span>
@@ -114,7 +114,6 @@ export class RequestComponent extends Select implements OnDestroy{
     @Input() indiceNome               : string = 'nome';
     @Input() url                      : string;
     @Input() processaResultado        : any;
-    @Input() processaErro             : any;
     @Input() processaParametros       : any;
     
     @Output() change            = new EventEmitter<any>();
@@ -125,6 +124,7 @@ export class RequestComponent extends Select implements OnDestroy{
     @Output() onAbrir           = new EventEmitter<any>();
     @Output() onFechar          = new EventEmitter<any>();
     @Output() onLimpar          = new EventEmitter<any>();
+    @Output() onErro            = new EventEmitter<any>();
     @ViewChild('campoBusca') campoBusca : ElementRef;
 
     private pagina          : number = 1;
@@ -236,9 +236,9 @@ export class RequestComponent extends Select implements OnDestroy{
                 this.buscando = false;
             },
             erro =>{
-                if(typeof this.processaErro != 'undefined') {
-                    this.processaErro(erro);
-                }
+                console.log(erro);
+                this.onErro.emit(erro);
+                this.buscando = false;
 
             }
         );

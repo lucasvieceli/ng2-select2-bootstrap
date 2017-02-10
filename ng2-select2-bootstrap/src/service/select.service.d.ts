@@ -7,5 +7,5 @@ export declare class SelectService {
     private http;
     headers: Headers;
     constructor(http: Http);
-    getResultados(url: any, parametros: any): Observable<{}>;
+    getResultados(url: any, parametros: any): Observable<any>;
 }

@@ -39,6 +39,7 @@ var RequestMultipleComponent = RequestMultipleComponent_1 = (function (_super) {
         _this.onAbrir = new core_1.EventEmitter();
         _this.onFechar = new core_1.EventEmitter();
         _this.onLimpar = new core_1.EventEmitter();
+        _this.onErro = new core_1.EventEmitter();
         _this.pagina = 1;
         _this.quantidadePadrao = 0;
         _this.buscando = false;
@@ -139,6 +140,8 @@ var RequestMultipleComponent = RequestMultipleComponent_1 = (function (_super) {
             _this.valoresExibir = _this.valoresExibir.concat(exibirResultado);
             _this.buscando = false;
         }, function (erro) {
+            _this.onErro.emit(erro);
+            _this.buscando = false;
         });
     };
     RequestMultipleComponent.prototype.onScroll = function () {
@@ -212,10 +215,6 @@ __decorate([
 __decorate([
     core_1.Input(),
     __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "processaErro", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
 ], RequestMultipleComponent.prototype, "processaParametros", void 0);
 __decorate([
     core_1.Output(),
@@ -249,6 +248,10 @@ __decorate([
     core_1.Output(),
     __metadata("design:type", Object)
 ], RequestMultipleComponent.prototype, "onLimpar", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], RequestMultipleComponent.prototype, "onErro", void 0);
 __decorate([
     core_1.ViewChild('campoBusca'),
     __metadata("design:type", core_1.ElementRef)

@@ -1,6 +1,6 @@
 {
   "name": "ng2-select2-bootstrap",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "scripts": {
     "build": "ngc -p tsconfig.json",
     "lint": "tslint ../src/**/*.ts",

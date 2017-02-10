@@ -27,8 +27,7 @@ var SelectService = (function () {
         }
         return this.http
             .get(url, { headers: this.headers, search: informar })
-            .map(function (res) { return res.json(); })
-            .catch(function (erro) { return erro; });
+            .map(function (res) { return res.json(); });
     };
     return SelectService;
 }());
