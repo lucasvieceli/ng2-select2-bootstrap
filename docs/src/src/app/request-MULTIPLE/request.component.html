@@ -49,6 +49,7 @@
                                     (onBuscar)="log('onBuscar', $event)"
                                     (onSelecionarItem)="log('onSelecionarItem', $event)"
                                     (onRemoverItem)="log('onRemoverItem', $event)"
+                                    (onErro)="log('onErro', $event)"
                                     indiceNome="name"
                             >
                             </select2-request-multiple>
@@ -185,7 +186,12 @@
                                                         <td>true</td>
                                                         <td>Dispara quando fecha o elemento</td>
                                                     </tr>
-
+                                                    <tr>
+                                                        <td><strong>onErro</strong></td>
+                                                        <td>boolean</td>
+                                                        <td>object</td>
+                                                        <td>Dispara quando acontece um erro na requisição</td>
+                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
