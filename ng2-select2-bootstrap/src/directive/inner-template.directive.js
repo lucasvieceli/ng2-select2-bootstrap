@@ -35,26 +35,26 @@ var InnerTemplateDirective = (function () {
             });
         }
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object), 
-        __metadata('design:paramtypes', [Object])
-    ], InnerTemplateDirective.prototype, "item", null);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], InnerTemplateDirective.prototype, "index", void 0);
-    __decorate([
-        core_1.Input('inner-template'), 
-        __metadata('design:type', core_1.TemplateRef)
-    ], InnerTemplateDirective.prototype, "templateRef", void 0);
-    InnerTemplateDirective = __decorate([
-        core_1.Directive({
-            selector: '[inner-template]'
-        }), 
-        __metadata('design:paramtypes', [core_1.ViewContainerRef])
-    ], InnerTemplateDirective);
     return InnerTemplateDirective;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [Object])
+], InnerTemplateDirective.prototype, "item", null);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], InnerTemplateDirective.prototype, "index", void 0);
+__decorate([
+    core_1.Input('inner-template'),
+    __metadata("design:type", core_1.TemplateRef)
+], InnerTemplateDirective.prototype, "templateRef", void 0);
+InnerTemplateDirective = __decorate([
+    core_1.Directive({
+        selector: '[inner-template]'
+    }),
+    __metadata("design:paramtypes", [core_1.ViewContainerRef])
+], InnerTemplateDirective);
 exports.InnerTemplateDirective = InnerTemplateDirective;
 //# sourceMappingURL=inner-template.directive.js.map

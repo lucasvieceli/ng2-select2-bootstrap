@@ -1,9 +1,11 @@
-import {ElementRef, NgZone, EventEmitter, TemplateRef} from "@angular/core";
+import {ElementRef, NgZone, EventEmitter, TemplateRef, OnInit} from "@angular/core";
 import {ControlValueAccessor} from "@angular/forms";
 
-export class Select  implements ControlValueAccessor{
+export class Select  implements ControlValueAccessor, OnInit{
     protected indiceId      : string = 'id';
     protected indiceNome    : string = 'nome';
+    protected minimoCaracteres : number = 0;
+    protected exibirMensagemCaracteresMinimo : boolean = true;
     protected aberto        : boolean = false;
     protected focus         : boolean = false;
     protected campoBusca    : ElementRef;
@@ -30,6 +32,12 @@ export class Select  implements ControlValueAccessor{
         public elementRef   : ElementRef,
         public zone         : NgZone
     ) { }
+
+    ngOnInit(){
+        if(this.minimoCaracteres == 0){
+            this.exibirMensagemCaracteresMinimo = false;
+        }
+    }
 
     setFocus(valor : boolean) {
         this.focus = valor;
@@ -98,9 +106,19 @@ export class Select  implements ControlValueAccessor{
     }
     clickForaComponent(event) {
         if(!this.elementRef.nativeElement.contains(event.target) && this.aberto) {
-            console.log('mandou fecharrrr');
             this.fechar();
         }
+    }
+    
+    validaCaracteresMinimo(){
+        if(this.minimoCaracteres > 0) {
+            if(this.valorPesquisado.length < this.minimoCaracteres){
+                return false;
+            }
+            this.exibirMensagemCaracteresMinimo = false;
+        }
+
+        return true;
     }
 
 

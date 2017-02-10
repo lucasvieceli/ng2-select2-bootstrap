@@ -36,13 +36,18 @@ import {Select} from './../common/select';
                 </span>
                 <span class="select2-results">
                     <ul class="select2-results__options" role="tree"  aria-expanded="true" aria-hidden="false">
-                        <span [hidden]="!valoresExibir.length" >
-                            <li *ngFor="let item of valoresExibir" (click)="selecionar(item)" class="select2-results__option" highlight="select2-results__option--highlighted" role="treeitem" [attr.aria-selected]="((_value) && (item[indiceId] == _value[indiceId])) ? true : false">
-                                <span  class="nao-fechar"  [inner-template]="templateResultado || templateResultadoInterno" [item]="item"></span>
+                        <span [hidden]="exibirMensagemCaracteresMinimo">
+                            <span [hidden]="!valoresExibir.length" >
+                                <li *ngFor="let item of valoresExibir" (click)="selecionar(item)" class="select2-results__option" highlight="select2-results__option--highlighted" role="treeitem" [attr.aria-selected]="((_value) && (item[indiceId] == _value[indiceId])) ? true : false">
+                                    <span  [inner-template]="templateResultado || templateResultadoInterno" [item]="item"></span>
+                                </li>
+                            </span>
+                            <li [hidden]="valoresExibir.length" class="select2-results__option select2-results__message" aria-live="assertive">
+                                <span  [inner-template]="templateSemResultado || templateSemResultadoInterno" [item]="{pesquisa:valorPesquisado}"></span>
                             </li>
                         </span>
-                        <li [hidden]="valoresExibir.length" class="select2-results__option select2-results__message" aria-live="assertive">
-                            <span  class="nao-fechar"  [inner-template]="templateSemResultado || templateSemResultadoInterno" [item]="{pesquisa:valorPesquisado}"></span>
+                        <li [hidden]="exibirMensagemCaracteresMinimo == false" class="select2-results__option select2-results__message">
+                            Digite {{minimoCaracteres}} ou mais caracteres para realizar a busca
                         </li>
                     </ul>
                 </span>
@@ -82,9 +87,10 @@ import {Select} from './../common/select';
 export class SelectComponent extends Select{
 
 
-    @Input() name                     : any;
-    @Input() classe                   : any;
+    @Input() name                     : string = '';
+    @Input() classe                   : string = '';
     @Input() placeholder              : string = 'Selecione';
+    @Input() minimoCaracteres         : number = 0;
     @Input() templateResultado        : TemplateRef<any>;
     @Input() templateSelecionado      : TemplateRef<any>;
     @Input() templateSemResultado     : TemplateRef<any>;
@@ -145,6 +151,10 @@ export class SelectComponent extends Select{
     }
 
     buscar(){
+        if(this.validaCaracteresMinimo() == false){
+            return false;
+        }
+
         this.onBuscar.emit(this.valorPesquisado);
         this.valoresExibir = this._valores.filter(item => item[this.indiceNome.toLocaleLowerCase()].indexOf(this.valorPesquisado.toLocaleLowerCase()) !== -1);
     }

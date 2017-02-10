@@ -27,29 +27,29 @@ var HighlightDirective = (function () {
             this.elementRef.nativeElement.classList.remove(this.classe);
         }
     };
-    __decorate([
-        core_1.Input('highlight'), 
-        __metadata('design:type', Object)
-    ], HighlightDirective.prototype, "classe", void 0);
-    __decorate([
-        core_1.HostListener('mouseenter'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
-        __metadata('design:returntype', void 0)
-    ], HighlightDirective.prototype, "onMouseEnter", null);
-    __decorate([
-        core_1.HostListener('mouseleave'), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', []), 
-        __metadata('design:returntype', void 0)
-    ], HighlightDirective.prototype, "onMouseLeave", null);
-    HighlightDirective = __decorate([
-        core_1.Directive({
-            selector: '[highlight]',
-        }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], HighlightDirective);
     return HighlightDirective;
 }());
+__decorate([
+    core_1.Input('highlight'),
+    __metadata("design:type", Object)
+], HighlightDirective.prototype, "classe", void 0);
+__decorate([
+    core_1.HostListener('mouseenter'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], HighlightDirective.prototype, "onMouseEnter", null);
+__decorate([
+    core_1.HostListener('mouseleave'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], HighlightDirective.prototype, "onMouseLeave", null);
+HighlightDirective = __decorate([
+    core_1.Directive({
+        selector: '[highlight]',
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], HighlightDirective);
 exports.HighlightDirective = HighlightDirective;
 //# sourceMappingURL=highlight.directive.js.map

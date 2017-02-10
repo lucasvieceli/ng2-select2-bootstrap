@@ -14,6 +14,7 @@ export class SimplesComponent {
     {id: 6, nome: 'Mirella'},
   ];
   codigoUtilizado = `
+    <!--caso queira mudar a exibição-->
      <template #exibirDiferente let-valor>
           ID: {{valor.id}}<br>
           Nome: {{valor.nome}}

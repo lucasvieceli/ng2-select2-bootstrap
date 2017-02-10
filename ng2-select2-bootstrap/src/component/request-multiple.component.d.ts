@@ -9,6 +9,7 @@ export declare class RequestMultipleComponent extends Select implements OnDestro
     name: any;
     classe: any;
     placeholder: string;
+    minimoCaracteres: number;
     templateResultado: TemplateRef<any>;
     templateSelecionado: TemplateRef<any>;
     templateSemResultado: TemplateRef<any>;
@@ -40,7 +41,7 @@ export declare class RequestMultipleComponent extends Select implements OnDestro
     selecionar(item: any): void;
     getSomenteId(): any[];
     limpar(): void;
-    buscar(): void;
+    buscar(): boolean;
     onScroll(): void;
     value: any;
 }

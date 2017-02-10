@@ -6,6 +6,8 @@ var Select = (function () {
         this.zone = zone;
         this.indiceId = 'id';
         this.indiceNome = 'nome';
+        this.minimoCaracteres = 0;
+        this.exibirMensagemCaracteresMinimo = true;
         this.aberto = false;
         this.focus = false;
         this.valoresExibir = [];
@@ -18,6 +20,11 @@ var Select = (function () {
         this.onFechar = new core_1.EventEmitter();
         this.onLimpar = new core_1.EventEmitter();
     }
+    Select.prototype.ngOnInit = function () {
+        if (this.minimoCaracteres == 0) {
+            this.exibirMensagemCaracteresMinimo = false;
+        }
+    };
     Select.prototype.setFocus = function (valor) {
         this.focus = valor;
     };
@@ -75,9 +82,17 @@ var Select = (function () {
     };
     Select.prototype.clickForaComponent = function (event) {
         if (!this.elementRef.nativeElement.contains(event.target) && this.aberto) {
-            console.log('mandou fecharrrr');
             this.fechar();
         }
+    };
+    Select.prototype.validaCaracteresMinimo = function () {
+        if (this.minimoCaracteres > 0) {
+            if (this.valorPesquisado.length < this.minimoCaracteres) {
+                return false;
+            }
+            this.exibirMensagemCaracteresMinimo = false;
+        }
+        return true;
     };
     Select.prototype.writeValue = function (value) {
         this.data = value;

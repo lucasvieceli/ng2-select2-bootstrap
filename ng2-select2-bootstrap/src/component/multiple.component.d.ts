@@ -7,6 +7,7 @@ export declare class MultipleComponent extends Select implements ControlValueAcc
     name: any;
     classe: any;
     placeholder: string;
+    minimoCaracteres: number;
     templateResultado: TemplateRef<any>;
     templateSelecionado: TemplateRef<any>;
     templateSemResultado: TemplateRef<any>;
@@ -28,7 +29,7 @@ export declare class MultipleComponent extends Select implements ControlValueAcc
     getSomenteId(): any[];
     limpar(event: any): void;
     remove(item: any, event: any): void;
-    buscar(): void;
+    buscar(): boolean;
     value: any;
     writeValue(value: any): void;
     updateValue(value: any): void;

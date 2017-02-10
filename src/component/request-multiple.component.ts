@@ -40,16 +40,21 @@ import {SelectService} from "../service/select.service";
                         (OnScrollMethod)="onScroll()"
                         style=" overflow: auto!important;"
                     >
-                        <span [hidden]="valoresExibir.length == 0" >
-                            <li *ngFor="let item of valoresExibir" (click)="selecionar(item)" class="select2-results__option" highlight="select2-results__option--highlighted" role="treeitem" [attr.aria-selected]="((_value) && (item[indiceId] == _value[indiceId])) ? true : false">
-                                <span  [inner-template]="templateResultado || templateResultadoInterno" [item]="item"></span>
+                        <span [hidden]="exibirMensagemCaracteresMinimo">
+                            <span [hidden]="valoresExibir.length == 0" >
+                                <li *ngFor="let item of valoresExibir" (click)="selecionar(item)" class="select2-results__option" highlight="select2-results__option--highlighted" role="treeitem" [attr.aria-selected]="((_value) && (item[indiceId] == _value[indiceId])) ? true : false">
+                                    <span  [inner-template]="templateResultado || templateResultadoInterno" [item]="item"></span>
+                                </li>
+                            </span>
+                            <li [hidden]="buscando || valoresExibir.length > 0" class="select2-results__option select2-results__message" aria-live="assertive">
+                                <span  [inner-template]="templateSemResultado || templateSemResultadoInterno" [item]="{pesquisa:valorPesquisado}"></span>
+                            </li>
+                            <li [hidden]="!buscando">
+                                <span [inner-template]="templateBuscando || templateBuscandoInterno"></span>
                             </li>
                         </span>
-                        <li [hidden]="buscando || valoresExibir.length > 0" class="select2-results__option select2-results__message" aria-live="assertive">
-                            <span  [inner-template]="templateSemResultado || templateSemResultadoInterno" [item]="{pesquisa:valorPesquisado}"></span>
-                        </li>
-                        <li [hidden]="!buscando">
-                            <span [inner-template]="templateBuscando || templateBuscandoInterno"></span>
+                        <li [hidden]="exibirMensagemCaracteresMinimo == false" class="select2-results__option select2-results__message">
+                            Digite {{minimoCaracteres}} ou mais caracteres para realizar a busca
                         </li>
                     </ul>
                 </span>
@@ -94,9 +99,10 @@ import {SelectService} from "../service/select.service";
 export class RequestMultipleComponent extends Select implements OnDestroy{
 
 
-    @Input() name                     : any;
-    @Input() classe                   : any;
+    @Input() name                     : any = '';
+    @Input() classe                   : any = '';
     @Input() placeholder              : string = 'Selecione';
+    @Input() minimoCaracteres         : number = 0;
     @Input() templateResultado        : TemplateRef<any>;
     @Input() templateSelecionado      : TemplateRef<any>;
     @Input() templateSemResultado     : TemplateRef<any>;
@@ -203,6 +209,10 @@ export class RequestMultipleComponent extends Select implements OnDestroy{
 
 
     buscar(){
+        if(this.validaCaracteresMinimo() == false){
+            return false;
+        }
+        
         this.buscando = true;
 
         // this.valoresExibir = this._valores.filter(item => item[this.indiceNome].indexOf(this.valorPesquisado) !== -1);

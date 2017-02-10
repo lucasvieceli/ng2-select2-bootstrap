@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var InfiniteScrollDirective = (function () {
     function InfiniteScrollDirective(element) {
         this.element = element;
@@ -30,24 +30,24 @@ var InfiniteScrollDirective = (function () {
             }
         }
     };
-    __decorate([
-        core_1.Input('scroll-distance'), 
-        __metadata('design:type', Number)
-    ], InfiniteScrollDirective.prototype, "scrollTrigger", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], InfiniteScrollDirective.prototype, "OnScrollMethod", void 0);
-    InfiniteScrollDirective = __decorate([
-        core_1.Directive({
-            selector: '[infinite-scroll]',
-            host: {
-                '(scroll)': 'onScroll($event)'
-            }
-        }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], InfiniteScrollDirective);
     return InfiniteScrollDirective;
 }());
+__decorate([
+    core_1.Input('scroll-distance'),
+    __metadata("design:type", Number)
+], InfiniteScrollDirective.prototype, "scrollTrigger", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], InfiniteScrollDirective.prototype, "OnScrollMethod", void 0);
+InfiniteScrollDirective = __decorate([
+    core_1.Directive({
+        selector: '[infinite-scroll]',
+        host: {
+            '(scroll)': 'onScroll($event)'
+        }
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], InfiniteScrollDirective);
 exports.InfiniteScrollDirective = InfiniteScrollDirective;
 //# sourceMappingURL=infinite-scroll.directive.js.map

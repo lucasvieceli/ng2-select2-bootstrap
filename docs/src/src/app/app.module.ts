@@ -11,6 +11,9 @@ import {LogComponent} from "./log/log.component";
 import {Ng2Select2BootstrapModule} from "ng2-select2-bootstrap";
 import {TabsModule} from "ng2-bootstrap";
 import {InstalacaoComponent} from "./instalacao/instalacao.component";
+import {MultipleComponent} from "./multiple/multiple.component";
+import {RequestComponent} from "./request/request.component";
+import {RequestMultipleComponent} from "./request-multiple/request-multiple.component";
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import {InstalacaoComponent} from "./instalacao/instalacao.component";
     SimplesComponent,
     LogComponent,
     InstalacaoComponent,
+    MultipleComponent,
+    RequestComponent,
+    RequestMultipleComponent,
   ],
   imports: [
     BrowserModule,

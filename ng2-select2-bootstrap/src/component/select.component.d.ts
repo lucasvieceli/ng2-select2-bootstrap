@@ -3,9 +3,10 @@ import { Select } from './../common/select';
 export declare class SelectComponent extends Select {
     elementRef: ElementRef;
     zone: NgZone;
-    name: any;
-    classe: any;
+    name: string;
+    classe: string;
     placeholder: string;
+    minimoCaracteres: number;
     templateResultado: TemplateRef<any>;
     templateSelecionado: TemplateRef<any>;
     templateSemResultado: TemplateRef<any>;
@@ -25,6 +26,6 @@ export declare class SelectComponent extends Select {
     abrir(): void;
     selecionar(item: any): void;
     limpar(event: any): void;
-    buscar(): void;
+    buscar(): boolean;
     value: any;
 }

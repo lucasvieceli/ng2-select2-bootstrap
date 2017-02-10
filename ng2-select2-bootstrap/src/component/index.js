@@ -1,5 +1,5 @@
 "use strict";
-var select_component_1 = require('./select.component');
+var select_component_1 = require("./select.component");
 exports.SelectComponent = select_component_1.SelectComponent;
 var multiple_component_1 = require("./multiple.component");
 exports.MultipleComponent = multiple_component_1.MultipleComponent;

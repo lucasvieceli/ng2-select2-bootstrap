@@ -1,10 +1,12 @@
-import { ElementRef, NgZone, EventEmitter, TemplateRef } from "@angular/core";
+import { ElementRef, NgZone, EventEmitter, TemplateRef, OnInit } from "@angular/core";
 import { ControlValueAccessor } from "@angular/forms";
-export declare class Select implements ControlValueAccessor {
+export declare class Select implements ControlValueAccessor, OnInit {
     elementRef: ElementRef;
     zone: NgZone;
     protected indiceId: string;
     protected indiceNome: string;
+    protected minimoCaracteres: number;
+    protected exibirMensagemCaracteresMinimo: boolean;
     protected aberto: boolean;
     protected focus: boolean;
     protected campoBusca: ElementRef;
@@ -26,6 +28,7 @@ export declare class Select implements ControlValueAccessor {
     onFechar: EventEmitter<any>;
     onLimpar: EventEmitter<any>;
     constructor(elementRef: ElementRef, zone: NgZone);
+    ngOnInit(): void;
     setFocus(valor: boolean): void;
     fechar(): void;
     selecionar(item: any): void;
@@ -36,8 +39,9 @@ export declare class Select implements ControlValueAccessor {
      * quando está marcado para exibir resultado completo
      */
     remove(item: any, event: any): void;
-    getClassGeral(): string;
+    getClassGeral(): "select2 select2-container select2-container--bootstrap select2-container--above select2-container--focus" | "select2 select2-container select2-container--bootstrap select2-container--above";
     clickForaComponent(event: any): void;
+    validaCaracteresMinimo(): boolean;
     writeValue(value: any): void;
     updateValue(value: any): void;
     onChange(_: any): void;

@@ -9,6 +9,7 @@ export declare class RequestComponent extends Select implements OnDestroy {
     name: any;
     classe: any;
     tabIndex: any;
+    minimoCaracteres: number;
     placeholder: string;
     templateResultado: TemplateRef<any>;
     templateSelecionado: TemplateRef<any>;
@@ -41,7 +42,7 @@ export declare class RequestComponent extends Select implements OnDestroy {
     keyup(valor: any): any;
     selecionar(item: any): void;
     limpar(event: any): void;
-    buscar(): void;
+    buscar(): boolean;
     onScroll(): void;
     value: any;
 }

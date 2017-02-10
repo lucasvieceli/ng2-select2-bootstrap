@@ -20,7 +20,7 @@ export class SelectService {
       for (let parametro in parametros) {
         informar.set(parametro, parametros[parametro]);
       }
-      informar.set('asdasdas', [1,2,3,4].toString());
+      // informar.set('asdasdas', [1,2,3,4].toString());
     }
 
     return this.http

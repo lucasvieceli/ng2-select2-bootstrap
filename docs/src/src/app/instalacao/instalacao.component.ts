@@ -8,6 +8,7 @@ export class InstalacaoComponent  {
   codigoCss = `
       <link href="<CAMINHO>/select2.min.css" rel="stylesheet">
       <link href="<CAMINHO>/select2.bootstrap.min.css" rel="stylesheet">
+      <link href="<CAMINHO>/fontawesome/css/font-awesome.min.css" rel="stylesheet">
   `;
   codigoModule = `
     import { BrowserModule } from '@angular/platform-browser';

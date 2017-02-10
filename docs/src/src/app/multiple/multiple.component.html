@@ -1,0 +1,178 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="section-heading">Select Multiple</h1>
+                <div class="section-paragraph">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <template #exibirDiferente let-valor>
+                                ID: {{valor.id}}<br>
+                                Nome: {{valor.nome}}
+                            </template>
+                            <template #exibirSelecionado let-valor>
+                                <li *ngFor="let item of valor.data" class="select2-selection__choice">
+                                    <span class="select2-selection__choice__remove" role="presentation" (click)="valor.remove(item, $event)">×</span>
+                                    {{item.nome}}( {{item.id}} )
+                                </li>
+                            </template>
+
+                            Valor selecionado: {{valorSelecionado | json}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <select2-multiple
+                                [valores]="valores"
+                                [(ngModel)]="valorSelecionado"
+                                [templateResultado]="exibirDiferente"
+                                [templateSelecionado]="exibirSelecionado"
+                                (onAbrir)="log('onAbrir', $event)"
+                                (onFechar)="log('onFechar', $event)"
+                                (onBuscar)="log('onBuscar', $event)"
+                                (onSelecionarItem)="log('onSelecionarItem', $event)"
+                                (onRemoverItem)="log('onRemoverItem', $event)"
+                            >
+                            </select2-multiple>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h4>Logs</h4>
+                            <log [logs]="logs"></log>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <tabset>
+                                <tab heading='Documentação'>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h2>Inputs</h2>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th><strong>Nome</strong></th>
+                                                        <th>Tipo</th>
+                                                        <th>Valor Padrão</th>
+                                                        <th>Descrição</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><strong>minimoCaracteres</strong></td>
+                                                        <td>number</td>
+                                                        <td>0</td>
+                                                        <td>Quantidade de mínimo para realizar a busca</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>placeholder</strong></td>
+                                                        <td>string</td>
+                                                        <td>Selecione</td>
+                                                        <td>Placeholder quando não houver item selecionado</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>templateResultado</strong></td>
+                                                        <td>TemplateRef</td>
+                                                        <td></td>
+                                                        <td>Template da lista de itens exibidos</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>templateSelecionado</strong></td>
+                                                        <td>TemplateRef</td>
+                                                        <td></td>
+                                                        <td>Template quando selecionar um item</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>templateSemResultado</strong></td>
+                                                        <td>TemplateRef</td>
+                                                        <td></td>
+                                                        <td>Template quando não houver item na busca</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>indiceId</strong></td>
+                                                        <td>string</td>
+                                                        <td>id</td>
+                                                        <td>O valor da posição que se encontra o id primario</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>indiceNome</strong></td>
+                                                        <td>string</td>
+                                                        <td>nome</td>
+                                                        <td>O valor da posição que se encontra o nome a ser exibido</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>valores</strong></td>
+                                                        <td>array</td>
+                                                        <td></td>
+                                                        <td>Array com itens a ser exibido</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h2>Outputs</h2>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th><strong>Nome</strong></th>
+                                                        <th>Tipo</th>
+                                                        <th>Valor Saída</th>
+                                                        <th>Descrição</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><strong>onAbrir</strong></td>
+                                                        <td>boolean</td>
+                                                        <td>true</td>
+                                                        <td>Dispara quando abre o elemento</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>onBuscar</strong></td>
+                                                        <td>string</td>
+                                                        <td></td>
+                                                        <td>Dispara quando faz alguma busca informando o que foi digitado</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>onSelecionarItem</strong></td>
+                                                        <td>object</td>
+                                                        <td></td>
+                                                        <td>Dispara quando seleciona um item passando o item selecionado</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>onRemoverItem</strong></td>
+                                                        <td>object</td>
+                                                        <td></td>
+                                                        <td>Dispara quando remove um item selecionado, passando o item por parametro</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>onFechar</strong></td>
+                                                        <td>boolean</td>
+                                                        <td>true</td>
+                                                        <td>Dispara quando fecha o elemento</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </tab>
+                                <tab heading="Código Fonte">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <pre class="prettyprint linenums"><code class="language-html">{{codigoUtilizado}}</code></pre>
+                                        </div>
+                                    </div>
+                                </tab>
+                            </tabset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
