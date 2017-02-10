@@ -1,5 +1,0 @@
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^lucasvieceli.github.io/ng2-select2-bootstrap$ [NC,OR]
-RewriteCond %{HTTP_HOST} ^www.lucasvieceli.github.io/ng2-select2-bootstrap$
-RewriteCond %{REQUEST_URI} !src
-RewriteRule (.*) /src$1 [L]
