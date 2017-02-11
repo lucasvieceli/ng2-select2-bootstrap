@@ -98,7 +98,7 @@ import {SelectService} from "../service/select.service";
     },
 })
 export class RequestComponent extends Select implements OnDestroy{
-    
+
     @Input() name                     : any = '';
     @Input() classe                   : any = '';
     @Input() tabIndex                 : any;
@@ -131,7 +131,6 @@ export class RequestComponent extends Select implements OnDestroy{
     private buscando        : boolean = false;
     private semResultado    : boolean = false;
     private subscrebeBusca  : any;
-
 
     constructor(
         public elementRef   : ElementRef,
