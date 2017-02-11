@@ -98,8 +98,7 @@ import {SelectService} from "../service/select.service";
     },
 })
 export class RequestComponent extends Select implements OnDestroy{
-
-
+    
     @Input() name                     : any = '';
     @Input() classe                   : any = '';
     @Input() tabIndex                 : any;
