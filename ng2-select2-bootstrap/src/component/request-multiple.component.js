@@ -126,7 +126,7 @@ var RequestMultipleComponent = RequestMultipleComponent_1 = (function (_super) {
         };
         //mata o subscribe
         this.ngOnDestroy();
-        this.onBuscar.emit(parametros);
+        this.onBuscar.emit(this.valorPesquisado);
         this.onProcessaParametros.emit(parametros);
         this.subscrebeBusca = this.requisicao.getResultados(this.url, parametros.retorno).subscribe(function (resultado) {
             var objEmit = { enviado: resultado, retorno: [] };
@@ -209,10 +209,6 @@ __decorate([
     core_1.Input(),
     __metadata("design:type", String)
 ], RequestMultipleComponent.prototype, "url", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "processaParametros", void 0);
 __decorate([
     core_1.Output(),
     __metadata("design:type", Object)

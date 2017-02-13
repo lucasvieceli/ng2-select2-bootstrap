@@ -112,8 +112,7 @@ export class RequestComponent extends Select implements OnDestroy{
     @Input() indiceId                 : string = 'id';
     @Input() indiceNome               : string = 'nome';
     @Input() url                      : string;
-    @Input() processaResultado        : any;
-    @Input() processaParametros       : any;
+ 
     
     @Output() change            = new EventEmitter<any>();
     @Output() onSelecionarItem  = new EventEmitter<any>();
@@ -124,6 +123,8 @@ export class RequestComponent extends Select implements OnDestroy{
     @Output() onFechar          = new EventEmitter<any>();
     @Output() onLimpar          = new EventEmitter<any>();
     @Output() onErro            = new EventEmitter<any>();
+    @Output() onProcessaResultado  = new EventEmitter<any>();
+    @Output() onProcessaParametros = new EventEmitter<any>();
     @ViewChild('campoBusca') campoBusca : ElementRef;
 
     private pagina          : number = 1;
@@ -201,26 +202,24 @@ export class RequestComponent extends Select implements OnDestroy{
         this.buscando = true;
 
         // this.valoresExibir = this._valores.filter(item => item[this.indiceNome].indexOf(this.valorPesquisado) !== -1);
-        let parametros = {};
-        if(typeof this.processaParametros != 'undefined'){
-            let obj = {
-                pagina          : this.pagina,
-                valorPesquisado : this.valorPesquisado
-            };
-
-            parametros = this.processaParametros(obj);
-        }
+        let parametros = {
+            enviado : {
+                pagina: this.pagina,
+                valorPesquisado: this.valorPesquisado,
+            },
+            retorno: {}
+        };
 
         //mata o subscribe
         this.ngOnDestroy();
-        this.onBuscar.emit(parametros);
-        
-        this.subscrebeBusca = this.requisicao.getResultados(this.url, parametros).subscribe(
+        this.onBuscar.emit(this.valorPesquisado);
+        this.onProcessaParametros.emit(parametros);
+        this.subscrebeBusca = this.requisicao.getResultados(this.url, parametros.retorno).subscribe(
             resultado =>{
-                let exibirResultado = [];
-                if(typeof this.processaResultado != 'undefined') {
-                    exibirResultado = this.processaResultado(resultado);
-                }
+                let objEmit = {enviado : resultado,retorno: []};
+                this.onProcessaResultado.emit(objEmit);
+                let exibirResultado = objEmit.retorno;
+                
                 if(this.quantidadePadrao == 0){
                     this.quantidadePadrao = exibirResultado.length;
                 }

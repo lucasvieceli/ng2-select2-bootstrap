@@ -110,7 +110,7 @@ export class RequestMultipleComponent extends Select implements OnDestroy{
     @Input() indiceId                 : string = 'id';
     @Input() indiceNome               : string = 'nome';
     @Input() url                      : string;
-    @Input() processaParametros       : any;
+ 
     
     @Output() change            = new EventEmitter<any>();
     @Output() onSelecionarItem  = new EventEmitter<any>();
@@ -228,7 +228,7 @@ export class RequestMultipleComponent extends Select implements OnDestroy{
 
         //mata o subscribe
         this.ngOnDestroy();
-        this.onBuscar.emit(parametros);
+        this.onBuscar.emit(this.valorPesquisado);
         this.onProcessaParametros.emit(parametros);
         
         this.subscrebeBusca = this.requisicao.getResultados(this.url, parametros.retorno).subscribe(
