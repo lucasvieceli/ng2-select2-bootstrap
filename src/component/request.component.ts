@@ -224,20 +224,20 @@ export class RequestComponent extends Select implements OnDestroy{
                 if(this.quantidadePadrao == 0){
                     this.quantidadePadrao = exibirResultado.length;
                 }
-
+        
                 if(this.quantidadePadrao != exibirResultado.length){
                     this.semResultado = true;
                 }
-
+        
                 this.valoresExibir = this.valoresExibir.concat(exibirResultado);
-
+        
                 this.buscando = false;
             },
             erro =>{
                 console.log(erro);
                 this.onErro.emit(erro);
                 this.buscando = false;
-
+        
             }
         );
     }
