@@ -40,6 +40,8 @@ var RequestMultipleComponent = RequestMultipleComponent_1 = (function (_super) {
         _this.onFechar = new core_1.EventEmitter();
         _this.onLimpar = new core_1.EventEmitter();
         _this.onErro = new core_1.EventEmitter();
+        _this.onProcessaResultado = new core_1.EventEmitter();
+        _this.onProcessaParametros = new core_1.EventEmitter();
         _this.pagina = 1;
         _this.quantidadePadrao = 0;
         _this.buscando = false;
@@ -114,23 +116,22 @@ var RequestMultipleComponent = RequestMultipleComponent_1 = (function (_super) {
         }
         this.buscando = true;
         // this.valoresExibir = this._valores.filter(item => item[this.indiceNome].indexOf(this.valorPesquisado) !== -1);
-        var parametros = {};
-        if (typeof this.processaParametros != 'undefined') {
-            var obj = {
+        var parametros = {
+            enviado: {
                 pagina: this.pagina,
                 valorPesquisado: this.valorPesquisado,
                 idSelecionados: this.getSomenteId(),
-            };
-            parametros = this.processaParametros(obj);
-        }
+            },
+            retorno: {}
+        };
         //mata o subscribe
         this.ngOnDestroy();
         this.onBuscar.emit(parametros);
-        this.subscrebeBusca = this.requisicao.getResultados(this.url, parametros).subscribe(function (resultado) {
-            var exibirResultado = [];
-            if (typeof _this.processaResultado != 'undefined') {
-                exibirResultado = _this.processaResultado(resultado);
-            }
+        this.onProcessaParametros.emit(parametros);
+        this.subscrebeBusca = this.requisicao.getResultados(this.url, parametros.retorno).subscribe(function (resultado) {
+            var objEmit = { enviado: resultado, retorno: [] };
+            _this.onProcessaResultado.emit(objEmit);
+            var exibirResultado = objEmit.retorno;
             if (_this.quantidadePadrao == 0) {
                 _this.quantidadePadrao = exibirResultado.length;
             }
@@ -211,10 +212,6 @@ __decorate([
 __decorate([
     core_1.Input(),
     __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "processaResultado", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
 ], RequestMultipleComponent.prototype, "processaParametros", void 0);
 __decorate([
     core_1.Output(),
@@ -252,6 +249,14 @@ __decorate([
     core_1.Output(),
     __metadata("design:type", Object)
 ], RequestMultipleComponent.prototype, "onErro", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], RequestMultipleComponent.prototype, "onProcessaResultado", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], RequestMultipleComponent.prototype, "onProcessaParametros", void 0);
 __decorate([
     core_1.ViewChild('campoBusca'),
     __metadata("design:type", core_1.ElementRef)
