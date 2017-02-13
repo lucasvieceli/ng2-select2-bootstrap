@@ -18,14 +18,21 @@ export class SelectService {
 
     if (parametros) {
       for (let parametro in parametros) {
-        informar.set(parametro, parametros[parametro]);
+        if(typeof parametros[parametro] == 'object' ){
+          for(let sub of parametros[parametro]) {
+            informar.append(parametro+'[]', sub);
+          }
+        }else {
+          informar.append(parametro, parametros[parametro]);
+        }
       }
-      // informar.set('asdasdas', [1,2,3,4].toString());
     }
 
     return this.http
                .get(url,{headers:this.headers, search : informar})
                .map(res=>res.json())
   }
+  
+  
 
 }

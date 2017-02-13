@@ -78,7 +78,8 @@ export class RequestComponent {
   processaParametros(valor){
     return {
       page: valor['pagina'],
-      q: valor['valorPesquisado']
+      q: valor['valorPesquisado'],
+      menos_id: [1,2,3,4]
     }
   }
 
