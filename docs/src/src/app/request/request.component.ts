@@ -34,38 +34,39 @@ export class RequestComponent {
       </template>
 
       <select2-request
-              [(ngModel)]="valorSelecionado"
-              [processaParametros]="processaParametros"
-              [processaResultado]="processaResultado"
-              [templateResultado]="templateResultado"
-              url="https://api.github.com/search/repositories"
-              minimoCaracteres="1"
-              (onAbrir)="log('onAbrir', $event)"
-              (onFechar)="log('onFechar', $event)"
-              (onBuscar)="log('onBuscar', $event)"
-              (onSelecionarItem)="log('onSelecionarItem', $event)"
-              (onLimpar)="log('onLimpar', $event)"
+          [(ngModel)]="valorSelecionado"
+          [templateResultado]="templateResultado"
+          url="https://api.github.com/search/repositories"
+          minimoCaracteres="1"
+          (onAbrir)="log('onAbrir', $event)"
+          (onFechar)="log('onFechar', $event)"
+          (onBuscar)="log('onBuscar', $event)"
+          (onSelecionarItem)="log('onSelecionarItem', $event)"
+          (onLimpar)="log('onLimpar', $event)"
+          (onErro)="log('onErro', $event)"
+          (onProcessaParametros)="processaParametros($event)"
+          (onProcessaResultado)="processaResultado($event)"
+          indiceNome="name"
       >
       </select2-request>
   `;
   codigoUtilizadoComponent = `
-      //COMPONENT
-      /**
-       * processa os parametros para passar para url
-       */
-      processaParametros(valor){
-        return {
-          page: valor['pagina'],
-          q: valor['valorPesquisado']
-        }
+    /**
+     * processa os parametros para passar para url
+     */
+    processaParametros(valor){
+      valor.retorno = {
+        q     : valor.enviado.valorPesquisado,
+        page  : valor.enviado.pagina,
       }
+    }
   
-      /**
-       * processa o resultado do servidor
-       */
-      processaResultado(valor){
-        return valor['items'];
-      }
+    /**
+     * processa o resultado do servidor
+     */
+    processaResultado(valor){
+     valor.retorno = valor.enviado.items;
+    }
   `;
 
   log(nome, texto){
@@ -76,9 +77,9 @@ export class RequestComponent {
    * processa os parametros para passar para url
    */
   processaParametros(valor){
-    return {
-      page: valor['pagina'],
-      q: valor['valorPesquisado']
+    valor.retorno = {
+      q     : valor.enviado.valorPesquisado,
+      page  : valor.enviado.pagina,
     }
   }
 
@@ -86,6 +87,6 @@ export class RequestComponent {
    * processa o resultado do servidor
    */
   processaResultado(valor){
-    return valor['items'];
+    valor.retorno = valor.enviado.items;
   }
 }

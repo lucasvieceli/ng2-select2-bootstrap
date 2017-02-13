@@ -5,6 +5,8 @@ import {Component} from '@angular/core'
 })
 export class RequestMultipleComponent {
   logs : any  = [];
+  objProcessaParametros = {enviado: { pagina: 'Página atual que está pesquisando', valorPesquisado: 'Valor que foi pesquisado'}, retorno: {/*Atribuir aqui os parametros que você quer adicionar na url*/}};
+  objProcessaResultado = {enviado: {}, retorno: {}};
 
   codigoUtilizado = `
      <template #templateResultado let-valor>
@@ -34,39 +36,39 @@ export class RequestMultipleComponent {
       </template>
 
       <select2-request
-              [(ngModel)]="valorSelecionado"
-              [processaParametros]="processaParametros"
-              [processaResultado]="processaResultado"
-              [templateResultado]="templateResultado"
-              url="https://api.github.com/search/repositories"
-              minimoCaracteres="1"
-              (onAbrir)="log('onAbrir', $event)"
-              (onFechar)="log('onFechar', $event)"
-              (onBuscar)="log('onBuscar', $event)"
-              (onSelecionarItem)="log('onSelecionarItem', $event)"
-              (onRemoverItem)="log('onRemoverItem', $event)"
-              indiceNome="name"
+          [(ngModel)]="valorSelecionado"
+          [templateResultado]="templateResultado"
+          url="https://api.github.com/search/repositories"
+          minimoCaracteres="1"
+          (onAbrir)="log('onAbrir', $event)"
+          (onFechar)="log('onFechar', $event)"
+          (onBuscar)="log('onBuscar', $event)"
+          (onSelecionarItem)="log('onSelecionarItem', $event)"
+          (onRemoverItem)="log('onRemoverItem', $event)"
+          (onErro)="log('onErro', $event)"
+          (onProcessaParametros)="processaParametros($event)"
+          (onProcessaResultado)="processaResultado($event)"
+          indiceNome="name"
       >
       </select2-request>
   `;
   codigoUtilizadoComponent = `
-      //COMPONENT
-      /**
-       * processa os parametros para passar para url
-       */
-      processaParametros(valor){
-        return {
-          page: valor['pagina'],
-          q: valor['valorPesquisado']
-        }
+    /**
+     * processa os parametros para passar para url
+     */
+    processaParametros(valor){
+      valor.retorno = {
+        q     : valor.enviado.valorPesquisado,
+        page  : valor.enviado.pagina,
       }
+    }
   
-      /**
-       * processa o resultado do servidor
-       */
-      processaResultado(valor){
-        return valor['items'];
-      }
+    /**
+     * processa o resultado do servidor
+     */
+    processaResultado(valor){
+     valor.retorno = valor.enviado.items;
+    }
   `;
 
   log(nome, texto){
@@ -77,9 +79,9 @@ export class RequestMultipleComponent {
    * processa os parametros para passar para url
    */
   processaParametros(valor){
-    return {
-      page: valor['pagina'],
-      q: valor['valorPesquisado']
+    valor.retorno = {
+      q     : valor.enviado.valorPesquisado,
+      page  : valor.enviado.pagina,
     }
   }
 
@@ -87,6 +89,6 @@ export class RequestMultipleComponent {
    * processa o resultado do servidor
    */
   processaResultado(valor){
-    return valor['items'];
+   valor.retorno = valor.enviado.items;
   }
 }

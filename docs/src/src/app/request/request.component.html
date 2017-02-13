@@ -39,8 +39,6 @@
                             <h3>Digite um nome de repositório do github</h3>
                             <select2-request
                                     [(ngModel)]="valorSelecionado"
-                                    [processaParametros]="processaParametros"
-                                    [processaResultado]="processaResultado"
                                     [templateResultado]="templateResultado"
                                     url="https://api.github.com/search/repositories"
                                     minimoCaracteres="1"
@@ -50,6 +48,8 @@
                                     (onSelecionarItem)="log('onSelecionarItem', $event)"
                                     (onLimpar)="log('onLimpar', $event)"
                                     (onErro)="log('onErro', $event)"
+                                    (onProcessaParametros)="processaParametros($event)"
+                                    (onProcessaResultado)="processaResultado($event)"
                                     indiceNome="name"
                             >
                             </select2-request>
@@ -85,18 +85,6 @@
                                                         <td>Quantidade de mínimo para realizar a busca</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><strong>processaParametros</strong></td>
-                                                        <td>function</td>
-                                                        <td>{{ { pagina: 'Página atual que está pesquisando', valorPesquisado: 'Valor que foi pesquisado'} | json }}</td>
-                                                        <td>É chamado quando vai fazer a pesquisa no servidor, o retorno desta função irá junto com a url para buscar</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong>processaResultado</strong></td>
-                                                        <td>function</td>
-                                                        <td></td>
-                                                        <td>É chamado quando termina de executar a busca, passando o resultado da busca por parametro. pegando o retorno desta função para usar como valores a ser exibido</td>
-                                                    </tr>
-                                                    <tr>
                                                         <td><strong>placeholder</strong></td>
                                                         <td>string</td>
                                                         <td>Selecione</td>
@@ -117,7 +105,7 @@
                                                     <tr>
                                                         <td><strong>templateSemResultado</strong></td>
                                                         <td>TemplateRef</td>
-                                                        <td></td>
+                                                        <td>{{ {pesquisa:'Valor Pesquisado'} }}</td>
                                                         <td>Template quando não houver item na busca</td>
                                                     </tr>
                                                     <tr>
@@ -156,6 +144,18 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    <tr>
+                                                        <td><strong>onProcessaParametros</strong></td>
+                                                        <td>object</td>
+                                                        <td>{{ objProcessaParametros | json }}</td>
+                                                        <td>É chamado quando vai fazer a pesquisa no servidor. Atribua na posição 'retorno' o que você quer adicionar na url, veja o código de exemplo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>onProcessaResultado</strong></td>
+                                                        <td>object</td>
+                                                        <td>{{ objProcessaResultado | json }}</td>
+                                                        <td>É chamado quando termina de executar a busca. A posição 'enviado' é o que retornou na requisição, atribua a posição 'retorno' o que você gostaria de exibir no select, veja o código de exemplo</td>
+                                                    </tr>
                                                     <tr>
                                                         <td><strong>onAbrir</strong></td>
                                                         <td>boolean</td>

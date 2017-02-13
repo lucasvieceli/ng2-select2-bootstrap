@@ -17,7 +17,6 @@ export declare class RequestMultipleComponent extends Select implements OnDestro
     indiceId: string;
     indiceNome: string;
     url: string;
-    processaResultado: any;
     processaParametros: any;
     change: EventEmitter<any>;
     onSelecionarItem: EventEmitter<any>;
@@ -28,6 +27,8 @@ export declare class RequestMultipleComponent extends Select implements OnDestro
     onFechar: EventEmitter<any>;
     onLimpar: EventEmitter<any>;
     onErro: EventEmitter<any>;
+    onProcessaResultado: EventEmitter<any>;
+    onProcessaParametros: EventEmitter<any>;
     campoBusca: ElementRef;
     private pagina;
     private quantidadePadrao;
