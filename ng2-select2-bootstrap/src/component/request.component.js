@@ -41,6 +41,8 @@ var RequestComponent = RequestComponent_1 = (function (_super) {
         _this.onFechar = new core_1.EventEmitter();
         _this.onLimpar = new core_1.EventEmitter();
         _this.onErro = new core_1.EventEmitter();
+        _this.onProcessaResultado = new core_1.EventEmitter();
+        _this.onProcessaParametros = new core_1.EventEmitter();
         _this.pagina = 1;
         _this.quantidadePadrao = 0;
         _this.buscando = false;
@@ -102,22 +104,21 @@ var RequestComponent = RequestComponent_1 = (function (_super) {
         }
         this.buscando = true;
         // this.valoresExibir = this._valores.filter(item => item[this.indiceNome].indexOf(this.valorPesquisado) !== -1);
-        var parametros = {};
-        if (typeof this.processaParametros != 'undefined') {
-            var obj = {
+        var parametros = {
+            enviado: {
                 pagina: this.pagina,
-                valorPesquisado: this.valorPesquisado
-            };
-            parametros = this.processaParametros(obj);
-        }
+                valorPesquisado: this.valorPesquisado,
+            },
+            retorno: {}
+        };
         //mata o subscribe
         this.ngOnDestroy();
-        this.onBuscar.emit(parametros);
-        this.subscrebeBusca = this.requisicao.getResultados(this.url, parametros).subscribe(function (resultado) {
-            var exibirResultado = [];
-            if (typeof _this.processaResultado != 'undefined') {
-                exibirResultado = _this.processaResultado(resultado);
-            }
+        this.onBuscar.emit(this.valorPesquisado);
+        this.onProcessaParametros.emit(parametros);
+        this.subscrebeBusca = this.requisicao.getResultados(this.url, parametros.retorno).subscribe(function (resultado) {
+            var objEmit = { enviado: resultado, retorno: [] };
+            _this.onProcessaResultado.emit(objEmit);
+            var exibirResultado = objEmit.retorno;
             if (_this.quantidadePadrao == 0) {
                 _this.quantidadePadrao = exibirResultado.length;
             }
@@ -205,14 +206,6 @@ __decorate([
     __metadata("design:type", String)
 ], RequestComponent.prototype, "url", void 0);
 __decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "processaResultado", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "processaParametros", void 0);
-__decorate([
     core_1.Output(),
     __metadata("design:type", Object)
 ], RequestComponent.prototype, "change", void 0);
@@ -248,6 +241,14 @@ __decorate([
     core_1.Output(),
     __metadata("design:type", Object)
 ], RequestComponent.prototype, "onErro", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], RequestComponent.prototype, "onProcessaResultado", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], RequestComponent.prototype, "onProcessaParametros", void 0);
 __decorate([
     core_1.ViewChild('campoBusca'),
     __metadata("design:type", core_1.ElementRef)

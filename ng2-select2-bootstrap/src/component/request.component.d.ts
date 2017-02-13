@@ -19,8 +19,6 @@ export declare class RequestComponent extends Select implements OnDestroy {
     indiceId: string;
     indiceNome: string;
     url: string;
-    processaResultado: any;
-    processaParametros: any;
     change: EventEmitter<any>;
     onSelecionarItem: EventEmitter<any>;
     onBuscar: EventEmitter<any>;
@@ -30,6 +28,8 @@ export declare class RequestComponent extends Select implements OnDestroy {
     onFechar: EventEmitter<any>;
     onLimpar: EventEmitter<any>;
     onErro: EventEmitter<any>;
+    onProcessaResultado: EventEmitter<any>;
+    onProcessaParametros: EventEmitter<any>;
     campoBusca: ElementRef;
     private pagina;
     private quantidadePadrao;
