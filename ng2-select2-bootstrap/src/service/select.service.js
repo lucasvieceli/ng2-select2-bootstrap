@@ -22,8 +22,6 @@ var SelectService = (function () {
         var informar = new http_1.URLSearchParams();
         if (parametros) {
             for (var parametro in parametros) {
-                console.log(typeof parametros[parametro], 'typeof');
-                console.log(parametros[parametro], 'parametro');
                 if (typeof parametros[parametro] == 'object') {
                     for (var _i = 0, _a = parametros[parametro]; _i < _a.length; _i++) {
                         var sub = _a[_i];
