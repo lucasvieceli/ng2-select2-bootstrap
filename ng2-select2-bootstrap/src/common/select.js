@@ -10,6 +10,7 @@ var Select = (function () {
         this.exibirMensagemCaracteresMinimo = true;
         this.aberto = false;
         this.focus = false;
+        this.disabled = false;
         this.valoresExibir = [];
         this.change = new core_1.EventEmitter();
         this.onSelecionarItem = new core_1.EventEmitter();
@@ -26,6 +27,9 @@ var Select = (function () {
         }
     };
     Select.prototype.setFocus = function (valor) {
+        if (this.disabled) {
+            return false;
+        }
         this.focus = valor;
     };
     Select.prototype.fechar = function () {
@@ -73,12 +77,11 @@ var Select = (function () {
         }
     };
     Select.prototype.getClassGeral = function () {
-        if (this.focus) {
-            return 'select2 select2-container select2-container--bootstrap select2-container--above select2-container--focus';
-        }
-        else {
-            return 'select2 select2-container select2-container--bootstrap select2-container--above';
-        }
+        return {
+            'select2-container--focus': this.focus,
+            'select2 select2-container select2-container--bootstrap select2-container--above': true,
+            'select2-container--disabled': this.disabled
+        };
     };
     Select.prototype.clickForaComponent = function (event) {
         if (!this.elementRef.nativeElement.contains(event.target) && this.aberto) {

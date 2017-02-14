@@ -14,6 +14,7 @@ export declare class RequestMultipleComponent extends Select implements OnDestro
     templateSelecionado: TemplateRef<any>;
     templateSemResultado: TemplateRef<any>;
     templateBuscando: TemplateRef<any>;
+    disabled: boolean;
     indiceId: string;
     indiceNome: string;
     url: string;
@@ -36,7 +37,7 @@ export declare class RequestMultipleComponent extends Select implements OnDestro
     private subscrebeBusca;
     constructor(elementRef: ElementRef, zone: NgZone, requisicao: SelectService, renderer: Renderer);
     ngOnDestroy(): void;
-    abrir(): void;
+    abrir(): boolean;
     keyup(valor: any): any;
     selecionar(item: any): void;
     getSomenteId(): any[];

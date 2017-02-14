@@ -9,7 +9,7 @@ import {SelectService} from "../service/select.service";
 @Component({
     selector    : 'select2-request-multiple',
     template    : `
-    <span [class]="getClassGeral()" dir="ltr" (click)="abrir()">
+    <span [ngClass]="getClassGeral()"  dir="ltr" (click)="abrir()">
         <span class="selection">
             <span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1">
             <ul class="select2-selection__rendered">
@@ -107,6 +107,7 @@ export class RequestMultipleComponent extends Select implements OnDestroy{
     @Input() templateSelecionado      : TemplateRef<any>;
     @Input() templateSemResultado     : TemplateRef<any>;
     @Input() templateBuscando         : TemplateRef<any>;
+    @Input() disabled                 : boolean = false;
     @Input() indiceId                 : string = 'id';
     @Input() indiceNome               : string = 'nome';
     @Input() url                      : string;
@@ -149,6 +150,10 @@ export class RequestMultipleComponent extends Select implements OnDestroy{
 
     
     abrir(){
+        if(this.disabled){
+            return false;
+        }
+        
         if(this.aberto) {
             this.fechar();
         }else{

@@ -9,7 +9,7 @@ import {Select} from './../common/select';
     selector    : 'select2-multiple',
     template    : `
     <!--select simples-->
-    <span [class]="getClassGeral()" dir="ltr" (click)="abrir()">
+    <span [ngClass]="getClassGeral()" dir="ltr" (click)="abrir()">
         <span class="selection">
             <span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1">
             <ul class="select2-selection__rendered">
@@ -94,6 +94,7 @@ export class MultipleComponent extends Select implements ControlValueAccessor{
     @Input() templateResultado        : TemplateRef<any>;
     @Input() templateSelecionado      : TemplateRef<any>;
     @Input() templateSemResultado     : TemplateRef<any>;
+    @Input() disabled                 : boolean = false;
     @Input() indiceId                 : string = 'id';
     @Input() indiceNome               : string = 'nome';
     @Input() set valores(valor : any){
@@ -120,6 +121,10 @@ export class MultipleComponent extends Select implements ControlValueAccessor{
 
     
     abrir(){
+        if(this.disabled){
+            return false;
+        }
+        
         if(this.aberto) {
             this.fechar();
         }else{

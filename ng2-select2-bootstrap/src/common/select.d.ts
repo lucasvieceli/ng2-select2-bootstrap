@@ -9,6 +9,7 @@ export declare class Select implements ControlValueAccessor, OnInit {
     protected exibirMensagemCaracteresMinimo: boolean;
     protected aberto: boolean;
     protected focus: boolean;
+    protected disabled: boolean;
     protected campoBusca: ElementRef;
     templateResultado: TemplateRef<any>;
     templateSelecionado: TemplateRef<any>;
@@ -29,7 +30,7 @@ export declare class Select implements ControlValueAccessor, OnInit {
     onLimpar: EventEmitter<any>;
     constructor(elementRef: ElementRef, zone: NgZone);
     ngOnInit(): void;
-    setFocus(valor: boolean): void;
+    setFocus(valor: boolean): boolean;
     fechar(): void;
     selecionar(item: any): void;
     keyup(valor: any): any;
@@ -39,7 +40,11 @@ export declare class Select implements ControlValueAccessor, OnInit {
      * quando está marcado para exibir resultado completo
      */
     remove(item: any, event: any): void;
-    getClassGeral(): "select2 select2-container select2-container--bootstrap select2-container--above select2-container--focus" | "select2 select2-container select2-container--bootstrap select2-container--above";
+    getClassGeral(): {
+        'select2-container--focus': boolean;
+        'select2 select2-container select2-container--bootstrap select2-container--above': boolean;
+        'select2-container--disabled': boolean;
+    };
     clickForaComponent(event: any): void;
     validaCaracteresMinimo(): boolean;
     writeValue(value: any): void;

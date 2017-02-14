@@ -12,6 +12,7 @@ export declare class SelectComponent extends Select {
     templateSemResultado: TemplateRef<any>;
     indiceId: string;
     indiceNome: string;
+    disabled: boolean;
     valores: any;
     onSelecionarItem: EventEmitter<any>;
     onBuscar: EventEmitter<any>;
@@ -22,7 +23,7 @@ export declare class SelectComponent extends Select {
     onLimpar: EventEmitter<any>;
     campoBusca: ElementRef;
     constructor(elementRef: ElementRef, zone: NgZone);
-    abrir(): void;
+    abrir(): boolean;
     selecionar(item: any): void;
     limpar(event: any): void;
     buscar(): boolean;
