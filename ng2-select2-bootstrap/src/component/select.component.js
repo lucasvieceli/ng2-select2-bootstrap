@@ -28,7 +28,7 @@ var SelectComponent = SelectComponent_1 = (function (_super) {
         _this.minimoCaracteres = 0;
         _this.indiceId = 'id';
         _this.indiceNome = 'nome';
-        _this.change = new core_1.EventEmitter();
+        // @Output() change            = new EventEmitter<any>();
         _this.onSelecionarItem = new core_1.EventEmitter();
         _this.onBuscar = new core_1.EventEmitter();
         _this.onApagar = new core_1.EventEmitter();
@@ -139,10 +139,6 @@ __decorate([
     __metadata("design:type", Object),
     __metadata("design:paramtypes", [Object])
 ], SelectComponent.prototype, "valores", null);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], SelectComponent.prototype, "change", void 0);
 __decorate([
     core_1.Output(),
     __metadata("design:type", Object)

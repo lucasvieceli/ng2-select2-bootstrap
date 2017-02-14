@@ -23,6 +23,7 @@
                                 [templateResultado]="exibirDiferente"
                                 (onAbrir)="log('onAbrir', $event)"
                                 (onFechar)="log('onFechar', $event)"
+                                (ngModelChange)="log('change', $event)"
                                 (onBuscar)="log('onBuscar', $event)"
                                 (onSelecionarItem)="log('onSelecionarItem', $event)"
                                 (onLimpar)="log('onLimpar', $event)"

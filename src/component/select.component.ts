@@ -100,7 +100,7 @@ export class SelectComponent extends Select{
         this._valores = valor;
         this.valoresExibir = valor;
     }
-    @Output() change            = new EventEmitter<any>();
+    // @Output() change            = new EventEmitter<any>();
     @Output() onSelecionarItem  = new EventEmitter<any>();
     @Output() onBuscar          = new EventEmitter<any>();
     @Output() onApagar          = new EventEmitter<any>();

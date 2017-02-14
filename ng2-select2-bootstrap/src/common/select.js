@@ -102,10 +102,11 @@ var Select = (function () {
     Select.prototype.updateValue = function (value) {
         var _this = this;
         this.zone.run(function () {
-            _this._value = value;
-            _this.onChange(value);
-            _this._onTouchedCallback();
-            _this.change.emit(value);
+            if (_this._value != value) {
+                _this._value = value;
+                _this.onChange(value);
+                _this._onTouchedCallback();
+            }
         });
     };
     Select.prototype.onChange = function (_) { };

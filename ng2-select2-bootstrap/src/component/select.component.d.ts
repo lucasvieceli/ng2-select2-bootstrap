@@ -13,7 +13,6 @@ export declare class SelectComponent extends Select {
     indiceId: string;
     indiceNome: string;
     valores: any;
-    change: EventEmitter<any>;
     onSelecionarItem: EventEmitter<any>;
     onBuscar: EventEmitter<any>;
     onApagar: EventEmitter<any>;

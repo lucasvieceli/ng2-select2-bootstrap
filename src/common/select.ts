@@ -129,12 +129,13 @@ export class Select  implements ControlValueAccessor, OnInit{
     }
     updateValue (value: any) {
         this.zone.run(() => {
-            this._value = value;
+            if(this._value != value) {
+                this._value = value;
 
-            this.onChange(value);
-            this._onTouchedCallback();
-            this.change.emit(value);
-
+                this.onChange(value);
+                this._onTouchedCallback();
+                // this.change.emit(value);
+            }
 
         });
     }
