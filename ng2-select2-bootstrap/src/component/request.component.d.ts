@@ -15,7 +15,7 @@ export declare class RequestComponent extends Select implements OnDestroy {
     templateSelecionado: TemplateRef<any>;
     templateSemResultado: TemplateRef<any>;
     templateBuscando: TemplateRef<any>;
-    resultadoCompleto: boolean;
+    disabled: boolean;
     indiceId: string;
     indiceNome: string;
     url: string;
@@ -38,7 +38,7 @@ export declare class RequestComponent extends Select implements OnDestroy {
     private subscrebeBusca;
     constructor(elementRef: ElementRef, zone: NgZone, requisicao: SelectService, renderer: Renderer);
     ngOnDestroy(): void;
-    abrir(): void;
+    abrir(): boolean;
     keyup(valor: any): any;
     selecionar(item: any): void;
     limpar(event: any): void;

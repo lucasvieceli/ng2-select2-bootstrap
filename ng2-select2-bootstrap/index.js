@@ -41,6 +41,7 @@ Ng2Select2BootstrapModule = Ng2Select2BootstrapModule_1 = __decorate([
             component_1.MultipleComponent,
             component_1.RequestComponent,
             component_1.RequestMultipleComponent,
+            forms_1.FormsModule,
         ],
         declarations: [
             directive_1.InnerTemplateDirective,

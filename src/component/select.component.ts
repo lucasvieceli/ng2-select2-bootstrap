@@ -9,7 +9,7 @@ import {Select} from './../common/select';
     selector    : 'select2-select',
     template    : `
     <!--select simples-->
-    <span [class]="getClassGeral()" dir="ltr" (click)="abrir()">
+    <span [ngClass]="getClassGeral()" dir="ltr" (click)="abrir()">
         <span class="selection">
             <!--simples-->
             <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0">
@@ -96,11 +96,12 @@ export class SelectComponent extends Select{
     @Input() templateSemResultado     : TemplateRef<any>;
     @Input() indiceId                 : string = 'id';
     @Input() indiceNome               : string = 'nome';
+    @Input() disabled                 : boolean = false;
     @Input() set valores(valor : any){
         this._valores = valor;
         this.valoresExibir = valor;
     }
-    @Output() change            = new EventEmitter<any>();
+    // @Output() change            = new EventEmitter<any>();
     @Output() onSelecionarItem  = new EventEmitter<any>();
     @Output() onBuscar          = new EventEmitter<any>();
     @Output() onApagar          = new EventEmitter<any>();
@@ -120,6 +121,10 @@ export class SelectComponent extends Select{
 
     
     abrir(){
+        if(this.disabled){
+            return false;
+        }
+        
         if(this.aberto) {
             this.fechar();
         }else{

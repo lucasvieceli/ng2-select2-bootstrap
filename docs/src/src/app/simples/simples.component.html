@@ -19,10 +19,12 @@
                         <div class="col-md-3">
                             <select2-select
                                 [valores]="valores"
+                                [disabled]="true"
                                 [(ngModel)]="valorSelecionado"
                                 [templateResultado]="exibirDiferente"
                                 (onAbrir)="log('onAbrir', $event)"
                                 (onFechar)="log('onFechar', $event)"
+                                (ngModelChange)="log('change', $event)"
                                 (onBuscar)="log('onBuscar', $event)"
                                 (onSelecionarItem)="log('onSelecionarItem', $event)"
                                 (onLimpar)="log('onLimpar', $event)"
@@ -64,6 +66,12 @@
                                                         <td>string</td>
                                                         <td>Selecione</td>
                                                         <td>Placeholder quando não houver item selecionado</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>disabled</strong></td>
+                                                        <td>boolean</td>
+                                                        <td>false</td>
+                                                        <td>Indica se é somente leitura o select</td>
                                                     </tr>
                                                     <tr>
                                                         <td><strong>templateResultado</strong></td>

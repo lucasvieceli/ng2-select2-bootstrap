@@ -8,6 +8,7 @@ export class Select  implements ControlValueAccessor, OnInit{
     protected exibirMensagemCaracteresMinimo : boolean = true;
     protected aberto        : boolean = false;
     protected focus         : boolean = false;
+    protected disabled      : boolean = false;
     protected campoBusca    : ElementRef;
     templateResultado        : TemplateRef<any>;
     templateSelecionado      : TemplateRef<any>;
@@ -40,6 +41,10 @@ export class Select  implements ControlValueAccessor, OnInit{
     }
 
     setFocus(valor : boolean) {
+        if(this.disabled){
+            return false;
+        }
+        
         this.focus = valor;
     }
     fechar() {
@@ -98,11 +103,12 @@ export class Select  implements ControlValueAccessor, OnInit{
     }
 
     getClassGeral() {
-        if(this.focus) {
-            return 'select2 select2-container select2-container--bootstrap select2-container--above select2-container--focus';
-        }else {
-            return 'select2 select2-container select2-container--bootstrap select2-container--above';
-        }
+        return {
+            'select2-container--focus': this.focus,
+            'select2 select2-container select2-container--bootstrap select2-container--above': true,
+            'select2-container--disabled' : this.disabled
+        };
+        
     }
     clickForaComponent(event) {
         if(!this.elementRef.nativeElement.contains(event.target) && this.aberto) {
@@ -129,12 +135,13 @@ export class Select  implements ControlValueAccessor, OnInit{
     }
     updateValue (value: any) {
         this.zone.run(() => {
-            this._value = value;
+            if(this._value != value) {
+                this._value = value;
 
-            this.onChange(value);
-            this._onTouchedCallback();
-            this.change.emit(value);
-
+                this.onChange(value);
+                this._onTouchedCallback();
+                // this.change.emit(value);
+            }
 
         });
     }

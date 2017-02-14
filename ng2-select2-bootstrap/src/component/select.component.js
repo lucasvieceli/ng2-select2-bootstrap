@@ -28,7 +28,8 @@ var SelectComponent = SelectComponent_1 = (function (_super) {
         _this.minimoCaracteres = 0;
         _this.indiceId = 'id';
         _this.indiceNome = 'nome';
-        _this.change = new core_1.EventEmitter();
+        _this.disabled = false;
+        // @Output() change            = new EventEmitter<any>();
         _this.onSelecionarItem = new core_1.EventEmitter();
         _this.onBuscar = new core_1.EventEmitter();
         _this.onApagar = new core_1.EventEmitter();
@@ -47,6 +48,9 @@ var SelectComponent = SelectComponent_1 = (function (_super) {
         configurable: true
     });
     SelectComponent.prototype.abrir = function () {
+        if (this.disabled) {
+            return false;
+        }
         if (this.aberto) {
             this.fechar();
         }
@@ -136,13 +140,13 @@ __decorate([
 ], SelectComponent.prototype, "indiceNome", void 0);
 __decorate([
     core_1.Input(),
+    __metadata("design:type", Boolean)
+], SelectComponent.prototype, "disabled", void 0);
+__decorate([
+    core_1.Input(),
     __metadata("design:type", Object),
     __metadata("design:paramtypes", [Object])
 ], SelectComponent.prototype, "valores", null);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], SelectComponent.prototype, "change", void 0);
 __decorate([
     core_1.Output(),
     __metadata("design:type", Object)
@@ -183,7 +187,7 @@ __decorate([
 SelectComponent = SelectComponent_1 = __decorate([
     core_1.Component({
         selector: 'select2-select',
-        template: "\n    <!--select simples-->\n    <span [class]=\"getClassGeral()\" dir=\"ltr\" (click)=\"abrir()\">\n        <span class=\"selection\">\n            <!--simples-->\n            <span class=\"select2-selection select2-selection--single\" role=\"combobox\" aria-haspopup=\"true\" aria-expanded=\"false\" tabindex=\"0\">\n                <span class=\"select2-selection__rendered\">\n                    <span [hidden]=\"!data\" (click)=\"limpar($event)\" class=\"select2-selection__clear\">\u00D7</span>\n                    <span [hidden]=\"!data\" class=\"nao-fechar\" [inner-template]=\"templateSelecionado || templateSelecionadoInterno\" [item]=\"data\"></span>\n                    <span [hidden]=\"data\" [innerHtml]=\"placeholder\" class=\"select2-selection__placeholder\"></span>\n    \n                </span>\n                <span class=\"select2-selection__arrow\" role=\"presentation\">\n                    <b role=\"presentation\"></b>\n                </span>\n            </span>\n        </span>\n        <span class=\"dropdown-wrapper\" aria-hidden=\"true\"></span>\n    </span>\n    \n    <!--quando clicar campo-->\n    <div [hidden]=\"!aberto\">\n        <span class=\"select2-container select2-container--bootstrap select2-container--open\">\n            <span class=\"select2-dropdown select2-dropdown--below\" dir=\"ltr\" >\n                <span class=\"select2-search select2-search--dropdown\">\n                    <input (keyup)=\"keyup($event.target.value)\" #campoBusca placeholder=\"Digite algo\" autofocus class=\"select2-search__field\" type=\"search\" tabindex=\"0\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"textbox\">\n                </span>\n                <span class=\"select2-results\">\n                    <ul class=\"select2-results__options\" role=\"tree\"  aria-expanded=\"true\" aria-hidden=\"false\">\n                        <span [hidden]=\"exibirMensagemCaracteresMinimo\">\n                            <span [hidden]=\"!valoresExibir.length\" >\n                                <li *ngFor=\"let item of valoresExibir\" (click)=\"selecionar(item)\" class=\"select2-results__option\" highlight=\"select2-results__option--highlighted\" role=\"treeitem\" [attr.aria-selected]=\"((_value) && (item[indiceId] == _value[indiceId])) ? true : false\">\n                                    <span  [inner-template]=\"templateResultado || templateResultadoInterno\" [item]=\"item\"></span>\n                                </li>\n                            </span>\n                            <li [hidden]=\"valoresExibir.length\" class=\"select2-results__option select2-results__message\" aria-live=\"assertive\">\n                                <span  [inner-template]=\"templateSemResultado || templateSemResultadoInterno\" [item]=\"{pesquisa:valorPesquisado}\"></span>\n                            </li>\n                        </span>\n                        <li [hidden]=\"exibirMensagemCaracteresMinimo == false\" class=\"select2-results__option select2-results__message\">\n                            Digite {{minimoCaracteres}} ou mais caracteres para realizar a busca\n                        </li>\n                    </ul>\n                </span>\n            </span>\n        </span>\n    </div>\n    \n    \n    \n    <template #templateSemResultadoInterno>\n        Nenhum resultado encontrado\n    </template>\n    <template #templateResultadoInterno let-valor>\n        {{valor[indiceNome]}}\n    </template>\n    <template #templateSelecionadoInterno let-valor>\n        <span *ngIf=\"valor\">\n            {{valor[indiceNome]}}\n        </span>\n    </template>\n\n    \n    ",
+        template: "\n    <!--select simples-->\n    <span [ngClass]=\"getClassGeral()\" dir=\"ltr\" (click)=\"abrir()\">\n        <span class=\"selection\">\n            <!--simples-->\n            <span class=\"select2-selection select2-selection--single\" role=\"combobox\" aria-haspopup=\"true\" aria-expanded=\"false\" tabindex=\"0\">\n                <span class=\"select2-selection__rendered\">\n                    <span [hidden]=\"!data\" (click)=\"limpar($event)\" class=\"select2-selection__clear\">\u00D7</span>\n                    <span [hidden]=\"!data\" class=\"nao-fechar\" [inner-template]=\"templateSelecionado || templateSelecionadoInterno\" [item]=\"data\"></span>\n                    <span [hidden]=\"data\" [innerHtml]=\"placeholder\" class=\"select2-selection__placeholder\"></span>\n    \n                </span>\n                <span class=\"select2-selection__arrow\" role=\"presentation\">\n                    <b role=\"presentation\"></b>\n                </span>\n            </span>\n        </span>\n        <span class=\"dropdown-wrapper\" aria-hidden=\"true\"></span>\n    </span>\n    \n    <!--quando clicar campo-->\n    <div [hidden]=\"!aberto\">\n        <span class=\"select2-container select2-container--bootstrap select2-container--open\">\n            <span class=\"select2-dropdown select2-dropdown--below\" dir=\"ltr\" >\n                <span class=\"select2-search select2-search--dropdown\">\n                    <input (keyup)=\"keyup($event.target.value)\" #campoBusca placeholder=\"Digite algo\" autofocus class=\"select2-search__field\" type=\"search\" tabindex=\"0\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"textbox\">\n                </span>\n                <span class=\"select2-results\">\n                    <ul class=\"select2-results__options\" role=\"tree\"  aria-expanded=\"true\" aria-hidden=\"false\">\n                        <span [hidden]=\"exibirMensagemCaracteresMinimo\">\n                            <span [hidden]=\"!valoresExibir.length\" >\n                                <li *ngFor=\"let item of valoresExibir\" (click)=\"selecionar(item)\" class=\"select2-results__option\" highlight=\"select2-results__option--highlighted\" role=\"treeitem\" [attr.aria-selected]=\"((_value) && (item[indiceId] == _value[indiceId])) ? true : false\">\n                                    <span  [inner-template]=\"templateResultado || templateResultadoInterno\" [item]=\"item\"></span>\n                                </li>\n                            </span>\n                            <li [hidden]=\"valoresExibir.length\" class=\"select2-results__option select2-results__message\" aria-live=\"assertive\">\n                                <span  [inner-template]=\"templateSemResultado || templateSemResultadoInterno\" [item]=\"{pesquisa:valorPesquisado}\"></span>\n                            </li>\n                        </span>\n                        <li [hidden]=\"exibirMensagemCaracteresMinimo == false\" class=\"select2-results__option select2-results__message\">\n                            Digite {{minimoCaracteres}} ou mais caracteres para realizar a busca\n                        </li>\n                    </ul>\n                </span>\n            </span>\n        </span>\n    </div>\n    \n    \n    \n    <template #templateSemResultadoInterno>\n        Nenhum resultado encontrado\n    </template>\n    <template #templateResultadoInterno let-valor>\n        {{valor[indiceNome]}}\n    </template>\n    <template #templateSelecionadoInterno let-valor>\n        <span *ngIf=\"valor\">\n            {{valor[indiceNome]}}\n        </span>\n    </template>\n\n    \n    ",
         providers: [
             {
                 provide: forms_1.NG_VALUE_ACCESSOR,

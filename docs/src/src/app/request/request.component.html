@@ -45,6 +45,7 @@
                                     (onAbrir)="log('onAbrir', $event)"
                                     (onFechar)="log('onFechar', $event)"
                                     (onBuscar)="log('onBuscar', $event)"
+                                    (change)="log('change', $event)"
                                     (onSelecionarItem)="log('onSelecionarItem', $event)"
                                     (onLimpar)="log('onLimpar', $event)"
                                     (onErro)="log('onErro', $event)"
@@ -83,6 +84,12 @@
                                                         <td>number</td>
                                                         <td>0</td>
                                                         <td>Quantidade de mínimo para realizar a busca</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>disabled</strong></td>
+                                                        <td>boolean</td>
+                                                        <td>false</td>
+                                                        <td>Indica se é somente leitura o select</td>
                                                     </tr>
                                                     <tr>
                                                         <td><strong>placeholder</strong></td>

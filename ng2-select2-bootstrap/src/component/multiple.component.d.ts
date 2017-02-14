@@ -11,6 +11,7 @@ export declare class MultipleComponent extends Select implements ControlValueAcc
     templateResultado: TemplateRef<any>;
     templateSelecionado: TemplateRef<any>;
     templateSemResultado: TemplateRef<any>;
+    disabled: boolean;
     indiceId: string;
     indiceNome: string;
     valores: any;
@@ -24,7 +25,7 @@ export declare class MultipleComponent extends Select implements ControlValueAcc
     onLimpar: EventEmitter<any>;
     campoBusca: ElementRef;
     constructor(elementRef: ElementRef, zone: NgZone);
-    abrir(): void;
+    abrir(): boolean;
     selecionar(item: any): void;
     getSomenteId(): any[];
     limpar(event: any): void;

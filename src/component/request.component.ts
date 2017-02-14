@@ -10,7 +10,7 @@ import {SelectService} from "../service/select.service";
     selector    : 'select2-request',
     template    : `
     <!--select simples-->
-    <span [class]="getClassGeral()" [tabindex]="tabIndex" dir="ltr" (focus)="abrir()" (click)="abrir()">
+    <span [ngClass]="getClassGeral()" [tabindex]="tabIndex" dir="ltr" (focus)="abrir()" (click)="abrir()">
         <span class="selection">
             <!--simples-->
             <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0">
@@ -108,7 +108,7 @@ export class RequestComponent extends Select implements OnDestroy{
     @Input() templateSelecionado      : TemplateRef<any>;
     @Input() templateSemResultado     : TemplateRef<any>;
     @Input() templateBuscando         : TemplateRef<any>;
-    @Input() resultadoCompleto        : boolean = false;
+    @Input() disabled                 : boolean = false;
     @Input() indiceId                 : string = 'id';
     @Input() indiceNome               : string = 'nome';
     @Input() url                      : string;
@@ -150,6 +150,10 @@ export class RequestComponent extends Select implements OnDestroy{
 
     
     abrir(){
+        if(this.disabled){
+            return false;
+        }
+        
         if(this.aberto) {
             this.fechar();
         }else{
@@ -256,7 +260,7 @@ export class RequestComponent extends Select implements OnDestroy{
         }
     }
 
-    
+
 
     
     

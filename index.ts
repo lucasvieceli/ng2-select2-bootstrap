@@ -26,6 +26,7 @@ export * from './src/service/index';
     MultipleComponent,
     RequestComponent,
     RequestMultipleComponent,
+    FormsModule,
   ],
   declarations: [
     InnerTemplateDirective,
