@@ -223,17 +223,20 @@ export class RequestComponent extends Select implements OnDestroy{
                 let objEmit = {enviado : resultado,retorno: []};
                 this.onProcessaResultado.emit(objEmit);
                 let exibirResultado = objEmit.retorno;
-                
-                if(this.quantidadePadrao == 0){
-                    this.quantidadePadrao = exibirResultado.length;
+
+                if(Array.isArray(exibirResultado)) {
+                    if (this.quantidadePadrao == 0) {
+                        this.quantidadePadrao = exibirResultado.length;
+                    }
+
+                    if (this.quantidadePadrao != exibirResultado.length) {
+                        this.semResultado = true;
+                    }
+
+                    this.valoresExibir = this.valoresExibir.concat(exibirResultado);
+                }else{
+                    console.log('Ng2Select2Bootstrap: retorno não é um select', exibirResultado);
                 }
-        
-                if(this.quantidadePadrao != exibirResultado.length){
-                    this.semResultado = true;
-                }
-        
-                this.valoresExibir = this.valoresExibir.concat(exibirResultado);
-        
                 this.buscando = false;
             },
             erro =>{

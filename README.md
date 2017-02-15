@@ -7,3 +7,6 @@
 Log Alterações
 
  - 0.1.32 - Adicionado @input 'disabled' em todos os components, padrão valor false
+ - 0.1.33
+	 - Adicionado validação se é um array no retorno da busca do select request e multiple;
+	 - Corrigido a busca do select simples

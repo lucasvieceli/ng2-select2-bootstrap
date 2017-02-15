@@ -86,7 +86,7 @@ var SelectComponent = SelectComponent_1 = (function (_super) {
             return false;
         }
         this.onBuscar.emit(this.valorPesquisado);
-        this.valoresExibir = this._valores.filter(function (item) { return item[_this.indiceNome.toLocaleLowerCase()].indexOf(_this.valorPesquisado.toLocaleLowerCase()) !== -1; });
+        this.valoresExibir = this._valores.filter(function (item) { return item[_this.indiceNome].toLocaleLowerCase().indexOf(_this.valorPesquisado.toLocaleLowerCase()) !== -1; });
     };
     Object.defineProperty(SelectComponent.prototype, "value", {
         get: function () { return this._value; },
