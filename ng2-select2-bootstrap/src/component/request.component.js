@@ -122,13 +122,18 @@ var RequestComponent = RequestComponent_1 = (function (_super) {
             var objEmit = { enviado: resultado, retorno: [] };
             _this.onProcessaResultado.emit(objEmit);
             var exibirResultado = objEmit.retorno;
-            if (_this.quantidadePadrao == 0) {
-                _this.quantidadePadrao = exibirResultado.length;
+            if (Array.isArray(exibirResultado)) {
+                if (_this.quantidadePadrao == 0) {
+                    _this.quantidadePadrao = exibirResultado.length;
+                }
+                if (_this.quantidadePadrao != exibirResultado.length) {
+                    _this.semResultado = true;
+                }
+                _this.valoresExibir = _this.valoresExibir.concat(exibirResultado);
             }
-            if (_this.quantidadePadrao != exibirResultado.length) {
-                _this.semResultado = true;
+            else {
+                console.log('Ng2Select2Bootstrap: retorno não é um select', exibirResultado);
             }
-            _this.valoresExibir = _this.valoresExibir.concat(exibirResultado);
             _this.buscando = false;
         }, function (erro) {
             console.log(erro);

@@ -50612,9 +50612,9 @@ var core_1 = __webpack_require__(0);
 var RequestMultipleComponent = (function () {
     function RequestMultipleComponent() {
         this.logs = [];
-        this.objProcessaParametros = { enviado: { pagina: 'Página atual que está pesquisando', valorPesquisado: 'Valor que foi pesquisado' }, retorno: {} };
+        this.objProcessaParametros = { enviado: { pagina: 'Página atual que está pesquisando', valorPesquisado: 'Valor que foi pesquisado', idSelecionados: 'Array com id que foram selecionados' }, retorno: {} };
         this.objProcessaResultado = { enviado: {}, retorno: {} };
-        this.codigoUtilizado = "\n     <template #templateResultado let-valor>\n          <div style=\"padding-top: 4px;padding-bottom: 3px;\">\n              <div style=\"float: left;width: 60px;margin-right: 10px;\">\n                  <img [src]=\"valor.owner.avatar_url\" width=\"60\">\n              </div>\n              <div style=\"margin-left: 70px;\">\n                  <div style=\"color: black\">{{valor.name}}</div>\n                  <div style=\"font-size: 13px;color: black;margin-top: 4px;\">{{valor.description}}</div>\n                  <div>\n                      <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\n                          <i class=\"fa fa-flash\"></i>\n                          {{valor.forks_count}}\n                          Forks\n                      </div>\n                      <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\n                          <i class=\"fa fa-star\"></i> {{valor.stargazers_count}} Stars\n                      </div>\n                      <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\n                          <i class=\"fa fa-eye\"></i>\n                          {{valor.watchers_count}} Watchers\n                      </div>\n                  </div>\n              </div>\n          </div>\n      </template>\n\n      <select2-request\n          [(ngModel)]=\"valorSelecionado\"\n          [templateResultado]=\"templateResultado\"\n          url=\"https://api.github.com/search/repositories\"\n          minimoCaracteres=\"1\"\n          (onAbrir)=\"log('onAbrir', $event)\"\n          (onFechar)=\"log('onFechar', $event)\"\n          (onBuscar)=\"log('onBuscar', $event)\"\n          (onSelecionarItem)=\"log('onSelecionarItem', $event)\"\n          (onRemoverItem)=\"log('onRemoverItem', $event)\"\n          (onErro)=\"log('onErro', $event)\"\n          (onProcessaParametros)=\"processaParametros($event)\"\n          (onProcessaResultado)=\"processaResultado($event)\"\n          indiceNome=\"name\"\n      >\n      </select2-request>\n  ";
+        this.codigoUtilizado = "\n     <template #templateResultado let-valor>\n          <div style=\"padding-top: 4px;padding-bottom: 3px;\">\n              <div style=\"float: left;width: 60px;margin-right: 10px;\">\n                  <img [src]=\"valor.owner.avatar_url\" width=\"60\">\n              </div>\n              <div style=\"margin-left: 70px;\">\n                  <div style=\"color: black\">{{valor.name}}</div>\n                  <div style=\"font-size: 13px;color: black;margin-top: 4px;\">{{valor.description}}</div>\n                  <div>\n                      <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\n                          <i class=\"fa fa-flash\"></i>\n                          {{valor.forks_count}}\n                          Forks\n                      </div>\n                      <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\n                          <i class=\"fa fa-star\"></i> {{valor.stargazers_count}} Stars\n                      </div>\n                      <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\n                          <i class=\"fa fa-eye\"></i>\n                          {{valor.watchers_count}} Watchers\n                      </div>\n                  </div>\n              </div>\n          </div>\n      </template>\n\n      <select2-request-multiple\n                [(ngModel)]=\"valorSelecionado\"\n                [templateResultado]=\"templateResultado\"\n                url=\"https://api.github.com/search/repositories\"\n                minimoCaracteres=\"1\"\n                (onAbrir)=\"log('onAbrir', $event)\"\n                (onFechar)=\"log('onFechar', $event)\"\n                (onBuscar)=\"log('onBuscar', $event)\"\n                (onSelecionarItem)=\"log('onSelecionarItem', $event)\"\n                (onRemoverItem)=\"log('onRemoverItem', $event)\"\n                (onErro)=\"log('onErro', $event)\"\n                (onProcessaParametros)=\"processaParametros($event)\"\n                (onProcessaResultado)=\"processaResultado($event)\"\n                indiceNome=\"name\"\n        >\n        </select2-request-multiple>\n  ";
         this.codigoUtilizadoComponent = "\n    /**\n     * processa os parametros para passar para url\n     */\n    processaParametros(valor){\n      valor.retorno = {\n        q     : valor.enviado.valorPesquisado,\n        page  : valor.enviado.pagina,\n      }\n    }\n  \n    /**\n     * processa o resultado do servidor\n     */\n    processaResultado(valor){\n     valor.retorno = valor.enviado.items;\n    }\n  ";
     }
     RequestMultipleComponent.prototype.log = function (nome, texto) {
@@ -50665,6 +50665,8 @@ var core_1 = __webpack_require__(0);
 var RequestComponent = (function () {
     function RequestComponent() {
         this.logs = [];
+        this.objProcessaParametros = { enviado: { pagina: 'Página atual que está pesquisando', valorPesquisado: 'Valor que foi pesquisado' }, retorno: {} };
+        this.objProcessaResultado = { enviado: {}, retorno: {} };
         this.codigoUtilizado = "\n     <template #templateResultado let-valor>\n          <div style=\"padding-top: 4px;padding-bottom: 3px;\">\n              <div style=\"float: left;width: 60px;margin-right: 10px;\">\n                  <img [src]=\"valor.owner.avatar_url\" width=\"60\">\n              </div>\n              <div style=\"margin-left: 70px;\">\n                  <div style=\"color: black\">{{valor.name}}</div>\n                  <div style=\"font-size: 13px;color: black;margin-top: 4px;\">{{valor.description}}</div>\n                  <div>\n                      <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\n                          <i class=\"fa fa-flash\"></i>\n                          {{valor.forks_count}}\n                          Forks\n                      </div>\n                      <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\n                          <i class=\"fa fa-star\"></i> {{valor.stargazers_count}} Stars\n                      </div>\n                      <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\n                          <i class=\"fa fa-eye\"></i>\n                          {{valor.watchers_count}} Watchers\n                      </div>\n                  </div>\n              </div>\n          </div>\n      </template>\n\n      <select2-request\n          [(ngModel)]=\"valorSelecionado\"\n          [templateResultado]=\"templateResultado\"\n          url=\"https://api.github.com/search/repositories\"\n          minimoCaracteres=\"1\"\n          (onAbrir)=\"log('onAbrir', $event)\"\n          (onFechar)=\"log('onFechar', $event)\"\n          (onBuscar)=\"log('onBuscar', $event)\"\n          (onSelecionarItem)=\"log('onSelecionarItem', $event)\"\n          (onLimpar)=\"log('onLimpar', $event)\"\n          (onErro)=\"log('onErro', $event)\"\n          (onProcessaParametros)=\"processaParametros($event)\"\n          (onProcessaResultado)=\"processaResultado($event)\"\n          indiceNome=\"name\"\n      >\n      </select2-request>\n  ";
         this.codigoUtilizadoComponent = "\n    /**\n     * processa os parametros para passar para url\n     */\n    processaParametros(valor){\n      valor.retorno = {\n        q     : valor.enviado.valorPesquisado,\n        page  : valor.enviado.pagina,\n      }\n    }\n  \n    /**\n     * processa o resultado do servidor\n     */\n    processaResultado(valor){\n     valor.retorno = valor.enviado.items;\n    }\n  ";
     }
@@ -85865,13 +85867,18 @@ var RequestMultipleComponent = RequestMultipleComponent_1 = (function (_super) {
             var objEmit = { enviado: resultado, retorno: [] };
             _this.onProcessaResultado.emit(objEmit);
             var exibirResultado = objEmit.retorno;
-            if (_this.quantidadePadrao == 0) {
-                _this.quantidadePadrao = exibirResultado.length;
+            if (Array.isArray(exibirResultado)) {
+                if (_this.quantidadePadrao == 0) {
+                    _this.quantidadePadrao = exibirResultado.length;
+                }
+                if (_this.quantidadePadrao != exibirResultado.length) {
+                    _this.semResultado = true;
+                }
+                _this.valoresExibir = _this.valoresExibir.concat(exibirResultado);
             }
-            if (_this.quantidadePadrao != exibirResultado.length) {
-                _this.semResultado = true;
+            else {
+                console.log('Ng2Select2Bootstrap: retorno não é um select', exibirResultado);
             }
-            _this.valoresExibir = _this.valoresExibir.concat(exibirResultado);
             _this.buscando = false;
         }, function (erro) {
             _this.onErro.emit(erro);
@@ -86154,13 +86161,18 @@ var RequestComponent = RequestComponent_1 = (function (_super) {
             var objEmit = { enviado: resultado, retorno: [] };
             _this.onProcessaResultado.emit(objEmit);
             var exibirResultado = objEmit.retorno;
-            if (_this.quantidadePadrao == 0) {
-                _this.quantidadePadrao = exibirResultado.length;
+            if (Array.isArray(exibirResultado)) {
+                if (_this.quantidadePadrao == 0) {
+                    _this.quantidadePadrao = exibirResultado.length;
+                }
+                if (_this.quantidadePadrao != exibirResultado.length) {
+                    _this.semResultado = true;
+                }
+                _this.valoresExibir = _this.valoresExibir.concat(exibirResultado);
             }
-            if (_this.quantidadePadrao != exibirResultado.length) {
-                _this.semResultado = true;
+            else {
+                console.log('Ng2Select2Bootstrap: retorno não é um select', exibirResultado);
             }
-            _this.valoresExibir = _this.valoresExibir.concat(exibirResultado);
             _this.buscando = false;
         }, function (erro) {
             console.log(erro);
@@ -86412,7 +86424,7 @@ var SelectComponent = SelectComponent_1 = (function (_super) {
             return false;
         }
         this.onBuscar.emit(this.valorPesquisado);
-        this.valoresExibir = this._valores.filter(function (item) { return item[_this.indiceNome.toLocaleLowerCase()].indexOf(_this.valorPesquisado.toLocaleLowerCase()) !== -1; });
+        this.valoresExibir = this._valores.filter(function (item) { return item[_this.indiceNome].toLocaleLowerCase().indexOf(_this.valorPesquisado.toLocaleLowerCase()) !== -1; });
     };
     Object.defineProperty(SelectComponent.prototype, "value", {
         get: function () { return this._value; },
