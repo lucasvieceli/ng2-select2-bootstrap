@@ -5,7 +5,7 @@ import {Component} from '@angular/core'
 })
 export class RequestMultipleComponent {
   logs : any  = [];
-  objProcessaParametros = {enviado: { pagina: 'Página atual que está pesquisando', valorPesquisado: 'Valor que foi pesquisado'}, retorno: {/*Atribuir aqui os parametros que você quer adicionar na url*/}};
+  objProcessaParametros = {enviado: { pagina: 'Página atual que está pesquisando', valorPesquisado: 'Valor que foi pesquisado', idSelecionados: 'Array com id que foram selecionados'}, retorno: {}};
   objProcessaResultado = {enviado: {}, retorno: {}};
 
   codigoUtilizado = `
@@ -35,22 +35,22 @@ export class RequestMultipleComponent {
           </div>
       </template>
 
-      <select2-request
-          [(ngModel)]="valorSelecionado"
-          [templateResultado]="templateResultado"
-          url="https://api.github.com/search/repositories"
-          minimoCaracteres="1"
-          (onAbrir)="log('onAbrir', $event)"
-          (onFechar)="log('onFechar', $event)"
-          (onBuscar)="log('onBuscar', $event)"
-          (onSelecionarItem)="log('onSelecionarItem', $event)"
-          (onRemoverItem)="log('onRemoverItem', $event)"
-          (onErro)="log('onErro', $event)"
-          (onProcessaParametros)="processaParametros($event)"
-          (onProcessaResultado)="processaResultado($event)"
-          indiceNome="name"
-      >
-      </select2-request>
+      <select2-request-multiple
+                [(ngModel)]="valorSelecionado"
+                [templateResultado]="templateResultado"
+                url="https://api.github.com/search/repositories"
+                minimoCaracteres="1"
+                (onAbrir)="log('onAbrir', $event)"
+                (onFechar)="log('onFechar', $event)"
+                (onBuscar)="log('onBuscar', $event)"
+                (onSelecionarItem)="log('onSelecionarItem', $event)"
+                (onRemoverItem)="log('onRemoverItem', $event)"
+                (onErro)="log('onErro', $event)"
+                (onProcessaParametros)="processaParametros($event)"
+                (onProcessaResultado)="processaResultado($event)"
+                indiceNome="name"
+        >
+        </select2-request-multiple>
   `;
   codigoUtilizadoComponent = `
     /**

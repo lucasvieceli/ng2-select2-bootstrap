@@ -5,6 +5,8 @@ import {Component} from '@angular/core'
 })
 export class RequestComponent {
   logs : any  = [];
+  objProcessaParametros = {enviado: { pagina: 'Página atual que está pesquisando', valorPesquisado: 'Valor que foi pesquisado'}, retorno: {}};
+  objProcessaResultado = {enviado: {}, retorno: {}};
 
   codigoUtilizado = `
      <template #templateResultado let-valor>
