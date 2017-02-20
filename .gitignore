@@ -47,3 +47,5 @@ Thumbs.db
 **/*.ngfactory.ts
 **/*.ngsummary.json
 **/*.bat
+
+*.bat
