@@ -1,0 +1,60 @@
+{
+  "name": "ng2-select2-bootstrap",
+  "version": "0.1.34",
+  "scripts": {
+    "build": "ngc -p tsconfig.json",
+    "lint": "tslint ./src/**/*.ts",
+    "test": "tsc && karma start",
+    "prepublish": "tsc",
+
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucasvieceli/ng2-select2-bootstrap"
+  },
+  "author": {
+    "name": "lucas vieceli",
+    "email": "vieceli46@hotmail.com"
+  },
+  "keywords": [
+    "angular2",
+    "select2",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucasvieceli/ng2-select2-bootstrap/issues"
+  },
+  "main": "./index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@angular/common": "~2.4.1",
+    "@angular/compiler": "~2.4.1",
+    "@angular/compiler-cli": "^2.4.8",
+    "@angular/core": "~2.4.1",
+    "@angular/forms": "~2.4.1",
+    "@angular/http": "~2.4.1",
+    "@angular/platform-browser": "~2.4.1",
+    "@angular/platform-browser-dynamic": "~2.4.1",
+    "@angular/platform-server": "^2.4.1",
+    "@angular/router": "~3.4.1",
+    "@angular/upgrade": "2.0.1",
+    "@types/es6-shim": "^0.31.32",
+    "@types/jasmine": "^2.5.40",
+    "@types/protractor": "^4.0.0",
+    "@types/selenium-webdriver": "^2.53.39",
+    "angular2-in-memory-web-api": "0.0.21",
+    "codelyzer": "^0.0.28",
+    "core-js": "^2.4.1",
+    "ie-shim": "^0.1.0",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.0-beta.12",
+    "tslint": "^3.15.1",
+    "typescript": "2.0.2",
+    "zone.js": "^0.7.4"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
