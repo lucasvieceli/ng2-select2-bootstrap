@@ -5,6 +5,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
@@ -39,6 +42,7 @@ var Ng2Select2BootstrapModule = (function () {
                 component_1.MultipleComponent,
                 component_1.RequestComponent,
                 component_1.RequestMultipleComponent,
+                forms_1.FormsModule,
             ],
             declarations: [
                 directive_1.InnerTemplateDirective,
@@ -50,7 +54,8 @@ var Ng2Select2BootstrapModule = (function () {
                 directive_1.InfiniteScrollDirective,
             ],
             providers: [service_1.SelectService]
-        })
+        }), 
+        __metadata('design:paramtypes', [])
     ], Ng2Select2BootstrapModule);
     return Ng2Select2BootstrapModule;
 }());
