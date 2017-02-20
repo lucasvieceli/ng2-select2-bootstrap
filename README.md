@@ -10,3 +10,4 @@ Log Alterações
  - 0.1.33
 	 - Adicionado validação se é um array no retorno da busca do select request e multiple;
 	 - Corrigido a busca do select simples
+ 
