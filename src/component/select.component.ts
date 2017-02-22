@@ -161,7 +161,7 @@ export class SelectComponent extends Select{
         }
 
         this.onBuscar.emit(this.valorPesquisado);
-        this.valoresExibir = this._valores.filter(item => item[this.indiceNome].toLocaleLowerCase().indexOf(this.valorPesquisado.toLocaleLowerCase()) !== -1);
+        this.valoresExibir = this._valores.filter(item => item[this.indiceNome].toString().toLocaleLowerCase().indexOf(this.valorPesquisado.toString().toLocaleLowerCase()) !== -1);
     }
 
 
