@@ -2034,7 +2034,7 @@ function loadLocale(name) {
             module && module.exports) {
         try {
             oldLocale = globalLocale._abbr;
-            __webpack_require__(852)("./" + name);
+            __webpack_require__(860)("./" + name);
             // because defineLocale currently also sets the global locale, we
             // want to undo that for lazy loaded locales
             getSetGlobalLocale(oldLocale);
@@ -6488,7 +6488,7 @@ function resolveEnumIdentifier(enumType, name) {
 /***/ function(module, exports, __webpack_require__) {
 
 var anObject       = __webpack_require__(4)
-  , IE8_DOM_DEFINE = __webpack_require__(377)
+  , IE8_DOM_DEFINE = __webpack_require__(380)
   , toPrimitive    = __webpack_require__(63)
   , dP             = Object.defineProperty;
 
@@ -8163,7 +8163,7 @@ module.exports = function(method, arg){
 /***/ function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(108)
+var IObject = __webpack_require__(109)
   , defined = __webpack_require__(49);
 module.exports = function(it){
   return IObject(defined(it));
@@ -9010,10 +9010,10 @@ function defaultUrlMatcher(segments, segmentGroup, route) {
 // 5 -> Array#find
 // 6 -> Array#findIndex
 var ctx      = __webpack_require__(71)
-  , IObject  = __webpack_require__(108)
+  , IObject  = __webpack_require__(109)
   , toObject = __webpack_require__(30)
   , toLength = __webpack_require__(20)
-  , asc      = __webpack_require__(711);
+  , asc      = __webpack_require__(719);
 module.exports = function(TYPE, $create){
   var IS_MAP        = TYPE == 1
     , IS_FILTER     = TYPE == 2
@@ -9054,7 +9054,7 @@ module.exports = function(TYPE, $create){
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has         = __webpack_require__(22)
   , toObject    = __webpack_require__(30)
-  , IE_PROTO    = __webpack_require__(238)('IE_PROTO')
+  , IE_PROTO    = __webpack_require__(239)('IE_PROTO')
   , ObjectProto = Object.prototype;
 
 module.exports = Object.getPrototypeOf || function(O){
@@ -9404,10 +9404,10 @@ module.exports = function(it){
 /* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
-var Map     = __webpack_require__(394)
+var Map     = __webpack_require__(397)
   , $export = __webpack_require__(2)
   , shared  = __webpack_require__(153)('metadata')
-  , store   = shared.store || (shared.store = new (__webpack_require__(402)));
+  , store   = shared.store || (shared.store = new (__webpack_require__(405)));
 
 var getOrCreateMetadataMap = function(target, targetKey, create){
   var targetMetadata = store.get(target);
@@ -9465,7 +9465,7 @@ var pIE            = __webpack_require__(152)
   , toIObject      = __webpack_require__(35)
   , toPrimitive    = __webpack_require__(63)
   , has            = __webpack_require__(22)
-  , IE8_DOM_DEFINE = __webpack_require__(377)
+  , IE8_DOM_DEFINE = __webpack_require__(380)
   , gOPD           = Object.getOwnPropertyDescriptor;
 
 exports.f = __webpack_require__(18) ? gOPD : function getOwnPropertyDescriptor(O, P){
@@ -9484,42 +9484,42 @@ exports.f = __webpack_require__(18) ? gOPD : function getOwnPropertyDescriptor(O
 "use strict";
 'use strict';
 if(__webpack_require__(18)){
-  var LIBRARY             = __webpack_require__(109)
+  var LIBRARY             = __webpack_require__(110)
     , global              = __webpack_require__(10)
     , fails               = __webpack_require__(6)
     , $export             = __webpack_require__(2)
     , $typed              = __webpack_require__(155)
-    , $buffer             = __webpack_require__(241)
+    , $buffer             = __webpack_require__(242)
     , ctx                 = __webpack_require__(71)
-    , anInstance          = __webpack_require__(107)
+    , anInstance          = __webpack_require__(108)
     , propertyDesc        = __webpack_require__(61)
     , hide                = __webpack_require__(29)
-    , redefineAll         = __webpack_require__(110)
+    , redefineAll         = __webpack_require__(111)
     , toInteger           = __webpack_require__(62)
     , toLength            = __webpack_require__(20)
     , toIndex             = __webpack_require__(74)
     , toPrimitive         = __webpack_require__(63)
     , has                 = __webpack_require__(22)
-    , same                = __webpack_require__(389)
-    , classof             = __webpack_require__(225)
+    , same                = __webpack_require__(392)
+    , classof             = __webpack_require__(226)
     , isObject            = __webpack_require__(9)
     , toObject            = __webpack_require__(30)
-    , isArrayIter         = __webpack_require__(230)
+    , isArrayIter         = __webpack_require__(231)
     , create              = __webpack_require__(72)
     , getPrototypeOf      = __webpack_require__(44)
     , gOPN                = __webpack_require__(73).f
-    , getIterFn           = __webpack_require__(242)
+    , getIterFn           = __webpack_require__(243)
     , uid                 = __webpack_require__(75)
     , wks                 = __webpack_require__(12)
     , createArrayMethod   = __webpack_require__(43)
-    , createArrayIncludes = __webpack_require__(224)
-    , speciesConstructor  = __webpack_require__(390)
+    , createArrayIncludes = __webpack_require__(225)
+    , speciesConstructor  = __webpack_require__(393)
     , ArrayIterators      = __webpack_require__(156)
     , Iterators           = __webpack_require__(86)
-    , $iterDetect         = __webpack_require__(234)
-    , setSpecies          = __webpack_require__(111)
-    , arrayFill           = __webpack_require__(223)
-    , arrayCopyWithin     = __webpack_require__(369)
+    , $iterDetect         = __webpack_require__(235)
+    , setSpecies          = __webpack_require__(112)
+    , arrayFill           = __webpack_require__(224)
+    , arrayCopyWithin     = __webpack_require__(372)
     , $DP                 = __webpack_require__(14)
     , $GOPD               = __webpack_require__(51)
     , dP                  = $DP.f
@@ -10506,9 +10506,9 @@ module.exports = function(it, S){
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component_loader_class__ = __webpack_require__(521);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component_loader_factory__ = __webpack_require__(522);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__content_ref_class__ = __webpack_require__(523);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component_loader_class__ = __webpack_require__(524);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component_loader_factory__ = __webpack_require__(525);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__content_ref_class__ = __webpack_require__(526);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__component_loader_class__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__component_loader_factory__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__content_ref_class__["a"]; });
@@ -11985,22 +11985,22 @@ module.exports = function(fn, that, length){
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject    = __webpack_require__(4)
-  , dPs         = __webpack_require__(384)
-  , enumBugKeys = __webpack_require__(226)
-  , IE_PROTO    = __webpack_require__(238)('IE_PROTO')
+  , dPs         = __webpack_require__(387)
+  , enumBugKeys = __webpack_require__(227)
+  , IE_PROTO    = __webpack_require__(239)('IE_PROTO')
   , Empty       = function(){ /* empty */ }
   , PROTOTYPE   = 'prototype';
 
 // Create object with fake `null` prototype: use iframe Object with cleared prototype
 var createDict = function(){
   // Thrash, waste and sodomy: IE GC bug
-  var iframe = __webpack_require__(375)('iframe')
+  var iframe = __webpack_require__(378)('iframe')
     , i      = enumBugKeys.length
     , lt     = '<'
     , gt     = '>'
     , iframeDocument;
   iframe.style.display = 'none';
-  __webpack_require__(376).appendChild(iframe);
+  __webpack_require__(379).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -12031,8 +12031,8 @@ module.exports = Object.create || function create(O, Properties){
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys      = __webpack_require__(386)
-  , hiddenKeys = __webpack_require__(226).concat('length', 'prototype');
+var $keys      = __webpack_require__(389)
+  , hiddenKeys = __webpack_require__(227).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
   return $keys(O, hiddenKeys);
@@ -12067,7 +12067,7 @@ module.exports = function(key){
 "use strict";
 'use strict';
 // 19.1.3.6 Object.prototype.toString()
-var classof = __webpack_require__(225)
+var classof = __webpack_require__(226)
   , test    = {};
 test[__webpack_require__(12)('toStringTag')] = 'z';
 if(test + '' != '[object z]'){
@@ -13985,8 +13985,8 @@ module.exports = {};
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys       = __webpack_require__(386)
-  , enumBugKeys = __webpack_require__(226);
+var $keys       = __webpack_require__(389)
+  , enumBugKeys = __webpack_require__(227);
 
 module.exports = Object.keys || function keys(O){
   return $keys(O, enumBugKeys);
@@ -13997,8 +13997,8 @@ module.exports = Object.keys || function keys(O){
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ng_positioning__ = __webpack_require__(541);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__positioning_service__ = __webpack_require__(864);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ng_positioning__ = __webpack_require__(544);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__positioning_service__ = __webpack_require__(872);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__ng_positioning__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__ng_positioning__["b"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__positioning_service__["a"]; });
@@ -18378,6 +18378,136 @@ var RouterConfigLoader = (function () {
 /* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
+"use strict";
+"use strict";
+var core_1 = __webpack_require__(0);
+var Select = (function () {
+    function Select(elementRef, zone) {
+        this.elementRef = elementRef;
+        this.zone = zone;
+        this.indiceId = 'id';
+        this.indiceNome = 'nome';
+        this.minimoCaracteres = 0;
+        this.exibirMensagemCaracteresMinimo = true;
+        this.aberto = false;
+        this.focus = false;
+        this.disabled = false;
+        this.valoresExibir = [];
+        this.change = new core_1.EventEmitter();
+        this.onSelecionarItem = new core_1.EventEmitter();
+        this.onBuscar = new core_1.EventEmitter();
+        this.onApagar = new core_1.EventEmitter();
+        this.onRemoverItem = new core_1.EventEmitter();
+        this.onAbrir = new core_1.EventEmitter();
+        this.onFechar = new core_1.EventEmitter();
+        this.onLimpar = new core_1.EventEmitter();
+    }
+    Select.prototype.ngOnInit = function () {
+        if (this.minimoCaracteres == 0) {
+            this.exibirMensagemCaracteresMinimo = false;
+        }
+    };
+    Select.prototype.setFocus = function (valor) {
+        if (this.disabled) {
+            return false;
+        }
+        this.focus = valor;
+    };
+    Select.prototype.fechar = function () {
+        this.aberto = false;
+        this.valoresExibir = [];
+        this.setFocus(true);
+        this.setFocus(false);
+        this.onFechar.emit(true);
+    };
+    Select.prototype.selecionar = function (item) {
+        this.updateValue(this.data);
+        this.onSelecionarItem.emit(item);
+        //apaga campo de busca
+        this.campoBusca.nativeElement.value = '';
+        this.fechar();
+    };
+    Select.prototype.keyup = function (valor) {
+        if (this.valorPesquisado == valor) {
+            return null;
+        }
+        this.valoresExibir = [];
+        this.valorPesquisado = valor;
+        this.buscar();
+    };
+    Select.prototype.buscar = function () {
+    };
+    Select.prototype.abrir = function () {
+    };
+    /**
+     * quando está marcado para exibir resultado completo
+     */
+    Select.prototype.remove = function (item, event) {
+        var _this = this;
+        event.stopPropagation();
+        this.fechar();
+        // let itens
+        var posicao = this.data.findIndex(function (procurar) { return procurar[_this.indiceId] == item[_this.indiceId]; });
+        if (posicao !== -1) {
+            this.data.splice(posicao, 1);
+        }
+        this.onRemoverItem.emit(item);
+        if (this.data.length == 0) {
+            this.aberto = false;
+            this.abrir();
+        }
+    };
+    Select.prototype.getClassGeral = function () {
+        return {
+            'select2-container--focus': this.focus,
+            'select2 select2-container select2-container--bootstrap select2-container--above': true,
+            'select2-container--disabled': this.disabled
+        };
+    };
+    Select.prototype.clickForaComponent = function (event) {
+        if (!this.elementRef.nativeElement.contains(event.target) && this.aberto) {
+            this.fechar();
+        }
+    };
+    Select.prototype.validaCaracteresMinimo = function () {
+        if (this.minimoCaracteres > 0) {
+            if (this.valorPesquisado.length < this.minimoCaracteres) {
+                return false;
+            }
+            this.exibirMensagemCaracteresMinimo = false;
+        }
+        return true;
+    };
+    Select.prototype.writeValue = function (value) {
+        this.data = value;
+        this._value = value;
+        this.updateValue(this._value);
+    };
+    Select.prototype.updateValue = function (value) {
+        var _this = this;
+        this.zone.run(function () {
+            if (_this._value != value) {
+                _this._value = value;
+                _this.onChange(value);
+                _this._onTouchedCallback();
+            }
+        });
+    };
+    Select.prototype.onChange = function (_) { };
+    Select.prototype.onTouched = function () { };
+    Select.prototype.registerOnChange = function (fn) { this.onChange = fn; };
+    Select.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+    Select.prototype._onChangeCallback = function (_) { };
+    Select.prototype._onTouchedCallback = function () { };
+    return Select;
+}());
+exports.Select = Select;
+
+
+/***/ },
+/* 107 */
+/***/ function(module, exports, __webpack_require__) {
+
 // 22.1.3.31 Array.prototype[@@unscopables]
 var UNSCOPABLES = __webpack_require__(12)('unscopables')
   , ArrayProto  = Array.prototype;
@@ -18387,7 +18517,7 @@ module.exports = function(key){
 };
 
 /***/ },
-/* 107 */
+/* 108 */
 /***/ function(module, exports) {
 
 module.exports = function(it, Constructor, name, forbiddenField){
@@ -18397,7 +18527,7 @@ module.exports = function(it, Constructor, name, forbiddenField){
 };
 
 /***/ },
-/* 108 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
@@ -18407,13 +18537,13 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
 };
 
 /***/ },
-/* 109 */
+/* 110 */
 /***/ function(module, exports) {
 
 module.exports = false;
 
 /***/ },
-/* 110 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
 var redefine = __webpack_require__(23);
@@ -18423,7 +18553,7 @@ module.exports = function(target, src, safe){
 };
 
 /***/ },
-/* 111 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18442,7 +18572,7 @@ module.exports = function(KEY){
 };
 
 /***/ },
-/* 112 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
 var def = __webpack_require__(14).f
@@ -18454,12 +18584,12 @@ module.exports = function(it, tag, stat){
 };
 
 /***/ },
-/* 113 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__date_formatter__ = __webpack_require__(524);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__date_formatter__ = __webpack_require__(527);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DatePickerInnerComponent; });
 
 
@@ -18727,136 +18857,6 @@ var DatePickerInnerComponent = (function () {
     return DatePickerInnerComponent;
 }());
 //# sourceMappingURL=datepicker-inner.component.js.map
-
-/***/ },
-/* 114 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var core_1 = __webpack_require__(0);
-var Select = (function () {
-    function Select(elementRef, zone) {
-        this.elementRef = elementRef;
-        this.zone = zone;
-        this.indiceId = 'id';
-        this.indiceNome = 'nome';
-        this.minimoCaracteres = 0;
-        this.exibirMensagemCaracteresMinimo = true;
-        this.aberto = false;
-        this.focus = false;
-        this.disabled = false;
-        this.valoresExibir = [];
-        this.change = new core_1.EventEmitter();
-        this.onSelecionarItem = new core_1.EventEmitter();
-        this.onBuscar = new core_1.EventEmitter();
-        this.onApagar = new core_1.EventEmitter();
-        this.onRemoverItem = new core_1.EventEmitter();
-        this.onAbrir = new core_1.EventEmitter();
-        this.onFechar = new core_1.EventEmitter();
-        this.onLimpar = new core_1.EventEmitter();
-    }
-    Select.prototype.ngOnInit = function () {
-        if (this.minimoCaracteres == 0) {
-            this.exibirMensagemCaracteresMinimo = false;
-        }
-    };
-    Select.prototype.setFocus = function (valor) {
-        if (this.disabled) {
-            return false;
-        }
-        this.focus = valor;
-    };
-    Select.prototype.fechar = function () {
-        this.aberto = false;
-        this.valoresExibir = [];
-        this.setFocus(true);
-        this.setFocus(false);
-        this.onFechar.emit(true);
-    };
-    Select.prototype.selecionar = function (item) {
-        this.updateValue(this.data);
-        this.onSelecionarItem.emit(item);
-        //apaga campo de busca
-        this.campoBusca.nativeElement.value = '';
-        this.fechar();
-    };
-    Select.prototype.keyup = function (valor) {
-        if (this.valorPesquisado == valor) {
-            return null;
-        }
-        this.valoresExibir = [];
-        this.valorPesquisado = valor;
-        this.buscar();
-    };
-    Select.prototype.buscar = function () {
-    };
-    Select.prototype.abrir = function () {
-    };
-    /**
-     * quando está marcado para exibir resultado completo
-     */
-    Select.prototype.remove = function (item, event) {
-        var _this = this;
-        event.stopPropagation();
-        this.fechar();
-        // let itens
-        var posicao = this.data.findIndex(function (procurar) { return procurar[_this.indiceId] == item[_this.indiceId]; });
-        if (posicao !== -1) {
-            this.data.splice(posicao, 1);
-        }
-        this.onRemoverItem.emit(item);
-        if (this.data.length == 0) {
-            this.aberto = false;
-            this.abrir();
-        }
-    };
-    Select.prototype.getClassGeral = function () {
-        return {
-            'select2-container--focus': this.focus,
-            'select2 select2-container select2-container--bootstrap select2-container--above': true,
-            'select2-container--disabled': this.disabled
-        };
-    };
-    Select.prototype.clickForaComponent = function (event) {
-        if (!this.elementRef.nativeElement.contains(event.target) && this.aberto) {
-            this.fechar();
-        }
-    };
-    Select.prototype.validaCaracteresMinimo = function () {
-        if (this.minimoCaracteres > 0) {
-            if (this.valorPesquisado.length < this.minimoCaracteres) {
-                return false;
-            }
-            this.exibirMensagemCaracteresMinimo = false;
-        }
-        return true;
-    };
-    Select.prototype.writeValue = function (value) {
-        this.data = value;
-        this._value = value;
-        this.updateValue(this._value);
-    };
-    Select.prototype.updateValue = function (value) {
-        var _this = this;
-        this.zone.run(function () {
-            if (_this._value != value) {
-                _this._value = value;
-                _this.onChange(value);
-                _this._onTouchedCallback();
-            }
-        });
-    };
-    Select.prototype.onChange = function (_) { };
-    Select.prototype.onTouched = function () { };
-    Select.prototype.registerOnChange = function (fn) { this.onChange = fn; };
-    Select.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
-    Select.prototype._onChangeCallback = function (_) { };
-    Select.prototype._onTouchedCallback = function () { };
-    return Select;
-}());
-exports.Select = Select;
-//# sourceMappingURL=select.js.map
 
 /***/ },
 /* 115 */
@@ -25056,15 +25056,15 @@ var RouterOutletMap = (function () {
 var global            = __webpack_require__(10)
   , $export           = __webpack_require__(2)
   , redefine          = __webpack_require__(23)
-  , redefineAll       = __webpack_require__(110)
+  , redefineAll       = __webpack_require__(111)
   , meta              = __webpack_require__(60)
   , forOf             = __webpack_require__(150)
-  , anInstance        = __webpack_require__(107)
+  , anInstance        = __webpack_require__(108)
   , isObject          = __webpack_require__(9)
   , fails             = __webpack_require__(6)
-  , $iterDetect       = __webpack_require__(234)
-  , setToStringTag    = __webpack_require__(112)
-  , inheritIfRequired = __webpack_require__(229);
+  , $iterDetect       = __webpack_require__(235)
+  , setToStringTag    = __webpack_require__(113)
+  , inheritIfRequired = __webpack_require__(230);
 
 module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK){
   var Base  = global[NAME]
@@ -25177,11 +25177,11 @@ module.exports = function(KEY, length, exec){
 /***/ function(module, exports, __webpack_require__) {
 
 var ctx         = __webpack_require__(71)
-  , call        = __webpack_require__(379)
-  , isArrayIter = __webpack_require__(230)
+  , call        = __webpack_require__(382)
+  , isArrayIter = __webpack_require__(231)
   , anObject    = __webpack_require__(4)
   , toLength    = __webpack_require__(20)
-  , getIterFn   = __webpack_require__(242)
+  , getIterFn   = __webpack_require__(243)
   , BREAK       = {}
   , RETURN      = {};
 var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
@@ -25232,7 +25232,7 @@ module.exports = function(key){
 var $export = __webpack_require__(2)
   , defined = __webpack_require__(49)
   , fails   = __webpack_require__(6)
-  , spaces  = __webpack_require__(240)
+  , spaces  = __webpack_require__(241)
   , space   = '[' + spaces + ']'
   , non     = '\u200b\u0085'
   , ltrim   = RegExp('^' + space + space + '*')
@@ -25297,8 +25297,8 @@ module.exports = {
 
 "use strict";
 'use strict';
-var addToUnscopables = __webpack_require__(106)
-  , step             = __webpack_require__(381)
+var addToUnscopables = __webpack_require__(107)
+  , step             = __webpack_require__(384)
   , Iterators        = __webpack_require__(86)
   , toIObject        = __webpack_require__(35);
 
@@ -25306,7 +25306,7 @@ var addToUnscopables = __webpack_require__(106)
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(233)(Array, 'Array', function(iterated, kind){
+module.exports = __webpack_require__(234)(Array, 'Array', function(iterated, kind){
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -25337,10 +25337,10 @@ addToUnscopables('entries');
 
 "use strict";
 'use strict';
-var $at  = __webpack_require__(391)(true);
+var $at  = __webpack_require__(394)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(233)(String, 'String', function(iterated){
+__webpack_require__(234)(String, 'String', function(iterated){
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -25361,8 +25361,8 @@ __webpack_require__(233)(String, 'String', function(iterated){
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_ng2_bootstrap_config__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dropdown_service__ = __webpack_require__(252);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dropdown_config__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dropdown_service__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dropdown_config__ = __webpack_require__(252);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DropdownDirective; });
 
 
@@ -35391,6 +35391,60 @@ var TreeNode = (function () {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var http_1 = __webpack_require__(340);
+__webpack_require__(566);
+__webpack_require__(899);
+__webpack_require__(904);
+var SelectService = (function () {
+    function SelectService(http) {
+        this.http = http;
+        this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+    }
+    SelectService.prototype.getResultados = function (url, parametros) {
+        var informar = new http_1.URLSearchParams();
+        if (parametros) {
+            for (var parametro in parametros) {
+                if (typeof parametros[parametro] == 'object') {
+                    for (var _i = 0, _a = parametros[parametro]; _i < _a.length; _i++) {
+                        var sub = _a[_i];
+                        informar.append(parametro + '[]', sub);
+                    }
+                }
+                else {
+                    informar.append(parametro, parametros[parametro]);
+                }
+            }
+        }
+        return this.http
+            .get(url, { headers: this.headers, search: informar })
+            .map(function (res) { return res.json(); });
+    };
+    SelectService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
+    ], SelectService);
+    return SelectService;
+    var _a;
+}());
+exports.SelectService = SelectService;
+
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
 'use strict';
 var toObject = __webpack_require__(30)
@@ -35408,7 +35462,7 @@ module.exports = function fill(value /*, start = 0, end = @length */){
 };
 
 /***/ },
-/* 224 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
@@ -35434,7 +35488,7 @@ module.exports = function(IS_INCLUDES){
 };
 
 /***/ },
-/* 225 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
@@ -35462,7 +35516,7 @@ module.exports = function(it){
 };
 
 /***/ },
-/* 226 */
+/* 227 */
 /***/ function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -35471,7 +35525,7 @@ module.exports = (
 ).split(',');
 
 /***/ },
-/* 227 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 var MATCH = __webpack_require__(12)('match');
@@ -35488,7 +35542,7 @@ module.exports = function(KEY){
 };
 
 /***/ },
-/* 228 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35507,11 +35561,11 @@ module.exports = function(){
 };
 
 /***/ },
-/* 229 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 var isObject       = __webpack_require__(9)
-  , setPrototypeOf = __webpack_require__(237).set;
+  , setPrototypeOf = __webpack_require__(238).set;
 module.exports = function(that, target, C){
   var P, S = target.constructor;
   if(S !== C && typeof S == 'function' && (P = S.prototype) !== C.prototype && isObject(P) && setPrototypeOf){
@@ -35520,7 +35574,7 @@ module.exports = function(that, target, C){
 };
 
 /***/ },
-/* 230 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
@@ -35533,7 +35587,7 @@ module.exports = function(it){
 };
 
 /***/ },
-/* 231 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
@@ -35543,7 +35597,7 @@ module.exports = Array.isArray || function isArray(arg){
 };
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 7.2.8 IsRegExp(argument)
@@ -35556,19 +35610,19 @@ module.exports = function(it){
 };
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
-var LIBRARY        = __webpack_require__(109)
+var LIBRARY        = __webpack_require__(110)
   , $export        = __webpack_require__(2)
   , redefine       = __webpack_require__(23)
   , hide           = __webpack_require__(29)
   , has            = __webpack_require__(22)
   , Iterators      = __webpack_require__(86)
-  , $iterCreate    = __webpack_require__(380)
-  , setToStringTag = __webpack_require__(112)
+  , $iterCreate    = __webpack_require__(383)
+  , setToStringTag = __webpack_require__(113)
   , getPrototypeOf = __webpack_require__(44)
   , ITERATOR       = __webpack_require__(12)('iterator')
   , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
@@ -35632,7 +35686,7 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
 };
 
 /***/ },
-/* 234 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 var ITERATOR     = __webpack_require__(12)('iterator')
@@ -35658,7 +35712,7 @@ module.exports = function(exec, skipClosing){
 };
 
 /***/ },
-/* 235 */
+/* 236 */
 /***/ function(module, exports) {
 
 // 20.2.2.14 Math.expm1(x)
@@ -35673,7 +35727,7 @@ module.exports = (!$expm1
 } : $expm1;
 
 /***/ },
-/* 236 */
+/* 237 */
 /***/ function(module, exports) {
 
 // 20.2.2.28 Math.sign(x)
@@ -35682,7 +35736,7 @@ module.exports = Math.sign || function sign(x){
 };
 
 /***/ },
-/* 237 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 // Works with __proto__ only. Old v8 can't work with null proto objects.
@@ -35712,7 +35766,7 @@ module.exports = {
 };
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 var shared = __webpack_require__(153)('keys')
@@ -35722,11 +35776,11 @@ module.exports = function(key){
 };
 
 /***/ },
-/* 239 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 // helper for String#{startsWith, endsWith, includes}
-var isRegExp = __webpack_require__(232)
+var isRegExp = __webpack_require__(233)
   , defined  = __webpack_require__(49);
 
 module.exports = function(that, searchString, NAME){
@@ -35735,32 +35789,32 @@ module.exports = function(that, searchString, NAME){
 };
 
 /***/ },
-/* 240 */
+/* 241 */
 /***/ function(module, exports) {
 
 module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
   '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
 /***/ },
-/* 241 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var global         = __webpack_require__(10)
   , DESCRIPTORS    = __webpack_require__(18)
-  , LIBRARY        = __webpack_require__(109)
+  , LIBRARY        = __webpack_require__(110)
   , $typed         = __webpack_require__(155)
   , hide           = __webpack_require__(29)
-  , redefineAll    = __webpack_require__(110)
+  , redefineAll    = __webpack_require__(111)
   , fails          = __webpack_require__(6)
-  , anInstance     = __webpack_require__(107)
+  , anInstance     = __webpack_require__(108)
   , toInteger      = __webpack_require__(62)
   , toLength       = __webpack_require__(20)
   , gOPN           = __webpack_require__(73).f
   , dP             = __webpack_require__(14).f
-  , arrayFill      = __webpack_require__(223)
-  , setToStringTag = __webpack_require__(112)
+  , arrayFill      = __webpack_require__(224)
+  , setToStringTag = __webpack_require__(113)
   , ARRAY_BUFFER   = 'ArrayBuffer'
   , DATA_VIEW      = 'DataView'
   , PROTOTYPE      = 'prototype'
@@ -36021,10 +36075,10 @@ exports[ARRAY_BUFFER] = $ArrayBuffer;
 exports[DATA_VIEW] = $DataView;
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
-var classof   = __webpack_require__(225)
+var classof   = __webpack_require__(226)
   , ITERATOR  = __webpack_require__(12)('iterator')
   , Iterators = __webpack_require__(86);
 module.exports = __webpack_require__(11).getIteratorMethod = function(it){
@@ -36034,7 +36088,7 @@ module.exports = __webpack_require__(11).getIteratorMethod = function(it){
 };
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $iterators    = __webpack_require__(156)
@@ -36061,12 +36115,12 @@ for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList'
 }
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accordion_config__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accordion_config__ = __webpack_require__(246);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AccordionComponent; });
 
 
@@ -36119,7 +36173,7 @@ var AccordionComponent = (function () {
 //# sourceMappingURL=accordion.component.js.map
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36144,7 +36198,7 @@ var AccordionConfig = (function () {
 //# sourceMappingURL=accordion.config.js.map
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36170,13 +36224,13 @@ var AlertConfig = (function () {
 //# sourceMappingURL=alert.config.js.map
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(560);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__carousel_config__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(563);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__carousel_config__ = __webpack_require__(249);
 /* unused harmony export Direction */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CarouselComponent; });
 // todo: add animation
@@ -36443,7 +36497,7 @@ var CarouselComponent = (function () {
 //# sourceMappingURL=carousel.component.js.map
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36469,12 +36523,12 @@ var CarouselConfig = (function () {
 //# sourceMappingURL=carousel.config.js.map
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__collapse_directive__ = __webpack_require__(520);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__collapse_directive__ = __webpack_require__(523);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CollapseModule; });
 
 
@@ -36497,7 +36551,7 @@ var CollapseModule = (function () {
 //# sourceMappingURL=collapse.module.js.map
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36533,11 +36587,11 @@ var DatepickerConfig = (function () {
 //# sourceMappingURL=datepicker.config.js.map
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dropdown_service__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dropdown_service__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DropdownConfig; });
 
@@ -36560,7 +36614,7 @@ var DropdownConfig = (function () {
 //# sourceMappingURL=dropdown.config.js.map
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36645,12 +36699,12 @@ var dropdownService = new DropdownService();
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_options_class__ = __webpack_require__(533);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_options_class__ = __webpack_require__(536);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_ng2_bootstrap_config__ = __webpack_require__(36);
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return ModalBackdropOptions; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ModalBackdropComponent; });
@@ -36714,7 +36768,7 @@ var ModalBackdropComponent = (function () {
 //# sourceMappingURL=modal-backdrop.component.js.map
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36763,7 +36817,7 @@ var PopoverContainerComponent = (function () {
 //# sourceMappingURL=popover-container.component.js.map
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36816,7 +36870,7 @@ var ProgressDirective = (function () {
 //# sourceMappingURL=progress.directive.js.map
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36840,7 +36894,7 @@ var ProgressbarConfig = (function () {
 //# sourceMappingURL=progressbar.config.js.map
 
 /***/ },
-/* 257 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36882,12 +36936,12 @@ var DraggableItemService = (function () {
 //# sourceMappingURL=draggable-item.service.js.map
 
 /***/ },
-/* 258 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tabset_component__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tabset_component__ = __webpack_require__(260);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TabDirective; });
 
 
@@ -36954,12 +37008,12 @@ var TabDirective = (function () {
 //# sourceMappingURL=tab.directive.js.map
 
 /***/ },
-/* 259 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tabset_config__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tabset_config__ = __webpack_require__(261);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TabsetComponent; });
 
 
@@ -37088,7 +37142,7 @@ var TabsetComponent = (function () {
 //# sourceMappingURL=tabset.component.js.map
 
 /***/ },
-/* 260 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37110,7 +37164,7 @@ var TabsetConfig = (function () {
 //# sourceMappingURL=tabset.config.js.map
 
 /***/ },
-/* 261 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37151,7 +37205,7 @@ var TimepickerConfig = (function () {
 //# sourceMappingURL=timepicker.config.js.map
 
 /***/ },
-/* 262 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37207,13 +37261,13 @@ var TooltipContainerComponent = (function () {
 //# sourceMappingURL=tooltip-container.component.js.map
 
 /***/ },
-/* 263 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_ng2_bootstrap_config__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__typeahead_utils__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__typeahead_utils__ = __webpack_require__(265);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TypeaheadContainerComponent; });
 
 
@@ -37362,11 +37416,11 @@ var TypeaheadContainerComponent = (function () {
 //# sourceMappingURL=typeahead-container.component.js.map
 
 /***/ },
-/* 264 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__latin_map__ = __webpack_require__(556);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__latin_map__ = __webpack_require__(559);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TypeaheadUtils; });
 
 var TypeaheadUtils = (function () {
@@ -37430,7 +37484,7 @@ var TypeaheadUtils = (function () {
 //# sourceMappingURL=typeahead-utils.js.map
 
 /***/ },
-/* 265 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37453,59 +37507,6 @@ function OnChange(defaultValue) {
     };
 }
 //# sourceMappingURL=decorators.js.map
-
-/***/ },
-/* 266 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(340);
-__webpack_require__(566);
-__webpack_require__(899);
-__webpack_require__(904);
-var SelectService = (function () {
-    function SelectService(http) {
-        this.http = http;
-        this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-    }
-    SelectService.prototype.getResultados = function (url, parametros) {
-        var informar = new http_1.URLSearchParams();
-        if (parametros) {
-            for (var parametro in parametros) {
-                if (typeof parametros[parametro] == 'object') {
-                    for (var _i = 0, _a = parametros[parametro]; _i < _a.length; _i++) {
-                        var sub = _a[_i];
-                        informar.append(parametro + '[]', sub);
-                    }
-                }
-                else {
-                    informar.append(parametro, parametros[parametro]);
-                }
-            }
-        }
-        return this.http
-            .get(url, { headers: this.headers, search: informar })
-            .map(function (res) { return res.json(); });
-    };
-    return SelectService;
-}());
-SelectService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], SelectService);
-exports.SelectService = SelectService;
-//# sourceMappingURL=select.service.js.map
 
 /***/ },
 /* 267 */
@@ -50524,6 +50525,46 @@ var RouterPreloader = (function () {
 
 "use strict";
 "use strict";
+var select_component_1 = __webpack_require__(692);
+exports.SelectComponent = select_component_1.SelectComponent;
+var multiple_component_1 = __webpack_require__(689);
+exports.MultipleComponent = multiple_component_1.MultipleComponent;
+var request_component_1 = __webpack_require__(691);
+exports.RequestComponent = request_component_1.RequestComponent;
+var request_multiple_component_1 = __webpack_require__(690);
+exports.RequestMultipleComponent = request_multiple_component_1.RequestMultipleComponent;
+
+
+/***/ },
+/* 364 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var inner_template_directive_1 = __webpack_require__(695);
+exports.InnerTemplateDirective = inner_template_directive_1.InnerTemplateDirective;
+var highlight_directive_1 = __webpack_require__(693);
+exports.HighlightDirective = highlight_directive_1.HighlightDirective;
+var infinite_scroll_directive_1 = __webpack_require__(694);
+exports.InfiniteScrollDirective = infinite_scroll_directive_1.InfiniteScrollDirective;
+
+
+/***/ },
+/* 365 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var select_service_1 = __webpack_require__(223);
+exports.SelectService = select_service_1.SelectService;
+
+
+/***/ },
+/* 366 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -50551,7 +50592,7 @@ exports.InstalacaoComponent = InstalacaoComponent;
 
 
 /***/ },
-/* 364 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50594,7 +50635,7 @@ exports.MultipleComponent = MultipleComponent;
 
 
 /***/ },
-/* 365 */
+/* 368 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50647,7 +50688,7 @@ exports.RequestMultipleComponent = RequestMultipleComponent;
 
 
 /***/ },
-/* 366 */
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50700,7 +50741,7 @@ exports.RequestComponent = RequestComponent;
 
 
 /***/ },
-/* 367 */
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50725,6 +50766,7 @@ var SimplesComponent = (function () {
             { id: 4, nome: 'Thiago' },
             { id: 5, nome: 'Isadora' },
             { id: 6, nome: 'Mirella' },
+            { id: 7, nome: 102 },
         ];
         this.codigoUtilizado = "\n    <!--caso queira mudar a exibi\u00E7\u00E3o-->\n     <template #exibirDiferente let-valor>\n          ID: {{valor.id}}<br>\n          Nome: {{valor.nome}}\n      </template>\n\n      Valor selecionado: {{valorSelecionado | json}}\n      <select2-select\n          [valores]=\"valores\"\n          [(ngModel)]=\"valorSelecionado\"\n          [templateResultado]=\"exibirDiferente\"\n          (onAbrir)=\"log('onAbrir', $event)\"\n          (onFechar)=\"log('onFechar', $event)\"\n          (onBuscar)=\"log('onBuscar', $event)\"\n          (onSelecionarItem)=\"log('onSelecionarItem', $event)\"\n          (onLimpar)=\"log('onLimpar', $event)\"\n      >\n      </select2-select>\n  ";
     }
@@ -50743,7 +50785,7 @@ exports.SimplesComponent = SimplesComponent;
 
 
 /***/ },
-/* 368 */
+/* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
 var cof = __webpack_require__(70);
@@ -50753,7 +50795,7 @@ module.exports = function(it, msg){
 };
 
 /***/ },
-/* 369 */
+/* 372 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50785,12 +50827,12 @@ module.exports = [].copyWithin || function copyWithin(target/*= 0*/, start/*= 0,
 };
 
 /***/ },
-/* 370 */
+/* 373 */
 /***/ function(module, exports, __webpack_require__) {
 
 var aFunction = __webpack_require__(59)
   , toObject  = __webpack_require__(30)
-  , IObject   = __webpack_require__(108)
+  , IObject   = __webpack_require__(109)
   , toLength  = __webpack_require__(20);
 
 module.exports = function(that, callbackfn, aLen, memo, isRight){
@@ -50818,14 +50860,14 @@ module.exports = function(that, callbackfn, aLen, memo, isRight){
 };
 
 /***/ },
-/* 371 */
+/* 374 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var aFunction  = __webpack_require__(59)
   , isObject   = __webpack_require__(9)
-  , invoke     = __webpack_require__(714)
+  , invoke     = __webpack_require__(722)
   , arraySlice = [].slice
   , factories  = {};
 
@@ -50848,21 +50890,21 @@ module.exports = Function.bind || function bind(that /*, args... */){
 };
 
 /***/ },
-/* 372 */
+/* 375 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var dP          = __webpack_require__(14).f
   , create      = __webpack_require__(72)
-  , redefineAll = __webpack_require__(110)
+  , redefineAll = __webpack_require__(111)
   , ctx         = __webpack_require__(71)
-  , anInstance  = __webpack_require__(107)
+  , anInstance  = __webpack_require__(108)
   , defined     = __webpack_require__(49)
   , forOf       = __webpack_require__(150)
-  , $iterDefine = __webpack_require__(233)
-  , step        = __webpack_require__(381)
-  , setSpecies  = __webpack_require__(111)
+  , $iterDefine = __webpack_require__(234)
+  , step        = __webpack_require__(384)
+  , setSpecies  = __webpack_require__(112)
   , DESCRIPTORS = __webpack_require__(18)
   , fastKey     = __webpack_require__(60).fastKey
   , SIZE        = DESCRIPTORS ? '_s' : 'size';
@@ -50996,16 +51038,16 @@ module.exports = {
 };
 
 /***/ },
-/* 373 */
+/* 376 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
-var redefineAll       = __webpack_require__(110)
+var redefineAll       = __webpack_require__(111)
   , getWeak           = __webpack_require__(60).getWeak
   , anObject          = __webpack_require__(4)
   , isObject          = __webpack_require__(9)
-  , anInstance        = __webpack_require__(107)
+  , anInstance        = __webpack_require__(108)
   , forOf             = __webpack_require__(150)
   , createArrayMethod = __webpack_require__(43)
   , $has              = __webpack_require__(22)
@@ -51085,7 +51127,7 @@ module.exports = {
 };
 
 /***/ },
-/* 374 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51099,7 +51141,7 @@ module.exports = function(object, index, value){
 };
 
 /***/ },
-/* 375 */
+/* 378 */
 /***/ function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(9)
@@ -51111,21 +51153,21 @@ module.exports = function(it){
 };
 
 /***/ },
-/* 376 */
+/* 379 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(10).document && document.documentElement;
 
 /***/ },
-/* 377 */
+/* 380 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(18) && !__webpack_require__(6)(function(){
-  return Object.defineProperty(__webpack_require__(375)('div'), 'a', {get: function(){ return 7; }}).a != 7;
+  return Object.defineProperty(__webpack_require__(378)('div'), 'a', {get: function(){ return 7; }}).a != 7;
 });
 
 /***/ },
-/* 378 */
+/* 381 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
@@ -51136,7 +51178,7 @@ module.exports = function isInteger(it){
 };
 
 /***/ },
-/* 379 */
+/* 382 */
 /***/ function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
@@ -51153,14 +51195,14 @@ module.exports = function(iterator, fn, value, entries){
 };
 
 /***/ },
-/* 380 */
+/* 383 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var create         = __webpack_require__(72)
   , descriptor     = __webpack_require__(61)
-  , setToStringTag = __webpack_require__(112)
+  , setToStringTag = __webpack_require__(113)
   , IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
@@ -51172,7 +51214,7 @@ module.exports = function(Constructor, NAME, next){
 };
 
 /***/ },
-/* 381 */
+/* 384 */
 /***/ function(module, exports) {
 
 module.exports = function(done, value){
@@ -51180,7 +51222,7 @@ module.exports = function(done, value){
 };
 
 /***/ },
-/* 382 */
+/* 385 */
 /***/ function(module, exports) {
 
 // 20.2.2.20 Math.log1p(x)
@@ -51189,7 +51231,7 @@ module.exports = Math.log1p || function log1p(x){
 };
 
 /***/ },
-/* 383 */
+/* 386 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51199,7 +51241,7 @@ var getKeys  = __webpack_require__(87)
   , gOPS     = __webpack_require__(151)
   , pIE      = __webpack_require__(152)
   , toObject = __webpack_require__(30)
-  , IObject  = __webpack_require__(108)
+  , IObject  = __webpack_require__(109)
   , $assign  = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
@@ -51228,7 +51270,7 @@ module.exports = !$assign || __webpack_require__(6)(function(){
 } : $assign;
 
 /***/ },
-/* 384 */
+/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
 var dP       = __webpack_require__(14)
@@ -51246,7 +51288,7 @@ module.exports = __webpack_require__(18) ? Object.defineProperties : function de
 };
 
 /***/ },
-/* 385 */
+/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
@@ -51271,13 +51313,13 @@ module.exports.f = function getOwnPropertyNames(it){
 
 
 /***/ },
-/* 386 */
+/* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
 var has          = __webpack_require__(22)
   , toIObject    = __webpack_require__(35)
-  , arrayIndexOf = __webpack_require__(224)(false)
-  , IE_PROTO     = __webpack_require__(238)('IE_PROTO');
+  , arrayIndexOf = __webpack_require__(225)(false)
+  , IE_PROTO     = __webpack_require__(239)('IE_PROTO');
 
 module.exports = function(object, names){
   var O      = toIObject(object)
@@ -51293,25 +51335,25 @@ module.exports = function(object, names){
 };
 
 /***/ },
-/* 387 */
+/* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $parseFloat = __webpack_require__(10).parseFloat
   , $trim       = __webpack_require__(154).trim;
 
-module.exports = 1 / $parseFloat(__webpack_require__(240) + '-0') !== -Infinity ? function parseFloat(str){
+module.exports = 1 / $parseFloat(__webpack_require__(241) + '-0') !== -Infinity ? function parseFloat(str){
   var string = $trim(String(str), 3)
     , result = $parseFloat(string);
   return result === 0 && string.charAt(0) == '-' ? -0 : result;
 } : $parseFloat;
 
 /***/ },
-/* 388 */
+/* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $parseInt = __webpack_require__(10).parseInt
   , $trim     = __webpack_require__(154).trim
-  , ws        = __webpack_require__(240)
+  , ws        = __webpack_require__(241)
   , hex       = /^[\-+]?0[xX]/;
 
 module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? function parseInt(str, radix){
@@ -51320,7 +51362,7 @@ module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? f
 } : $parseInt;
 
 /***/ },
-/* 389 */
+/* 392 */
 /***/ function(module, exports) {
 
 // 7.2.9 SameValue(x, y)
@@ -51329,7 +51371,7 @@ module.exports = Object.is || function is(x, y){
 };
 
 /***/ },
-/* 390 */
+/* 393 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
@@ -51342,7 +51384,7 @@ module.exports = function(O, D){
 };
 
 /***/ },
-/* 391 */
+/* 394 */
 /***/ function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(62)
@@ -51364,7 +51406,7 @@ module.exports = function(TO_STRING){
 };
 
 /***/ },
-/* 392 */
+/* 395 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51382,18 +51424,18 @@ module.exports = function repeat(count){
 };
 
 /***/ },
-/* 393 */
+/* 396 */
 /***/ function(module, exports, __webpack_require__) {
 
 exports.f = __webpack_require__(12);
 
 /***/ },
-/* 394 */
+/* 397 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
-var strong = __webpack_require__(372);
+var strong = __webpack_require__(375);
 
 // 23.1 Map Objects
 module.exports = __webpack_require__(148)('Map', function(get){
@@ -51411,17 +51453,17 @@ module.exports = __webpack_require__(148)('Map', function(get){
 }, strong, true);
 
 /***/ },
-/* 395 */
+/* 398 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 21.2.5.3 get RegExp.prototype.flags()
 if(__webpack_require__(18) && /./g.flags != 'g')__webpack_require__(14).f(RegExp.prototype, 'flags', {
   configurable: true,
-  get: __webpack_require__(228)
+  get: __webpack_require__(229)
 });
 
 /***/ },
-/* 396 */
+/* 399 */
 /***/ function(module, exports, __webpack_require__) {
 
 // @@match logic
@@ -51436,7 +51478,7 @@ __webpack_require__(149)('match', 1, function(defined, MATCH, $match){
 });
 
 /***/ },
-/* 397 */
+/* 400 */
 /***/ function(module, exports, __webpack_require__) {
 
 // @@replace logic
@@ -51453,7 +51495,7 @@ __webpack_require__(149)('replace', 2, function(defined, REPLACE, $replace){
 });
 
 /***/ },
-/* 398 */
+/* 401 */
 /***/ function(module, exports, __webpack_require__) {
 
 // @@search logic
@@ -51468,13 +51510,13 @@ __webpack_require__(149)('search', 1, function(defined, SEARCH, $search){
 });
 
 /***/ },
-/* 399 */
+/* 402 */
 /***/ function(module, exports, __webpack_require__) {
 
 // @@split logic
 __webpack_require__(149)('split', 2, function(defined, SPLIT, $split){
   'use strict';
-  var isRegExp   = __webpack_require__(232)
+  var isRegExp   = __webpack_require__(233)
     , _split     = $split
     , $push      = [].push
     , $SPLIT     = 'split'
@@ -51543,12 +51585,12 @@ __webpack_require__(149)('split', 2, function(defined, SPLIT, $split){
 });
 
 /***/ },
-/* 400 */
+/* 403 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
-var strong = __webpack_require__(372);
+var strong = __webpack_require__(375);
 
 // 23.2 Set Objects
 module.exports = __webpack_require__(148)('Set', function(get){
@@ -51561,7 +51603,7 @@ module.exports = __webpack_require__(148)('Set', function(get){
 }, strong);
 
 /***/ },
-/* 401 */
+/* 404 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51575,20 +51617,20 @@ var global         = __webpack_require__(10)
   , META           = __webpack_require__(60).KEY
   , $fails         = __webpack_require__(6)
   , shared         = __webpack_require__(153)
-  , setToStringTag = __webpack_require__(112)
+  , setToStringTag = __webpack_require__(113)
   , uid            = __webpack_require__(75)
   , wks            = __webpack_require__(12)
-  , wksExt         = __webpack_require__(393)
-  , wksDefine      = __webpack_require__(717)
-  , keyOf          = __webpack_require__(715)
-  , enumKeys       = __webpack_require__(713)
-  , isArray        = __webpack_require__(231)
+  , wksExt         = __webpack_require__(396)
+  , wksDefine      = __webpack_require__(725)
+  , keyOf          = __webpack_require__(723)
+  , enumKeys       = __webpack_require__(721)
+  , isArray        = __webpack_require__(232)
   , anObject       = __webpack_require__(4)
   , toIObject      = __webpack_require__(35)
   , toPrimitive    = __webpack_require__(63)
   , createDesc     = __webpack_require__(61)
   , _create        = __webpack_require__(72)
-  , gOPNExt        = __webpack_require__(385)
+  , gOPNExt        = __webpack_require__(388)
   , $GOPD          = __webpack_require__(51)
   , $DP            = __webpack_require__(14)
   , $keys          = __webpack_require__(87)
@@ -51718,7 +51760,7 @@ if(!USE_NATIVE){
   __webpack_require__(152).f  = $propertyIsEnumerable;
   __webpack_require__(151).f = $getOwnPropertySymbols;
 
-  if(DESCRIPTORS && !__webpack_require__(109)){
+  if(DESCRIPTORS && !__webpack_require__(110)){
     redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
   }
 
@@ -51802,7 +51844,7 @@ setToStringTag(Math, 'Math', true);
 setToStringTag(global.JSON, 'JSON', true);
 
 /***/ },
-/* 402 */
+/* 405 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51810,8 +51852,8 @@ setToStringTag(global.JSON, 'JSON', true);
 var each         = __webpack_require__(43)(0)
   , redefine     = __webpack_require__(23)
   , meta         = __webpack_require__(60)
-  , assign       = __webpack_require__(383)
-  , weak         = __webpack_require__(373)
+  , assign       = __webpack_require__(386)
+  , weak         = __webpack_require__(376)
   , isObject     = __webpack_require__(9)
   , getWeak      = meta.getWeak
   , isExtensible = Object.isExtensible
@@ -51864,7 +51906,7 @@ if(new $WeakMap().set((Object.freeze || Object)(tmp), 7).get(tmp) != 7){
 }
 
 /***/ },
-/* 403 */
+/* 406 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -51942,7 +51984,7 @@ return af;
 
 
 /***/ },
-/* 404 */
+/* 407 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -52006,7 +52048,7 @@ return arDz;
 
 
 /***/ },
-/* 405 */
+/* 408 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -52137,7 +52179,7 @@ return arLy;
 
 
 /***/ },
-/* 406 */
+/* 409 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -52202,7 +52244,7 @@ return arMa;
 
 
 /***/ },
-/* 407 */
+/* 410 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -52312,7 +52354,7 @@ return arSa;
 
 
 /***/ },
-/* 408 */
+/* 411 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -52376,7 +52418,7 @@ return arTn;
 
 
 /***/ },
-/* 409 */
+/* 412 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -52523,7 +52565,7 @@ return ar;
 
 
 /***/ },
-/* 410 */
+/* 413 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -52633,7 +52675,7 @@ return az;
 
 
 /***/ },
-/* 411 */
+/* 414 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -52772,7 +52814,7 @@ return be;
 
 
 /***/ },
-/* 412 */
+/* 415 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -52867,7 +52909,7 @@ return bg;
 
 
 /***/ },
-/* 413 */
+/* 416 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -52991,7 +53033,7 @@ return bn;
 
 
 /***/ },
-/* 414 */
+/* 417 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -53115,7 +53157,7 @@ return bo;
 
 
 /***/ },
-/* 415 */
+/* 418 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -53228,7 +53270,7 @@ return br;
 
 
 /***/ },
-/* 416 */
+/* 419 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -53376,7 +53418,7 @@ return bs;
 
 
 /***/ },
-/* 417 */
+/* 420 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -53462,7 +53504,7 @@ return ca;
 
 
 /***/ },
-/* 418 */
+/* 421 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -53639,7 +53681,7 @@ return cs;
 
 
 /***/ },
-/* 419 */
+/* 422 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -53707,7 +53749,7 @@ return cv;
 
 
 /***/ },
-/* 420 */
+/* 423 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -53793,7 +53835,7 @@ return cy;
 
 
 /***/ },
-/* 421 */
+/* 424 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -53858,7 +53900,7 @@ return da;
 
 
 /***/ },
-/* 422 */
+/* 425 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -53942,7 +53984,7 @@ return deAt;
 
 
 /***/ },
-/* 423 */
+/* 426 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -54025,7 +54067,7 @@ return de;
 
 
 /***/ },
-/* 424 */
+/* 427 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -54130,7 +54172,7 @@ return dv;
 
 
 /***/ },
-/* 425 */
+/* 428 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -54233,7 +54275,7 @@ return el;
 
 
 /***/ },
-/* 426 */
+/* 429 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -54305,7 +54347,7 @@ return enAu;
 
 
 /***/ },
-/* 427 */
+/* 430 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -54373,7 +54415,7 @@ return enCa;
 
 
 /***/ },
-/* 428 */
+/* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -54445,7 +54487,7 @@ return enGb;
 
 
 /***/ },
-/* 429 */
+/* 432 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -54517,7 +54559,7 @@ return enIe;
 
 
 /***/ },
-/* 430 */
+/* 433 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -54589,7 +54631,7 @@ return enNz;
 
 
 /***/ },
-/* 431 */
+/* 434 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -54667,7 +54709,7 @@ return eo;
 
 
 /***/ },
-/* 432 */
+/* 435 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -54752,7 +54794,7 @@ return esDo;
 
 
 /***/ },
-/* 433 */
+/* 436 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -54838,7 +54880,7 @@ return es;
 
 
 /***/ },
-/* 434 */
+/* 437 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -54923,7 +54965,7 @@ return et;
 
 
 /***/ },
-/* 435 */
+/* 438 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -54994,7 +55036,7 @@ return eu;
 
 
 /***/ },
-/* 436 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -55106,7 +55148,7 @@ return fa;
 
 
 /***/ },
-/* 437 */
+/* 440 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -55218,7 +55260,7 @@ return fi;
 
 
 /***/ },
-/* 438 */
+/* 441 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -55283,7 +55325,7 @@ return fo;
 
 
 /***/ },
-/* 439 */
+/* 442 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -55348,7 +55390,7 @@ return frCa;
 
 
 /***/ },
-/* 440 */
+/* 443 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -55417,7 +55459,7 @@ return frCh;
 
 
 /***/ },
-/* 441 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -55486,7 +55528,7 @@ return fr;
 
 
 /***/ },
-/* 442 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -55564,7 +55606,7 @@ return fy;
 
 
 /***/ },
-/* 443 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -55645,7 +55687,7 @@ return gd;
 
 
 /***/ },
-/* 444 */
+/* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -55727,7 +55769,7 @@ return gl;
 
 
 /***/ },
-/* 445 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -55831,7 +55873,7 @@ return he;
 
 
 /***/ },
-/* 446 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -55960,7 +56002,7 @@ return hi;
 
 
 /***/ },
-/* 447 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -56110,7 +56152,7 @@ return hr;
 
 
 /***/ },
-/* 448 */
+/* 451 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -56224,7 +56266,7 @@ return hu;
 
 
 /***/ },
-/* 449 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -56324,7 +56366,7 @@ return hyAm;
 
 
 /***/ },
-/* 450 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -56412,7 +56454,7 @@ return id;
 
 
 /***/ },
-/* 451 */
+/* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -56544,7 +56586,7 @@ return is;
 
 
 /***/ },
-/* 452 */
+/* 455 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -56619,7 +56661,7 @@ return it;
 
 
 /***/ },
-/* 453 */
+/* 456 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -56700,7 +56742,7 @@ return ja;
 
 
 /***/ },
-/* 454 */
+/* 457 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -56788,7 +56830,7 @@ return jv;
 
 
 /***/ },
-/* 455 */
+/* 458 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -56882,7 +56924,7 @@ return ka;
 
 
 /***/ },
-/* 456 */
+/* 459 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -56974,7 +57016,7 @@ return kk;
 
 
 /***/ },
-/* 457 */
+/* 460 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -57037,7 +57079,7 @@ return km;
 
 
 /***/ },
-/* 458 */
+/* 461 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -57107,7 +57149,7 @@ return ko;
 
 
 /***/ },
-/* 459 */
+/* 462 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -57200,7 +57242,7 @@ return ky;
 
 
 /***/ },
-/* 460 */
+/* 463 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -57342,7 +57384,7 @@ return lb;
 
 
 /***/ },
-/* 461 */
+/* 464 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -57417,7 +57459,7 @@ return lo;
 
 
 /***/ },
-/* 462 */
+/* 465 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -57539,7 +57581,7 @@ return lt;
 
 
 /***/ },
-/* 463 */
+/* 466 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -57641,7 +57683,7 @@ return lv;
 
 
 /***/ },
-/* 464 */
+/* 467 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -57757,7 +57799,7 @@ return me;
 
 
 /***/ },
-/* 465 */
+/* 468 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -57826,7 +57868,7 @@ return mi;
 
 
 /***/ },
-/* 466 */
+/* 469 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -57921,7 +57963,7 @@ return mk;
 
 
 /***/ },
-/* 467 */
+/* 470 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58007,7 +58049,7 @@ return ml;
 
 
 /***/ },
-/* 468 */
+/* 471 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58171,7 +58213,7 @@ return mr;
 
 
 /***/ },
-/* 469 */
+/* 472 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58259,7 +58301,7 @@ return msMy;
 
 
 /***/ },
-/* 470 */
+/* 473 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58346,7 +58388,7 @@ return ms;
 
 
 /***/ },
-/* 471 */
+/* 474 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58447,7 +58489,7 @@ return my;
 
 
 /***/ },
-/* 472 */
+/* 475 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58515,7 +58557,7 @@ return nb;
 
 
 /***/ },
-/* 473 */
+/* 476 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58643,7 +58685,7 @@ return ne;
 
 
 /***/ },
-/* 474 */
+/* 477 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58734,7 +58776,7 @@ return nlBe;
 
 
 /***/ },
-/* 475 */
+/* 478 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58825,7 +58867,7 @@ return nl;
 
 
 /***/ },
-/* 476 */
+/* 479 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58890,7 +58932,7 @@ return nn;
 
 
 /***/ },
-/* 477 */
+/* 480 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59019,7 +59061,7 @@ return paIn;
 
 
 /***/ },
-/* 478 */
+/* 481 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59129,7 +59171,7 @@ return pl;
 
 
 /***/ },
-/* 479 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59195,7 +59237,7 @@ return ptBr;
 
 
 /***/ },
-/* 480 */
+/* 483 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59265,7 +59307,7 @@ return pt;
 
 
 /***/ },
-/* 481 */
+/* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59345,7 +59387,7 @@ return ro;
 
 
 /***/ },
-/* 482 */
+/* 485 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59533,7 +59575,7 @@ return ru;
 
 
 /***/ },
-/* 483 */
+/* 486 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59599,7 +59641,7 @@ return se;
 
 
 /***/ },
-/* 484 */
+/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59675,7 +59717,7 @@ return si;
 
 
 /***/ },
-/* 485 */
+/* 488 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59830,7 +59872,7 @@ return sk;
 
 
 /***/ },
-/* 486 */
+/* 489 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59997,7 +60039,7 @@ return sl;
 
 
 /***/ },
-/* 487 */
+/* 490 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60072,7 +60114,7 @@ return sq;
 
 
 /***/ },
-/* 488 */
+/* 491 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60187,7 +60229,7 @@ return srCyrl;
 
 
 /***/ },
-/* 489 */
+/* 492 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60302,7 +60344,7 @@ return sr;
 
 
 /***/ },
-/* 490 */
+/* 493 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60396,7 +60438,7 @@ return ss;
 
 
 /***/ },
-/* 491 */
+/* 494 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60470,7 +60512,7 @@ return sv;
 
 
 /***/ },
-/* 492 */
+/* 495 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60534,7 +60576,7 @@ return sw;
 
 
 /***/ },
-/* 493 */
+/* 496 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60669,7 +60711,7 @@ return ta;
 
 
 /***/ },
-/* 494 */
+/* 497 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60763,7 +60805,7 @@ return te;
 
 
 /***/ },
-/* 495 */
+/* 498 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60836,7 +60878,7 @@ return tet;
 
 
 /***/ },
-/* 496 */
+/* 499 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60908,7 +60950,7 @@ return th;
 
 
 /***/ },
-/* 497 */
+/* 500 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60975,7 +61017,7 @@ return tlPh;
 
 
 /***/ },
-/* 498 */
+/* 501 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61100,7 +61142,7 @@ return tlh;
 
 
 /***/ },
-/* 499 */
+/* 502 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61195,7 +61237,7 @@ return tr;
 
 
 /***/ },
-/* 500 */
+/* 503 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61291,7 +61333,7 @@ return tzl;
 
 
 /***/ },
-/* 501 */
+/* 504 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61354,7 +61396,7 @@ return tzmLatn;
 
 
 /***/ },
-/* 502 */
+/* 505 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61417,7 +61459,7 @@ return tzm;
 
 
 /***/ },
-/* 503 */
+/* 506 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61568,7 +61610,7 @@ return uk;
 
 
 /***/ },
-/* 504 */
+/* 507 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61631,7 +61673,7 @@ return uz;
 
 
 /***/ },
-/* 505 */
+/* 508 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61715,7 +61757,7 @@ return vi;
 
 
 /***/ },
-/* 506 */
+/* 509 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61788,7 +61830,7 @@ return xPseudo;
 
 
 /***/ },
-/* 507 */
+/* 510 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61853,7 +61895,7 @@ return yo;
 
 
 /***/ },
-/* 508 */
+/* 511 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61985,7 +62027,7 @@ return zhCn;
 
 
 /***/ },
-/* 509 */
+/* 512 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -62095,7 +62137,7 @@ return zhHk;
 
 
 /***/ },
-/* 510 */
+/* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -62204,13 +62246,13 @@ return zhTw;
 
 
 /***/ },
-/* 511 */
+/* 514 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_ng2_bootstrap_config__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accordion_component__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accordion_component__ = __webpack_require__(245);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AccordionPanelComponent; });
 
 
@@ -62280,16 +62322,16 @@ var AccordionPanelComponent = (function () {
 //# sourceMappingURL=accordion-group.component.js.map
 
 /***/ },
-/* 512 */
+/* 515 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__collapse_collapse_module__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accordion_group_component__ = __webpack_require__(511);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__accordion_component__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__accordion_config__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__collapse_collapse_module__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accordion_group_component__ = __webpack_require__(514);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__accordion_component__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__accordion_config__ = __webpack_require__(246);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AccordionModule; });
 
 
@@ -62315,13 +62357,13 @@ var AccordionModule = (function () {
 //# sourceMappingURL=accordion.module.js.map
 
 /***/ },
-/* 513 */
+/* 516 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__alert_config__ = __webpack_require__(246);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_decorators__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__alert_config__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_decorators__ = __webpack_require__(266);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AlertComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -62400,14 +62442,14 @@ var AlertComponent = (function () {
 //# sourceMappingURL=alert.component.js.map
 
 /***/ },
-/* 514 */
+/* 517 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alert_component__ = __webpack_require__(513);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__alert_config__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alert_component__ = __webpack_require__(516);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__alert_config__ = __webpack_require__(247);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AlertModule; });
 
 
@@ -62434,7 +62476,7 @@ var AlertModule = (function () {
 //# sourceMappingURL=alert.module.js.map
 
 /***/ },
-/* 515 */
+/* 518 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62527,7 +62569,7 @@ var ButtonCheckboxDirective = (function () {
 //# sourceMappingURL=button-checkbox.directive.js.map
 
 /***/ },
-/* 516 */
+/* 519 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62608,13 +62650,13 @@ var ButtonRadioDirective = (function () {
 //# sourceMappingURL=button-radio.directive.js.map
 
 /***/ },
-/* 517 */
+/* 520 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__button_checkbox_directive__ = __webpack_require__(515);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__button_radio_directive__ = __webpack_require__(516);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__button_checkbox_directive__ = __webpack_require__(518);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__button_radio_directive__ = __webpack_require__(519);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ButtonsModule; });
 
 
@@ -62638,15 +62680,15 @@ var ButtonsModule = (function () {
 //# sourceMappingURL=buttons.module.js.map
 
 /***/ },
-/* 518 */
+/* 521 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__carousel_component__ = __webpack_require__(247);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__slide_component__ = __webpack_require__(519);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__carousel_config__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__carousel_component__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__slide_component__ = __webpack_require__(522);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__carousel_config__ = __webpack_require__(249);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CarouselModule; });
 
 
@@ -62674,12 +62716,12 @@ var CarouselModule = (function () {
 //# sourceMappingURL=carousel.module.js.map
 
 /***/ },
-/* 519 */
+/* 522 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__carousel_component__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__carousel_component__ = __webpack_require__(248);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return SlideComponent; });
 
 
@@ -62716,7 +62758,7 @@ var SlideComponent = (function () {
 //# sourceMappingURL=slide.component.js.map
 
 /***/ },
-/* 520 */
+/* 523 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62824,13 +62866,13 @@ var CollapseDirective = (function () {
 //# sourceMappingURL=collapse.directive.js.map
 
 /***/ },
-/* 521 */
+/* 524 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__content_ref_class__ = __webpack_require__(523);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_triggers__ = __webpack_require__(875);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__content_ref_class__ = __webpack_require__(526);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_triggers__ = __webpack_require__(883);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ComponentLoader; });
 
 
@@ -62997,12 +63039,12 @@ var ComponentLoader = (function () {
 //# sourceMappingURL=component-loader.class.js.map
 
 /***/ },
-/* 522 */
+/* 525 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component_loader_class__ = __webpack_require__(521);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component_loader_class__ = __webpack_require__(524);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__positioning__ = __webpack_require__(88);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ComponentLoaderFactory; });
 
@@ -63040,7 +63082,7 @@ var ComponentLoaderFactory = (function () {
 //# sourceMappingURL=component-loader.factory.js.map
 
 /***/ },
-/* 523 */
+/* 526 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63060,7 +63102,7 @@ var ContentRef = (function () {
 //# sourceMappingURL=content-ref.class.js.map
 
 /***/ },
-/* 524 */
+/* 527 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63079,14 +63121,14 @@ var DateFormatter = (function () {
 //# sourceMappingURL=date-formatter.js.map
 
 /***/ },
-/* 525 */
+/* 528 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_inner_component__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datepicker_config__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_inner_component__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datepicker_config__ = __webpack_require__(251);
 /* unused harmony export DATEPICKER_CONTROL_VALUE_ACCESSOR */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DatePickerComponent; });
 
@@ -63193,19 +63235,19 @@ var DatePickerComponent = (function () {
 //# sourceMappingURL=datepicker.component.js.map
 
 /***/ },
-/* 526 */
+/* 529 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datepicker_inner_component__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__datepicker_component__ = __webpack_require__(525);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__daypicker_component__ = __webpack_require__(527);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__monthpicker_component__ = __webpack_require__(528);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__yearpicker_component__ = __webpack_require__(529);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__datepicker_config__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datepicker_inner_component__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__datepicker_component__ = __webpack_require__(528);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__daypicker_component__ = __webpack_require__(530);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__monthpicker_component__ = __webpack_require__(531);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__yearpicker_component__ = __webpack_require__(532);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__datepicker_config__ = __webpack_require__(251);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DatepickerModule; });
 
 
@@ -63239,13 +63281,13 @@ var DatepickerModule = (function () {
 //# sourceMappingURL=datepicker.module.js.map
 
 /***/ },
-/* 527 */
+/* 530 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_ng2_bootstrap_config__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_inner_component__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_inner_component__ = __webpack_require__(114);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DayPickerComponent; });
 
 
@@ -63369,13 +63411,13 @@ var DayPickerComponent = (function () {
 //# sourceMappingURL=daypicker.component.js.map
 
 /***/ },
-/* 528 */
+/* 531 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_ng2_bootstrap_config__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_inner_component__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_inner_component__ = __webpack_require__(114);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return MonthPickerComponent; });
 
 
@@ -63431,13 +63473,13 @@ var MonthPickerComponent = (function () {
 //# sourceMappingURL=monthpicker.component.js.map
 
 /***/ },
-/* 529 */
+/* 532 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_ng2_bootstrap_config__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_inner_component__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_inner_component__ = __webpack_require__(114);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return YearPickerComponent; });
 
 
@@ -63495,7 +63537,7 @@ var YearPickerComponent = (function () {
 //# sourceMappingURL=yearpicker.component.js.map
 
 /***/ },
-/* 530 */
+/* 533 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63534,7 +63576,7 @@ var DropdownMenuDirective = (function () {
 //# sourceMappingURL=dropdown-menu.directive.js.map
 
 /***/ },
-/* 531 */
+/* 534 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63597,15 +63639,15 @@ var DropdownToggleDirective = (function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
 
 /***/ },
-/* 532 */
+/* 535 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dropdown_menu_directive__ = __webpack_require__(530);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dropdown_toggle_directive__ = __webpack_require__(531);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dropdown_menu_directive__ = __webpack_require__(533);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dropdown_toggle_directive__ = __webpack_require__(534);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dropdown_directive__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dropdown_config__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dropdown_config__ = __webpack_require__(252);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return DropdownModule; });
 
 
@@ -63631,7 +63673,7 @@ var DropdownModule = (function () {
 //# sourceMappingURL=dropdown.module.js.map
 
 /***/ },
-/* 533 */
+/* 536 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63662,17 +63704,17 @@ var Selector = {
 //# sourceMappingURL=modal-options.class.js.map
 
 /***/ },
-/* 534 */
+/* 537 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_facade_browser__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_ng2_bootstrap_config__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_utils_class__ = __webpack_require__(562);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_backdrop_component__ = __webpack_require__(253);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modal_options_class__ = __webpack_require__(533);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__component_loader_component_loader_factory__ = __webpack_require__(522);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_utils_class__ = __webpack_require__(565);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_backdrop_component__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modal_options_class__ = __webpack_require__(536);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__component_loader_component_loader_factory__ = __webpack_require__(525);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ModalDirective; });
 /* tslint:disable:max-file-line-count */
 // todo: should we support enforce focus in?
@@ -63991,13 +64033,13 @@ var ModalDirective = (function () {
 //# sourceMappingURL=modal.component.js.map
 
 /***/ },
-/* 535 */
+/* 538 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_backdrop_component__ = __webpack_require__(253);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_component__ = __webpack_require__(534);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_backdrop_component__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_component__ = __webpack_require__(537);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__positioning__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__component_loader__ = __webpack_require__(64);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ModalModule; });
@@ -64026,7 +64068,7 @@ var ModalModule = (function () {
 //# sourceMappingURL=modal.module.js.map
 
 /***/ },
-/* 536 */
+/* 539 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64267,7 +64309,7 @@ var PagerComponent = (function () {
 //# sourceMappingURL=pager.component.js.map
 
 /***/ },
-/* 537 */
+/* 540 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64508,15 +64550,15 @@ var PaginationComponent = (function () {
 //# sourceMappingURL=pagination.component.js.map
 
 /***/ },
-/* 538 */
+/* 541 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pagination_config__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pager_component__ = __webpack_require__(536);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pagination_component__ = __webpack_require__(537);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pager_component__ = __webpack_require__(539);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pagination_component__ = __webpack_require__(540);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return PaginationModule; });
 
 
@@ -64543,14 +64585,14 @@ var PaginationModule = (function () {
 //# sourceMappingURL=pagination.module.js.map
 
 /***/ },
-/* 539 */
+/* 542 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__popover_config__ = __webpack_require__(160);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__component_loader__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__popover_container_component__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__popover_container_component__ = __webpack_require__(255);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return PopoverDirective; });
 
 
@@ -64657,7 +64699,7 @@ var PopoverDirective = (function () {
 //# sourceMappingURL=popover.directive.js.map
 
 /***/ },
-/* 540 */
+/* 543 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64666,8 +64708,8 @@ var PopoverDirective = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__component_loader__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__positioning__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__popover_config__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__popover_directive__ = __webpack_require__(539);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__popover_container_component__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__popover_directive__ = __webpack_require__(542);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__popover_container_component__ = __webpack_require__(255);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return PopoverModule; });
 
 
@@ -64700,7 +64742,7 @@ var PopoverModule = (function () {
 //# sourceMappingURL=popover.module.js.map
 
 /***/ },
-/* 541 */
+/* 544 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64846,12 +64888,12 @@ function positionElements(hostElement, targetElement, placement, appendToBody) {
 //# sourceMappingURL=ng-positioning.js.map
 
 /***/ },
-/* 542 */
+/* 545 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__progress_directive__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__progress_directive__ = __webpack_require__(256);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return BarComponent; });
 
 
@@ -64911,12 +64953,12 @@ var BarComponent = (function () {
 //# sourceMappingURL=bar.component.js.map
 
 /***/ },
-/* 543 */
+/* 546 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__progressbar_config__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__progressbar_config__ = __webpack_require__(257);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ProgressbarComponent; });
 
 
@@ -64945,16 +64987,16 @@ var ProgressbarComponent = (function () {
 //# sourceMappingURL=progressbar.component.js.map
 
 /***/ },
-/* 544 */
+/* 547 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bar_component__ = __webpack_require__(542);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__progress_directive__ = __webpack_require__(255);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__progressbar_component__ = __webpack_require__(543);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__progressbar_config__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bar_component__ = __webpack_require__(545);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__progress_directive__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__progressbar_component__ = __webpack_require__(546);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__progressbar_config__ = __webpack_require__(257);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ProgressbarModule; });
 
 
@@ -64982,7 +65024,7 @@ var ProgressbarModule = (function () {
 //# sourceMappingURL=progressbar.module.js.map
 
 /***/ },
-/* 545 */
+/* 548 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65105,13 +65147,13 @@ var RatingComponent = (function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
 
 /***/ },
-/* 546 */
+/* 549 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rating_component__ = __webpack_require__(545);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rating_component__ = __webpack_require__(548);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return RatingModule; });
 
 
@@ -65139,13 +65181,13 @@ var RatingModule = (function () {
 //# sourceMappingURL=rating.module.js.map
 
 /***/ },
-/* 547 */
+/* 550 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sortable_module__ = __webpack_require__(867);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sortable_component__ = __webpack_require__(548);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__draggable_item_service__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sortable_module__ = __webpack_require__(875);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sortable_component__ = __webpack_require__(551);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__draggable_item_service__ = __webpack_require__(258);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__sortable_module__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__sortable_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__draggable_item_service__["a"]; });
@@ -65155,13 +65197,13 @@ var RatingModule = (function () {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 548 */
+/* 551 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__draggable_item_service__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__draggable_item_service__ = __webpack_require__(258);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return SortableComponent; });
 
 
@@ -65341,7 +65383,7 @@ var SortableComponent = (function () {
 //# sourceMappingURL=sortable.component.js.map
 
 /***/ },
-/* 549 */
+/* 552 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65382,12 +65424,12 @@ var NgTranscludeDirective = (function () {
 //# sourceMappingURL=ng-transclude.directive.js.map
 
 /***/ },
-/* 550 */
+/* 553 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tab_directive__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tab_directive__ = __webpack_require__(259);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TabHeadingDirective; });
 
 
@@ -65409,17 +65451,17 @@ var TabHeadingDirective = (function () {
 //# sourceMappingURL=tab-heading.directive.js.map
 
 /***/ },
-/* 551 */
+/* 554 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_transclude_directive__ = __webpack_require__(549);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tab_heading_directive__ = __webpack_require__(550);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tab_directive__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabset_component__ = __webpack_require__(259);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tabset_config__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_transclude_directive__ = __webpack_require__(552);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tab_heading_directive__ = __webpack_require__(553);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tab_directive__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabset_component__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tabset_config__ = __webpack_require__(261);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TabsModule; });
 
 
@@ -65451,13 +65493,13 @@ var TabsModule = (function () {
 //# sourceMappingURL=tabs.module.js.map
 
 /***/ },
-/* 552 */
+/* 555 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__timepicker_config__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__timepicker_config__ = __webpack_require__(262);
 /* unused harmony export TIMEPICKER_CONTROL_VALUE_ACCESSOR */
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TimepickerComponent; });
 
@@ -65760,15 +65802,15 @@ var TimepickerComponent = (function () {
 //# sourceMappingURL=timepicker.component.js.map
 
 /***/ },
-/* 553 */
+/* 556 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__timepicker_component__ = __webpack_require__(552);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__timepicker_config__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__timepicker_component__ = __webpack_require__(555);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__timepicker_config__ = __webpack_require__(262);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TimepickerModule; });
 
 
@@ -65798,15 +65840,15 @@ var TimepickerModule = (function () {
 //# sourceMappingURL=timepicker.module.js.map
 
 /***/ },
-/* 554 */
+/* 557 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tooltip_container_component__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tooltip_container_component__ = __webpack_require__(263);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_config__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__component_loader__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_decorators__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_decorators__ = __webpack_require__(266);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TooltipDirective; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -66060,14 +66102,14 @@ var TooltipDirective = (function () {
 //# sourceMappingURL=tooltip.directive.js.map
 
 /***/ },
-/* 555 */
+/* 558 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_container_component__ = __webpack_require__(262);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_directive__ = __webpack_require__(554);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_container_component__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_directive__ = __webpack_require__(557);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tooltip_config__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__component_loader__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__positioning__ = __webpack_require__(88);
@@ -66104,7 +66146,7 @@ var TooltipModule = (function () {
 //# sourceMappingURL=tooltip.module.js.map
 
 /***/ },
-/* 556 */
+/* 559 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66939,7 +66981,7 @@ var latinMap = {
 //# sourceMappingURL=latin-map.js.map
 
 /***/ },
-/* 557 */
+/* 560 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -66963,14 +67005,14 @@ var TypeaheadMatch = (function () {
 //# sourceMappingURL=typeahead-match.class.js.map
 
 /***/ },
-/* 558 */
+/* 561 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__typeahead_container_component__ = __webpack_require__(263);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__typeahead_utils__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__typeahead_container_component__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__typeahead_utils__ = __webpack_require__(265);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_from__ = __webpack_require__(898);
@@ -66985,7 +67027,7 @@ var TypeaheadMatch = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_mergeMap__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_add_operator_toArray__ = __webpack_require__(903);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_add_operator_toArray___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_rxjs_add_operator_toArray__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__typeahead_match_class__ = __webpack_require__(557);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__typeahead_match_class__ = __webpack_require__(560);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__component_loader__ = __webpack_require__(64);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TypeaheadDirective; });
 
@@ -67317,14 +67359,14 @@ var TypeaheadDirective = (function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
 
 /***/ },
-/* 559 */
+/* 562 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__typeahead_container_component__ = __webpack_require__(263);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__typeahead_directive__ = __webpack_require__(558);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__typeahead_container_component__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__typeahead_directive__ = __webpack_require__(561);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__component_loader__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__positioning__ = __webpack_require__(88);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return TypeaheadModule; });
@@ -67359,15 +67401,15 @@ var TypeaheadModule = (function () {
 //# sourceMappingURL=typeahead.module.js.map
 
 /***/ },
-/* 560 */
+/* 563 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__decorators__ = __webpack_require__(265);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__linked_list_class__ = __webpack_require__(874);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__decorators__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__linked_list_class__ = __webpack_require__(882);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng2_bootstrap_config__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__trigger_class__ = __webpack_require__(561);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_class__ = __webpack_require__(562);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__trigger_class__ = __webpack_require__(564);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_class__ = __webpack_require__(565);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "e", function() { return __WEBPACK_IMPORTED_MODULE_0__decorators__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__linked_list_class__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__ng2_bootstrap_config__["a"]; });
@@ -67381,7 +67423,7 @@ var TypeaheadModule = (function () {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 561 */
+/* 564 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67401,7 +67443,7 @@ var Trigger = (function () {
 //# sourceMappingURL=trigger.class.js.map
 
 /***/ },
-/* 562 */
+/* 565 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67428,46 +67470,6 @@ var Utils = (function () {
     return Utils;
 }());
 //# sourceMappingURL=utils.class.js.map
-
-/***/ },
-/* 563 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var select_component_1 = __webpack_require__(881);
-exports.SelectComponent = select_component_1.SelectComponent;
-var multiple_component_1 = __webpack_require__(878);
-exports.MultipleComponent = multiple_component_1.MultipleComponent;
-var request_component_1 = __webpack_require__(880);
-exports.RequestComponent = request_component_1.RequestComponent;
-var request_multiple_component_1 = __webpack_require__(879);
-exports.RequestMultipleComponent = request_multiple_component_1.RequestMultipleComponent;
-//# sourceMappingURL=index.js.map
-
-/***/ },
-/* 564 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var inner_template_directive_1 = __webpack_require__(884);
-exports.InnerTemplateDirective = inner_template_directive_1.InnerTemplateDirective;
-var highlight_directive_1 = __webpack_require__(882);
-exports.HighlightDirective = highlight_directive_1.HighlightDirective;
-var infinite_scroll_directive_1 = __webpack_require__(883);
-exports.InfiniteScrollDirective = infinite_scroll_directive_1.InfiniteScrollDirective;
-//# sourceMappingURL=index.js.map
-
-/***/ },
-/* 565 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var select_service_1 = __webpack_require__(266);
-exports.SelectService = select_service_1.SelectService;
-//# sourceMappingURL=index.js.map
 
 /***/ },
 /* 566 */
@@ -68486,19 +68488,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(679);
-var app_routes_1 = __webpack_require__(689);
-var app_component_1 = __webpack_require__(688);
+var app_routes_1 = __webpack_require__(697);
+var app_component_1 = __webpack_require__(696);
 var forms_1 = __webpack_require__(17);
 var platform_browser_1 = __webpack_require__(145);
 var http_1 = __webpack_require__(340);
-var simples_component_1 = __webpack_require__(367);
-var log_component_1 = __webpack_require__(690);
-var ng2_select2_bootstrap_1 = __webpack_require__(876);
-var ng2_bootstrap_1 = __webpack_require__(860);
-var instalacao_component_1 = __webpack_require__(363);
-var multiple_component_1 = __webpack_require__(364);
-var request_component_1 = __webpack_require__(366);
-var request_multiple_component_1 = __webpack_require__(365);
+var simples_component_1 = __webpack_require__(370);
+var log_component_1 = __webpack_require__(698);
+var ng2_select2_bootstrap_1 = __webpack_require__(884);
+var ng2_bootstrap_1 = __webpack_require__(868);
+var instalacao_component_1 = __webpack_require__(366);
+var multiple_component_1 = __webpack_require__(367);
+var request_component_1 = __webpack_require__(369);
+var request_multiple_component_1 = __webpack_require__(368);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -68539,29 +68541,29 @@ exports.AppModule = AppModule;
 "use strict";
 // Polyfills
 "use strict";
-__webpack_require__(851); // Internet Explorer 9 support
+__webpack_require__(859); // Internet Explorer 9 support
 // import 'core-js/es6';
 // Added parts of es6 which are necessary for your project or your browser support requirements.
-__webpack_require__(704);
-__webpack_require__(697);
-__webpack_require__(693);
-__webpack_require__(699);
-__webpack_require__(698);
-__webpack_require__(696);
-__webpack_require__(695);
-__webpack_require__(703);
-__webpack_require__(692);
-__webpack_require__(691);
-__webpack_require__(701);
-__webpack_require__(694);
-__webpack_require__(702);
-__webpack_require__(706);
-__webpack_require__(707);
+__webpack_require__(712);
 __webpack_require__(705);
+__webpack_require__(701);
+__webpack_require__(707);
+__webpack_require__(706);
+__webpack_require__(704);
+__webpack_require__(703);
+__webpack_require__(711);
 __webpack_require__(700);
+__webpack_require__(699);
+__webpack_require__(709);
+__webpack_require__(702);
+__webpack_require__(710);
+__webpack_require__(714);
+__webpack_require__(715);
+__webpack_require__(713);
+__webpack_require__(708);
 // see issue https://github.com/AngularClass/angular2-webpack-starter/issues/709
 // import 'core-js/es6/promise';
-__webpack_require__(708);
+__webpack_require__(716);
 __webpack_require__(924);
 __webpack_require__(923);
 
@@ -81104,6 +81106,1278 @@ function getResolve(route) {
 
 "use strict";
 "use strict";
+var select_1 = __webpack_require__(106);
+exports.Select = select_1.Select;
+
+
+/***/ },
+/* 689 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var forms_1 = __webpack_require__(17);
+var select_1 = __webpack_require__(106);
+var MultipleComponent = (function (_super) {
+    __extends(MultipleComponent, _super);
+    function MultipleComponent(elementRef, zone) {
+        _super.call(this, elementRef, zone);
+        this.elementRef = elementRef;
+        this.zone = zone;
+        this.name = '';
+        this.classe = '';
+        this.placeholder = 'Selecione';
+        this.minimoCaracteres = 0;
+        this.disabled = false;
+        this.indiceId = 'id';
+        this.indiceNome = 'nome';
+        this.change = new core_1.EventEmitter();
+        this.onSelecionarItem = new core_1.EventEmitter();
+        this.onBuscar = new core_1.EventEmitter();
+        this.onApagar = new core_1.EventEmitter();
+        this.onRemoverItem = new core_1.EventEmitter();
+        this.onAbrir = new core_1.EventEmitter();
+        this.onFechar = new core_1.EventEmitter();
+        this.onLimpar = new core_1.EventEmitter();
+    }
+    Object.defineProperty(MultipleComponent.prototype, "valores", {
+        set: function (valor) {
+            this._valores = valor;
+            this.valoresExibir = valor;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MultipleComponent.prototype.abrir = function () {
+        if (this.disabled) {
+            return false;
+        }
+        if (this.aberto) {
+            this.fechar();
+        }
+        else {
+            this.aberto = true;
+            if (!this.data) {
+                this.data = [];
+            }
+            if (!this._value) {
+                this._value = [];
+            }
+            this.valorPesquisado = '';
+            this.campoBusca.nativeElement.focus();
+            this.setFocus(true);
+            this.onAbrir.emit(true);
+            this.buscar();
+        }
+    };
+    MultipleComponent.prototype.selecionar = function (item) {
+        var _this = this;
+        //verifica se ja foi adicionado
+        var jaExiste = this.data.findIndex(function (procurar) { return procurar[_this.indiceId] == item[_this.indiceId]; });
+        if (jaExiste === -1) {
+            this.data.push(item);
+        }
+        this.updateValue(this.data);
+        this.onSelecionarItem.emit(item);
+        this.fechar();
+        //apaga campo de busca
+        this.campoBusca.nativeElement.value = '';
+    };
+    MultipleComponent.prototype.getSomenteId = function () {
+        var ids = [];
+        for (var _i = 0, _a = this.data; _i < _a.length; _i++) {
+            var item = _a[_i];
+            ids.push(item[this.indiceId]);
+        }
+        return ids;
+    };
+    MultipleComponent.prototype.limpar = function (event) {
+        event.stopPropagation();
+        this.data = null;
+        this.updateValue(null);
+        this.onLimpar.emit(true);
+        this.aberto = false;
+        this.abrir();
+    };
+    MultipleComponent.prototype.remove = function (item, event) {
+        _super.prototype.remove.call(this, item, event);
+        this.updateValue(this.data);
+    };
+    MultipleComponent.prototype.buscar = function () {
+        var _this = this;
+        if (this.validaCaracteresMinimo() == false) {
+            return false;
+        }
+        this.onBuscar.emit(this.valorPesquisado);
+        this.valoresExibir = this._valores.filter(function (item) {
+            var pesquisa = item[_this.indiceNome].toString().toLocaleLowerCase().indexOf(_this.valorPesquisado.toString().toLocaleLowerCase());
+            //verifica se o item da lista original ja n esta add na lista data
+            var jaFoiAdicionado = _this.data.findIndex(function (procurar) { return procurar[_this.indiceId] == item[_this.indiceId]; });
+            if (pesquisa !== -1 && jaFoiAdicionado === -1) {
+                return item;
+            }
+        });
+    };
+    Object.defineProperty(MultipleComponent.prototype, "value", {
+        get: function () { return this._value; },
+        set: function (v) {
+            if (v !== this._value) {
+                this._value = (v);
+                this._onChangeCallback(v);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ;
+    MultipleComponent.prototype.writeValue = function (value) {
+        this.data = value;
+        this._value = value;
+    };
+    MultipleComponent.prototype.updateValue = function (value) {
+        var _this = this;
+        this.zone.run(function () {
+            _this._value = value;
+            _this.onChange(value);
+            _this._onTouchedCallback();
+            _this.change.emit(value);
+        });
+    };
+    MultipleComponent.prototype.onChange = function (_) { };
+    MultipleComponent.prototype.onTouched = function () { };
+    MultipleComponent.prototype.registerOnChange = function (fn) { this.onChange = fn; };
+    MultipleComponent.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+    MultipleComponent.prototype._onChangeCallback = function (_) { };
+    MultipleComponent.prototype._onTouchedCallback = function () { };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], MultipleComponent.prototype, "name", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], MultipleComponent.prototype, "classe", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], MultipleComponent.prototype, "placeholder", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], MultipleComponent.prototype, "minimoCaracteres", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_a = typeof core_1.TemplateRef !== 'undefined' && core_1.TemplateRef) === 'function' && _a) || Object)
+    ], MultipleComponent.prototype, "templateResultado", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_b = typeof core_1.TemplateRef !== 'undefined' && core_1.TemplateRef) === 'function' && _b) || Object)
+    ], MultipleComponent.prototype, "templateSelecionado", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_c = typeof core_1.TemplateRef !== 'undefined' && core_1.TemplateRef) === 'function' && _c) || Object)
+    ], MultipleComponent.prototype, "templateSemResultado", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], MultipleComponent.prototype, "disabled", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], MultipleComponent.prototype, "indiceId", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], MultipleComponent.prototype, "indiceNome", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object), 
+        __metadata('design:paramtypes', [Object])
+    ], MultipleComponent.prototype, "valores", null);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], MultipleComponent.prototype, "change", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], MultipleComponent.prototype, "onSelecionarItem", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], MultipleComponent.prototype, "onBuscar", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], MultipleComponent.prototype, "onApagar", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], MultipleComponent.prototype, "onRemoverItem", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], MultipleComponent.prototype, "onAbrir", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], MultipleComponent.prototype, "onFechar", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], MultipleComponent.prototype, "onLimpar", void 0);
+    __decorate([
+        core_1.ViewChild('campoBusca'), 
+        __metadata('design:type', (typeof (_d = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _d) || Object)
+    ], MultipleComponent.prototype, "campoBusca", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], MultipleComponent.prototype, "value", null);
+    MultipleComponent = __decorate([
+        core_1.Component({
+            selector: 'select2-multiple',
+            template: "\n    <!--select simples-->\n    <span [ngClass]=\"getClassGeral()\" dir=\"ltr\" (click)=\"abrir()\">\n        <span class=\"selection\">\n            <span class=\"select2-selection select2-selection--multiple\" role=\"combobox\" aria-haspopup=\"true\" aria-expanded=\"false\" tabindex=\"-1\">\n            <ul class=\"select2-selection__rendered\">\n                <li [hidden]=\"data\" [innerHtml]=\"placeholder\"  class=\"select2-selection__placeholder\"></li>\n                <span [hidden]=\"!data\" >\n                    <span [inner-template]=\"templateSelecionado || templateSelecionadoInterno\" [item]=\"this\"></span>\n                </span>\n                <li class=\"select2-selection__arrow\" role=\"presentation\"><b role=\"presentation\"></b></li>\n            </ul>\n        </span>\n        </span>\n        <span class=\"dropdown-wrapper\" aria-hidden=\"true\"></span>\n    </span>\n    \n    <!--quando clicar campo-->\n    <div [hidden]=\"!aberto\">\n        <span class=\"select2-container select2-container--bootstrap select2-container--open\">\n            <span class=\"select2-dropdown select2-dropdown--below\" dir=\"ltr\" >\n                <span class=\"select2-search select2-search--dropdown\">\n                    <input (keyup)=\"keyup($event.target.value)\" #campoBusca placeholder=\"Digite algo\" autofocus class=\"select2-search__field\" type=\"search\" tabindex=\"0\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"textbox\">\n                </span>\n                <span class=\"select2-results\">\n                    <ul class=\"select2-results__options\" role=\"tree\"  aria-expanded=\"true\" aria-hidden=\"false\">\n                        <span [hidden]=\"exibirMensagemCaracteresMinimo\">\n                            <span [hidden]=\"valoresExibir.length == 0\" >\n                                <li *ngFor=\"let item of valoresExibir\" (click)=\"selecionar(item)\" class=\"select2-results__option\" highlight=\"select2-results__option--highlighted\" role=\"treeitem\" [attr.aria-selected]=\"((_value) && (item[indiceId] == _value[indiceId])) ? true : false\">\n                                    <span  [inner-template]=\"templateResultado || templateResultadoInterno\" [item]=\"item\"></span>\n                                </li>\n                            </span>\n                            <li [hidden]=\"valoresExibir.length > 0\" class=\"select2-results__option select2-results__message\" aria-live=\"assertive\">\n                                <span  [inner-template]=\"templateSemResultado || templateSemResultadoInterno\" [item]=\"{pesquisa:valorPesquisado}\"></span>\n                            </li>\n                        </span>\n                        <li [hidden]=\"exibirMensagemCaracteresMinimo == false\" class=\"select2-results__option select2-results__message\">\n                            Digite {{minimoCaracteres}} ou mais caracteres para realizar a busca\n                        </li>\n                    </ul>\n                </span>\n            </span>\n        </span>\n    </div>\n    \n    \n    \n    <template #templateSemResultadoInterno>\n        Nenhum resultado encontrado\n    </template>\n    <template #templateResultadoInterno let-valor>\n        {{valor[indiceNome]}}\n    </template>\n    <template #templateSelecionadoInterno let-valor>\n        <span *ngIf=\"valor\">\n            <li *ngFor=\"let item of valor.data\" class=\"select2-selection__choice\">\n                <span class=\"select2-selection__choice__remove\" role=\"presentation\" (click)=\"valor.remove(item, $event)\">\u00D7</span>\n                {{item[indiceNome]}}\n            </li>\n        </span>\n    </template>\n\n    \n    ",
+            providers: [
+                {
+                    provide: forms_1.NG_VALUE_ACCESSOR,
+                    useExisting: core_1.forwardRef(function () { return MultipleComponent; }),
+                    multi: true
+                }
+            ],
+            host: {
+                '(document:click)': 'clickForaComponent($event)',
+                '(focus)': 'setFocus(true)',
+                '(blur)': 'setFocus(false)',
+            },
+        }), 
+        __metadata('design:paramtypes', [(typeof (_e = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _e) || Object, (typeof (_f = typeof core_1.NgZone !== 'undefined' && core_1.NgZone) === 'function' && _f) || Object])
+    ], MultipleComponent);
+    return MultipleComponent;
+    var _a, _b, _c, _d, _e, _f;
+}(select_1.Select));
+exports.MultipleComponent = MultipleComponent;
+
+
+/***/ },
+/* 690 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var forms_1 = __webpack_require__(17);
+var select_1 = __webpack_require__(106);
+var select_service_1 = __webpack_require__(223);
+var RequestMultipleComponent = (function (_super) {
+    __extends(RequestMultipleComponent, _super);
+    function RequestMultipleComponent(elementRef, zone, requisicao, renderer) {
+        _super.call(this, elementRef, zone);
+        this.elementRef = elementRef;
+        this.zone = zone;
+        this.requisicao = requisicao;
+        this.renderer = renderer;
+        this.name = '';
+        this.classe = '';
+        this.placeholder = 'Selecione';
+        this.minimoCaracteres = 0;
+        this.disabled = false;
+        this.indiceId = 'id';
+        this.indiceNome = 'nome';
+        this.change = new core_1.EventEmitter();
+        this.onSelecionarItem = new core_1.EventEmitter();
+        this.onBuscar = new core_1.EventEmitter();
+        this.onApagar = new core_1.EventEmitter();
+        this.onRemoverItem = new core_1.EventEmitter();
+        this.onAbrir = new core_1.EventEmitter();
+        this.onFechar = new core_1.EventEmitter();
+        this.onLimpar = new core_1.EventEmitter();
+        this.onErro = new core_1.EventEmitter();
+        this.onProcessaResultado = new core_1.EventEmitter();
+        this.onProcessaParametros = new core_1.EventEmitter();
+        this.pagina = 1;
+        this.quantidadePadrao = 0;
+        this.buscando = false;
+        this.semResultado = false;
+    }
+    RequestMultipleComponent.prototype.ngOnDestroy = function () {
+        if (this.subscrebeBusca) {
+            this.subscrebeBusca.unsubscribe();
+        }
+    };
+    RequestMultipleComponent.prototype.abrir = function () {
+        if (this.disabled) {
+            return false;
+        }
+        if (this.aberto) {
+            this.fechar();
+        }
+        else {
+            this.aberto = true;
+            if (!this.data) {
+                this.data = [];
+            }
+            this.onAbrir.emit(true);
+            // this.renderer.invokeElementMethod(this.campoBusca.nativeElement, 'focus', []);
+            this.pagina = 1;
+            this.semResultado = false;
+            this.quantidadePadrao = 0;
+            this.valorPesquisado = '';
+            this.campoBusca.nativeElement.value = '';
+            this.setFocus(true);
+            this.buscar();
+        }
+    };
+    RequestMultipleComponent.prototype.keyup = function (valor) {
+        if (this.valorPesquisado == valor) {
+            return null;
+        }
+        this.valoresExibir = [];
+        this.valorPesquisado = valor;
+        this.pagina = 1;
+        this.buscar();
+    };
+    RequestMultipleComponent.prototype.selecionar = function (item) {
+        var _this = this;
+        var jaExiste = this.data.findIndex(function (procurar) { return procurar[_this.indiceId] == item[_this.indiceId]; });
+        if (jaExiste === -1) {
+            this.data.push(item);
+        }
+        this.updateValue(this.data);
+        this.onSelecionarItem.emit(item);
+        this.fechar();
+        //apaga campo de busca
+        this.campoBusca.nativeElement.value = '';
+    };
+    RequestMultipleComponent.prototype.getSomenteId = function () {
+        var ids = [];
+        for (var _i = 0, _a = this.data; _i < _a.length; _i++) {
+            var item = _a[_i];
+            ids.push(item[this.indiceId]);
+        }
+        return ids;
+    };
+    RequestMultipleComponent.prototype.limpar = function () {
+        this.data = [];
+        this.updateValue(null);
+        this.aberto = false;
+        this.onLimpar.emit(true);
+        this.abrir();
+    };
+    RequestMultipleComponent.prototype.buscar = function () {
+        var _this = this;
+        if (this.validaCaracteresMinimo() == false) {
+            return false;
+        }
+        this.buscando = true;
+        // this.valoresExibir = this._valores.filter(item => item[this.indiceNome].indexOf(this.valorPesquisado) !== -1);
+        var parametros = {
+            enviado: {
+                pagina: this.pagina,
+                valorPesquisado: this.valorPesquisado,
+                idSelecionados: this.getSomenteId(),
+            },
+            retorno: {}
+        };
+        //mata o subscribe
+        this.ngOnDestroy();
+        this.onBuscar.emit(this.valorPesquisado);
+        this.onProcessaParametros.emit(parametros);
+        this.subscrebeBusca = this.requisicao.getResultados(this.url, parametros.retorno).subscribe(function (resultado) {
+            var objEmit = { enviado: resultado, retorno: [] };
+            _this.onProcessaResultado.emit(objEmit);
+            var exibirResultado = objEmit.retorno;
+            if (Array.isArray(exibirResultado)) {
+                if (_this.quantidadePadrao == 0) {
+                    _this.quantidadePadrao = exibirResultado.length;
+                }
+                if (_this.quantidadePadrao != exibirResultado.length) {
+                    _this.semResultado = true;
+                }
+                _this.valoresExibir = _this.valoresExibir.concat(exibirResultado);
+            }
+            else {
+                console.log('Ng2Select2Bootstrap: retorno não é um select', exibirResultado);
+            }
+            _this.buscando = false;
+        }, function (erro) {
+            _this.onErro.emit(erro);
+            _this.buscando = false;
+        });
+    };
+    RequestMultipleComponent.prototype.onScroll = function () {
+        if (!this.buscando && !this.semResultado) {
+            this.pagina++;
+            this.buscar();
+        }
+    };
+    Object.defineProperty(RequestMultipleComponent.prototype, "value", {
+        get: function () { return this._value; },
+        set: function (v) {
+            if (v !== this._value) {
+                this._value = v;
+                this._onChangeCallback(v);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ;
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], RequestMultipleComponent.prototype, "name", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], RequestMultipleComponent.prototype, "classe", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], RequestMultipleComponent.prototype, "placeholder", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], RequestMultipleComponent.prototype, "minimoCaracteres", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_a = typeof core_1.TemplateRef !== 'undefined' && core_1.TemplateRef) === 'function' && _a) || Object)
+    ], RequestMultipleComponent.prototype, "templateResultado", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_b = typeof core_1.TemplateRef !== 'undefined' && core_1.TemplateRef) === 'function' && _b) || Object)
+    ], RequestMultipleComponent.prototype, "templateSelecionado", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_c = typeof core_1.TemplateRef !== 'undefined' && core_1.TemplateRef) === 'function' && _c) || Object)
+    ], RequestMultipleComponent.prototype, "templateSemResultado", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_d = typeof core_1.TemplateRef !== 'undefined' && core_1.TemplateRef) === 'function' && _d) || Object)
+    ], RequestMultipleComponent.prototype, "templateBuscando", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], RequestMultipleComponent.prototype, "disabled", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], RequestMultipleComponent.prototype, "indiceId", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], RequestMultipleComponent.prototype, "indiceNome", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], RequestMultipleComponent.prototype, "url", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestMultipleComponent.prototype, "change", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestMultipleComponent.prototype, "onSelecionarItem", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestMultipleComponent.prototype, "onBuscar", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestMultipleComponent.prototype, "onApagar", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestMultipleComponent.prototype, "onRemoverItem", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestMultipleComponent.prototype, "onAbrir", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestMultipleComponent.prototype, "onFechar", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestMultipleComponent.prototype, "onLimpar", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestMultipleComponent.prototype, "onErro", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestMultipleComponent.prototype, "onProcessaResultado", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestMultipleComponent.prototype, "onProcessaParametros", void 0);
+    __decorate([
+        core_1.ViewChild('campoBusca'), 
+        __metadata('design:type', (typeof (_e = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _e) || Object)
+    ], RequestMultipleComponent.prototype, "campoBusca", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], RequestMultipleComponent.prototype, "value", null);
+    RequestMultipleComponent = __decorate([
+        core_1.Component({
+            selector: 'select2-request-multiple',
+            template: "\n    <span [ngClass]=\"getClassGeral()\"  dir=\"ltr\" (click)=\"abrir()\">\n        <span class=\"selection\">\n            <span class=\"select2-selection select2-selection--multiple\" role=\"combobox\" aria-haspopup=\"true\" aria-expanded=\"false\" tabindex=\"-1\">\n            <ul class=\"select2-selection__rendered\">\n                <li [hidden]=\"data\" [innerHtml]=\"placeholder\"  class=\"select2-selection__placeholder\"></li>\n                <span [hidden]=\"!data\" >\n                    <span [inner-template]=\"templateSelecionado || templateSelecionadoInterno\" [item]=\"this\"></span>\n                </span>\n                <li class=\"select2-selection__arrow\" role=\"presentation\"><b role=\"presentation\"></b></li>\n            </ul>\n        </span>\n        </span>\n        <span class=\"dropdown-wrapper\" aria-hidden=\"true\"></span>\n    </span>\n    \n    <!--quando clicar campo-->\n    <div [hidden]=\"!aberto\">\n        <span class=\"select2-container select2-container--bootstrap select2-container--open\">\n            <span class=\"select2-dropdown select2-dropdown--below\" dir=\"ltr\" >\n                <span class=\"select2-search select2-search--dropdown\">\n                    <input (keyup)=\"keyup($event.target.value)\" #campoBusca placeholder=\"Digite algo\" autofocus class=\"select2-search__field\" type=\"search\" tabindex=\"0\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"textbox\">\n                </span>\n                <span class=\"select2-results\" aria-expanded=\"true\" aria-hidden=\"false\">\n                    <ul \n                        class=\"select2-results__options\" \n                        role=\"tree\"  \n                        infinite-scroll\n                        scroll-distance=\"0,30\"\n                        (OnScrollMethod)=\"onScroll()\"\n                        style=\" overflow: auto!important;\"\n                    >\n                        <span [hidden]=\"exibirMensagemCaracteresMinimo\">\n                            <span [hidden]=\"valoresExibir.length == 0\" >\n                                <li *ngFor=\"let item of valoresExibir\" (click)=\"selecionar(item)\" class=\"select2-results__option\" highlight=\"select2-results__option--highlighted\" role=\"treeitem\" [attr.aria-selected]=\"((_value) && (item[indiceId] == _value[indiceId])) ? true : false\">\n                                    <span  [inner-template]=\"templateResultado || templateResultadoInterno\" [item]=\"item\"></span>\n                                </li>\n                            </span>\n                            <li [hidden]=\"buscando || valoresExibir.length > 0\" class=\"select2-results__option select2-results__message\" aria-live=\"assertive\">\n                                <span  [inner-template]=\"templateSemResultado || templateSemResultadoInterno\" [item]=\"{pesquisa:valorPesquisado}\"></span>\n                            </li>\n                            <li [hidden]=\"!buscando\">\n                                <span [inner-template]=\"templateBuscando || templateBuscandoInterno\"></span>\n                            </li>\n                        </span>\n                        <li [hidden]=\"exibirMensagemCaracteresMinimo == false\" class=\"select2-results__option select2-results__message\">\n                            Digite {{minimoCaracteres}} ou mais caracteres para realizar a busca\n                        </li>\n                    </ul>\n                </span>\n            </span>\n        </span>\n    </div>\n    \n    \n    \n    <template #templateSemResultadoInterno>\n        Nenhum resultado encontrado\n    </template>\n    <template #templateResultadoInterno let-valor>\n        {{valor[indiceNome]}}\n    </template>\n    <template #templateSelecionadoInterno let-valor>\n       <span *ngIf=\"valor\">\n            <li *ngFor=\"let item of valor.data\" class=\"select2-selection__choice\">\n                <span class=\"select2-selection__choice__remove\" role=\"presentation\" (click)=\"valor.remove(item, $event)\">\u00D7</span>\n                {{item[indiceNome]}}\n            </li>\n        </span>\n    </template>\n    <template #templateBuscandoInterno>\n        <span class=\"fa fa-5x fa-refresh fa-spin\" style=\" width: auto;margin:auto 50% !important\"></span>\n    </template>\n    \n    ",
+            providers: [
+                {
+                    provide: forms_1.NG_VALUE_ACCESSOR,
+                    useExisting: core_1.forwardRef(function () { return RequestMultipleComponent; }),
+                    multi: true
+                }
+            ],
+            host: {
+                '(document:click)': 'clickForaComponent($event)',
+                '(focus)': 'setFocus(true)',
+                '(blur)': 'setFocus(false)',
+            },
+        }), 
+        __metadata('design:paramtypes', [(typeof (_f = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _f) || Object, (typeof (_g = typeof core_1.NgZone !== 'undefined' && core_1.NgZone) === 'function' && _g) || Object, (typeof (_h = typeof select_service_1.SelectService !== 'undefined' && select_service_1.SelectService) === 'function' && _h) || Object, (typeof (_j = typeof core_1.Renderer !== 'undefined' && core_1.Renderer) === 'function' && _j) || Object])
+    ], RequestMultipleComponent);
+    return RequestMultipleComponent;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+}(select_1.Select));
+exports.RequestMultipleComponent = RequestMultipleComponent;
+
+
+/***/ },
+/* 691 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var forms_1 = __webpack_require__(17);
+var select_1 = __webpack_require__(106);
+var select_service_1 = __webpack_require__(223);
+var RequestComponent = (function (_super) {
+    __extends(RequestComponent, _super);
+    function RequestComponent(elementRef, zone, requisicao, renderer) {
+        _super.call(this, elementRef, zone);
+        this.elementRef = elementRef;
+        this.zone = zone;
+        this.requisicao = requisicao;
+        this.renderer = renderer;
+        this.name = '';
+        this.classe = '';
+        this.minimoCaracteres = 0;
+        this.placeholder = 'Selecione';
+        this.disabled = false;
+        this.indiceId = 'id';
+        this.indiceNome = 'nome';
+        this.change = new core_1.EventEmitter();
+        this.onSelecionarItem = new core_1.EventEmitter();
+        this.onBuscar = new core_1.EventEmitter();
+        this.onApagar = new core_1.EventEmitter();
+        this.onRemoverItem = new core_1.EventEmitter();
+        this.onAbrir = new core_1.EventEmitter();
+        this.onFechar = new core_1.EventEmitter();
+        this.onLimpar = new core_1.EventEmitter();
+        this.onErro = new core_1.EventEmitter();
+        this.onProcessaResultado = new core_1.EventEmitter();
+        this.onProcessaParametros = new core_1.EventEmitter();
+        this.pagina = 1;
+        this.quantidadePadrao = 0;
+        this.buscando = false;
+        this.semResultado = false;
+    }
+    RequestComponent.prototype.ngOnDestroy = function () {
+        if (this.subscrebeBusca) {
+            this.subscrebeBusca.unsubscribe();
+        }
+    };
+    RequestComponent.prototype.abrir = function () {
+        if (this.disabled) {
+            return false;
+        }
+        if (this.aberto) {
+            this.fechar();
+        }
+        else {
+            this.setFocus(true);
+            this.aberto = true;
+            // this.renderer.invokeElementMethod(this.campoBusca.nativeElement, 'focus', []);
+            this.pagina = 1;
+            this.semResultado = false;
+            this.quantidadePadrao = 0;
+            this.valorPesquisado = '';
+            this.campoBusca.nativeElement.value = '';
+            this.setFocus(true);
+            this.onAbrir.emit(true);
+            this.buscar();
+        }
+    };
+    RequestComponent.prototype.keyup = function (valor) {
+        if (this.valorPesquisado == valor) {
+            return null;
+        }
+        this.valoresExibir = [];
+        this.valorPesquisado = valor;
+        this.pagina = 1;
+        this.buscar();
+    };
+    RequestComponent.prototype.selecionar = function (item) {
+        this.data = item;
+        _super.prototype.selecionar.call(this, item);
+    };
+    RequestComponent.prototype.limpar = function (event) {
+        event.stopPropagation();
+        this.data = null;
+        this.updateValue(null);
+        this.onLimpar.emit(true);
+        if (this.aberto) {
+            this.fechar();
+        }
+        else {
+            this.abrir();
+        }
+    };
+    RequestComponent.prototype.buscar = function () {
+        var _this = this;
+        if (this.validaCaracteresMinimo() == false) {
+            return false;
+        }
+        this.buscando = true;
+        // this.valoresExibir = this._valores.filter(item => item[this.indiceNome].indexOf(this.valorPesquisado) !== -1);
+        var parametros = {
+            enviado: {
+                pagina: this.pagina,
+                valorPesquisado: this.valorPesquisado,
+            },
+            retorno: {}
+        };
+        //mata o subscribe
+        this.ngOnDestroy();
+        this.onBuscar.emit(this.valorPesquisado);
+        this.onProcessaParametros.emit(parametros);
+        this.subscrebeBusca = this.requisicao.getResultados(this.url, parametros.retorno).subscribe(function (resultado) {
+            var objEmit = { enviado: resultado, retorno: [] };
+            _this.onProcessaResultado.emit(objEmit);
+            var exibirResultado = objEmit.retorno;
+            if (Array.isArray(exibirResultado)) {
+                if (_this.quantidadePadrao == 0) {
+                    _this.quantidadePadrao = exibirResultado.length;
+                }
+                if (_this.quantidadePadrao != exibirResultado.length) {
+                    _this.semResultado = true;
+                }
+                _this.valoresExibir = _this.valoresExibir.concat(exibirResultado);
+            }
+            else {
+                console.log('Ng2Select2Bootstrap: retorno não é um select', exibirResultado);
+            }
+            _this.buscando = false;
+        }, function (erro) {
+            console.log(erro);
+            _this.onErro.emit(erro);
+            _this.buscando = false;
+        });
+    };
+    RequestComponent.prototype.onScroll = function () {
+        if (!this.buscando && !this.semResultado) {
+            this.pagina++;
+            this.buscar();
+        }
+    };
+    Object.defineProperty(RequestComponent.prototype, "value", {
+        get: function () { return this._value; },
+        set: function (v) {
+            if (v !== this._value) {
+                this._value = v;
+                this._onChangeCallback(v);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ;
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], RequestComponent.prototype, "name", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], RequestComponent.prototype, "classe", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], RequestComponent.prototype, "tabIndex", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], RequestComponent.prototype, "minimoCaracteres", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], RequestComponent.prototype, "placeholder", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_a = typeof core_1.TemplateRef !== 'undefined' && core_1.TemplateRef) === 'function' && _a) || Object)
+    ], RequestComponent.prototype, "templateResultado", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_b = typeof core_1.TemplateRef !== 'undefined' && core_1.TemplateRef) === 'function' && _b) || Object)
+    ], RequestComponent.prototype, "templateSelecionado", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_c = typeof core_1.TemplateRef !== 'undefined' && core_1.TemplateRef) === 'function' && _c) || Object)
+    ], RequestComponent.prototype, "templateSemResultado", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_d = typeof core_1.TemplateRef !== 'undefined' && core_1.TemplateRef) === 'function' && _d) || Object)
+    ], RequestComponent.prototype, "templateBuscando", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], RequestComponent.prototype, "disabled", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], RequestComponent.prototype, "indiceId", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], RequestComponent.prototype, "indiceNome", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], RequestComponent.prototype, "url", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestComponent.prototype, "change", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestComponent.prototype, "onSelecionarItem", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestComponent.prototype, "onBuscar", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestComponent.prototype, "onApagar", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestComponent.prototype, "onRemoverItem", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestComponent.prototype, "onAbrir", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestComponent.prototype, "onFechar", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestComponent.prototype, "onLimpar", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestComponent.prototype, "onErro", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestComponent.prototype, "onProcessaResultado", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RequestComponent.prototype, "onProcessaParametros", void 0);
+    __decorate([
+        core_1.ViewChild('campoBusca'), 
+        __metadata('design:type', (typeof (_e = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _e) || Object)
+    ], RequestComponent.prototype, "campoBusca", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], RequestComponent.prototype, "value", null);
+    RequestComponent = __decorate([
+        core_1.Component({
+            selector: 'select2-request',
+            template: "\n    <!--select simples-->\n    <span [ngClass]=\"getClassGeral()\" [tabindex]=\"tabIndex\" dir=\"ltr\" (focus)=\"abrir()\" (click)=\"abrir()\">\n        <span class=\"selection\">\n            <!--simples-->\n            <span class=\"select2-selection select2-selection--single\" role=\"combobox\" aria-haspopup=\"true\" aria-expanded=\"false\" tabindex=\"0\">\n                <span class=\"select2-selection__rendered\">\n                    <span [hidden]=\"!data\" (click)=\"limpar($event)\" class=\"select2-selection__clear\">\u00D7</span>\n                    <span [hidden]=\"!data\" [inner-template]=\"templateSelecionado || templateSelecionadoInterno\" [item]=\"data\"></span>\n                    <span [hidden]=\"data\" [innerHtml]=\"placeholder\" class=\"select2-selection__placeholder\"></span>\n    \n                </span>\n                <span class=\"select2-selection__arrow\" role=\"presentation\">\n                    <b role=\"presentation\"></b>\n                </span>\n            </span>\n        </span>\n        <span class=\"dropdown-wrapper\" aria-hidden=\"true\"></span>\n    </span>\n    \n    <!--quando clicar campo-->\n    <div [hidden]=\"!aberto\">\n        <span class=\"select2-container select2-container--bootstrap select2-container--open\">\n            <span class=\"select2-dropdown select2-dropdown--below\" dir=\"ltr\" >\n                <span class=\"select2-search select2-search--dropdown\">\n                    <input (keyup)=\"keyup($event.target.value)\" #campoBusca placeholder=\"Digite algo\" autofocus class=\"select2-search__field\" type=\"search\" tabindex=\"0\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"textbox\">\n                </span>\n                <span class=\"select2-results\" aria-expanded=\"true\" aria-hidden=\"false\">\n                    <ul \n                        class=\"select2-results__options\" \n                        role=\"tree\"  \n                        infinite-scroll\n                        scroll-distance=\"0,30\"\n                        (OnScrollMethod)=\"onScroll()\"\n                        style=\" overflow: auto!important;\"\n                    >\n                        <span [hidden]=\"exibirMensagemCaracteresMinimo\">\n                            <span [hidden]=\"exibirMensagemCaracteresMinimo && valoresExibir.length == 0\" >\n                                <li *ngFor=\"let item of valoresExibir\" (click)=\"selecionar(item)\" class=\"select2-results__option\" highlight=\"select2-results__option--highlighted\" role=\"treeitem\" [attr.aria-selected]=\"((_value) && (item[indiceId] == _value[indiceId])) ? true : false\">\n                                    <span  [inner-template]=\"templateResultado || templateResultadoInterno\" [item]=\"item\"></span>\n                                </li>\n                            </span>\n                            <li [hidden]=\"buscando || valoresExibir.length > 0\" class=\"select2-results__option select2-results__message\" aria-live=\"assertive\">\n                                <span  [inner-template]=\"templateSemResultado || templateSemResultadoInterno\" [item]=\"{pesquisa:valorPesquisado}\"></span>\n                            </li>\n                            <li [hidden]=\"!buscando\">\n                                <span [inner-template]=\"templateBuscando || templateBuscandoInterno\"></span>\n                            </li>\n                        </span>\n                        <li [hidden]=\"exibirMensagemCaracteresMinimo == false\" class=\"select2-results__option select2-results__message\">\n                            Digite {{minimoCaracteres}} ou mais caracteres para realizar a busca\n                        </li>\n                    </ul>\n                </span>\n            </span>\n        </span>\n    </div>\n    \n    \n    \n    <template #templateSemResultadoInterno>\n        Nenhum resultado encontrado\n    </template>\n    <template #templateResultadoInterno let-valor>\n        {{valor[indiceNome]}}\n    </template>\n    <template #templateSelecionadoInterno let-valor>\n        <span *ngIf=\"valor\">\n            {{valor[indiceNome]}}\n        </span>\n    </template>\n    <template #templateBuscandoInterno>\n        <span class=\"fa fa-5x fa-refresh fa-spin\" style=\" width: auto;margin:auto 50% !important\"></span>\n    </template>\n    \n    ",
+            providers: [
+                {
+                    provide: forms_1.NG_VALUE_ACCESSOR,
+                    useExisting: core_1.forwardRef(function () { return RequestComponent; }),
+                    multi: true
+                }
+            ],
+            host: {
+                '(document:click)': 'clickForaComponent($event)',
+                '(focus)': 'abrir()',
+                '(blur)': 'fechar()',
+            },
+        }), 
+        __metadata('design:paramtypes', [(typeof (_f = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _f) || Object, (typeof (_g = typeof core_1.NgZone !== 'undefined' && core_1.NgZone) === 'function' && _g) || Object, (typeof (_h = typeof select_service_1.SelectService !== 'undefined' && select_service_1.SelectService) === 'function' && _h) || Object, (typeof (_j = typeof core_1.Renderer !== 'undefined' && core_1.Renderer) === 'function' && _j) || Object])
+    ], RequestComponent);
+    return RequestComponent;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+}(select_1.Select));
+exports.RequestComponent = RequestComponent;
+
+
+/***/ },
+/* 692 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var forms_1 = __webpack_require__(17);
+var select_1 = __webpack_require__(106);
+var SelectComponent = (function (_super) {
+    __extends(SelectComponent, _super);
+    function SelectComponent(elementRef, zone) {
+        _super.call(this, elementRef, zone);
+        this.elementRef = elementRef;
+        this.zone = zone;
+        this.name = '';
+        this.classe = '';
+        this.placeholder = 'Selecione';
+        this.minimoCaracteres = 0;
+        this.indiceId = 'id';
+        this.indiceNome = 'nome';
+        this.disabled = false;
+        // @Output() change            = new EventEmitter<any>();
+        this.onSelecionarItem = new core_1.EventEmitter();
+        this.onBuscar = new core_1.EventEmitter();
+        this.onApagar = new core_1.EventEmitter();
+        this.onRemoverItem = new core_1.EventEmitter();
+        this.onAbrir = new core_1.EventEmitter();
+        this.onFechar = new core_1.EventEmitter();
+        this.onLimpar = new core_1.EventEmitter();
+    }
+    Object.defineProperty(SelectComponent.prototype, "valores", {
+        set: function (valor) {
+            this._valores = valor;
+            this.valoresExibir = valor;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    SelectComponent.prototype.abrir = function () {
+        if (this.disabled) {
+            return false;
+        }
+        if (this.aberto) {
+            this.fechar();
+        }
+        else {
+            this.aberto = true;
+            this.campoBusca.nativeElement.focus();
+            this.valorPesquisado = '';
+            this.campoBusca.nativeElement.value = '';
+            this.setFocus(true);
+            this.onAbrir.emit(true);
+            this.buscar();
+        }
+    };
+    SelectComponent.prototype.selecionar = function (item) {
+        this.data = item;
+        _super.prototype.selecionar.call(this, item);
+    };
+    SelectComponent.prototype.limpar = function (event) {
+        event.stopPropagation();
+        this.data = null;
+        this.updateValue(null);
+        this.onLimpar.emit(true);
+        if (this.aberto) {
+            this.fechar();
+        }
+        else {
+            this.abrir();
+        }
+    };
+    SelectComponent.prototype.buscar = function () {
+        var _this = this;
+        if (this.validaCaracteresMinimo() == false) {
+            return false;
+        }
+        this.onBuscar.emit(this.valorPesquisado);
+        this.valoresExibir = this._valores.filter(function (item) { return item[_this.indiceNome].toString().toLocaleLowerCase().indexOf(_this.valorPesquisado.toString().toLocaleLowerCase()) !== -1; });
+    };
+    Object.defineProperty(SelectComponent.prototype, "value", {
+        get: function () { return this._value; },
+        set: function (v) {
+            if (v !== this._value) {
+                this._value = v;
+                this._onChangeCallback(v);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ;
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], SelectComponent.prototype, "name", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], SelectComponent.prototype, "classe", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], SelectComponent.prototype, "placeholder", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], SelectComponent.prototype, "minimoCaracteres", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_a = typeof core_1.TemplateRef !== 'undefined' && core_1.TemplateRef) === 'function' && _a) || Object)
+    ], SelectComponent.prototype, "templateResultado", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_b = typeof core_1.TemplateRef !== 'undefined' && core_1.TemplateRef) === 'function' && _b) || Object)
+    ], SelectComponent.prototype, "templateSelecionado", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_c = typeof core_1.TemplateRef !== 'undefined' && core_1.TemplateRef) === 'function' && _c) || Object)
+    ], SelectComponent.prototype, "templateSemResultado", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], SelectComponent.prototype, "indiceId", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], SelectComponent.prototype, "indiceNome", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], SelectComponent.prototype, "disabled", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object), 
+        __metadata('design:paramtypes', [Object])
+    ], SelectComponent.prototype, "valores", null);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], SelectComponent.prototype, "onSelecionarItem", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], SelectComponent.prototype, "onBuscar", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], SelectComponent.prototype, "onApagar", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], SelectComponent.prototype, "onRemoverItem", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], SelectComponent.prototype, "onAbrir", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], SelectComponent.prototype, "onFechar", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], SelectComponent.prototype, "onLimpar", void 0);
+    __decorate([
+        core_1.ViewChild('campoBusca'), 
+        __metadata('design:type', (typeof (_d = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _d) || Object)
+    ], SelectComponent.prototype, "campoBusca", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], SelectComponent.prototype, "value", null);
+    SelectComponent = __decorate([
+        core_1.Component({
+            selector: 'select2-select',
+            template: "\n    <!--select simples-->\n    <span [ngClass]=\"getClassGeral()\" dir=\"ltr\" (click)=\"abrir()\">\n        <span class=\"selection\">\n            <!--simples-->\n            <span class=\"select2-selection select2-selection--single\" role=\"combobox\" aria-haspopup=\"true\" aria-expanded=\"false\" tabindex=\"0\">\n                <span class=\"select2-selection__rendered\">\n                    <span [hidden]=\"!data\" (click)=\"limpar($event)\" class=\"select2-selection__clear\">\u00D7</span>\n                    <span [hidden]=\"!data\" class=\"nao-fechar\" [inner-template]=\"templateSelecionado || templateSelecionadoInterno\" [item]=\"data\"></span>\n                    <span [hidden]=\"data\" [innerHtml]=\"placeholder\" class=\"select2-selection__placeholder\"></span>\n    \n                </span>\n                <span class=\"select2-selection__arrow\" role=\"presentation\">\n                    <b role=\"presentation\"></b>\n                </span>\n            </span>\n        </span>\n        <span class=\"dropdown-wrapper\" aria-hidden=\"true\"></span>\n    </span>\n    \n    <!--quando clicar campo-->\n    <div [hidden]=\"!aberto\">\n        <span class=\"select2-container select2-container--bootstrap select2-container--open\">\n            <span class=\"select2-dropdown select2-dropdown--below\" dir=\"ltr\" >\n                <span class=\"select2-search select2-search--dropdown\">\n                    <input (keyup)=\"keyup($event.target.value)\" #campoBusca placeholder=\"Digite algo\" autofocus class=\"select2-search__field\" type=\"search\" tabindex=\"0\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"textbox\">\n                </span>\n                <span class=\"select2-results\">\n                    <ul class=\"select2-results__options\" role=\"tree\"  aria-expanded=\"true\" aria-hidden=\"false\">\n                        <span [hidden]=\"exibirMensagemCaracteresMinimo\">\n                            <span [hidden]=\"!valoresExibir.length\" >\n                                <li *ngFor=\"let item of valoresExibir\" (click)=\"selecionar(item)\" class=\"select2-results__option\" highlight=\"select2-results__option--highlighted\" role=\"treeitem\" [attr.aria-selected]=\"((_value) && (item[indiceId] == _value[indiceId])) ? true : false\">\n                                    <span  [inner-template]=\"templateResultado || templateResultadoInterno\" [item]=\"item\"></span>\n                                </li>\n                            </span>\n                            <li [hidden]=\"valoresExibir.length\" class=\"select2-results__option select2-results__message\" aria-live=\"assertive\">\n                                <span  [inner-template]=\"templateSemResultado || templateSemResultadoInterno\" [item]=\"{pesquisa:valorPesquisado}\"></span>\n                            </li>\n                        </span>\n                        <li [hidden]=\"exibirMensagemCaracteresMinimo == false\" class=\"select2-results__option select2-results__message\">\n                            Digite {{minimoCaracteres}} ou mais caracteres para realizar a busca\n                        </li>\n                    </ul>\n                </span>\n            </span>\n        </span>\n    </div>\n    \n    \n    \n    <template #templateSemResultadoInterno>\n        Nenhum resultado encontrado\n    </template>\n    <template #templateResultadoInterno let-valor>\n        {{valor[indiceNome]}}\n    </template>\n    <template #templateSelecionadoInterno let-valor>\n        <span *ngIf=\"valor\">\n            {{valor[indiceNome]}}\n        </span>\n    </template>\n\n    \n    ",
+            providers: [
+                {
+                    provide: forms_1.NG_VALUE_ACCESSOR,
+                    useExisting: core_1.forwardRef(function () { return SelectComponent; }),
+                    multi: true
+                }
+            ],
+            host: {
+                '(document:click)': 'clickForaComponent($event)',
+                '(focus)': 'setFocus(true)',
+                '(blur)': 'setFocus(false)',
+            },
+        }), 
+        __metadata('design:paramtypes', [(typeof (_e = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _e) || Object, (typeof (_f = typeof core_1.NgZone !== 'undefined' && core_1.NgZone) === 'function' && _f) || Object])
+    ], SelectComponent);
+    return SelectComponent;
+    var _a, _b, _c, _d, _e, _f;
+}(select_1.Select));
+exports.SelectComponent = SelectComponent;
+
+
+/***/ },
+/* 693 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var HighlightDirective = (function () {
+    function HighlightDirective(elementRef) {
+        this.elementRef = elementRef;
+    }
+    HighlightDirective.prototype.onMouseEnter = function () {
+        this.highlight();
+    };
+    HighlightDirective.prototype.onMouseLeave = function () {
+        this.highlight();
+    };
+    HighlightDirective.prototype.highlight = function () {
+        if (this.elementRef.nativeElement.className.indexOf(this.classe) === -1) {
+            this.elementRef.nativeElement.className += ' ' + this.classe;
+        }
+        else {
+            this.elementRef.nativeElement.classList.remove(this.classe);
+        }
+    };
+    __decorate([
+        core_1.Input('highlight'), 
+        __metadata('design:type', Object)
+    ], HighlightDirective.prototype, "classe", void 0);
+    __decorate([
+        core_1.HostListener('mouseenter'), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', []), 
+        __metadata('design:returntype', void 0)
+    ], HighlightDirective.prototype, "onMouseEnter", null);
+    __decorate([
+        core_1.HostListener('mouseleave'), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', []), 
+        __metadata('design:returntype', void 0)
+    ], HighlightDirective.prototype, "onMouseLeave", null);
+    HighlightDirective = __decorate([
+        core_1.Directive({
+            selector: '[highlight]',
+        }), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
+    ], HighlightDirective);
+    return HighlightDirective;
+    var _a;
+}());
+exports.HighlightDirective = HighlightDirective;
+
+
+/***/ },
+/* 694 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var InfiniteScrollDirective = (function () {
+    function InfiniteScrollDirective(element) {
+        this.element = element;
+        this._count = 0;
+        this.OnScrollMethod = new core_1.EventEmitter();
+        this._element = this.element.nativeElement;
+        if (!this.scrollTrigger) {
+            this.scrollTrigger = 1;
+        }
+    }
+    InfiniteScrollDirective.prototype.onScroll = function () {
+        this._count++;
+        if (this._element.scrollTop + this._element.clientHeight >= this._element.scrollHeight) {
+            this.OnScrollMethod.emit(null);
+        }
+        else {
+            if (this._element.scrollTop + this._element.clientHeight >= (this._element.scrollHeight - (this._element.scrollHeight * this.scrollTrigger))) {
+                this.OnScrollMethod.emit(null);
+            }
+        }
+    };
+    __decorate([
+        core_1.Input('scroll-distance'), 
+        __metadata('design:type', Number)
+    ], InfiniteScrollDirective.prototype, "scrollTrigger", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], InfiniteScrollDirective.prototype, "OnScrollMethod", void 0);
+    InfiniteScrollDirective = __decorate([
+        core_1.Directive({
+            selector: '[infinite-scroll]',
+            host: {
+                '(scroll)': 'onScroll($event)'
+            }
+        }), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
+    ], InfiniteScrollDirective);
+    return InfiniteScrollDirective;
+    var _a;
+}());
+exports.InfiniteScrollDirective = InfiniteScrollDirective;
+
+
+/***/ },
+/* 695 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var InnerTemplateDirective = (function () {
+    function InnerTemplateDirective(viewContainer) {
+        this.viewContainer = viewContainer;
+    }
+    Object.defineProperty(InnerTemplateDirective.prototype, "item", {
+        set: function (item) {
+            this._item = item;
+            if (this.template) {
+                this.template.destroy();
+                this.criaTemplate();
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    InnerTemplateDirective.prototype.ngOnInit = function () {
+        this.criaTemplate();
+    };
+    InnerTemplateDirective.prototype.criaTemplate = function () {
+        if (this.templateRef) {
+            this.template = this.viewContainer.createEmbeddedView(this.templateRef, {
+                '\$implicit': this._item,
+                'index': this.index
+            });
+        }
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object), 
+        __metadata('design:paramtypes', [Object])
+    ], InnerTemplateDirective.prototype, "item", null);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Number)
+    ], InnerTemplateDirective.prototype, "index", void 0);
+    __decorate([
+        core_1.Input('inner-template'), 
+        __metadata('design:type', (typeof (_a = typeof core_1.TemplateRef !== 'undefined' && core_1.TemplateRef) === 'function' && _a) || Object)
+    ], InnerTemplateDirective.prototype, "templateRef", void 0);
+    InnerTemplateDirective = __decorate([
+        core_1.Directive({
+            selector: '[inner-template]'
+        }), 
+        __metadata('design:paramtypes', [(typeof (_b = typeof core_1.ViewContainerRef !== 'undefined' && core_1.ViewContainerRef) === 'function' && _b) || Object])
+    ], InnerTemplateDirective);
+    return InnerTemplateDirective;
+    var _a, _b;
+}());
+exports.InnerTemplateDirective = InnerTemplateDirective;
+
+
+/***/ },
+/* 696 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -81130,16 +82404,16 @@ exports.AppComponent = AppComponent;
 
 
 /***/ },
-/* 689 */
+/* 697 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
-var simples_component_1 = __webpack_require__(367);
-var instalacao_component_1 = __webpack_require__(363);
-var multiple_component_1 = __webpack_require__(364);
-var request_component_1 = __webpack_require__(366);
-var request_multiple_component_1 = __webpack_require__(365);
+var simples_component_1 = __webpack_require__(370);
+var instalacao_component_1 = __webpack_require__(366);
+var multiple_component_1 = __webpack_require__(367);
+var request_component_1 = __webpack_require__(369);
+var request_multiple_component_1 = __webpack_require__(368);
 exports.rootRouterConfig = [
     { path: '', redirectTo: 'instalacao', pathMatch: 'full' },
     { path: 'instalacao', component: instalacao_component_1.InstalacaoComponent },
@@ -81151,7 +82425,7 @@ exports.rootRouterConfig = [
 
 
 /***/ },
-/* 690 */
+/* 698 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81215,75 +82489,67 @@ exports.LogComponent = LogComponent;
 
 
 /***/ },
-/* 691 */
+/* 699 */
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(157);
-__webpack_require__(727);
-__webpack_require__(725);
-__webpack_require__(731);
-__webpack_require__(728);
-__webpack_require__(734);
-__webpack_require__(736);
-__webpack_require__(724);
-__webpack_require__(730);
-__webpack_require__(721);
 __webpack_require__(735);
-__webpack_require__(719);
 __webpack_require__(733);
+__webpack_require__(739);
+__webpack_require__(736);
+__webpack_require__(742);
+__webpack_require__(744);
 __webpack_require__(732);
-__webpack_require__(726);
+__webpack_require__(738);
 __webpack_require__(729);
-__webpack_require__(718);
-__webpack_require__(720);
-__webpack_require__(723);
-__webpack_require__(722);
+__webpack_require__(743);
+__webpack_require__(727);
+__webpack_require__(741);
+__webpack_require__(740);
+__webpack_require__(734);
 __webpack_require__(737);
+__webpack_require__(726);
+__webpack_require__(728);
+__webpack_require__(731);
+__webpack_require__(730);
+__webpack_require__(745);
 __webpack_require__(156);
 module.exports = __webpack_require__(11).Array;
 
 /***/ },
-/* 692 */
+/* 700 */
 /***/ function(module, exports, __webpack_require__) {
 
-__webpack_require__(738);
-__webpack_require__(740);
-__webpack_require__(739);
-__webpack_require__(742);
-__webpack_require__(741);
+__webpack_require__(746);
+__webpack_require__(748);
+__webpack_require__(747);
+__webpack_require__(750);
+__webpack_require__(749);
 module.exports = Date;
 
 /***/ },
-/* 693 */
+/* 701 */
 /***/ function(module, exports, __webpack_require__) {
 
-__webpack_require__(743);
-__webpack_require__(745);
-__webpack_require__(744);
+__webpack_require__(751);
+__webpack_require__(753);
+__webpack_require__(752);
 module.exports = __webpack_require__(11).Function;
 
 /***/ },
-/* 694 */
+/* 702 */
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(76);
 __webpack_require__(157);
-__webpack_require__(243);
-__webpack_require__(394);
+__webpack_require__(244);
+__webpack_require__(397);
 module.exports = __webpack_require__(11).Map;
 
 /***/ },
-/* 695 */
+/* 703 */
 /***/ function(module, exports, __webpack_require__) {
 
-__webpack_require__(746);
-__webpack_require__(747);
-__webpack_require__(748);
-__webpack_require__(749);
-__webpack_require__(750);
-__webpack_require__(751);
-__webpack_require__(752);
-__webpack_require__(753);
 __webpack_require__(754);
 __webpack_require__(755);
 __webpack_require__(756);
@@ -81293,15 +82559,7 @@ __webpack_require__(759);
 __webpack_require__(760);
 __webpack_require__(761);
 __webpack_require__(762);
-module.exports = __webpack_require__(11).Math;
-
-/***/ },
-/* 696 */
-/***/ function(module, exports, __webpack_require__) {
-
 __webpack_require__(763);
-__webpack_require__(773);
-__webpack_require__(774);
 __webpack_require__(764);
 __webpack_require__(765);
 __webpack_require__(766);
@@ -81309,186 +82567,202 @@ __webpack_require__(767);
 __webpack_require__(768);
 __webpack_require__(769);
 __webpack_require__(770);
-__webpack_require__(771);
-__webpack_require__(772);
-module.exports = __webpack_require__(11).Number;
-
-/***/ },
-/* 697 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(401);
-__webpack_require__(776);
-__webpack_require__(778);
-__webpack_require__(777);
-__webpack_require__(780);
-__webpack_require__(782);
-__webpack_require__(787);
-__webpack_require__(781);
-__webpack_require__(779);
-__webpack_require__(789);
-__webpack_require__(788);
-__webpack_require__(784);
-__webpack_require__(785);
-__webpack_require__(783);
-__webpack_require__(775);
-__webpack_require__(786);
-__webpack_require__(790);
-__webpack_require__(76);
-
-module.exports = __webpack_require__(11).Object;
-
-/***/ },
-/* 698 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(791);
-module.exports = __webpack_require__(11).parseFloat;
-
-/***/ },
-/* 699 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(792);
-module.exports = __webpack_require__(11).parseInt;
-
-/***/ },
-/* 700 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(793);
-__webpack_require__(794);
-__webpack_require__(795);
-__webpack_require__(796);
-__webpack_require__(797);
-__webpack_require__(800);
-__webpack_require__(798);
-__webpack_require__(799);
-__webpack_require__(801);
-__webpack_require__(802);
-__webpack_require__(803);
-__webpack_require__(804);
-__webpack_require__(806);
-__webpack_require__(805);
-module.exports = __webpack_require__(11).Reflect;
-
-/***/ },
-/* 701 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(807);
-__webpack_require__(808);
-__webpack_require__(395);
-__webpack_require__(396);
-__webpack_require__(397);
-__webpack_require__(398);
-__webpack_require__(399);
-module.exports = __webpack_require__(11).RegExp;
-
-/***/ },
-/* 702 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(76);
-__webpack_require__(157);
-__webpack_require__(243);
-__webpack_require__(400);
-module.exports = __webpack_require__(11).Set;
-
-/***/ },
-/* 703 */
-/***/ function(module, exports, __webpack_require__) {
-
-__webpack_require__(818);
-__webpack_require__(822);
-__webpack_require__(829);
-__webpack_require__(157);
-__webpack_require__(813);
-__webpack_require__(814);
-__webpack_require__(819);
-__webpack_require__(823);
-__webpack_require__(825);
-__webpack_require__(809);
-__webpack_require__(810);
-__webpack_require__(811);
-__webpack_require__(812);
-__webpack_require__(815);
-__webpack_require__(816);
-__webpack_require__(817);
-__webpack_require__(820);
-__webpack_require__(821);
-__webpack_require__(824);
-__webpack_require__(826);
-__webpack_require__(827);
-__webpack_require__(828);
-__webpack_require__(396);
-__webpack_require__(397);
-__webpack_require__(398);
-__webpack_require__(399);
-module.exports = __webpack_require__(11).String;
+module.exports = __webpack_require__(11).Math;
 
 /***/ },
 /* 704 */
 /***/ function(module, exports, __webpack_require__) {
 
-__webpack_require__(401);
-__webpack_require__(76);
-module.exports = __webpack_require__(11).Symbol;
+__webpack_require__(771);
+__webpack_require__(781);
+__webpack_require__(782);
+__webpack_require__(772);
+__webpack_require__(773);
+__webpack_require__(774);
+__webpack_require__(775);
+__webpack_require__(776);
+__webpack_require__(777);
+__webpack_require__(778);
+__webpack_require__(779);
+__webpack_require__(780);
+module.exports = __webpack_require__(11).Number;
 
 /***/ },
 /* 705 */
 /***/ function(module, exports, __webpack_require__) {
 
-__webpack_require__(830);
-__webpack_require__(831);
-__webpack_require__(836);
-__webpack_require__(839);
-__webpack_require__(840);
-__webpack_require__(834);
-__webpack_require__(837);
-__webpack_require__(835);
-__webpack_require__(838);
-__webpack_require__(832);
-__webpack_require__(833);
+__webpack_require__(404);
+__webpack_require__(784);
+__webpack_require__(786);
+__webpack_require__(785);
+__webpack_require__(788);
+__webpack_require__(790);
+__webpack_require__(795);
+__webpack_require__(789);
+__webpack_require__(787);
+__webpack_require__(797);
+__webpack_require__(796);
+__webpack_require__(792);
+__webpack_require__(793);
+__webpack_require__(791);
+__webpack_require__(783);
+__webpack_require__(794);
+__webpack_require__(798);
 __webpack_require__(76);
-module.exports = __webpack_require__(11);
+
+module.exports = __webpack_require__(11).Object;
 
 /***/ },
 /* 706 */
 /***/ function(module, exports, __webpack_require__) {
 
-__webpack_require__(76);
-__webpack_require__(156);
-__webpack_require__(402);
-module.exports = __webpack_require__(11).WeakMap;
+__webpack_require__(799);
+module.exports = __webpack_require__(11).parseFloat;
 
 /***/ },
 /* 707 */
 /***/ function(module, exports, __webpack_require__) {
 
-__webpack_require__(76);
-__webpack_require__(243);
-__webpack_require__(841);
-module.exports = __webpack_require__(11).WeakSet;
+__webpack_require__(800);
+module.exports = __webpack_require__(11).parseInt;
 
 /***/ },
 /* 708 */
 /***/ function(module, exports, __webpack_require__) {
 
-__webpack_require__(842);
-__webpack_require__(843);
-__webpack_require__(845);
+__webpack_require__(801);
+__webpack_require__(802);
+__webpack_require__(803);
+__webpack_require__(804);
+__webpack_require__(805);
+__webpack_require__(808);
+__webpack_require__(806);
+__webpack_require__(807);
+__webpack_require__(809);
+__webpack_require__(810);
+__webpack_require__(811);
+__webpack_require__(812);
+__webpack_require__(814);
+__webpack_require__(813);
+module.exports = __webpack_require__(11).Reflect;
+
+/***/ },
+/* 709 */
+/***/ function(module, exports, __webpack_require__) {
+
+__webpack_require__(815);
+__webpack_require__(816);
+__webpack_require__(398);
+__webpack_require__(399);
+__webpack_require__(400);
+__webpack_require__(401);
+__webpack_require__(402);
+module.exports = __webpack_require__(11).RegExp;
+
+/***/ },
+/* 710 */
+/***/ function(module, exports, __webpack_require__) {
+
+__webpack_require__(76);
+__webpack_require__(157);
+__webpack_require__(244);
+__webpack_require__(403);
+module.exports = __webpack_require__(11).Set;
+
+/***/ },
+/* 711 */
+/***/ function(module, exports, __webpack_require__) {
+
+__webpack_require__(826);
+__webpack_require__(830);
+__webpack_require__(837);
+__webpack_require__(157);
+__webpack_require__(821);
+__webpack_require__(822);
+__webpack_require__(827);
+__webpack_require__(831);
+__webpack_require__(833);
+__webpack_require__(817);
+__webpack_require__(818);
+__webpack_require__(819);
+__webpack_require__(820);
+__webpack_require__(823);
+__webpack_require__(824);
+__webpack_require__(825);
+__webpack_require__(828);
+__webpack_require__(829);
+__webpack_require__(832);
+__webpack_require__(834);
+__webpack_require__(835);
+__webpack_require__(836);
+__webpack_require__(399);
+__webpack_require__(400);
+__webpack_require__(401);
+__webpack_require__(402);
+module.exports = __webpack_require__(11).String;
+
+/***/ },
+/* 712 */
+/***/ function(module, exports, __webpack_require__) {
+
+__webpack_require__(404);
+__webpack_require__(76);
+module.exports = __webpack_require__(11).Symbol;
+
+/***/ },
+/* 713 */
+/***/ function(module, exports, __webpack_require__) {
+
+__webpack_require__(838);
+__webpack_require__(839);
 __webpack_require__(844);
 __webpack_require__(847);
-__webpack_require__(846);
 __webpack_require__(848);
+__webpack_require__(842);
+__webpack_require__(845);
+__webpack_require__(843);
+__webpack_require__(846);
+__webpack_require__(840);
+__webpack_require__(841);
+__webpack_require__(76);
+module.exports = __webpack_require__(11);
+
+/***/ },
+/* 714 */
+/***/ function(module, exports, __webpack_require__) {
+
+__webpack_require__(76);
+__webpack_require__(156);
+__webpack_require__(405);
+module.exports = __webpack_require__(11).WeakMap;
+
+/***/ },
+/* 715 */
+/***/ function(module, exports, __webpack_require__) {
+
+__webpack_require__(76);
+__webpack_require__(244);
 __webpack_require__(849);
+module.exports = __webpack_require__(11).WeakSet;
+
+/***/ },
+/* 716 */
+/***/ function(module, exports, __webpack_require__) {
+
 __webpack_require__(850);
+__webpack_require__(851);
+__webpack_require__(853);
+__webpack_require__(852);
+__webpack_require__(855);
+__webpack_require__(854);
+__webpack_require__(856);
+__webpack_require__(857);
+__webpack_require__(858);
 module.exports = __webpack_require__(11).Reflect;
 
 
 /***/ },
-/* 709 */
+/* 717 */
 /***/ function(module, exports, __webpack_require__) {
 
 var forOf = __webpack_require__(150);
@@ -81501,11 +82775,11 @@ module.exports = function(iter, ITERATOR){
 
 
 /***/ },
-/* 710 */
+/* 718 */
 /***/ function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(9)
-  , isArray  = __webpack_require__(231)
+  , isArray  = __webpack_require__(232)
   , SPECIES  = __webpack_require__(12)('species');
 
 module.exports = function(original){
@@ -81522,18 +82796,18 @@ module.exports = function(original){
 };
 
 /***/ },
-/* 711 */
+/* 719 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-var speciesConstructor = __webpack_require__(710);
+var speciesConstructor = __webpack_require__(718);
 
 module.exports = function(original, length){
   return new (speciesConstructor(original))(length);
 };
 
 /***/ },
-/* 712 */
+/* 720 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81548,7 +82822,7 @@ module.exports = function(hint){
 };
 
 /***/ },
-/* 713 */
+/* 721 */
 /***/ function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
@@ -81568,7 +82842,7 @@ module.exports = function(it){
 };
 
 /***/ },
-/* 714 */
+/* 722 */
 /***/ function(module, exports) {
 
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -81589,7 +82863,7 @@ module.exports = function(fn, args, that){
 };
 
 /***/ },
-/* 715 */
+/* 723 */
 /***/ function(module, exports, __webpack_require__) {
 
 var getKeys   = __webpack_require__(87)
@@ -81604,7 +82878,7 @@ module.exports = function(object, el){
 };
 
 /***/ },
-/* 716 */
+/* 724 */
 /***/ function(module, exports, __webpack_require__) {
 
 // all object keys, includes non-enumerable and symbols
@@ -81619,13 +82893,13 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it){
 };
 
 /***/ },
-/* 717 */
+/* 725 */
 /***/ function(module, exports, __webpack_require__) {
 
 var global         = __webpack_require__(10)
   , core           = __webpack_require__(11)
-  , LIBRARY        = __webpack_require__(109)
-  , wksExt         = __webpack_require__(393)
+  , LIBRARY        = __webpack_require__(110)
+  , wksExt         = __webpack_require__(396)
   , defineProperty = __webpack_require__(14).f;
 module.exports = function(name){
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -81633,18 +82907,18 @@ module.exports = function(name){
 };
 
 /***/ },
-/* 718 */
+/* 726 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 var $export = __webpack_require__(2);
 
-$export($export.P, 'Array', {copyWithin: __webpack_require__(369)});
+$export($export.P, 'Array', {copyWithin: __webpack_require__(372)});
 
-__webpack_require__(106)('copyWithin');
+__webpack_require__(107)('copyWithin');
 
 /***/ },
-/* 719 */
+/* 727 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81660,18 +82934,18 @@ $export($export.P + $export.F * !__webpack_require__(34)([].every, true), 'Array
 });
 
 /***/ },
-/* 720 */
+/* 728 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
 var $export = __webpack_require__(2);
 
-$export($export.P, 'Array', {fill: __webpack_require__(223)});
+$export($export.P, 'Array', {fill: __webpack_require__(224)});
 
-__webpack_require__(106)('fill');
+__webpack_require__(107)('fill');
 
 /***/ },
-/* 721 */
+/* 729 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81687,7 +82961,7 @@ $export($export.P + $export.F * !__webpack_require__(34)([].filter, true), 'Arra
 });
 
 /***/ },
-/* 722 */
+/* 730 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81704,10 +82978,10 @@ $export($export.P + $export.F * forced, 'Array', {
     return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
   }
 });
-__webpack_require__(106)(KEY);
+__webpack_require__(107)(KEY);
 
 /***/ },
-/* 723 */
+/* 731 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81724,10 +82998,10 @@ $export($export.P + $export.F * forced, 'Array', {
     return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
   }
 });
-__webpack_require__(106)(KEY);
+__webpack_require__(107)(KEY);
 
 /***/ },
-/* 724 */
+/* 732 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81744,7 +83018,7 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 });
 
 /***/ },
-/* 725 */
+/* 733 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81752,13 +83026,13 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 var ctx            = __webpack_require__(71)
   , $export        = __webpack_require__(2)
   , toObject       = __webpack_require__(30)
-  , call           = __webpack_require__(379)
-  , isArrayIter    = __webpack_require__(230)
+  , call           = __webpack_require__(382)
+  , isArrayIter    = __webpack_require__(231)
   , toLength       = __webpack_require__(20)
-  , createProperty = __webpack_require__(374)
-  , getIterFn      = __webpack_require__(242);
+  , createProperty = __webpack_require__(377)
+  , getIterFn      = __webpack_require__(243);
 
-$export($export.S + $export.F * !__webpack_require__(234)(function(iter){ Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(235)(function(iter){ Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
     var O       = toObject(arrayLike)
@@ -81788,13 +83062,13 @@ $export($export.S + $export.F * !__webpack_require__(234)(function(iter){ Array.
 
 
 /***/ },
-/* 726 */
+/* 734 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export       = __webpack_require__(2)
-  , $indexOf      = __webpack_require__(224)(false)
+  , $indexOf      = __webpack_require__(225)(false)
   , $native       = [].indexOf
   , NEGATIVE_ZERO = !!$native && 1 / [1].indexOf(1, -0) < 0;
 
@@ -81809,16 +83083,16 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(34)($nati
 });
 
 /***/ },
-/* 727 */
+/* 735 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
 var $export = __webpack_require__(2);
 
-$export($export.S, 'Array', {isArray: __webpack_require__(231)});
+$export($export.S, 'Array', {isArray: __webpack_require__(232)});
 
 /***/ },
-/* 728 */
+/* 736 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81829,14 +83103,14 @@ var $export   = __webpack_require__(2)
   , arrayJoin = [].join;
 
 // fallback for not array-like strings
-$export($export.P + $export.F * (__webpack_require__(108) != Object || !__webpack_require__(34)(arrayJoin)), 'Array', {
+$export($export.P + $export.F * (__webpack_require__(109) != Object || !__webpack_require__(34)(arrayJoin)), 'Array', {
   join: function join(separator){
     return arrayJoin.call(toIObject(this), separator === undefined ? ',' : separator);
   }
 });
 
 /***/ },
-/* 729 */
+/* 737 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81864,7 +83138,7 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(34)($nati
 });
 
 /***/ },
-/* 730 */
+/* 738 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81880,13 +83154,13 @@ $export($export.P + $export.F * !__webpack_require__(34)([].map, true), 'Array',
 });
 
 /***/ },
-/* 731 */
+/* 739 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export        = __webpack_require__(2)
-  , createProperty = __webpack_require__(374);
+  , createProperty = __webpack_require__(377);
 
 // WebKit Array.of isn't generic
 $export($export.S + $export.F * __webpack_require__(6)(function(){
@@ -81905,13 +83179,13 @@ $export($export.S + $export.F * __webpack_require__(6)(function(){
 });
 
 /***/ },
-/* 732 */
+/* 740 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export = __webpack_require__(2)
-  , $reduce = __webpack_require__(370);
+  , $reduce = __webpack_require__(373);
 
 $export($export.P + $export.F * !__webpack_require__(34)([].reduceRight, true), 'Array', {
   // 22.1.3.19 / 15.4.4.22 Array.prototype.reduceRight(callbackfn [, initialValue])
@@ -81921,13 +83195,13 @@ $export($export.P + $export.F * !__webpack_require__(34)([].reduceRight, true), 
 });
 
 /***/ },
-/* 733 */
+/* 741 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export = __webpack_require__(2)
-  , $reduce = __webpack_require__(370);
+  , $reduce = __webpack_require__(373);
 
 $export($export.P + $export.F * !__webpack_require__(34)([].reduce, true), 'Array', {
   // 22.1.3.18 / 15.4.4.21 Array.prototype.reduce(callbackfn [, initialValue])
@@ -81937,13 +83211,13 @@ $export($export.P + $export.F * !__webpack_require__(34)([].reduce, true), 'Arra
 });
 
 /***/ },
-/* 734 */
+/* 742 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export    = __webpack_require__(2)
-  , html       = __webpack_require__(376)
+  , html       = __webpack_require__(379)
   , cof        = __webpack_require__(70)
   , toIndex    = __webpack_require__(74)
   , toLength   = __webpack_require__(20)
@@ -81971,7 +83245,7 @@ $export($export.P + $export.F * __webpack_require__(6)(function(){
 });
 
 /***/ },
-/* 735 */
+/* 743 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81987,7 +83261,7 @@ $export($export.P + $export.F * !__webpack_require__(34)([].some, true), 'Array'
 });
 
 /***/ },
-/* 736 */
+/* 744 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82016,13 +83290,13 @@ $export($export.P + $export.F * (fails(function(){
 });
 
 /***/ },
-/* 737 */
+/* 745 */
 /***/ function(module, exports, __webpack_require__) {
 
-__webpack_require__(111)('Array');
+__webpack_require__(112)('Array');
 
 /***/ },
-/* 738 */
+/* 746 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.3.3.1 / 15.9.4.4 Date.now()
@@ -82031,7 +83305,7 @@ var $export = __webpack_require__(2);
 $export($export.S, 'Date', {now: function(){ return new Date().getTime(); }});
 
 /***/ },
-/* 739 */
+/* 747 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82065,7 +83339,7 @@ $export($export.P + $export.F * (fails(function(){
 });
 
 /***/ },
-/* 740 */
+/* 748 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82085,16 +83359,16 @@ $export($export.P + $export.F * __webpack_require__(6)(function(){
 });
 
 /***/ },
-/* 741 */
+/* 749 */
 /***/ function(module, exports, __webpack_require__) {
 
 var TO_PRIMITIVE = __webpack_require__(12)('toPrimitive')
   , proto        = Date.prototype;
 
-if(!(TO_PRIMITIVE in proto))__webpack_require__(29)(proto, TO_PRIMITIVE, __webpack_require__(712));
+if(!(TO_PRIMITIVE in proto))__webpack_require__(29)(proto, TO_PRIMITIVE, __webpack_require__(720));
 
 /***/ },
-/* 742 */
+/* 750 */
 /***/ function(module, exports, __webpack_require__) {
 
 var DateProto    = Date.prototype
@@ -82110,16 +83384,16 @@ if(new Date(NaN) + '' != INVALID_DATE){
 }
 
 /***/ },
-/* 743 */
+/* 751 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
 var $export = __webpack_require__(2);
 
-$export($export.P, 'Function', {bind: __webpack_require__(371)});
+$export($export.P, 'Function', {bind: __webpack_require__(374)});
 
 /***/ },
-/* 744 */
+/* 752 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82138,7 +83412,7 @@ if(!(HAS_INSTANCE in FunctionProto))__webpack_require__(14).f(FunctionProto, HAS
 }});
 
 /***/ },
-/* 745 */
+/* 753 */
 /***/ function(module, exports, __webpack_require__) {
 
 var dP         = __webpack_require__(14).f
@@ -82168,12 +83442,12 @@ NAME in FProto || __webpack_require__(18) && dP(FProto, NAME, {
 });
 
 /***/ },
-/* 746 */
+/* 754 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.3 Math.acosh(x)
 var $export = __webpack_require__(2)
-  , log1p   = __webpack_require__(382)
+  , log1p   = __webpack_require__(385)
   , sqrt    = Math.sqrt
   , $acosh  = Math.acosh;
 
@@ -82191,7 +83465,7 @@ $export($export.S + $export.F * !($acosh
 });
 
 /***/ },
-/* 747 */
+/* 755 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.5 Math.asinh(x)
@@ -82206,7 +83480,7 @@ function asinh(x){
 $export($export.S + $export.F * !($asinh && 1 / $asinh(0) > 0), 'Math', {asinh: asinh});
 
 /***/ },
-/* 748 */
+/* 756 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.7 Math.atanh(x)
@@ -82221,12 +83495,12 @@ $export($export.S + $export.F * !($atanh && 1 / $atanh(-0) < 0), 'Math', {
 });
 
 /***/ },
-/* 749 */
+/* 757 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.9 Math.cbrt(x)
 var $export = __webpack_require__(2)
-  , sign    = __webpack_require__(236);
+  , sign    = __webpack_require__(237);
 
 $export($export.S, 'Math', {
   cbrt: function cbrt(x){
@@ -82235,7 +83509,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-/* 750 */
+/* 758 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.11 Math.clz32(x)
@@ -82248,7 +83522,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-/* 751 */
+/* 759 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.12 Math.cosh(x)
@@ -82262,22 +83536,22 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-/* 752 */
+/* 760 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.14 Math.expm1(x)
 var $export = __webpack_require__(2)
-  , $expm1  = __webpack_require__(235);
+  , $expm1  = __webpack_require__(236);
 
 $export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', {expm1: $expm1});
 
 /***/ },
-/* 753 */
+/* 761 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.16 Math.fround(x)
 var $export   = __webpack_require__(2)
-  , sign      = __webpack_require__(236)
+  , sign      = __webpack_require__(237)
   , pow       = Math.pow
   , EPSILON   = pow(2, -52)
   , EPSILON32 = pow(2, -23)
@@ -82303,7 +83577,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-/* 754 */
+/* 762 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.17 Math.hypot([value1[, value2[, … ]]])
@@ -82333,7 +83607,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-/* 755 */
+/* 763 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.18 Math.imul(x, y)
@@ -82355,7 +83629,7 @@ $export($export.S + $export.F * __webpack_require__(6)(function(){
 });
 
 /***/ },
-/* 756 */
+/* 764 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.21 Math.log10(x)
@@ -82368,16 +83642,16 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-/* 757 */
+/* 765 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.20 Math.log1p(x)
 var $export = __webpack_require__(2);
 
-$export($export.S, 'Math', {log1p: __webpack_require__(382)});
+$export($export.S, 'Math', {log1p: __webpack_require__(385)});
 
 /***/ },
-/* 758 */
+/* 766 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.22 Math.log2(x)
@@ -82390,21 +83664,21 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-/* 759 */
+/* 767 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.28 Math.sign(x)
 var $export = __webpack_require__(2);
 
-$export($export.S, 'Math', {sign: __webpack_require__(236)});
+$export($export.S, 'Math', {sign: __webpack_require__(237)});
 
 /***/ },
-/* 760 */
+/* 768 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.30 Math.sinh(x)
 var $export = __webpack_require__(2)
-  , expm1   = __webpack_require__(235)
+  , expm1   = __webpack_require__(236)
   , exp     = Math.exp;
 
 // V8 near Chromium 38 has a problem with very small numbers
@@ -82419,12 +83693,12 @@ $export($export.S + $export.F * __webpack_require__(6)(function(){
 });
 
 /***/ },
-/* 761 */
+/* 769 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.33 Math.tanh(x)
 var $export = __webpack_require__(2)
-  , expm1   = __webpack_require__(235)
+  , expm1   = __webpack_require__(236)
   , exp     = Math.exp;
 
 $export($export.S, 'Math', {
@@ -82436,7 +83710,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-/* 762 */
+/* 770 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.2.2.34 Math.trunc(x)
@@ -82449,7 +83723,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ },
-/* 763 */
+/* 771 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82457,7 +83731,7 @@ $export($export.S, 'Math', {
 var global            = __webpack_require__(10)
   , has               = __webpack_require__(22)
   , cof               = __webpack_require__(70)
-  , inheritIfRequired = __webpack_require__(229)
+  , inheritIfRequired = __webpack_require__(230)
   , toPrimitive       = __webpack_require__(63)
   , fails             = __webpack_require__(6)
   , gOPN              = __webpack_require__(73).f
@@ -82524,7 +83798,7 @@ if(!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')){
 }
 
 /***/ },
-/* 764 */
+/* 772 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.1 Number.EPSILON
@@ -82533,7 +83807,7 @@ var $export = __webpack_require__(2);
 $export($export.S, 'Number', {EPSILON: Math.pow(2, -52)});
 
 /***/ },
-/* 765 */
+/* 773 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.2 Number.isFinite(number)
@@ -82547,16 +83821,16 @@ $export($export.S, 'Number', {
 });
 
 /***/ },
-/* 766 */
+/* 774 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
 var $export = __webpack_require__(2);
 
-$export($export.S, 'Number', {isInteger: __webpack_require__(378)});
+$export($export.S, 'Number', {isInteger: __webpack_require__(381)});
 
 /***/ },
-/* 767 */
+/* 775 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.4 Number.isNaN(number)
@@ -82569,12 +83843,12 @@ $export($export.S, 'Number', {
 });
 
 /***/ },
-/* 768 */
+/* 776 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.5 Number.isSafeInteger(number)
 var $export   = __webpack_require__(2)
-  , isInteger = __webpack_require__(378)
+  , isInteger = __webpack_require__(381)
   , abs       = Math.abs;
 
 $export($export.S, 'Number', {
@@ -82584,7 +83858,7 @@ $export($export.S, 'Number', {
 });
 
 /***/ },
-/* 769 */
+/* 777 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.6 Number.MAX_SAFE_INTEGER
@@ -82593,7 +83867,7 @@ var $export = __webpack_require__(2);
 $export($export.S, 'Number', {MAX_SAFE_INTEGER: 0x1fffffffffffff});
 
 /***/ },
-/* 770 */
+/* 778 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 20.1.2.10 Number.MIN_SAFE_INTEGER
@@ -82602,33 +83876,33 @@ var $export = __webpack_require__(2);
 $export($export.S, 'Number', {MIN_SAFE_INTEGER: -0x1fffffffffffff});
 
 /***/ },
-/* 771 */
+/* 779 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export     = __webpack_require__(2)
-  , $parseFloat = __webpack_require__(387);
+  , $parseFloat = __webpack_require__(390);
 // 20.1.2.12 Number.parseFloat(string)
 $export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', {parseFloat: $parseFloat});
 
 /***/ },
-/* 772 */
+/* 780 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(2)
-  , $parseInt = __webpack_require__(388);
+  , $parseInt = __webpack_require__(391);
 // 20.1.2.13 Number.parseInt(string, radix)
 $export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', {parseInt: $parseInt});
 
 /***/ },
-/* 773 */
+/* 781 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export      = __webpack_require__(2)
   , toInteger    = __webpack_require__(62)
-  , aNumberValue = __webpack_require__(368)
-  , repeat       = __webpack_require__(392)
+  , aNumberValue = __webpack_require__(371)
+  , repeat       = __webpack_require__(395)
   , $toFixed     = 1..toFixed
   , floor        = Math.floor
   , data         = [0, 0, 0, 0, 0, 0]
@@ -82739,14 +84013,14 @@ $export($export.P + $export.F * (!!$toFixed && (
 });
 
 /***/ },
-/* 774 */
+/* 782 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export      = __webpack_require__(2)
   , $fails       = __webpack_require__(6)
-  , aNumberValue = __webpack_require__(368)
+  , aNumberValue = __webpack_require__(371)
   , $toPrecision = 1..toPrecision;
 
 $export($export.P + $export.F * ($fails(function(){
@@ -82763,16 +84037,16 @@ $export($export.P + $export.F * ($fails(function(){
 });
 
 /***/ },
-/* 775 */
+/* 783 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(2);
 
-$export($export.S + $export.F, 'Object', {assign: __webpack_require__(383)});
+$export($export.S + $export.F, 'Object', {assign: __webpack_require__(386)});
 
 /***/ },
-/* 776 */
+/* 784 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(2)
@@ -82780,15 +84054,15 @@ var $export = __webpack_require__(2)
 $export($export.S, 'Object', {create: __webpack_require__(72)});
 
 /***/ },
-/* 777 */
+/* 785 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(2);
 // 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
-$export($export.S + $export.F * !__webpack_require__(18), 'Object', {defineProperties: __webpack_require__(384)});
+$export($export.S + $export.F * !__webpack_require__(18), 'Object', {defineProperties: __webpack_require__(387)});
 
 /***/ },
-/* 778 */
+/* 786 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(2);
@@ -82796,7 +84070,7 @@ var $export = __webpack_require__(2);
 $export($export.S + $export.F * !__webpack_require__(18), 'Object', {defineProperty: __webpack_require__(14).f});
 
 /***/ },
-/* 779 */
+/* 787 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.5 Object.freeze(O)
@@ -82810,7 +84084,7 @@ __webpack_require__(45)('freeze', function($freeze){
 });
 
 /***/ },
-/* 780 */
+/* 788 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
@@ -82824,16 +84098,16 @@ __webpack_require__(45)('getOwnPropertyDescriptor', function(){
 });
 
 /***/ },
-/* 781 */
+/* 789 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 Object.getOwnPropertyNames(O)
 __webpack_require__(45)('getOwnPropertyNames', function(){
-  return __webpack_require__(385).f;
+  return __webpack_require__(388).f;
 });
 
 /***/ },
-/* 782 */
+/* 790 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 Object.getPrototypeOf(O)
@@ -82847,7 +84121,7 @@ __webpack_require__(45)('getPrototypeOf', function(){
 });
 
 /***/ },
-/* 783 */
+/* 791 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.11 Object.isExtensible(O)
@@ -82860,7 +84134,7 @@ __webpack_require__(45)('isExtensible', function($isExtensible){
 });
 
 /***/ },
-/* 784 */
+/* 792 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.12 Object.isFrozen(O)
@@ -82873,7 +84147,7 @@ __webpack_require__(45)('isFrozen', function($isFrozen){
 });
 
 /***/ },
-/* 785 */
+/* 793 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.13 Object.isSealed(O)
@@ -82886,15 +84160,15 @@ __webpack_require__(45)('isSealed', function($isSealed){
 });
 
 /***/ },
-/* 786 */
+/* 794 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.3.10 Object.is(value1, value2)
 var $export = __webpack_require__(2);
-$export($export.S, 'Object', {is: __webpack_require__(389)});
+$export($export.S, 'Object', {is: __webpack_require__(392)});
 
 /***/ },
-/* 787 */
+/* 795 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
@@ -82908,7 +84182,7 @@ __webpack_require__(45)('keys', function(){
 });
 
 /***/ },
-/* 788 */
+/* 796 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.15 Object.preventExtensions(O)
@@ -82922,7 +84196,7 @@ __webpack_require__(45)('preventExtensions', function($preventExtensions){
 });
 
 /***/ },
-/* 789 */
+/* 797 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.2.17 Object.seal(O)
@@ -82936,33 +84210,33 @@ __webpack_require__(45)('seal', function($seal){
 });
 
 /***/ },
-/* 790 */
+/* 798 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
 var $export = __webpack_require__(2);
-$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(237).set});
+$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(238).set});
 
 /***/ },
-/* 791 */
+/* 799 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export     = __webpack_require__(2)
-  , $parseFloat = __webpack_require__(387);
+  , $parseFloat = __webpack_require__(390);
 // 18.2.4 parseFloat(string)
 $export($export.G + $export.F * (parseFloat != $parseFloat), {parseFloat: $parseFloat});
 
 /***/ },
-/* 792 */
+/* 800 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(2)
-  , $parseInt = __webpack_require__(388);
+  , $parseInt = __webpack_require__(391);
 // 18.2.5 parseInt(string, radix)
 $export($export.G + $export.F * (parseInt != $parseInt), {parseInt: $parseInt});
 
 /***/ },
-/* 793 */
+/* 801 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
@@ -82983,7 +84257,7 @@ $export($export.S + $export.F * !__webpack_require__(6)(function(){
 });
 
 /***/ },
-/* 794 */
+/* 802 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
@@ -82993,7 +84267,7 @@ var $export    = __webpack_require__(2)
   , anObject   = __webpack_require__(4)
   , isObject   = __webpack_require__(9)
   , fails      = __webpack_require__(6)
-  , bind       = __webpack_require__(371)
+  , bind       = __webpack_require__(374)
   , rConstruct = (__webpack_require__(10).Reflect || {}).construct;
 
 // MS Edge supports only 2 arguments and argumentsList argument is optional
@@ -83035,7 +84309,7 @@ $export($export.S + $export.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
 });
 
 /***/ },
-/* 795 */
+/* 803 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.3 Reflect.defineProperty(target, propertyKey, attributes)
@@ -83062,7 +84336,7 @@ $export($export.S + $export.F * __webpack_require__(6)(function(){
 });
 
 /***/ },
-/* 796 */
+/* 804 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.4 Reflect.deleteProperty(target, propertyKey)
@@ -83078,7 +84352,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ },
-/* 797 */
+/* 805 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83093,7 +84367,7 @@ var Enumerate = function(iterated){
     , key;
   for(key in iterated)keys.push(key);
 };
-__webpack_require__(380)(Enumerate, 'Object', function(){
+__webpack_require__(383)(Enumerate, 'Object', function(){
   var that = this
     , keys = that._k
     , key;
@@ -83110,7 +84384,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ },
-/* 798 */
+/* 806 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.7 Reflect.getOwnPropertyDescriptor(target, propertyKey)
@@ -83125,7 +84399,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ },
-/* 799 */
+/* 807 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.8 Reflect.getPrototypeOf(target)
@@ -83140,7 +84414,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ },
-/* 800 */
+/* 808 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.6 Reflect.get(target, propertyKey [, receiver])
@@ -83166,7 +84440,7 @@ function get(target, propertyKey/*, receiver*/){
 $export($export.S, 'Reflect', {get: get});
 
 /***/ },
-/* 801 */
+/* 809 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.9 Reflect.has(target, propertyKey)
@@ -83179,7 +84453,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ },
-/* 802 */
+/* 810 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.10 Reflect.isExtensible(target)
@@ -83195,16 +84469,16 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ },
-/* 803 */
+/* 811 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.11 Reflect.ownKeys(target)
 var $export = __webpack_require__(2);
 
-$export($export.S, 'Reflect', {ownKeys: __webpack_require__(716)});
+$export($export.S, 'Reflect', {ownKeys: __webpack_require__(724)});
 
 /***/ },
-/* 804 */
+/* 812 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.12 Reflect.preventExtensions(target)
@@ -83225,12 +84499,12 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ },
-/* 805 */
+/* 813 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.14 Reflect.setPrototypeOf(target, proto)
 var $export  = __webpack_require__(2)
-  , setProto = __webpack_require__(237);
+  , setProto = __webpack_require__(238);
 
 if(setProto)$export($export.S, 'Reflect', {
   setPrototypeOf: function setPrototypeOf(target, proto){
@@ -83245,7 +84519,7 @@ if(setProto)$export($export.S, 'Reflect', {
 });
 
 /***/ },
-/* 806 */
+/* 814 */
 /***/ function(module, exports, __webpack_require__) {
 
 // 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
@@ -83281,15 +84555,15 @@ function set(target, propertyKey, V/*, receiver*/){
 $export($export.S, 'Reflect', {set: set});
 
 /***/ },
-/* 807 */
+/* 815 */
 /***/ function(module, exports, __webpack_require__) {
 
 var global            = __webpack_require__(10)
-  , inheritIfRequired = __webpack_require__(229)
+  , inheritIfRequired = __webpack_require__(230)
   , dP                = __webpack_require__(14).f
   , gOPN              = __webpack_require__(73).f
-  , isRegExp          = __webpack_require__(232)
-  , $flags            = __webpack_require__(228)
+  , isRegExp          = __webpack_require__(233)
+  , $flags            = __webpack_require__(229)
   , $RegExp           = global.RegExp
   , Base              = $RegExp
   , proto             = $RegExp.prototype
@@ -83326,17 +84600,17 @@ if(__webpack_require__(18) && (!CORRECT_NEW || __webpack_require__(6)(function()
   __webpack_require__(23)(global, 'RegExp', $RegExp);
 }
 
-__webpack_require__(111)('RegExp');
+__webpack_require__(112)('RegExp');
 
 /***/ },
-/* 808 */
+/* 816 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
-__webpack_require__(395);
+__webpack_require__(398);
 var anObject    = __webpack_require__(4)
-  , $flags      = __webpack_require__(228)
+  , $flags      = __webpack_require__(229)
   , DESCRIPTORS = __webpack_require__(18)
   , TO_STRING   = 'toString'
   , $toString   = /./[TO_STRING];
@@ -83360,7 +84634,7 @@ if(__webpack_require__(6)(function(){ return $toString.call({source: 'a', flags:
 }
 
 /***/ },
-/* 809 */
+/* 817 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83373,7 +84647,7 @@ __webpack_require__(24)('anchor', function(createHTML){
 });
 
 /***/ },
-/* 810 */
+/* 818 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83386,7 +84660,7 @@ __webpack_require__(24)('big', function(createHTML){
 });
 
 /***/ },
-/* 811 */
+/* 819 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83399,7 +84673,7 @@ __webpack_require__(24)('blink', function(createHTML){
 });
 
 /***/ },
-/* 812 */
+/* 820 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83412,13 +84686,13 @@ __webpack_require__(24)('bold', function(createHTML){
 });
 
 /***/ },
-/* 813 */
+/* 821 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export = __webpack_require__(2)
-  , $at     = __webpack_require__(391)(false);
+  , $at     = __webpack_require__(394)(false);
 $export($export.P, 'String', {
   // 21.1.3.3 String.prototype.codePointAt(pos)
   codePointAt: function codePointAt(pos){
@@ -83427,7 +84701,7 @@ $export($export.P, 'String', {
 });
 
 /***/ },
-/* 814 */
+/* 822 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83435,11 +84709,11 @@ $export($export.P, 'String', {
 'use strict';
 var $export   = __webpack_require__(2)
   , toLength  = __webpack_require__(20)
-  , context   = __webpack_require__(239)
+  , context   = __webpack_require__(240)
   , ENDS_WITH = 'endsWith'
   , $endsWith = ''[ENDS_WITH];
 
-$export($export.P + $export.F * __webpack_require__(227)(ENDS_WITH), 'String', {
+$export($export.P + $export.F * __webpack_require__(228)(ENDS_WITH), 'String', {
   endsWith: function endsWith(searchString /*, endPosition = @length */){
     var that = context(this, searchString, ENDS_WITH)
       , endPosition = arguments.length > 1 ? arguments[1] : undefined
@@ -83453,7 +84727,7 @@ $export($export.P + $export.F * __webpack_require__(227)(ENDS_WITH), 'String', {
 });
 
 /***/ },
-/* 815 */
+/* 823 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83466,7 +84740,7 @@ __webpack_require__(24)('fixed', function(createHTML){
 });
 
 /***/ },
-/* 816 */
+/* 824 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83479,7 +84753,7 @@ __webpack_require__(24)('fontcolor', function(createHTML){
 });
 
 /***/ },
-/* 817 */
+/* 825 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83492,7 +84766,7 @@ __webpack_require__(24)('fontsize', function(createHTML){
 });
 
 /***/ },
-/* 818 */
+/* 826 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export        = __webpack_require__(2)
@@ -83520,17 +84794,17 @@ $export($export.S + $export.F * (!!$fromCodePoint && $fromCodePoint.length != 1)
 });
 
 /***/ },
-/* 819 */
+/* 827 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 // 21.1.3.7 String.prototype.includes(searchString, position = 0)
 'use strict';
 var $export  = __webpack_require__(2)
-  , context  = __webpack_require__(239)
+  , context  = __webpack_require__(240)
   , INCLUDES = 'includes';
 
-$export($export.P + $export.F * __webpack_require__(227)(INCLUDES), 'String', {
+$export($export.P + $export.F * __webpack_require__(228)(INCLUDES), 'String', {
   includes: function includes(searchString /*, position = 0 */){
     return !!~context(this, searchString, INCLUDES)
       .indexOf(searchString, arguments.length > 1 ? arguments[1] : undefined);
@@ -83538,7 +84812,7 @@ $export($export.P + $export.F * __webpack_require__(227)(INCLUDES), 'String', {
 });
 
 /***/ },
-/* 820 */
+/* 828 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83551,7 +84825,7 @@ __webpack_require__(24)('italics', function(createHTML){
 });
 
 /***/ },
-/* 821 */
+/* 829 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83564,7 +84838,7 @@ __webpack_require__(24)('link', function(createHTML){
 });
 
 /***/ },
-/* 822 */
+/* 830 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(2)
@@ -83587,18 +84861,18 @@ $export($export.S, 'String', {
 });
 
 /***/ },
-/* 823 */
+/* 831 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(2);
 
 $export($export.P, 'String', {
   // 21.1.3.13 String.prototype.repeat(count)
-  repeat: __webpack_require__(392)
+  repeat: __webpack_require__(395)
 });
 
 /***/ },
-/* 824 */
+/* 832 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83611,7 +84885,7 @@ __webpack_require__(24)('small', function(createHTML){
 });
 
 /***/ },
-/* 825 */
+/* 833 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83619,11 +84893,11 @@ __webpack_require__(24)('small', function(createHTML){
 'use strict';
 var $export     = __webpack_require__(2)
   , toLength    = __webpack_require__(20)
-  , context     = __webpack_require__(239)
+  , context     = __webpack_require__(240)
   , STARTS_WITH = 'startsWith'
   , $startsWith = ''[STARTS_WITH];
 
-$export($export.P + $export.F * __webpack_require__(227)(STARTS_WITH), 'String', {
+$export($export.P + $export.F * __webpack_require__(228)(STARTS_WITH), 'String', {
   startsWith: function startsWith(searchString /*, position = 0 */){
     var that   = context(this, searchString, STARTS_WITH)
       , index  = toLength(Math.min(arguments.length > 1 ? arguments[1] : undefined, that.length))
@@ -83635,7 +84909,7 @@ $export($export.P + $export.F * __webpack_require__(227)(STARTS_WITH), 'String',
 });
 
 /***/ },
-/* 826 */
+/* 834 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83648,7 +84922,7 @@ __webpack_require__(24)('strike', function(createHTML){
 });
 
 /***/ },
-/* 827 */
+/* 835 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83661,7 +84935,7 @@ __webpack_require__(24)('sub', function(createHTML){
 });
 
 /***/ },
-/* 828 */
+/* 836 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83674,7 +84948,7 @@ __webpack_require__(24)('sup', function(createHTML){
 });
 
 /***/ },
-/* 829 */
+/* 837 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83687,20 +84961,20 @@ __webpack_require__(154)('trim', function($trim){
 });
 
 /***/ },
-/* 830 */
+/* 838 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 var $export      = __webpack_require__(2)
   , $typed       = __webpack_require__(155)
-  , buffer       = __webpack_require__(241)
+  , buffer       = __webpack_require__(242)
   , anObject     = __webpack_require__(4)
   , toIndex      = __webpack_require__(74)
   , toLength     = __webpack_require__(20)
   , isObject     = __webpack_require__(9)
   , ArrayBuffer  = __webpack_require__(10).ArrayBuffer
-  , speciesConstructor = __webpack_require__(390)
+  , speciesConstructor = __webpack_require__(393)
   , $ArrayBuffer = buffer.ArrayBuffer
   , $DataView    = buffer.DataView
   , $isView      = $typed.ABV && ArrayBuffer.isView
@@ -83736,19 +85010,19 @@ $export($export.P + $export.U + $export.F * __webpack_require__(6)(function(){
   }
 });
 
-__webpack_require__(111)(ARRAY_BUFFER);
+__webpack_require__(112)(ARRAY_BUFFER);
 
 /***/ },
-/* 831 */
+/* 839 */
 /***/ function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(2);
 $export($export.G + $export.W + $export.F * !__webpack_require__(155).ABV, {
-  DataView: __webpack_require__(241).DataView
+  DataView: __webpack_require__(242).DataView
 });
 
 /***/ },
-/* 832 */
+/* 840 */
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Float32', 4, function(init){
@@ -83758,7 +85032,7 @@ __webpack_require__(52)('Float32', 4, function(init){
 });
 
 /***/ },
-/* 833 */
+/* 841 */
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Float64', 8, function(init){
@@ -83768,7 +85042,7 @@ __webpack_require__(52)('Float64', 8, function(init){
 });
 
 /***/ },
-/* 834 */
+/* 842 */
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Int16', 2, function(init){
@@ -83778,7 +85052,7 @@ __webpack_require__(52)('Int16', 2, function(init){
 });
 
 /***/ },
-/* 835 */
+/* 843 */
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Int32', 4, function(init){
@@ -83788,7 +85062,7 @@ __webpack_require__(52)('Int32', 4, function(init){
 });
 
 /***/ },
-/* 836 */
+/* 844 */
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Int8', 1, function(init){
@@ -83798,7 +85072,7 @@ __webpack_require__(52)('Int8', 1, function(init){
 });
 
 /***/ },
-/* 837 */
+/* 845 */
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Uint16', 2, function(init){
@@ -83808,7 +85082,7 @@ __webpack_require__(52)('Uint16', 2, function(init){
 });
 
 /***/ },
-/* 838 */
+/* 846 */
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Uint32', 4, function(init){
@@ -83818,7 +85092,7 @@ __webpack_require__(52)('Uint32', 4, function(init){
 });
 
 /***/ },
-/* 839 */
+/* 847 */
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Uint8', 1, function(init){
@@ -83828,7 +85102,7 @@ __webpack_require__(52)('Uint8', 1, function(init){
 });
 
 /***/ },
-/* 840 */
+/* 848 */
 /***/ function(module, exports, __webpack_require__) {
 
 __webpack_require__(52)('Uint8', 1, function(init){
@@ -83838,12 +85112,12 @@ __webpack_require__(52)('Uint8', 1, function(init){
 }, true);
 
 /***/ },
-/* 841 */
+/* 849 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
-var weak = __webpack_require__(373);
+var weak = __webpack_require__(376);
 
 // 23.4 WeakSet Objects
 __webpack_require__(148)('WeakSet', function(get){
@@ -83856,7 +85130,7 @@ __webpack_require__(148)('WeakSet', function(get){
 }, weak, false, true);
 
 /***/ },
-/* 842 */
+/* 850 */
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata                  = __webpack_require__(50)
@@ -83869,7 +85143,7 @@ metadata.exp({defineMetadata: function defineMetadata(metadataKey, metadataValue
 }});
 
 /***/ },
-/* 843 */
+/* 851 */
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(50)
@@ -83889,11 +85163,11 @@ metadata.exp({deleteMetadata: function deleteMetadata(metadataKey, target /*, ta
 }});
 
 /***/ },
-/* 844 */
+/* 852 */
 /***/ function(module, exports, __webpack_require__) {
 
-var Set                     = __webpack_require__(400)
-  , from                    = __webpack_require__(709)
+var Set                     = __webpack_require__(403)
+  , from                    = __webpack_require__(717)
   , metadata                = __webpack_require__(50)
   , anObject                = __webpack_require__(4)
   , getPrototypeOf          = __webpack_require__(44)
@@ -83913,7 +85187,7 @@ metadata.exp({getMetadataKeys: function getMetadataKeys(target /*, targetKey */)
 }});
 
 /***/ },
-/* 845 */
+/* 853 */
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(50)
@@ -83935,7 +85209,7 @@ metadata.exp({getMetadata: function getMetadata(metadataKey, target /*, targetKe
 }});
 
 /***/ },
-/* 846 */
+/* 854 */
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata                = __webpack_require__(50)
@@ -83948,7 +85222,7 @@ metadata.exp({getOwnMetadataKeys: function getOwnMetadataKeys(target /*, targetK
 }});
 
 /***/ },
-/* 847 */
+/* 855 */
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(50)
@@ -83962,7 +85236,7 @@ metadata.exp({getOwnMetadata: function getOwnMetadata(metadataKey, target /*, ta
 }});
 
 /***/ },
-/* 848 */
+/* 856 */
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(50)
@@ -83983,7 +85257,7 @@ metadata.exp({hasMetadata: function hasMetadata(metadataKey, target /*, targetKe
 }});
 
 /***/ },
-/* 849 */
+/* 857 */
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(50)
@@ -83997,7 +85271,7 @@ metadata.exp({hasOwnMetadata: function hasOwnMetadata(metadataKey, target /*, ta
 }});
 
 /***/ },
-/* 850 */
+/* 858 */
 /***/ function(module, exports, __webpack_require__) {
 
 var metadata                  = __webpack_require__(50)
@@ -84017,7 +85291,7 @@ metadata.exp({metadata: function metadata(metadataKey, metadataValue){
 }});
 
 /***/ },
-/* 851 */
+/* 859 */
 /***/ function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/******/ (function(modules) { // webpackBootstrap
@@ -84204,226 +85478,226 @@ metadata.exp({metadata: function metadata(metadataKey, metadataValue){
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
 
 /***/ },
-/* 852 */
+/* 860 */
 /***/ function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 403,
-	"./af.js": 403,
-	"./ar": 409,
-	"./ar-dz": 404,
-	"./ar-dz.js": 404,
-	"./ar-ly": 405,
-	"./ar-ly.js": 405,
-	"./ar-ma": 406,
-	"./ar-ma.js": 406,
-	"./ar-sa": 407,
-	"./ar-sa.js": 407,
-	"./ar-tn": 408,
-	"./ar-tn.js": 408,
-	"./ar.js": 409,
-	"./az": 410,
-	"./az.js": 410,
-	"./be": 411,
-	"./be.js": 411,
-	"./bg": 412,
-	"./bg.js": 412,
-	"./bn": 413,
-	"./bn.js": 413,
-	"./bo": 414,
-	"./bo.js": 414,
-	"./br": 415,
-	"./br.js": 415,
-	"./bs": 416,
-	"./bs.js": 416,
-	"./ca": 417,
-	"./ca.js": 417,
-	"./cs": 418,
-	"./cs.js": 418,
-	"./cv": 419,
-	"./cv.js": 419,
-	"./cy": 420,
-	"./cy.js": 420,
-	"./da": 421,
-	"./da.js": 421,
-	"./de": 423,
-	"./de-at": 422,
-	"./de-at.js": 422,
-	"./de.js": 423,
-	"./dv": 424,
-	"./dv.js": 424,
-	"./el": 425,
-	"./el.js": 425,
-	"./en-au": 426,
-	"./en-au.js": 426,
-	"./en-ca": 427,
-	"./en-ca.js": 427,
-	"./en-gb": 428,
-	"./en-gb.js": 428,
-	"./en-ie": 429,
-	"./en-ie.js": 429,
-	"./en-nz": 430,
-	"./en-nz.js": 430,
-	"./eo": 431,
-	"./eo.js": 431,
-	"./es": 433,
-	"./es-do": 432,
-	"./es-do.js": 432,
-	"./es.js": 433,
-	"./et": 434,
-	"./et.js": 434,
-	"./eu": 435,
-	"./eu.js": 435,
-	"./fa": 436,
-	"./fa.js": 436,
-	"./fi": 437,
-	"./fi.js": 437,
-	"./fo": 438,
-	"./fo.js": 438,
-	"./fr": 441,
-	"./fr-ca": 439,
-	"./fr-ca.js": 439,
-	"./fr-ch": 440,
-	"./fr-ch.js": 440,
-	"./fr.js": 441,
-	"./fy": 442,
-	"./fy.js": 442,
-	"./gd": 443,
-	"./gd.js": 443,
-	"./gl": 444,
-	"./gl.js": 444,
-	"./he": 445,
-	"./he.js": 445,
-	"./hi": 446,
-	"./hi.js": 446,
-	"./hr": 447,
-	"./hr.js": 447,
-	"./hu": 448,
-	"./hu.js": 448,
-	"./hy-am": 449,
-	"./hy-am.js": 449,
-	"./id": 450,
-	"./id.js": 450,
-	"./is": 451,
-	"./is.js": 451,
-	"./it": 452,
-	"./it.js": 452,
-	"./ja": 453,
-	"./ja.js": 453,
-	"./jv": 454,
-	"./jv.js": 454,
-	"./ka": 455,
-	"./ka.js": 455,
-	"./kk": 456,
-	"./kk.js": 456,
-	"./km": 457,
-	"./km.js": 457,
-	"./ko": 458,
-	"./ko.js": 458,
-	"./ky": 459,
-	"./ky.js": 459,
-	"./lb": 460,
-	"./lb.js": 460,
-	"./lo": 461,
-	"./lo.js": 461,
-	"./lt": 462,
-	"./lt.js": 462,
-	"./lv": 463,
-	"./lv.js": 463,
-	"./me": 464,
-	"./me.js": 464,
-	"./mi": 465,
-	"./mi.js": 465,
-	"./mk": 466,
-	"./mk.js": 466,
-	"./ml": 467,
-	"./ml.js": 467,
-	"./mr": 468,
-	"./mr.js": 468,
-	"./ms": 470,
-	"./ms-my": 469,
-	"./ms-my.js": 469,
-	"./ms.js": 470,
-	"./my": 471,
-	"./my.js": 471,
-	"./nb": 472,
-	"./nb.js": 472,
-	"./ne": 473,
-	"./ne.js": 473,
-	"./nl": 475,
-	"./nl-be": 474,
-	"./nl-be.js": 474,
-	"./nl.js": 475,
-	"./nn": 476,
-	"./nn.js": 476,
-	"./pa-in": 477,
-	"./pa-in.js": 477,
-	"./pl": 478,
-	"./pl.js": 478,
-	"./pt": 480,
-	"./pt-br": 479,
-	"./pt-br.js": 479,
-	"./pt.js": 480,
-	"./ro": 481,
-	"./ro.js": 481,
-	"./ru": 482,
-	"./ru.js": 482,
-	"./se": 483,
-	"./se.js": 483,
-	"./si": 484,
-	"./si.js": 484,
-	"./sk": 485,
-	"./sk.js": 485,
-	"./sl": 486,
-	"./sl.js": 486,
-	"./sq": 487,
-	"./sq.js": 487,
-	"./sr": 489,
-	"./sr-cyrl": 488,
-	"./sr-cyrl.js": 488,
-	"./sr.js": 489,
-	"./ss": 490,
-	"./ss.js": 490,
-	"./sv": 491,
-	"./sv.js": 491,
-	"./sw": 492,
-	"./sw.js": 492,
-	"./ta": 493,
-	"./ta.js": 493,
-	"./te": 494,
-	"./te.js": 494,
-	"./tet": 495,
-	"./tet.js": 495,
-	"./th": 496,
-	"./th.js": 496,
-	"./tl-ph": 497,
-	"./tl-ph.js": 497,
-	"./tlh": 498,
-	"./tlh.js": 498,
-	"./tr": 499,
-	"./tr.js": 499,
-	"./tzl": 500,
-	"./tzl.js": 500,
-	"./tzm": 502,
-	"./tzm-latn": 501,
-	"./tzm-latn.js": 501,
-	"./tzm.js": 502,
-	"./uk": 503,
-	"./uk.js": 503,
-	"./uz": 504,
-	"./uz.js": 504,
-	"./vi": 505,
-	"./vi.js": 505,
-	"./x-pseudo": 506,
-	"./x-pseudo.js": 506,
-	"./yo": 507,
-	"./yo.js": 507,
-	"./zh-cn": 508,
-	"./zh-cn.js": 508,
-	"./zh-hk": 509,
-	"./zh-hk.js": 509,
-	"./zh-tw": 510,
-	"./zh-tw.js": 510
+	"./af": 406,
+	"./af.js": 406,
+	"./ar": 412,
+	"./ar-dz": 407,
+	"./ar-dz.js": 407,
+	"./ar-ly": 408,
+	"./ar-ly.js": 408,
+	"./ar-ma": 409,
+	"./ar-ma.js": 409,
+	"./ar-sa": 410,
+	"./ar-sa.js": 410,
+	"./ar-tn": 411,
+	"./ar-tn.js": 411,
+	"./ar.js": 412,
+	"./az": 413,
+	"./az.js": 413,
+	"./be": 414,
+	"./be.js": 414,
+	"./bg": 415,
+	"./bg.js": 415,
+	"./bn": 416,
+	"./bn.js": 416,
+	"./bo": 417,
+	"./bo.js": 417,
+	"./br": 418,
+	"./br.js": 418,
+	"./bs": 419,
+	"./bs.js": 419,
+	"./ca": 420,
+	"./ca.js": 420,
+	"./cs": 421,
+	"./cs.js": 421,
+	"./cv": 422,
+	"./cv.js": 422,
+	"./cy": 423,
+	"./cy.js": 423,
+	"./da": 424,
+	"./da.js": 424,
+	"./de": 426,
+	"./de-at": 425,
+	"./de-at.js": 425,
+	"./de.js": 426,
+	"./dv": 427,
+	"./dv.js": 427,
+	"./el": 428,
+	"./el.js": 428,
+	"./en-au": 429,
+	"./en-au.js": 429,
+	"./en-ca": 430,
+	"./en-ca.js": 430,
+	"./en-gb": 431,
+	"./en-gb.js": 431,
+	"./en-ie": 432,
+	"./en-ie.js": 432,
+	"./en-nz": 433,
+	"./en-nz.js": 433,
+	"./eo": 434,
+	"./eo.js": 434,
+	"./es": 436,
+	"./es-do": 435,
+	"./es-do.js": 435,
+	"./es.js": 436,
+	"./et": 437,
+	"./et.js": 437,
+	"./eu": 438,
+	"./eu.js": 438,
+	"./fa": 439,
+	"./fa.js": 439,
+	"./fi": 440,
+	"./fi.js": 440,
+	"./fo": 441,
+	"./fo.js": 441,
+	"./fr": 444,
+	"./fr-ca": 442,
+	"./fr-ca.js": 442,
+	"./fr-ch": 443,
+	"./fr-ch.js": 443,
+	"./fr.js": 444,
+	"./fy": 445,
+	"./fy.js": 445,
+	"./gd": 446,
+	"./gd.js": 446,
+	"./gl": 447,
+	"./gl.js": 447,
+	"./he": 448,
+	"./he.js": 448,
+	"./hi": 449,
+	"./hi.js": 449,
+	"./hr": 450,
+	"./hr.js": 450,
+	"./hu": 451,
+	"./hu.js": 451,
+	"./hy-am": 452,
+	"./hy-am.js": 452,
+	"./id": 453,
+	"./id.js": 453,
+	"./is": 454,
+	"./is.js": 454,
+	"./it": 455,
+	"./it.js": 455,
+	"./ja": 456,
+	"./ja.js": 456,
+	"./jv": 457,
+	"./jv.js": 457,
+	"./ka": 458,
+	"./ka.js": 458,
+	"./kk": 459,
+	"./kk.js": 459,
+	"./km": 460,
+	"./km.js": 460,
+	"./ko": 461,
+	"./ko.js": 461,
+	"./ky": 462,
+	"./ky.js": 462,
+	"./lb": 463,
+	"./lb.js": 463,
+	"./lo": 464,
+	"./lo.js": 464,
+	"./lt": 465,
+	"./lt.js": 465,
+	"./lv": 466,
+	"./lv.js": 466,
+	"./me": 467,
+	"./me.js": 467,
+	"./mi": 468,
+	"./mi.js": 468,
+	"./mk": 469,
+	"./mk.js": 469,
+	"./ml": 470,
+	"./ml.js": 470,
+	"./mr": 471,
+	"./mr.js": 471,
+	"./ms": 473,
+	"./ms-my": 472,
+	"./ms-my.js": 472,
+	"./ms.js": 473,
+	"./my": 474,
+	"./my.js": 474,
+	"./nb": 475,
+	"./nb.js": 475,
+	"./ne": 476,
+	"./ne.js": 476,
+	"./nl": 478,
+	"./nl-be": 477,
+	"./nl-be.js": 477,
+	"./nl.js": 478,
+	"./nn": 479,
+	"./nn.js": 479,
+	"./pa-in": 480,
+	"./pa-in.js": 480,
+	"./pl": 481,
+	"./pl.js": 481,
+	"./pt": 483,
+	"./pt-br": 482,
+	"./pt-br.js": 482,
+	"./pt.js": 483,
+	"./ro": 484,
+	"./ro.js": 484,
+	"./ru": 485,
+	"./ru.js": 485,
+	"./se": 486,
+	"./se.js": 486,
+	"./si": 487,
+	"./si.js": 487,
+	"./sk": 488,
+	"./sk.js": 488,
+	"./sl": 489,
+	"./sl.js": 489,
+	"./sq": 490,
+	"./sq.js": 490,
+	"./sr": 492,
+	"./sr-cyrl": 491,
+	"./sr-cyrl.js": 491,
+	"./sr.js": 492,
+	"./ss": 493,
+	"./ss.js": 493,
+	"./sv": 494,
+	"./sv.js": 494,
+	"./sw": 495,
+	"./sw.js": 495,
+	"./ta": 496,
+	"./ta.js": 496,
+	"./te": 497,
+	"./te.js": 497,
+	"./tet": 498,
+	"./tet.js": 498,
+	"./th": 499,
+	"./th.js": 499,
+	"./tl-ph": 500,
+	"./tl-ph.js": 500,
+	"./tlh": 501,
+	"./tlh.js": 501,
+	"./tr": 502,
+	"./tr.js": 502,
+	"./tzl": 503,
+	"./tzl.js": 503,
+	"./tzm": 505,
+	"./tzm-latn": 504,
+	"./tzm-latn.js": 504,
+	"./tzm.js": 505,
+	"./uk": 506,
+	"./uk.js": 506,
+	"./uz": 507,
+	"./uz.js": 507,
+	"./vi": 508,
+	"./vi.js": 508,
+	"./x-pseudo": 509,
+	"./x-pseudo.js": 509,
+	"./yo": 510,
+	"./yo.js": 510,
+	"./zh-cn": 511,
+	"./zh-cn.js": 511,
+	"./zh-hk": 512,
+	"./zh-hk.js": 512,
+	"./zh-tw": 513,
+	"./zh-tw.js": 513
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -84439,18 +85713,18 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 852;
+webpackContext.id = 860;
 
 
 /***/ },
-/* 853 */
+/* 861 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__accordion_group_component__ = __webpack_require__(511);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accordion_component__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accordion_module__ = __webpack_require__(512);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accordion_config__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__accordion_group_component__ = __webpack_require__(514);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accordion_component__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accordion_module__ = __webpack_require__(515);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accordion_config__ = __webpack_require__(246);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__accordion_group_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__accordion_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__accordion_module__["a"]; });
@@ -84462,13 +85736,13 @@ webpackContext.id = 852;
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 854 */
+/* 862 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__alert_component__ = __webpack_require__(513);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__alert_module__ = __webpack_require__(514);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alert_config__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__alert_component__ = __webpack_require__(516);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__alert_module__ = __webpack_require__(517);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alert_config__ = __webpack_require__(247);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__alert_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__alert_module__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__alert_config__["a"]; });
@@ -84478,13 +85752,13 @@ webpackContext.id = 852;
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 855 */
+/* 863 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__button_checkbox_directive__ = __webpack_require__(515);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__button_radio_directive__ = __webpack_require__(516);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buttons_module__ = __webpack_require__(517);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__button_checkbox_directive__ = __webpack_require__(518);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__button_radio_directive__ = __webpack_require__(519);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__buttons_module__ = __webpack_require__(520);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__button_checkbox_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__button_radio_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__buttons_module__["a"]; });
@@ -84494,14 +85768,14 @@ webpackContext.id = 852;
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 856 */
+/* 864 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__carousel_component__ = __webpack_require__(247);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__carousel_module__ = __webpack_require__(518);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__slide_component__ = __webpack_require__(519);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__carousel_config__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__carousel_component__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__carousel_module__ = __webpack_require__(521);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__slide_component__ = __webpack_require__(522);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__carousel_config__ = __webpack_require__(249);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__carousel_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__carousel_module__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__slide_component__["a"]; });
@@ -84513,12 +85787,12 @@ webpackContext.id = 852;
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 857 */
+/* 865 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__collapse_directive__ = __webpack_require__(520);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__collapse_module__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__collapse_directive__ = __webpack_require__(523);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__collapse_module__ = __webpack_require__(250);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__collapse_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__collapse_module__["a"]; });
 
@@ -84526,17 +85800,17 @@ webpackContext.id = 852;
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 858 */
+/* 866 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__datepicker_component__ = __webpack_require__(525);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datepicker_module__ = __webpack_require__(526);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__daypicker_component__ = __webpack_require__(527);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__monthpicker_component__ = __webpack_require__(528);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__yearpicker_component__ = __webpack_require__(529);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__date_formatter__ = __webpack_require__(524);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__datepicker_config__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__datepicker_component__ = __webpack_require__(528);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datepicker_module__ = __webpack_require__(529);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__daypicker_component__ = __webpack_require__(530);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__monthpicker_component__ = __webpack_require__(531);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__yearpicker_component__ = __webpack_require__(532);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__date_formatter__ = __webpack_require__(527);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__datepicker_config__ = __webpack_require__(251);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__datepicker_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__datepicker_module__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__daypicker_component__["a"]; });
@@ -84562,16 +85836,16 @@ webpackContext.id = 852;
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 859 */
+/* 867 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dropdown_menu_directive__ = __webpack_require__(530);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dropdown_toggle_directive__ = __webpack_require__(531);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dropdown_menu_directive__ = __webpack_require__(533);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dropdown_toggle_directive__ = __webpack_require__(534);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dropdown_directive__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dropdown_service__ = __webpack_require__(252);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dropdown_module__ = __webpack_require__(532);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dropdown_config__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dropdown_service__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dropdown_module__ = __webpack_require__(535);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dropdown_config__ = __webpack_require__(252);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__dropdown_menu_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__dropdown_toggle_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "e", function() { return __WEBPACK_IMPORTED_MODULE_2__dropdown_directive__["a"]; });
@@ -84587,45 +85861,45 @@ webpackContext.id = 852;
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 860 */
+/* 868 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accordion_accordion_module__ = __webpack_require__(512);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alert_alert_module__ = __webpack_require__(514);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__buttons_buttons_module__ = __webpack_require__(517);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__carousel_carousel_module__ = __webpack_require__(518);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__collapse_collapse_module__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__datepicker_datepicker_module__ = __webpack_require__(526);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dropdown_dropdown_module__ = __webpack_require__(532);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__modal_modal_module__ = __webpack_require__(535);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pagination_pagination_module__ = __webpack_require__(538);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__progressbar_progressbar_module__ = __webpack_require__(544);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__rating_rating_module__ = __webpack_require__(546);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__sortable__ = __webpack_require__(547);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__tabs_tabs_module__ = __webpack_require__(551);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__timepicker_timepicker_module__ = __webpack_require__(553);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__tooltip_tooltip_module__ = __webpack_require__(555);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__typeahead_typeahead_module__ = __webpack_require__(559);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__popover_popover_module__ = __webpack_require__(540);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__accordion__ = __webpack_require__(853);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__alert__ = __webpack_require__(854);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__buttons__ = __webpack_require__(855);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__carousel__ = __webpack_require__(856);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__collapse__ = __webpack_require__(857);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__datepicker__ = __webpack_require__(858);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__modal__ = __webpack_require__(861);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__dropdown__ = __webpack_require__(859);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pagination__ = __webpack_require__(862);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__progressbar__ = __webpack_require__(865);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__rating__ = __webpack_require__(866);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__tabs__ = __webpack_require__(868);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__timepicker__ = __webpack_require__(869);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__tooltip__ = __webpack_require__(870);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__typeahead__ = __webpack_require__(872);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__popover__ = __webpack_require__(863);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__utils__ = __webpack_require__(560);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accordion_accordion_module__ = __webpack_require__(515);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alert_alert_module__ = __webpack_require__(517);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__buttons_buttons_module__ = __webpack_require__(520);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__carousel_carousel_module__ = __webpack_require__(521);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__collapse_collapse_module__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__datepicker_datepicker_module__ = __webpack_require__(529);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dropdown_dropdown_module__ = __webpack_require__(535);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__modal_modal_module__ = __webpack_require__(538);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pagination_pagination_module__ = __webpack_require__(541);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__progressbar_progressbar_module__ = __webpack_require__(547);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__rating_rating_module__ = __webpack_require__(549);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__sortable__ = __webpack_require__(550);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__tabs_tabs_module__ = __webpack_require__(554);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__timepicker_timepicker_module__ = __webpack_require__(556);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__tooltip_tooltip_module__ = __webpack_require__(558);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__typeahead_typeahead_module__ = __webpack_require__(562);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__popover_popover_module__ = __webpack_require__(543);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__accordion__ = __webpack_require__(861);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__alert__ = __webpack_require__(862);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__buttons__ = __webpack_require__(863);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__carousel__ = __webpack_require__(864);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__collapse__ = __webpack_require__(865);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__datepicker__ = __webpack_require__(866);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__modal__ = __webpack_require__(869);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__dropdown__ = __webpack_require__(867);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pagination__ = __webpack_require__(870);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__progressbar__ = __webpack_require__(873);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__rating__ = __webpack_require__(874);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__tabs__ = __webpack_require__(876);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__timepicker__ = __webpack_require__(877);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__tooltip__ = __webpack_require__(878);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__typeahead__ = __webpack_require__(880);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__popover__ = __webpack_require__(871);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__utils__ = __webpack_require__(563);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__component_loader__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__positioning__ = __webpack_require__(88);
 /* harmony export (binding) */ __webpack_require__.d(exports, "BsRootModule", function() { return BsRootModule; });
@@ -84795,13 +86069,13 @@ var Ng2BootstrapModule = (function () {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 861 */
+/* 869 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modal_backdrop_component__ = __webpack_require__(253);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_component__ = __webpack_require__(534);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_module__ = __webpack_require__(535);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modal_backdrop_component__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_component__ = __webpack_require__(537);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_module__ = __webpack_require__(538);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__modal_backdrop_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__modal_backdrop_component__["b"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__modal_component__["a"]; });
@@ -84812,13 +86086,13 @@ var Ng2BootstrapModule = (function () {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 862 */
+/* 870 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pager_component__ = __webpack_require__(536);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pagination_component__ = __webpack_require__(537);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pagination_module__ = __webpack_require__(538);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pager_component__ = __webpack_require__(539);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pagination_component__ = __webpack_require__(540);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pagination_module__ = __webpack_require__(541);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pagination_config__ = __webpack_require__(159);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__pager_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__pagination_component__["a"]; });
@@ -84831,14 +86105,14 @@ var Ng2BootstrapModule = (function () {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 863 */
+/* 871 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__popover_directive__ = __webpack_require__(539);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__popover_module__ = __webpack_require__(540);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__popover_directive__ = __webpack_require__(542);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__popover_module__ = __webpack_require__(543);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__popover_config__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__popover_container_component__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__popover_container_component__ = __webpack_require__(255);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__popover_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__popover_module__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__popover_config__["a"]; });
@@ -84850,12 +86124,12 @@ var Ng2BootstrapModule = (function () {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 864 */
+/* 872 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng_positioning__ = __webpack_require__(541);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng_positioning__ = __webpack_require__(544);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return PositioningService; });
 
 
@@ -84886,15 +86160,15 @@ var PositioningService = (function () {
 //# sourceMappingURL=positioning.service.js.map
 
 /***/ },
-/* 865 */
+/* 873 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bar_component__ = __webpack_require__(542);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__progress_directive__ = __webpack_require__(255);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__progressbar_component__ = __webpack_require__(543);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__progressbar_module__ = __webpack_require__(544);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__progressbar_config__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bar_component__ = __webpack_require__(545);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__progress_directive__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__progressbar_component__ = __webpack_require__(546);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__progressbar_module__ = __webpack_require__(547);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__progressbar_config__ = __webpack_require__(257);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__bar_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "e", function() { return __WEBPACK_IMPORTED_MODULE_1__progress_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__progressbar_component__["a"]; });
@@ -84908,12 +86182,12 @@ var PositioningService = (function () {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 866 */
+/* 874 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rating_component__ = __webpack_require__(545);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rating_module__ = __webpack_require__(546);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rating_component__ = __webpack_require__(548);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rating_module__ = __webpack_require__(549);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__rating_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__rating_module__["a"]; });
 
@@ -84921,14 +86195,14 @@ var PositioningService = (function () {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 867 */
+/* 875 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sortable_component__ = __webpack_require__(548);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__draggable_item_service__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sortable_component__ = __webpack_require__(551);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__draggable_item_service__ = __webpack_require__(258);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return SortableModule; });
 
 
@@ -84954,16 +86228,16 @@ var SortableModule = (function () {
 //# sourceMappingURL=sortable.module.js.map
 
 /***/ },
-/* 868 */
+/* 876 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ng_transclude_directive__ = __webpack_require__(549);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tab_directive__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tab_heading_directive__ = __webpack_require__(550);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabset_component__ = __webpack_require__(259);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tabset_config__ = __webpack_require__(260);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabs_module__ = __webpack_require__(551);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ng_transclude_directive__ = __webpack_require__(552);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tab_directive__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tab_heading_directive__ = __webpack_require__(553);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabset_component__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tabset_config__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tabs_module__ = __webpack_require__(554);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__ng_transclude_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__tab_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__tab_heading_directive__["a"]; });
@@ -84979,13 +86253,13 @@ var SortableModule = (function () {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 869 */
+/* 877 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__timepicker_config__ = __webpack_require__(261);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__timepicker_component__ = __webpack_require__(552);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__timepicker_module__ = __webpack_require__(553);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__timepicker_config__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__timepicker_component__ = __webpack_require__(555);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__timepicker_module__ = __webpack_require__(556);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__timepicker_config__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__timepicker_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__timepicker_module__["a"]; });
@@ -84995,15 +86269,15 @@ var SortableModule = (function () {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 870 */
+/* 878 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tooltip_container_component__ = __webpack_require__(262);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tooltip_directive__ = __webpack_require__(554);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_module__ = __webpack_require__(555);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__tooltip_container_component__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tooltip_directive__ = __webpack_require__(557);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_module__ = __webpack_require__(558);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tooltip_config__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tooltip_options_class__ = __webpack_require__(871);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tooltip_options_class__ = __webpack_require__(879);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__tooltip_container_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "e", function() { return __WEBPACK_IMPORTED_MODULE_1__tooltip_directive__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__tooltip_module__["a"]; });
@@ -85017,7 +86291,7 @@ var SortableModule = (function () {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 871 */
+/* 879 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85041,17 +86315,17 @@ var TooltipOptions = (function () {
 //# sourceMappingURL=tooltip-options.class.js.map
 
 /***/ },
-/* 872 */
+/* 880 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__latin_map__ = __webpack_require__(556);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__typeahead_options_class__ = __webpack_require__(873);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__typeahead_match_class__ = __webpack_require__(557);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__typeahead_utils__ = __webpack_require__(264);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__typeahead_container_component__ = __webpack_require__(263);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__typeahead_directive__ = __webpack_require__(558);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__typeahead_module__ = __webpack_require__(559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__latin_map__ = __webpack_require__(559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__typeahead_options_class__ = __webpack_require__(881);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__typeahead_match_class__ = __webpack_require__(560);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__typeahead_utils__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__typeahead_container_component__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__typeahead_directive__ = __webpack_require__(561);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__typeahead_module__ = __webpack_require__(562);
 /* unused harmony reexport latinMap */
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__typeahead_options_class__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__typeahead_match_class__["a"]; });
@@ -85069,7 +86343,7 @@ var TooltipOptions = (function () {
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 873 */
+/* 881 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85083,7 +86357,7 @@ var TypeaheadOptions = (function () {
 //# sourceMappingURL=typeahead-options.class.js.map
 
 /***/ },
-/* 874 */
+/* 882 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85330,11 +86604,11 @@ var LinkedList = (function () {
 //# sourceMappingURL=linked-list.class.js.map
 
 /***/ },
-/* 875 */
+/* 883 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__trigger_class__ = __webpack_require__(561);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__trigger_class__ = __webpack_require__(564);
 /* unused harmony export parseTriggers */
 /* harmony export (immutable) */ exports["a"] = listenToTriggers;
 
@@ -85382,1291 +86656,6 @@ function listenToTriggers(renderer, target, triggers, showFn, hideFn, toggleFn) 
 //# sourceMappingURL=triggers.js.map
 
 /***/ },
-/* 876 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-var core_1 = __webpack_require__(0);
-var common_1 = __webpack_require__(15);
-var forms_1 = __webpack_require__(17);
-var component_1 = __webpack_require__(563);
-var directive_1 = __webpack_require__(564);
-var service_1 = __webpack_require__(565);
-__export(__webpack_require__(563));
-__export(__webpack_require__(877));
-__export(__webpack_require__(564));
-__export(__webpack_require__(565));
-var Ng2Select2BootstrapModule = Ng2Select2BootstrapModule_1 = (function () {
-    function Ng2Select2BootstrapModule() {
-    }
-    Ng2Select2BootstrapModule.forRoot = function () {
-        return {
-            ngModule: Ng2Select2BootstrapModule_1,
-            providers: [service_1.SelectService]
-        };
-    };
-    return Ng2Select2BootstrapModule;
-}());
-Ng2Select2BootstrapModule = Ng2Select2BootstrapModule_1 = __decorate([
-    core_1.NgModule({
-        imports: [
-            common_1.CommonModule,
-            forms_1.FormsModule,
-        ],
-        exports: [
-            directive_1.InnerTemplateDirective,
-            component_1.SelectComponent,
-            component_1.MultipleComponent,
-            component_1.RequestComponent,
-            component_1.RequestMultipleComponent,
-            forms_1.FormsModule,
-        ],
-        declarations: [
-            directive_1.InnerTemplateDirective,
-            component_1.SelectComponent,
-            component_1.MultipleComponent,
-            component_1.RequestComponent,
-            directive_1.HighlightDirective,
-            component_1.RequestMultipleComponent,
-            directive_1.InfiniteScrollDirective,
-        ],
-        providers: [service_1.SelectService]
-    })
-], Ng2Select2BootstrapModule);
-exports.Ng2Select2BootstrapModule = Ng2Select2BootstrapModule;
-var Ng2Select2BootstrapModule_1;
-//# sourceMappingURL=index.js.map
-
-/***/ },
-/* 877 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var select_1 = __webpack_require__(114);
-exports.Select = select_1.Select;
-//# sourceMappingURL=index.js.map
-
-/***/ },
-/* 878 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var forms_1 = __webpack_require__(17);
-var select_1 = __webpack_require__(114);
-var MultipleComponent = MultipleComponent_1 = (function (_super) {
-    __extends(MultipleComponent, _super);
-    function MultipleComponent(elementRef, zone) {
-        var _this = _super.call(this, elementRef, zone) || this;
-        _this.elementRef = elementRef;
-        _this.zone = zone;
-        _this.name = '';
-        _this.classe = '';
-        _this.placeholder = 'Selecione';
-        _this.minimoCaracteres = 0;
-        _this.disabled = false;
-        _this.indiceId = 'id';
-        _this.indiceNome = 'nome';
-        _this.change = new core_1.EventEmitter();
-        _this.onSelecionarItem = new core_1.EventEmitter();
-        _this.onBuscar = new core_1.EventEmitter();
-        _this.onApagar = new core_1.EventEmitter();
-        _this.onRemoverItem = new core_1.EventEmitter();
-        _this.onAbrir = new core_1.EventEmitter();
-        _this.onFechar = new core_1.EventEmitter();
-        _this.onLimpar = new core_1.EventEmitter();
-        return _this;
-    }
-    Object.defineProperty(MultipleComponent.prototype, "valores", {
-        set: function (valor) {
-            this._valores = valor;
-            this.valoresExibir = valor;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    MultipleComponent.prototype.abrir = function () {
-        if (this.disabled) {
-            return false;
-        }
-        if (this.aberto) {
-            this.fechar();
-        }
-        else {
-            this.aberto = true;
-            if (!this.data) {
-                this.data = [];
-            }
-            if (!this._value) {
-                this._value = [];
-            }
-            this.valorPesquisado = '';
-            this.campoBusca.nativeElement.focus();
-            this.setFocus(true);
-            this.onAbrir.emit(true);
-            this.buscar();
-        }
-    };
-    MultipleComponent.prototype.selecionar = function (item) {
-        var _this = this;
-        //verifica se ja foi adicionado
-        var jaExiste = this.data.findIndex(function (procurar) { return procurar[_this.indiceId] == item[_this.indiceId]; });
-        if (jaExiste === -1) {
-            this.data.push(item);
-        }
-        this.updateValue(this.data);
-        this.onSelecionarItem.emit(item);
-        this.fechar();
-        //apaga campo de busca
-        this.campoBusca.nativeElement.value = '';
-    };
-    MultipleComponent.prototype.getSomenteId = function () {
-        var ids = [];
-        for (var _i = 0, _a = this.data; _i < _a.length; _i++) {
-            var item = _a[_i];
-            ids.push(item[this.indiceId]);
-        }
-        return ids;
-    };
-    MultipleComponent.prototype.limpar = function (event) {
-        event.stopPropagation();
-        this.data = null;
-        this.updateValue(null);
-        this.onLimpar.emit(true);
-        this.aberto = false;
-        this.abrir();
-    };
-    MultipleComponent.prototype.remove = function (item, event) {
-        _super.prototype.remove.call(this, item, event);
-        this.updateValue(this.data);
-    };
-    MultipleComponent.prototype.buscar = function () {
-        var _this = this;
-        if (this.validaCaracteresMinimo() == false) {
-            return false;
-        }
-        this.onBuscar.emit(this.valorPesquisado);
-        this.valoresExibir = this._valores.filter(function (item) {
-            var pesquisa = item[_this.indiceNome].toLocaleLowerCase().indexOf(_this.valorPesquisado.toLocaleLowerCase());
-            //verifica se o item da lista original ja n esta add na lista data
-            var jaFoiAdicionado = _this.data.findIndex(function (procurar) { return procurar[_this.indiceId] == item[_this.indiceId]; });
-            if (pesquisa !== -1 && jaFoiAdicionado === -1) {
-                return item;
-            }
-        });
-    };
-    Object.defineProperty(MultipleComponent.prototype, "value", {
-        get: function () { return this._value; },
-        set: function (v) {
-            if (v !== this._value) {
-                this._value = (v);
-                this._onChangeCallback(v);
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    ;
-    MultipleComponent.prototype.writeValue = function (value) {
-        this.data = value;
-        this._value = value;
-    };
-    MultipleComponent.prototype.updateValue = function (value) {
-        var _this = this;
-        this.zone.run(function () {
-            _this._value = value;
-            _this.onChange(value);
-            _this._onTouchedCallback();
-            _this.change.emit(value);
-        });
-    };
-    MultipleComponent.prototype.onChange = function (_) { };
-    MultipleComponent.prototype.onTouched = function () { };
-    MultipleComponent.prototype.registerOnChange = function (fn) { this.onChange = fn; };
-    MultipleComponent.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
-    MultipleComponent.prototype._onChangeCallback = function (_) { };
-    MultipleComponent.prototype._onTouchedCallback = function () { };
-    return MultipleComponent;
-}(select_1.Select));
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], MultipleComponent.prototype, "name", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], MultipleComponent.prototype, "classe", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], MultipleComponent.prototype, "placeholder", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Number)
-], MultipleComponent.prototype, "minimoCaracteres", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", core_1.TemplateRef)
-], MultipleComponent.prototype, "templateResultado", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", core_1.TemplateRef)
-], MultipleComponent.prototype, "templateSelecionado", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", core_1.TemplateRef)
-], MultipleComponent.prototype, "templateSemResultado", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Boolean)
-], MultipleComponent.prototype, "disabled", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], MultipleComponent.prototype, "indiceId", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], MultipleComponent.prototype, "indiceNome", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object),
-    __metadata("design:paramtypes", [Object])
-], MultipleComponent.prototype, "valores", null);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], MultipleComponent.prototype, "change", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], MultipleComponent.prototype, "onSelecionarItem", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], MultipleComponent.prototype, "onBuscar", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], MultipleComponent.prototype, "onApagar", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], MultipleComponent.prototype, "onRemoverItem", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], MultipleComponent.prototype, "onAbrir", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], MultipleComponent.prototype, "onFechar", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], MultipleComponent.prototype, "onLimpar", void 0);
-__decorate([
-    core_1.ViewChild('campoBusca'),
-    __metadata("design:type", core_1.ElementRef)
-], MultipleComponent.prototype, "campoBusca", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object),
-    __metadata("design:paramtypes", [Object])
-], MultipleComponent.prototype, "value", null);
-MultipleComponent = MultipleComponent_1 = __decorate([
-    core_1.Component({
-        selector: 'select2-multiple',
-        template: "\n    <!--select simples-->\n    <span [ngClass]=\"getClassGeral()\" dir=\"ltr\" (click)=\"abrir()\">\n        <span class=\"selection\">\n            <span class=\"select2-selection select2-selection--multiple\" role=\"combobox\" aria-haspopup=\"true\" aria-expanded=\"false\" tabindex=\"-1\">\n            <ul class=\"select2-selection__rendered\">\n                <li [hidden]=\"data\" [innerHtml]=\"placeholder\"  class=\"select2-selection__placeholder\"></li>\n                <span [hidden]=\"!data\" >\n                    <span [inner-template]=\"templateSelecionado || templateSelecionadoInterno\" [item]=\"this\"></span>\n                </span>\n                <li class=\"select2-selection__arrow\" role=\"presentation\"><b role=\"presentation\"></b></li>\n            </ul>\n        </span>\n        </span>\n        <span class=\"dropdown-wrapper\" aria-hidden=\"true\"></span>\n    </span>\n    \n    <!--quando clicar campo-->\n    <div [hidden]=\"!aberto\">\n        <span class=\"select2-container select2-container--bootstrap select2-container--open\">\n            <span class=\"select2-dropdown select2-dropdown--below\" dir=\"ltr\" >\n                <span class=\"select2-search select2-search--dropdown\">\n                    <input (keyup)=\"keyup($event.target.value)\" #campoBusca placeholder=\"Digite algo\" autofocus class=\"select2-search__field\" type=\"search\" tabindex=\"0\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"textbox\">\n                </span>\n                <span class=\"select2-results\">\n                    <ul class=\"select2-results__options\" role=\"tree\"  aria-expanded=\"true\" aria-hidden=\"false\">\n                        <span [hidden]=\"exibirMensagemCaracteresMinimo\">\n                            <span [hidden]=\"valoresExibir.length == 0\" >\n                                <li *ngFor=\"let item of valoresExibir\" (click)=\"selecionar(item)\" class=\"select2-results__option\" highlight=\"select2-results__option--highlighted\" role=\"treeitem\" [attr.aria-selected]=\"((_value) && (item[indiceId] == _value[indiceId])) ? true : false\">\n                                    <span  [inner-template]=\"templateResultado || templateResultadoInterno\" [item]=\"item\"></span>\n                                </li>\n                            </span>\n                            <li [hidden]=\"valoresExibir.length > 0\" class=\"select2-results__option select2-results__message\" aria-live=\"assertive\">\n                                <span  [inner-template]=\"templateSemResultado || templateSemResultadoInterno\" [item]=\"{pesquisa:valorPesquisado}\"></span>\n                            </li>\n                        </span>\n                        <li [hidden]=\"exibirMensagemCaracteresMinimo == false\" class=\"select2-results__option select2-results__message\">\n                            Digite {{minimoCaracteres}} ou mais caracteres para realizar a busca\n                        </li>\n                    </ul>\n                </span>\n            </span>\n        </span>\n    </div>\n    \n    \n    \n    <template #templateSemResultadoInterno>\n        Nenhum resultado encontrado\n    </template>\n    <template #templateResultadoInterno let-valor>\n        {{valor[indiceNome]}}\n    </template>\n    <template #templateSelecionadoInterno let-valor>\n        <span *ngIf=\"valor\">\n            <li *ngFor=\"let item of valor.data\" class=\"select2-selection__choice\">\n                <span class=\"select2-selection__choice__remove\" role=\"presentation\" (click)=\"valor.remove(item, $event)\">\u00D7</span>\n                {{item[indiceNome]}}\n            </li>\n        </span>\n    </template>\n\n    \n    ",
-        providers: [
-            {
-                provide: forms_1.NG_VALUE_ACCESSOR,
-                useExisting: core_1.forwardRef(function () { return MultipleComponent_1; }),
-                multi: true
-            }
-        ],
-        host: {
-            '(document:click)': 'clickForaComponent($event)',
-            '(focus)': 'setFocus(true)',
-            '(blur)': 'setFocus(false)',
-        },
-    }),
-    __metadata("design:paramtypes", [core_1.ElementRef,
-        core_1.NgZone])
-], MultipleComponent);
-exports.MultipleComponent = MultipleComponent;
-var MultipleComponent_1;
-//# sourceMappingURL=multiple.component.js.map
-
-/***/ },
-/* 879 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var forms_1 = __webpack_require__(17);
-var select_1 = __webpack_require__(114);
-var select_service_1 = __webpack_require__(266);
-var RequestMultipleComponent = RequestMultipleComponent_1 = (function (_super) {
-    __extends(RequestMultipleComponent, _super);
-    function RequestMultipleComponent(elementRef, zone, requisicao, renderer) {
-        var _this = _super.call(this, elementRef, zone) || this;
-        _this.elementRef = elementRef;
-        _this.zone = zone;
-        _this.requisicao = requisicao;
-        _this.renderer = renderer;
-        _this.name = '';
-        _this.classe = '';
-        _this.placeholder = 'Selecione';
-        _this.minimoCaracteres = 0;
-        _this.disabled = false;
-        _this.indiceId = 'id';
-        _this.indiceNome = 'nome';
-        _this.change = new core_1.EventEmitter();
-        _this.onSelecionarItem = new core_1.EventEmitter();
-        _this.onBuscar = new core_1.EventEmitter();
-        _this.onApagar = new core_1.EventEmitter();
-        _this.onRemoverItem = new core_1.EventEmitter();
-        _this.onAbrir = new core_1.EventEmitter();
-        _this.onFechar = new core_1.EventEmitter();
-        _this.onLimpar = new core_1.EventEmitter();
-        _this.onErro = new core_1.EventEmitter();
-        _this.onProcessaResultado = new core_1.EventEmitter();
-        _this.onProcessaParametros = new core_1.EventEmitter();
-        _this.pagina = 1;
-        _this.quantidadePadrao = 0;
-        _this.buscando = false;
-        _this.semResultado = false;
-        return _this;
-    }
-    RequestMultipleComponent.prototype.ngOnDestroy = function () {
-        if (this.subscrebeBusca) {
-            this.subscrebeBusca.unsubscribe();
-        }
-    };
-    RequestMultipleComponent.prototype.abrir = function () {
-        if (this.disabled) {
-            return false;
-        }
-        if (this.aberto) {
-            this.fechar();
-        }
-        else {
-            this.aberto = true;
-            if (!this.data) {
-                this.data = [];
-            }
-            this.onAbrir.emit(true);
-            // this.renderer.invokeElementMethod(this.campoBusca.nativeElement, 'focus', []);
-            this.pagina = 1;
-            this.semResultado = false;
-            this.quantidadePadrao = 0;
-            this.valorPesquisado = '';
-            this.campoBusca.nativeElement.value = '';
-            this.setFocus(true);
-            this.buscar();
-        }
-    };
-    RequestMultipleComponent.prototype.keyup = function (valor) {
-        if (this.valorPesquisado == valor) {
-            return null;
-        }
-        this.valoresExibir = [];
-        this.valorPesquisado = valor;
-        this.pagina = 1;
-        this.buscar();
-    };
-    RequestMultipleComponent.prototype.selecionar = function (item) {
-        var _this = this;
-        var jaExiste = this.data.findIndex(function (procurar) { return procurar[_this.indiceId] == item[_this.indiceId]; });
-        if (jaExiste === -1) {
-            this.data.push(item);
-        }
-        this.updateValue(this.data);
-        this.onSelecionarItem.emit(item);
-        this.fechar();
-        //apaga campo de busca
-        this.campoBusca.nativeElement.value = '';
-    };
-    RequestMultipleComponent.prototype.getSomenteId = function () {
-        var ids = [];
-        for (var _i = 0, _a = this.data; _i < _a.length; _i++) {
-            var item = _a[_i];
-            ids.push(item[this.indiceId]);
-        }
-        return ids;
-    };
-    RequestMultipleComponent.prototype.limpar = function () {
-        this.data = [];
-        this.updateValue(null);
-        this.aberto = false;
-        this.onLimpar.emit(true);
-        this.abrir();
-    };
-    RequestMultipleComponent.prototype.buscar = function () {
-        var _this = this;
-        if (this.validaCaracteresMinimo() == false) {
-            return false;
-        }
-        this.buscando = true;
-        // this.valoresExibir = this._valores.filter(item => item[this.indiceNome].indexOf(this.valorPesquisado) !== -1);
-        var parametros = {
-            enviado: {
-                pagina: this.pagina,
-                valorPesquisado: this.valorPesquisado,
-                idSelecionados: this.getSomenteId(),
-            },
-            retorno: {}
-        };
-        //mata o subscribe
-        this.ngOnDestroy();
-        this.onBuscar.emit(this.valorPesquisado);
-        this.onProcessaParametros.emit(parametros);
-        this.subscrebeBusca = this.requisicao.getResultados(this.url, parametros.retorno).subscribe(function (resultado) {
-            var objEmit = { enviado: resultado, retorno: [] };
-            _this.onProcessaResultado.emit(objEmit);
-            var exibirResultado = objEmit.retorno;
-            if (Array.isArray(exibirResultado)) {
-                if (_this.quantidadePadrao == 0) {
-                    _this.quantidadePadrao = exibirResultado.length;
-                }
-                if (_this.quantidadePadrao != exibirResultado.length) {
-                    _this.semResultado = true;
-                }
-                _this.valoresExibir = _this.valoresExibir.concat(exibirResultado);
-            }
-            else {
-                console.log('Ng2Select2Bootstrap: retorno não é um select', exibirResultado);
-            }
-            _this.buscando = false;
-        }, function (erro) {
-            _this.onErro.emit(erro);
-            _this.buscando = false;
-        });
-    };
-    RequestMultipleComponent.prototype.onScroll = function () {
-        if (!this.buscando && !this.semResultado) {
-            this.pagina++;
-            this.buscar();
-        }
-    };
-    Object.defineProperty(RequestMultipleComponent.prototype, "value", {
-        get: function () { return this._value; },
-        set: function (v) {
-            if (v !== this._value) {
-                this._value = v;
-                this._onChangeCallback(v);
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    ;
-    return RequestMultipleComponent;
-}(select_1.Select));
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "name", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "classe", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], RequestMultipleComponent.prototype, "placeholder", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Number)
-], RequestMultipleComponent.prototype, "minimoCaracteres", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", core_1.TemplateRef)
-], RequestMultipleComponent.prototype, "templateResultado", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", core_1.TemplateRef)
-], RequestMultipleComponent.prototype, "templateSelecionado", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", core_1.TemplateRef)
-], RequestMultipleComponent.prototype, "templateSemResultado", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", core_1.TemplateRef)
-], RequestMultipleComponent.prototype, "templateBuscando", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Boolean)
-], RequestMultipleComponent.prototype, "disabled", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], RequestMultipleComponent.prototype, "indiceId", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], RequestMultipleComponent.prototype, "indiceNome", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], RequestMultipleComponent.prototype, "url", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "change", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "onSelecionarItem", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "onBuscar", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "onApagar", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "onRemoverItem", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "onAbrir", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "onFechar", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "onLimpar", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "onErro", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "onProcessaResultado", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestMultipleComponent.prototype, "onProcessaParametros", void 0);
-__decorate([
-    core_1.ViewChild('campoBusca'),
-    __metadata("design:type", core_1.ElementRef)
-], RequestMultipleComponent.prototype, "campoBusca", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object),
-    __metadata("design:paramtypes", [Object])
-], RequestMultipleComponent.prototype, "value", null);
-RequestMultipleComponent = RequestMultipleComponent_1 = __decorate([
-    core_1.Component({
-        selector: 'select2-request-multiple',
-        template: "\n    <span [ngClass]=\"getClassGeral()\"  dir=\"ltr\" (click)=\"abrir()\">\n        <span class=\"selection\">\n            <span class=\"select2-selection select2-selection--multiple\" role=\"combobox\" aria-haspopup=\"true\" aria-expanded=\"false\" tabindex=\"-1\">\n            <ul class=\"select2-selection__rendered\">\n                <li [hidden]=\"data\" [innerHtml]=\"placeholder\"  class=\"select2-selection__placeholder\"></li>\n                <span [hidden]=\"!data\" >\n                    <span [inner-template]=\"templateSelecionado || templateSelecionadoInterno\" [item]=\"this\"></span>\n                </span>\n                <li class=\"select2-selection__arrow\" role=\"presentation\"><b role=\"presentation\"></b></li>\n            </ul>\n        </span>\n        </span>\n        <span class=\"dropdown-wrapper\" aria-hidden=\"true\"></span>\n    </span>\n    \n    <!--quando clicar campo-->\n    <div [hidden]=\"!aberto\">\n        <span class=\"select2-container select2-container--bootstrap select2-container--open\">\n            <span class=\"select2-dropdown select2-dropdown--below\" dir=\"ltr\" >\n                <span class=\"select2-search select2-search--dropdown\">\n                    <input (keyup)=\"keyup($event.target.value)\" #campoBusca placeholder=\"Digite algo\" autofocus class=\"select2-search__field\" type=\"search\" tabindex=\"0\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"textbox\">\n                </span>\n                <span class=\"select2-results\" aria-expanded=\"true\" aria-hidden=\"false\">\n                    <ul \n                        class=\"select2-results__options\" \n                        role=\"tree\"  \n                        infinite-scroll\n                        scroll-distance=\"0,30\"\n                        (OnScrollMethod)=\"onScroll()\"\n                        style=\" overflow: auto!important;\"\n                    >\n                        <span [hidden]=\"exibirMensagemCaracteresMinimo\">\n                            <span [hidden]=\"valoresExibir.length == 0\" >\n                                <li *ngFor=\"let item of valoresExibir\" (click)=\"selecionar(item)\" class=\"select2-results__option\" highlight=\"select2-results__option--highlighted\" role=\"treeitem\" [attr.aria-selected]=\"((_value) && (item[indiceId] == _value[indiceId])) ? true : false\">\n                                    <span  [inner-template]=\"templateResultado || templateResultadoInterno\" [item]=\"item\"></span>\n                                </li>\n                            </span>\n                            <li [hidden]=\"buscando || valoresExibir.length > 0\" class=\"select2-results__option select2-results__message\" aria-live=\"assertive\">\n                                <span  [inner-template]=\"templateSemResultado || templateSemResultadoInterno\" [item]=\"{pesquisa:valorPesquisado}\"></span>\n                            </li>\n                            <li [hidden]=\"!buscando\">\n                                <span [inner-template]=\"templateBuscando || templateBuscandoInterno\"></span>\n                            </li>\n                        </span>\n                        <li [hidden]=\"exibirMensagemCaracteresMinimo == false\" class=\"select2-results__option select2-results__message\">\n                            Digite {{minimoCaracteres}} ou mais caracteres para realizar a busca\n                        </li>\n                    </ul>\n                </span>\n            </span>\n        </span>\n    </div>\n    \n    \n    \n    <template #templateSemResultadoInterno>\n        Nenhum resultado encontrado\n    </template>\n    <template #templateResultadoInterno let-valor>\n        {{valor[indiceNome]}}\n    </template>\n    <template #templateSelecionadoInterno let-valor>\n       <span *ngIf=\"valor\">\n            <li *ngFor=\"let item of valor.data\" class=\"select2-selection__choice\">\n                <span class=\"select2-selection__choice__remove\" role=\"presentation\" (click)=\"valor.remove(item, $event)\">\u00D7</span>\n                {{item[indiceNome]}}\n            </li>\n        </span>\n    </template>\n    <template #templateBuscandoInterno>\n        <span class=\"fa fa-5x fa-refresh fa-spin\" style=\" width: auto;margin:auto 50% !important\"></span>\n    </template>\n    \n    ",
-        providers: [
-            {
-                provide: forms_1.NG_VALUE_ACCESSOR,
-                useExisting: core_1.forwardRef(function () { return RequestMultipleComponent_1; }),
-                multi: true
-            }
-        ],
-        host: {
-            '(document:click)': 'clickForaComponent($event)',
-            '(focus)': 'setFocus(true)',
-            '(blur)': 'setFocus(false)',
-        },
-    }),
-    __metadata("design:paramtypes", [core_1.ElementRef,
-        core_1.NgZone,
-        select_service_1.SelectService,
-        core_1.Renderer])
-], RequestMultipleComponent);
-exports.RequestMultipleComponent = RequestMultipleComponent;
-var RequestMultipleComponent_1;
-//# sourceMappingURL=request-multiple.component.js.map
-
-/***/ },
-/* 880 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var forms_1 = __webpack_require__(17);
-var select_1 = __webpack_require__(114);
-var select_service_1 = __webpack_require__(266);
-var RequestComponent = RequestComponent_1 = (function (_super) {
-    __extends(RequestComponent, _super);
-    function RequestComponent(elementRef, zone, requisicao, renderer) {
-        var _this = _super.call(this, elementRef, zone) || this;
-        _this.elementRef = elementRef;
-        _this.zone = zone;
-        _this.requisicao = requisicao;
-        _this.renderer = renderer;
-        _this.name = '';
-        _this.classe = '';
-        _this.minimoCaracteres = 0;
-        _this.placeholder = 'Selecione';
-        _this.disabled = false;
-        _this.indiceId = 'id';
-        _this.indiceNome = 'nome';
-        _this.change = new core_1.EventEmitter();
-        _this.onSelecionarItem = new core_1.EventEmitter();
-        _this.onBuscar = new core_1.EventEmitter();
-        _this.onApagar = new core_1.EventEmitter();
-        _this.onRemoverItem = new core_1.EventEmitter();
-        _this.onAbrir = new core_1.EventEmitter();
-        _this.onFechar = new core_1.EventEmitter();
-        _this.onLimpar = new core_1.EventEmitter();
-        _this.onErro = new core_1.EventEmitter();
-        _this.onProcessaResultado = new core_1.EventEmitter();
-        _this.onProcessaParametros = new core_1.EventEmitter();
-        _this.pagina = 1;
-        _this.quantidadePadrao = 0;
-        _this.buscando = false;
-        _this.semResultado = false;
-        return _this;
-    }
-    RequestComponent.prototype.ngOnDestroy = function () {
-        if (this.subscrebeBusca) {
-            this.subscrebeBusca.unsubscribe();
-        }
-    };
-    RequestComponent.prototype.abrir = function () {
-        if (this.disabled) {
-            return false;
-        }
-        if (this.aberto) {
-            this.fechar();
-        }
-        else {
-            this.setFocus(true);
-            this.aberto = true;
-            // this.renderer.invokeElementMethod(this.campoBusca.nativeElement, 'focus', []);
-            this.pagina = 1;
-            this.semResultado = false;
-            this.quantidadePadrao = 0;
-            this.valorPesquisado = '';
-            this.campoBusca.nativeElement.value = '';
-            this.setFocus(true);
-            this.onAbrir.emit(true);
-            this.buscar();
-        }
-    };
-    RequestComponent.prototype.keyup = function (valor) {
-        if (this.valorPesquisado == valor) {
-            return null;
-        }
-        this.valoresExibir = [];
-        this.valorPesquisado = valor;
-        this.pagina = 1;
-        this.buscar();
-    };
-    RequestComponent.prototype.selecionar = function (item) {
-        this.data = item;
-        _super.prototype.selecionar.call(this, item);
-    };
-    RequestComponent.prototype.limpar = function (event) {
-        event.stopPropagation();
-        this.data = null;
-        this.updateValue(null);
-        this.onLimpar.emit(true);
-        if (this.aberto) {
-            this.fechar();
-        }
-        else {
-            this.abrir();
-        }
-    };
-    RequestComponent.prototype.buscar = function () {
-        var _this = this;
-        if (this.validaCaracteresMinimo() == false) {
-            return false;
-        }
-        this.buscando = true;
-        // this.valoresExibir = this._valores.filter(item => item[this.indiceNome].indexOf(this.valorPesquisado) !== -1);
-        var parametros = {
-            enviado: {
-                pagina: this.pagina,
-                valorPesquisado: this.valorPesquisado,
-            },
-            retorno: {}
-        };
-        //mata o subscribe
-        this.ngOnDestroy();
-        this.onBuscar.emit(this.valorPesquisado);
-        this.onProcessaParametros.emit(parametros);
-        this.subscrebeBusca = this.requisicao.getResultados(this.url, parametros.retorno).subscribe(function (resultado) {
-            var objEmit = { enviado: resultado, retorno: [] };
-            _this.onProcessaResultado.emit(objEmit);
-            var exibirResultado = objEmit.retorno;
-            if (Array.isArray(exibirResultado)) {
-                if (_this.quantidadePadrao == 0) {
-                    _this.quantidadePadrao = exibirResultado.length;
-                }
-                if (_this.quantidadePadrao != exibirResultado.length) {
-                    _this.semResultado = true;
-                }
-                _this.valoresExibir = _this.valoresExibir.concat(exibirResultado);
-            }
-            else {
-                console.log('Ng2Select2Bootstrap: retorno não é um select', exibirResultado);
-            }
-            _this.buscando = false;
-        }, function (erro) {
-            console.log(erro);
-            _this.onErro.emit(erro);
-            _this.buscando = false;
-        });
-    };
-    RequestComponent.prototype.onScroll = function () {
-        if (!this.buscando && !this.semResultado) {
-            this.pagina++;
-            this.buscar();
-        }
-    };
-    Object.defineProperty(RequestComponent.prototype, "value", {
-        get: function () { return this._value; },
-        set: function (v) {
-            if (v !== this._value) {
-                this._value = v;
-                this._onChangeCallback(v);
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    ;
-    return RequestComponent;
-}(select_1.Select));
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "name", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "classe", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "tabIndex", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Number)
-], RequestComponent.prototype, "minimoCaracteres", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], RequestComponent.prototype, "placeholder", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", core_1.TemplateRef)
-], RequestComponent.prototype, "templateResultado", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", core_1.TemplateRef)
-], RequestComponent.prototype, "templateSelecionado", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", core_1.TemplateRef)
-], RequestComponent.prototype, "templateSemResultado", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", core_1.TemplateRef)
-], RequestComponent.prototype, "templateBuscando", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Boolean)
-], RequestComponent.prototype, "disabled", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], RequestComponent.prototype, "indiceId", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], RequestComponent.prototype, "indiceNome", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], RequestComponent.prototype, "url", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "change", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "onSelecionarItem", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "onBuscar", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "onApagar", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "onRemoverItem", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "onAbrir", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "onFechar", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "onLimpar", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "onErro", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "onProcessaResultado", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], RequestComponent.prototype, "onProcessaParametros", void 0);
-__decorate([
-    core_1.ViewChild('campoBusca'),
-    __metadata("design:type", core_1.ElementRef)
-], RequestComponent.prototype, "campoBusca", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object),
-    __metadata("design:paramtypes", [Object])
-], RequestComponent.prototype, "value", null);
-RequestComponent = RequestComponent_1 = __decorate([
-    core_1.Component({
-        selector: 'select2-request',
-        template: "\n    <!--select simples-->\n    <span [ngClass]=\"getClassGeral()\" [tabindex]=\"tabIndex\" dir=\"ltr\" (focus)=\"abrir()\" (click)=\"abrir()\">\n        <span class=\"selection\">\n            <!--simples-->\n            <span class=\"select2-selection select2-selection--single\" role=\"combobox\" aria-haspopup=\"true\" aria-expanded=\"false\" tabindex=\"0\">\n                <span class=\"select2-selection__rendered\">\n                    <span [hidden]=\"!data\" (click)=\"limpar($event)\" class=\"select2-selection__clear\">\u00D7</span>\n                    <span [hidden]=\"!data\" [inner-template]=\"templateSelecionado || templateSelecionadoInterno\" [item]=\"data\"></span>\n                    <span [hidden]=\"data\" [innerHtml]=\"placeholder\" class=\"select2-selection__placeholder\"></span>\n    \n                </span>\n                <span class=\"select2-selection__arrow\" role=\"presentation\">\n                    <b role=\"presentation\"></b>\n                </span>\n            </span>\n        </span>\n        <span class=\"dropdown-wrapper\" aria-hidden=\"true\"></span>\n    </span>\n    \n    <!--quando clicar campo-->\n    <div [hidden]=\"!aberto\">\n        <span class=\"select2-container select2-container--bootstrap select2-container--open\">\n            <span class=\"select2-dropdown select2-dropdown--below\" dir=\"ltr\" >\n                <span class=\"select2-search select2-search--dropdown\">\n                    <input (keyup)=\"keyup($event.target.value)\" #campoBusca placeholder=\"Digite algo\" autofocus class=\"select2-search__field\" type=\"search\" tabindex=\"0\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"textbox\">\n                </span>\n                <span class=\"select2-results\" aria-expanded=\"true\" aria-hidden=\"false\">\n                    <ul \n                        class=\"select2-results__options\" \n                        role=\"tree\"  \n                        infinite-scroll\n                        scroll-distance=\"0,30\"\n                        (OnScrollMethod)=\"onScroll()\"\n                        style=\" overflow: auto!important;\"\n                    >\n                        <span [hidden]=\"exibirMensagemCaracteresMinimo\">\n                            <span [hidden]=\"exibirMensagemCaracteresMinimo && valoresExibir.length == 0\" >\n                                <li *ngFor=\"let item of valoresExibir\" (click)=\"selecionar(item)\" class=\"select2-results__option\" highlight=\"select2-results__option--highlighted\" role=\"treeitem\" [attr.aria-selected]=\"((_value) && (item[indiceId] == _value[indiceId])) ? true : false\">\n                                    <span  [inner-template]=\"templateResultado || templateResultadoInterno\" [item]=\"item\"></span>\n                                </li>\n                            </span>\n                            <li [hidden]=\"buscando || valoresExibir.length > 0\" class=\"select2-results__option select2-results__message\" aria-live=\"assertive\">\n                                <span  [inner-template]=\"templateSemResultado || templateSemResultadoInterno\" [item]=\"{pesquisa:valorPesquisado}\"></span>\n                            </li>\n                            <li [hidden]=\"!buscando\">\n                                <span [inner-template]=\"templateBuscando || templateBuscandoInterno\"></span>\n                            </li>\n                        </span>\n                        <li [hidden]=\"exibirMensagemCaracteresMinimo == false\" class=\"select2-results__option select2-results__message\">\n                            Digite {{minimoCaracteres}} ou mais caracteres para realizar a busca\n                        </li>\n                    </ul>\n                </span>\n            </span>\n        </span>\n    </div>\n    \n    \n    \n    <template #templateSemResultadoInterno>\n        Nenhum resultado encontrado\n    </template>\n    <template #templateResultadoInterno let-valor>\n        {{valor[indiceNome]}}\n    </template>\n    <template #templateSelecionadoInterno let-valor>\n        <span *ngIf=\"valor\">\n            {{valor[indiceNome]}}\n        </span>\n    </template>\n    <template #templateBuscandoInterno>\n        <span class=\"fa fa-5x fa-refresh fa-spin\" style=\" width: auto;margin:auto 50% !important\"></span>\n    </template>\n    \n    ",
-        providers: [
-            {
-                provide: forms_1.NG_VALUE_ACCESSOR,
-                useExisting: core_1.forwardRef(function () { return RequestComponent_1; }),
-                multi: true
-            }
-        ],
-        host: {
-            '(document:click)': 'clickForaComponent($event)',
-            '(focus)': 'abrir()',
-            '(blur)': 'fechar()',
-        },
-    }),
-    __metadata("design:paramtypes", [core_1.ElementRef,
-        core_1.NgZone,
-        select_service_1.SelectService,
-        core_1.Renderer])
-], RequestComponent);
-exports.RequestComponent = RequestComponent;
-var RequestComponent_1;
-//# sourceMappingURL=request.component.js.map
-
-/***/ },
-/* 881 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var forms_1 = __webpack_require__(17);
-var select_1 = __webpack_require__(114);
-var SelectComponent = SelectComponent_1 = (function (_super) {
-    __extends(SelectComponent, _super);
-    function SelectComponent(elementRef, zone) {
-        var _this = _super.call(this, elementRef, zone) || this;
-        _this.elementRef = elementRef;
-        _this.zone = zone;
-        _this.name = '';
-        _this.classe = '';
-        _this.placeholder = 'Selecione';
-        _this.minimoCaracteres = 0;
-        _this.indiceId = 'id';
-        _this.indiceNome = 'nome';
-        _this.disabled = false;
-        // @Output() change            = new EventEmitter<any>();
-        _this.onSelecionarItem = new core_1.EventEmitter();
-        _this.onBuscar = new core_1.EventEmitter();
-        _this.onApagar = new core_1.EventEmitter();
-        _this.onRemoverItem = new core_1.EventEmitter();
-        _this.onAbrir = new core_1.EventEmitter();
-        _this.onFechar = new core_1.EventEmitter();
-        _this.onLimpar = new core_1.EventEmitter();
-        return _this;
-    }
-    Object.defineProperty(SelectComponent.prototype, "valores", {
-        set: function (valor) {
-            this._valores = valor;
-            this.valoresExibir = valor;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    SelectComponent.prototype.abrir = function () {
-        if (this.disabled) {
-            return false;
-        }
-        if (this.aberto) {
-            this.fechar();
-        }
-        else {
-            this.aberto = true;
-            this.campoBusca.nativeElement.focus();
-            this.valorPesquisado = '';
-            this.campoBusca.nativeElement.value = '';
-            this.setFocus(true);
-            this.onAbrir.emit(true);
-            this.buscar();
-        }
-    };
-    SelectComponent.prototype.selecionar = function (item) {
-        this.data = item;
-        _super.prototype.selecionar.call(this, item);
-    };
-    SelectComponent.prototype.limpar = function (event) {
-        event.stopPropagation();
-        this.data = null;
-        this.updateValue(null);
-        this.onLimpar.emit(true);
-        if (this.aberto) {
-            this.fechar();
-        }
-        else {
-            this.abrir();
-        }
-    };
-    SelectComponent.prototype.buscar = function () {
-        var _this = this;
-        if (this.validaCaracteresMinimo() == false) {
-            return false;
-        }
-        this.onBuscar.emit(this.valorPesquisado);
-        this.valoresExibir = this._valores.filter(function (item) { return item[_this.indiceNome].toLocaleLowerCase().indexOf(_this.valorPesquisado.toLocaleLowerCase()) !== -1; });
-    };
-    Object.defineProperty(SelectComponent.prototype, "value", {
-        get: function () { return this._value; },
-        set: function (v) {
-            if (v !== this._value) {
-                this._value = v;
-                this._onChangeCallback(v);
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    ;
-    return SelectComponent;
-}(select_1.Select));
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SelectComponent.prototype, "name", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SelectComponent.prototype, "classe", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SelectComponent.prototype, "placeholder", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Number)
-], SelectComponent.prototype, "minimoCaracteres", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", core_1.TemplateRef)
-], SelectComponent.prototype, "templateResultado", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", core_1.TemplateRef)
-], SelectComponent.prototype, "templateSelecionado", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", core_1.TemplateRef)
-], SelectComponent.prototype, "templateSemResultado", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SelectComponent.prototype, "indiceId", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SelectComponent.prototype, "indiceNome", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Boolean)
-], SelectComponent.prototype, "disabled", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object),
-    __metadata("design:paramtypes", [Object])
-], SelectComponent.prototype, "valores", null);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], SelectComponent.prototype, "onSelecionarItem", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], SelectComponent.prototype, "onBuscar", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], SelectComponent.prototype, "onApagar", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], SelectComponent.prototype, "onRemoverItem", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], SelectComponent.prototype, "onAbrir", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], SelectComponent.prototype, "onFechar", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], SelectComponent.prototype, "onLimpar", void 0);
-__decorate([
-    core_1.ViewChild('campoBusca'),
-    __metadata("design:type", core_1.ElementRef)
-], SelectComponent.prototype, "campoBusca", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object),
-    __metadata("design:paramtypes", [Object])
-], SelectComponent.prototype, "value", null);
-SelectComponent = SelectComponent_1 = __decorate([
-    core_1.Component({
-        selector: 'select2-select',
-        template: "\n    <!--select simples-->\n    <span [ngClass]=\"getClassGeral()\" dir=\"ltr\" (click)=\"abrir()\">\n        <span class=\"selection\">\n            <!--simples-->\n            <span class=\"select2-selection select2-selection--single\" role=\"combobox\" aria-haspopup=\"true\" aria-expanded=\"false\" tabindex=\"0\">\n                <span class=\"select2-selection__rendered\">\n                    <span [hidden]=\"!data\" (click)=\"limpar($event)\" class=\"select2-selection__clear\">\u00D7</span>\n                    <span [hidden]=\"!data\" class=\"nao-fechar\" [inner-template]=\"templateSelecionado || templateSelecionadoInterno\" [item]=\"data\"></span>\n                    <span [hidden]=\"data\" [innerHtml]=\"placeholder\" class=\"select2-selection__placeholder\"></span>\n    \n                </span>\n                <span class=\"select2-selection__arrow\" role=\"presentation\">\n                    <b role=\"presentation\"></b>\n                </span>\n            </span>\n        </span>\n        <span class=\"dropdown-wrapper\" aria-hidden=\"true\"></span>\n    </span>\n    \n    <!--quando clicar campo-->\n    <div [hidden]=\"!aberto\">\n        <span class=\"select2-container select2-container--bootstrap select2-container--open\">\n            <span class=\"select2-dropdown select2-dropdown--below\" dir=\"ltr\" >\n                <span class=\"select2-search select2-search--dropdown\">\n                    <input (keyup)=\"keyup($event.target.value)\" #campoBusca placeholder=\"Digite algo\" autofocus class=\"select2-search__field\" type=\"search\" tabindex=\"0\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"textbox\">\n                </span>\n                <span class=\"select2-results\">\n                    <ul class=\"select2-results__options\" role=\"tree\"  aria-expanded=\"true\" aria-hidden=\"false\">\n                        <span [hidden]=\"exibirMensagemCaracteresMinimo\">\n                            <span [hidden]=\"!valoresExibir.length\" >\n                                <li *ngFor=\"let item of valoresExibir\" (click)=\"selecionar(item)\" class=\"select2-results__option\" highlight=\"select2-results__option--highlighted\" role=\"treeitem\" [attr.aria-selected]=\"((_value) && (item[indiceId] == _value[indiceId])) ? true : false\">\n                                    <span  [inner-template]=\"templateResultado || templateResultadoInterno\" [item]=\"item\"></span>\n                                </li>\n                            </span>\n                            <li [hidden]=\"valoresExibir.length\" class=\"select2-results__option select2-results__message\" aria-live=\"assertive\">\n                                <span  [inner-template]=\"templateSemResultado || templateSemResultadoInterno\" [item]=\"{pesquisa:valorPesquisado}\"></span>\n                            </li>\n                        </span>\n                        <li [hidden]=\"exibirMensagemCaracteresMinimo == false\" class=\"select2-results__option select2-results__message\">\n                            Digite {{minimoCaracteres}} ou mais caracteres para realizar a busca\n                        </li>\n                    </ul>\n                </span>\n            </span>\n        </span>\n    </div>\n    \n    \n    \n    <template #templateSemResultadoInterno>\n        Nenhum resultado encontrado\n    </template>\n    <template #templateResultadoInterno let-valor>\n        {{valor[indiceNome]}}\n    </template>\n    <template #templateSelecionadoInterno let-valor>\n        <span *ngIf=\"valor\">\n            {{valor[indiceNome]}}\n        </span>\n    </template>\n\n    \n    ",
-        providers: [
-            {
-                provide: forms_1.NG_VALUE_ACCESSOR,
-                useExisting: core_1.forwardRef(function () { return SelectComponent_1; }),
-                multi: true
-            }
-        ],
-        host: {
-            '(document:click)': 'clickForaComponent($event)',
-            '(focus)': 'setFocus(true)',
-            '(blur)': 'setFocus(false)',
-        },
-    }),
-    __metadata("design:paramtypes", [core_1.ElementRef,
-        core_1.NgZone])
-], SelectComponent);
-exports.SelectComponent = SelectComponent;
-var SelectComponent_1;
-//# sourceMappingURL=select.component.js.map
-
-/***/ },
-/* 882 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var HighlightDirective = (function () {
-    function HighlightDirective(elementRef) {
-        this.elementRef = elementRef;
-    }
-    HighlightDirective.prototype.onMouseEnter = function () {
-        this.highlight();
-    };
-    HighlightDirective.prototype.onMouseLeave = function () {
-        this.highlight();
-    };
-    HighlightDirective.prototype.highlight = function () {
-        if (this.elementRef.nativeElement.className.indexOf(this.classe) === -1) {
-            this.elementRef.nativeElement.className += ' ' + this.classe;
-        }
-        else {
-            this.elementRef.nativeElement.classList.remove(this.classe);
-        }
-    };
-    return HighlightDirective;
-}());
-__decorate([
-    core_1.Input('highlight'),
-    __metadata("design:type", Object)
-], HighlightDirective.prototype, "classe", void 0);
-__decorate([
-    core_1.HostListener('mouseenter'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], HighlightDirective.prototype, "onMouseEnter", null);
-__decorate([
-    core_1.HostListener('mouseleave'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], HighlightDirective.prototype, "onMouseLeave", null);
-HighlightDirective = __decorate([
-    core_1.Directive({
-        selector: '[highlight]',
-    }),
-    __metadata("design:paramtypes", [core_1.ElementRef])
-], HighlightDirective);
-exports.HighlightDirective = HighlightDirective;
-//# sourceMappingURL=highlight.directive.js.map
-
-/***/ },
-/* 883 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var InfiniteScrollDirective = (function () {
-    function InfiniteScrollDirective(element) {
-        this.element = element;
-        this._count = 0;
-        this.OnScrollMethod = new core_1.EventEmitter();
-        this._element = this.element.nativeElement;
-        if (!this.scrollTrigger) {
-            this.scrollTrigger = 1;
-        }
-    }
-    InfiniteScrollDirective.prototype.onScroll = function () {
-        this._count++;
-        if (this._element.scrollTop + this._element.clientHeight >= this._element.scrollHeight) {
-            this.OnScrollMethod.emit(null);
-        }
-        else {
-            if (this._element.scrollTop + this._element.clientHeight >= (this._element.scrollHeight - (this._element.scrollHeight * this.scrollTrigger))) {
-                this.OnScrollMethod.emit(null);
-            }
-        }
-    };
-    return InfiniteScrollDirective;
-}());
-__decorate([
-    core_1.Input('scroll-distance'),
-    __metadata("design:type", Number)
-], InfiniteScrollDirective.prototype, "scrollTrigger", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], InfiniteScrollDirective.prototype, "OnScrollMethod", void 0);
-InfiniteScrollDirective = __decorate([
-    core_1.Directive({
-        selector: '[infinite-scroll]',
-        host: {
-            '(scroll)': 'onScroll($event)'
-        }
-    }),
-    __metadata("design:paramtypes", [core_1.ElementRef])
-], InfiniteScrollDirective);
-exports.InfiniteScrollDirective = InfiniteScrollDirective;
-//# sourceMappingURL=infinite-scroll.directive.js.map
-
-/***/ },
 /* 884 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -86681,56 +86670,59 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
 var core_1 = __webpack_require__(0);
-var InnerTemplateDirective = (function () {
-    function InnerTemplateDirective(viewContainer) {
-        this.viewContainer = viewContainer;
+var common_1 = __webpack_require__(15);
+var forms_1 = __webpack_require__(17);
+var component_1 = __webpack_require__(363);
+var directive_1 = __webpack_require__(364);
+var service_1 = __webpack_require__(365);
+__export(__webpack_require__(363));
+__export(__webpack_require__(688));
+__export(__webpack_require__(364));
+__export(__webpack_require__(365));
+var Ng2Select2BootstrapModule = (function () {
+    function Ng2Select2BootstrapModule() {
     }
-    Object.defineProperty(InnerTemplateDirective.prototype, "item", {
-        set: function (item) {
-            this._item = item;
-            if (this.template) {
-                this.template.destroy();
-                this.criaTemplate();
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    InnerTemplateDirective.prototype.ngOnInit = function () {
-        this.criaTemplate();
+    Ng2Select2BootstrapModule.forRoot = function () {
+        return {
+            ngModule: Ng2Select2BootstrapModule,
+            providers: [service_1.SelectService]
+        };
     };
-    InnerTemplateDirective.prototype.criaTemplate = function () {
-        if (this.templateRef) {
-            this.template = this.viewContainer.createEmbeddedView(this.templateRef, {
-                '\$implicit': this._item,
-                'index': this.index
-            });
-        }
-    };
-    return InnerTemplateDirective;
+    Ng2Select2BootstrapModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                common_1.CommonModule,
+                forms_1.FormsModule,
+            ],
+            exports: [
+                directive_1.InnerTemplateDirective,
+                component_1.SelectComponent,
+                component_1.MultipleComponent,
+                component_1.RequestComponent,
+                component_1.RequestMultipleComponent,
+                forms_1.FormsModule,
+            ],
+            declarations: [
+                directive_1.InnerTemplateDirective,
+                component_1.SelectComponent,
+                component_1.MultipleComponent,
+                component_1.RequestComponent,
+                directive_1.HighlightDirective,
+                component_1.RequestMultipleComponent,
+                directive_1.InfiniteScrollDirective,
+            ],
+            providers: [service_1.SelectService]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], Ng2Select2BootstrapModule);
+    return Ng2Select2BootstrapModule;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object),
-    __metadata("design:paramtypes", [Object])
-], InnerTemplateDirective.prototype, "item", null);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Number)
-], InnerTemplateDirective.prototype, "index", void 0);
-__decorate([
-    core_1.Input('inner-template'),
-    __metadata("design:type", core_1.TemplateRef)
-], InnerTemplateDirective.prototype, "templateRef", void 0);
-InnerTemplateDirective = __decorate([
-    core_1.Directive({
-        selector: '[inner-template]'
-    }),
-    __metadata("design:paramtypes", [core_1.ViewContainerRef])
-], InnerTemplateDirective);
-exports.InnerTemplateDirective = InnerTemplateDirective;
-//# sourceMappingURL=inner-template.directive.js.map
+exports.Ng2Select2BootstrapModule = Ng2Select2BootstrapModule;
+//# sourceMappingURL=index.js.map
 
 /***/ },
 /* 885 */
@@ -86940,25 +86932,25 @@ module.exports = "<pre>\n    <span *ngFor=\"let log of _logs\" >{{log.nome}} -> 
 /* 889 */
 /***/ function(module, exports) {
 
-module.exports = "<section>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n                <h1 class=\"section-heading\">Select Multiple</h1>\r\n                <div class=\"section-paragraph\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n\r\n                            <template #exibirDiferente let-valor>\r\n                                ID: {{valor.id}}<br>\r\n                                Nome: {{valor.nome}}\r\n                            </template>\r\n                            <template #exibirSelecionado let-valor>\r\n                                <li *ngFor=\"let item of valor.data\" class=\"select2-selection__choice\">\r\n                                    <span class=\"select2-selection__choice__remove\" role=\"presentation\" (click)=\"valor.remove(item, $event)\">×</span>\r\n                                    {{item.nome}}( {{item.id}} )\r\n                                </li>\r\n                            </template>\r\n\r\n                            Valor selecionado: {{valorSelecionado | json}}\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-3\">\r\n                            <select2-multiple\r\n                                [valores]=\"valores\"\r\n                                [(ngModel)]=\"valorSelecionado\"\r\n                                [templateResultado]=\"exibirDiferente\"\r\n                                [templateSelecionado]=\"exibirSelecionado\"\r\n                                (onAbrir)=\"log('onAbrir', $event)\"\r\n                                (onFechar)=\"log('onFechar', $event)\"\r\n                                (onBuscar)=\"log('onBuscar', $event)\"\r\n                                (onSelecionarItem)=\"log('onSelecionarItem', $event)\"\r\n                                (onRemoverItem)=\"log('onRemoverItem', $event)\"\r\n                            >\r\n                            </select2-multiple>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-4\">\r\n                            <h4>Logs</h4>\r\n                            <log [logs]=\"logs\"></log>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <tabset>\r\n                                <tab heading='Documentação'>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Inputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Padrão</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>minimoCaracteres</strong></td>\r\n                                                        <td>number</td>\r\n                                                        <td>0</td>\r\n                                                        <td>Quantidade de mínimo para realizar a busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>disabled</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>false</td>\r\n                                                        <td>Indica se é somente leitura o select</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>placeholder</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>Selecione</td>\r\n                                                        <td>Placeholder quando não houver item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template da lista de itens exibidos</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSelecionado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template quando selecionar um item</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSemResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td>{{ {pesquisa:'Valor Pesquisado'} }}</td>\r\n                                                        <td>Template quando não houver item na busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceId</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>id</td>\r\n                                                        <td>O valor da posição que se encontra o id primario</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceNome</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>nome</td>\r\n                                                        <td>O valor da posição que se encontra o nome a ser exibido</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>valores</strong></td>\r\n                                                        <td>array</td>\r\n                                                        <td></td>\r\n                                                        <td>Array com itens a ser exibido</td>\r\n                                                    </tr>\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Outputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Saída</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>onAbrir</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando abre o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onBuscar</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando faz alguma busca informando o que foi digitado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onSelecionarItem</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando seleciona um item passando o item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onRemoverItem</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando remove um item selecionado, passando o item por parametro</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onFechar</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando fecha o elemento</td>\r\n                                                    </tr>\r\n\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                                <tab heading=\"Código Fonte\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <pre class=\"prettyprint linenums\"><code class=\"language-html\">{{codigoUtilizado}}</code></pre>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                            </tabset>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n"
+module.exports = "<section>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n                <h1 class=\"section-heading\">Select Multiple</h1>\r\n                <div class=\"section-paragraph\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n\r\n                            <template #exibirDiferente let-valor>\r\n                                ID: {{valor.id}}<br>\r\n                                Nome: {{valor.nome}}\r\n                            </template>\r\n                            <template #exibirSelecionado let-valor>\r\n                                <li *ngFor=\"let item of valor.data\" class=\"select2-selection__choice\">\r\n                                    <span class=\"select2-selection__choice__remove\" role=\"presentation\" (click)=\"valor.remove(item, $event)\">×</span>\r\n                                    {{item.nome}}( {{item.id}} )\r\n                                </li>\r\n                            </template>\r\n\r\n                            Valor selecionado: {{valorSelecionado | json}}\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-3\">\r\n                            <select2-multiple\r\n                                [valores]=\"valores\"\r\n                                [(ngModel)]=\"valorSelecionado\"\r\n                                [templateResultado]=\"exibirDiferente\"\r\n                                [templateSelecionado]=\"exibirSelecionado\"\r\n                                (onAbrir)=\"log('onAbrir', $event)\"\r\n                                (onFechar)=\"log('onFechar', $event)\"\r\n                                (onBuscar)=\"log('onBuscar', $event)\"\r\n                                (onSelecionarItem)=\"log('onSelecionarItem', $event)\"\r\n                                (onRemoverItem)=\"log('onRemoverItem', $event)\"\r\n                            >\r\n                            </select2-multiple>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-4\">\r\n                            <h4>Logs</h4>\r\n                            <log [logs]=\"logs\"></log>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <tabset>\r\n                                <tab heading='Documentação'>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Inputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Padrão</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>minimoCaracteres</strong></td>\r\n                                                        <td>number</td>\r\n                                                        <td>0</td>\r\n                                                        <td>Quantidade de mínimo para realizar a busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>disabled</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>false</td>\r\n                                                        <td>Indica se é somente leitura o select</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>placeholder</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>Selecione</td>\r\n                                                        <td>Placeholder quando não houver item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template da lista de itens exibidos</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSelecionado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template quando selecionar um item</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSemResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td>{{ {pesquisa:'Valor Pesquisado'} | json }}</td>\r\n                                                        <td>Template quando não houver item na busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceId</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>id</td>\r\n                                                        <td>O valor da posição que se encontra o id primario</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceNome</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>nome</td>\r\n                                                        <td>O valor da posição que se encontra o nome a ser exibido</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>valores</strong></td>\r\n                                                        <td>array</td>\r\n                                                        <td></td>\r\n                                                        <td>Array com itens a ser exibido</td>\r\n                                                    </tr>\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Outputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Saída</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>onAbrir</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando abre o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onBuscar</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando faz alguma busca informando o que foi digitado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onSelecionarItem</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando seleciona um item passando o item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onRemoverItem</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando remove um item selecionado, passando o item por parametro</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onFechar</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando fecha o elemento</td>\r\n                                                    </tr>\r\n\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                                <tab heading=\"Código Fonte\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <pre class=\"prettyprint linenums\"><code class=\"language-html\">{{codigoUtilizado}}</code></pre>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                            </tabset>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n"
 
 /***/ },
 /* 890 */
 /***/ function(module, exports) {
 
-module.exports = "<section>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n                <h1 class=\"section-heading\">Select Request</h1>\r\n                <div class=\"section-paragraph\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            Valor selecionado: {{valorSelecionado | json}}\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-8\">\r\n                            <template #templateResultado let-valor>\r\n                                <div style=\"padding-top: 4px;padding-bottom: 3px;\">\r\n                                    <div style=\"float: left;width: 60px;margin-right: 10px;\">\r\n                                        <img [src]=\"valor.owner.avatar_url\" width=\"60\">\r\n                                    </div>\r\n                                    <div style=\"margin-left: 70px;\">\r\n                                        <div style=\"color: black\">{{valor.name}}</div>\r\n                                        <div style=\"font-size: 13px;color: black;margin-top: 4px;\">{{valor.description}}</div>\r\n                                        <div>\r\n                                            <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\r\n                                                <i class=\"fa fa-flash\"></i>\r\n                                                {{valor.forks_count}}\r\n                                                Forks\r\n                                            </div>\r\n                                            <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\r\n                                                <i class=\"fa fa-star\"></i> {{valor.stargazers_count}} Stars\r\n                                            </div>\r\n                                            <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\r\n                                                <i class=\"fa fa-eye\"></i>\r\n                                                {{valor.watchers_count}} Watchers\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </template>\r\n                            <h3>Digite um nome de repositório do github</h3>\r\n                            <select2-request-multiple\r\n                                    [(ngModel)]=\"valorSelecionado\"\r\n                                    [templateResultado]=\"templateResultado\"\r\n                                    url=\"https://api.github.com/search/repositories\"\r\n                                    minimoCaracteres=\"1\"\r\n                                    (onAbrir)=\"log('onAbrir', $event)\"\r\n                                    (onFechar)=\"log('onFechar', $event)\"\r\n                                    (onBuscar)=\"log('onBuscar', $event)\"\r\n                                    (onSelecionarItem)=\"log('onSelecionarItem', $event)\"\r\n                                    (onRemoverItem)=\"log('onRemoverItem', $event)\"\r\n                                    (onErro)=\"log('onErro', $event)\"\r\n                                    (onProcessaParametros)=\"processaParametros($event)\"\r\n                                    (onProcessaResultado)=\"processaResultado($event)\"\r\n                                    indiceNome=\"name\"\r\n                            >\r\n                            </select2-request-multiple>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-4\">\r\n                            <h4>Logs</h4>\r\n                            <log [logs]=\"logs\"></log>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <tabset>\r\n                                <tab heading='Documentação'>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Inputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Padrão</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>minimoCaracteres</strong></td>\r\n                                                        <td>number</td>\r\n                                                        <td>0</td>\r\n                                                        <td>Quantidade de mínimo para realizar a busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>disabled</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>false</td>\r\n                                                        <td>Indica se é somente leitura o select</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>placeholder</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>Selecione</td>\r\n                                                        <td>Placeholder quando não houver item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template da lista de itens exibidos</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSelecionado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template quando selecionar um item</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSemResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td>{{ {pesquisa:'Valor Pesquisado'} }}</td>\r\n                                                        <td>Template quando não houver item na busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateBuscando</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template quando estiver buscando no servdor</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceId</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>id</td>\r\n                                                        <td>O valor da posição que se encontra o id primario</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceNome</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>nome</td>\r\n                                                        <td>O valor da posição que se encontra o nome a ser exibido</td>\r\n                                                    </tr>\r\n\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Outputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Saída</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>onProcessaParametros</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td>{{ objProcessaParametros | json }}</td>\r\n                                                        <td>É chamado quando vai fazer a pesquisa no servidor. Atribua na posição 'retorno' o que você quer adicionar na url, veja o código de exemplo</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onProcessaResultado</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td>{{ objProcessaResultado | json }}</td>\r\n                                                        <td>É chamado quando termina de executar a busca. A posição 'enviado' é o que retornou na requisição, atribua a posição 'retorno' o que você gostaria de exibir no select, veja o código de exemplo</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onAbrir</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando abre o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onBuscar</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando faz alguma busca informando o que foi digitado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onSelecionarItem</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando seleciona um item passando o item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onRemoverItem</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>object</td>\r\n                                                        <td>Dispara quando remove um item selecionado, passando o item por parametro</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onFechar</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando fecha o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onErro</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>object</td>\r\n                                                        <td>Dispara quando acontece um erro na requisição</td>\r\n                                                    </tr>\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                                <tab heading=\"Código Fonte\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h3>HTML</h3>\r\n                                            <pre class=\"prettyprint linenums\"><code class=\"language-html\">{{codigoUtilizado}}</code></pre>\r\n\r\n                                            <h3>COMPONENT</h3>\r\n                                            <pre class=\"prettyprint linenums\"><code class=\"language-javascript\">{{codigoUtilizadoComponent}}</code></pre>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                            </tabset>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n"
+module.exports = "<section>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n                <h1 class=\"section-heading\">Select Request</h1>\r\n                <div class=\"section-paragraph\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            Valor selecionado: {{valorSelecionado | json}}\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-8\">\r\n                            <template #templateResultado let-valor>\r\n                                <div style=\"padding-top: 4px;padding-bottom: 3px;\">\r\n                                    <div style=\"float: left;width: 60px;margin-right: 10px;\">\r\n                                        <img [src]=\"valor.owner.avatar_url\" width=\"60\">\r\n                                    </div>\r\n                                    <div style=\"margin-left: 70px;\">\r\n                                        <div style=\"color: black\">{{valor.name}}</div>\r\n                                        <div style=\"font-size: 13px;color: black;margin-top: 4px;\">{{valor.description}}</div>\r\n                                        <div>\r\n                                            <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\r\n                                                <i class=\"fa fa-flash\"></i>\r\n                                                {{valor.forks_count}}\r\n                                                Forks\r\n                                            </div>\r\n                                            <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\r\n                                                <i class=\"fa fa-star\"></i> {{valor.stargazers_count}} Stars\r\n                                            </div>\r\n                                            <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\r\n                                                <i class=\"fa fa-eye\"></i>\r\n                                                {{valor.watchers_count}} Watchers\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </template>\r\n                            <h3>Digite um nome de repositório do github</h3>\r\n                            <select2-request-multiple\r\n                                    [(ngModel)]=\"valorSelecionado\"\r\n                                    [templateResultado]=\"templateResultado\"\r\n                                    url=\"https://api.github.com/search/repositories\"\r\n                                    minimoCaracteres=\"1\"\r\n                                    (onAbrir)=\"log('onAbrir', $event)\"\r\n                                    (onFechar)=\"log('onFechar', $event)\"\r\n                                    (onBuscar)=\"log('onBuscar', $event)\"\r\n                                    (onSelecionarItem)=\"log('onSelecionarItem', $event)\"\r\n                                    (onRemoverItem)=\"log('onRemoverItem', $event)\"\r\n                                    (onErro)=\"log('onErro', $event)\"\r\n                                    (onProcessaParametros)=\"processaParametros($event)\"\r\n                                    (onProcessaResultado)=\"processaResultado($event)\"\r\n                                    indiceNome=\"name\"\r\n                            >\r\n                            </select2-request-multiple>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-4\">\r\n                            <h4>Logs</h4>\r\n                            <log [logs]=\"logs\"></log>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <tabset>\r\n                                <tab heading='Documentação'>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Inputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Padrão</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>minimoCaracteres</strong></td>\r\n                                                        <td>number</td>\r\n                                                        <td>0</td>\r\n                                                        <td>Quantidade de mínimo para realizar a busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>disabled</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>false</td>\r\n                                                        <td>Indica se é somente leitura o select</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>placeholder</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>Selecione</td>\r\n                                                        <td>Placeholder quando não houver item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template da lista de itens exibidos</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSelecionado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template quando selecionar um item</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSemResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td>{{ {pesquisa:'Valor Pesquisado'} | json }}</td>\r\n                                                        <td>Template quando não houver item na busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateBuscando</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template quando estiver buscando no servdor</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceId</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>id</td>\r\n                                                        <td>O valor da posição que se encontra o id primario</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceNome</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>nome</td>\r\n                                                        <td>O valor da posição que se encontra o nome a ser exibido</td>\r\n                                                    </tr>\r\n\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Outputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Saída</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>onProcessaParametros</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td>{{ objProcessaParametros | json }}</td>\r\n                                                        <td>É chamado quando vai fazer a pesquisa no servidor. Atribua na posição 'retorno' o que você quer adicionar na url, veja o código de exemplo</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onProcessaResultado</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td>{{ objProcessaResultado | json }}</td>\r\n                                                        <td>É chamado quando termina de executar a busca. A posição 'enviado' é o que retornou na requisição, atribua a posição 'retorno' o que você gostaria de exibir no select, veja o código de exemplo</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onAbrir</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando abre o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onBuscar</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando faz alguma busca informando o que foi digitado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onSelecionarItem</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando seleciona um item passando o item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onRemoverItem</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>object</td>\r\n                                                        <td>Dispara quando remove um item selecionado, passando o item por parametro</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onFechar</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando fecha o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onErro</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>object</td>\r\n                                                        <td>Dispara quando acontece um erro na requisição</td>\r\n                                                    </tr>\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                                <tab heading=\"Código Fonte\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h3>HTML</h3>\r\n                                            <pre class=\"prettyprint linenums\"><code class=\"language-html\">{{codigoUtilizado}}</code></pre>\r\n\r\n                                            <h3>COMPONENT</h3>\r\n                                            <pre class=\"prettyprint linenums\"><code class=\"language-javascript\">{{codigoUtilizadoComponent}}</code></pre>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                            </tabset>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n"
 
 /***/ },
 /* 891 */
 /***/ function(module, exports) {
 
-module.exports = "<section>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n                <h1 class=\"section-heading\">Select Request</h1>\r\n                <div class=\"section-paragraph\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            Valor selecionado: {{valorSelecionado | json}}\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-8\">\r\n                            <template #templateResultado let-valor>\r\n                                <div style=\"padding-top: 4px;padding-bottom: 3px;\">\r\n                                    <div style=\"float: left;width: 60px;margin-right: 10px;\">\r\n                                        <img [src]=\"valor.owner.avatar_url\" width=\"60\">\r\n                                    </div>\r\n                                    <div style=\"margin-left: 70px;\">\r\n                                        <div style=\"color: black\">{{valor.name}}</div>\r\n                                        <div style=\"font-size: 13px;color: black;margin-top: 4px;\">{{valor.description}}</div>\r\n                                        <div>\r\n                                            <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\r\n                                                <i class=\"fa fa-flash\"></i>\r\n                                                {{valor.forks_count}}\r\n                                                Forks\r\n                                            </div>\r\n                                            <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\r\n                                                <i class=\"fa fa-star\"></i> {{valor.stargazers_count}} Stars\r\n                                            </div>\r\n                                            <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\r\n                                                <i class=\"fa fa-eye\"></i>\r\n                                                {{valor.watchers_count}} Watchers\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </template>\r\n                            <h3>Digite um nome de repositório do github</h3>\r\n                            <select2-request\r\n                                    [(ngModel)]=\"valorSelecionado\"\r\n                                    [templateResultado]=\"templateResultado\"\r\n                                    url=\"https://api.github.com/search/repositories\"\r\n                                    minimoCaracteres=\"1\"\r\n                                    (onAbrir)=\"log('onAbrir', $event)\"\r\n                                    (onFechar)=\"log('onFechar', $event)\"\r\n                                    (onBuscar)=\"log('onBuscar', $event)\"\r\n                                    (change)=\"log('change', $event)\"\r\n                                    (onSelecionarItem)=\"log('onSelecionarItem', $event)\"\r\n                                    (onLimpar)=\"log('onLimpar', $event)\"\r\n                                    (onErro)=\"log('onErro', $event)\"\r\n                                    (onProcessaParametros)=\"processaParametros($event)\"\r\n                                    (onProcessaResultado)=\"processaResultado($event)\"\r\n                                    indiceNome=\"name\"\r\n                            >\r\n                            </select2-request>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-4\">\r\n                            <h4>Logs</h4>\r\n                            <log [logs]=\"logs\"></log>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <tabset>\r\n                                <tab heading='Documentação'>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Inputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Padrão</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>minimoCaracteres</strong></td>\r\n                                                        <td>number</td>\r\n                                                        <td>0</td>\r\n                                                        <td>Quantidade de mínimo para realizar a busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>disabled</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>false</td>\r\n                                                        <td>Indica se é somente leitura o select</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>placeholder</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>Selecione</td>\r\n                                                        <td>Placeholder quando não houver item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template da lista de itens exibidos</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSelecionado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template quando selecionar um item</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSemResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td>{{ {pesquisa:'Valor Pesquisado'} }}</td>\r\n                                                        <td>Template quando não houver item na busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateBuscando</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template quando estiver buscando no servdor</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceId</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>id</td>\r\n                                                        <td>O valor da posição que se encontra o id primario</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceNome</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>nome</td>\r\n                                                        <td>O valor da posição que se encontra o nome a ser exibido</td>\r\n                                                    </tr>\r\n\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Outputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Saída</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>onProcessaParametros</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td>{{ objProcessaParametros | json }}</td>\r\n                                                        <td>É chamado quando vai fazer a pesquisa no servidor. Atribua na posição 'retorno' o que você quer adicionar na url, veja o código de exemplo</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onProcessaResultado</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td>{{ objProcessaResultado | json }}</td>\r\n                                                        <td>É chamado quando termina de executar a busca. A posição 'enviado' é o que retornou na requisição, atribua a posição 'retorno' o que você gostaria de exibir no select, veja o código de exemplo</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onAbrir</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando abre o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onBuscar</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando faz alguma busca informando o que foi digitado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onSelecionarItem</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando seleciona um item passando o item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onLimpar</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando limpa o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onFechar</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando fecha o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onErro</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>object</td>\r\n                                                        <td>Dispara quando acontece um erro na requisição</td>\r\n                                                    </tr>\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                                <tab heading=\"Código Fonte\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h3>HTML</h3>\r\n                                            <pre class=\"prettyprint linenums\"><code class=\"language-html\">{{codigoUtilizado}}</code></pre>\r\n\r\n                                            <h3>COMPONENT</h3>\r\n                                            <pre class=\"prettyprint linenums\"><code class=\"language-javascript\">{{codigoUtilizadoComponent}}</code></pre>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                            </tabset>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n"
+module.exports = "<section>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n                <h1 class=\"section-heading\">Select Request</h1>\r\n                <div class=\"section-paragraph\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            Valor selecionado: {{valorSelecionado | json}}\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-8\">\r\n                            <template #templateResultado let-valor>\r\n                                <div style=\"padding-top: 4px;padding-bottom: 3px;\">\r\n                                    <div style=\"float: left;width: 60px;margin-right: 10px;\">\r\n                                        <img [src]=\"valor.owner.avatar_url\" width=\"60\">\r\n                                    </div>\r\n                                    <div style=\"margin-left: 70px;\">\r\n                                        <div style=\"color: black\">{{valor.name}}</div>\r\n                                        <div style=\"font-size: 13px;color: black;margin-top: 4px;\">{{valor.description}}</div>\r\n                                        <div>\r\n                                            <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\r\n                                                <i class=\"fa fa-flash\"></i>\r\n                                                {{valor.forks_count}}\r\n                                                Forks\r\n                                            </div>\r\n                                            <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\r\n                                                <i class=\"fa fa-star\"></i> {{valor.stargazers_count}} Stars\r\n                                            </div>\r\n                                            <div style=\"display: inline-block;color: black;font-size: 11px;margin-right: 1em;\">\r\n                                                <i class=\"fa fa-eye\"></i>\r\n                                                {{valor.watchers_count}} Watchers\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </template>\r\n                            <h3>Digite um nome de repositório do github</h3>\r\n                            <select2-request\r\n                                    [(ngModel)]=\"valorSelecionado\"\r\n                                    [templateResultado]=\"templateResultado\"\r\n                                    url=\"https://api.github.com/search/repositories\"\r\n                                    minimoCaracteres=\"1\"\r\n                                    (onAbrir)=\"log('onAbrir', $event)\"\r\n                                    (onFechar)=\"log('onFechar', $event)\"\r\n                                    (onBuscar)=\"log('onBuscar', $event)\"\r\n                                    (change)=\"log('change', $event)\"\r\n                                    (onSelecionarItem)=\"log('onSelecionarItem', $event)\"\r\n                                    (onLimpar)=\"log('onLimpar', $event)\"\r\n                                    (onErro)=\"log('onErro', $event)\"\r\n                                    (onProcessaParametros)=\"processaParametros($event)\"\r\n                                    (onProcessaResultado)=\"processaResultado($event)\"\r\n                                    indiceNome=\"name\"\r\n                            >\r\n                            </select2-request>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-4\">\r\n                            <h4>Logs</h4>\r\n                            <log [logs]=\"logs\"></log>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <tabset>\r\n                                <tab heading='Documentação'>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Inputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Padrão</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>minimoCaracteres</strong></td>\r\n                                                        <td>number</td>\r\n                                                        <td>0</td>\r\n                                                        <td>Quantidade de mínimo para realizar a busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>disabled</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>false</td>\r\n                                                        <td>Indica se é somente leitura o select</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>placeholder</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>Selecione</td>\r\n                                                        <td>Placeholder quando não houver item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template da lista de itens exibidos</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSelecionado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template quando selecionar um item</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSemResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td>{{ {pesquisa:'Valor Pesquisado'} | json }}</td>\r\n                                                        <td>Template quando não houver item na busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateBuscando</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template quando estiver buscando no servdor</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceId</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>id</td>\r\n                                                        <td>O valor da posição que se encontra o id primario</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceNome</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>nome</td>\r\n                                                        <td>O valor da posição que se encontra o nome a ser exibido</td>\r\n                                                    </tr>\r\n\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Outputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Saída</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>onProcessaParametros</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td>{{ objProcessaParametros | json }}</td>\r\n                                                        <td>É chamado quando vai fazer a pesquisa no servidor. Atribua na posição 'retorno' o que você quer adicionar na url, veja o código de exemplo</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onProcessaResultado</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td>{{ objProcessaResultado | json }}</td>\r\n                                                        <td>É chamado quando termina de executar a busca. A posição 'enviado' é o que retornou na requisição, atribua a posição 'retorno' o que você gostaria de exibir no select, veja o código de exemplo</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onAbrir</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando abre o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onBuscar</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando faz alguma busca informando o que foi digitado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onSelecionarItem</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando seleciona um item passando o item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onLimpar</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando limpa o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onFechar</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando fecha o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onErro</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>object</td>\r\n                                                        <td>Dispara quando acontece um erro na requisição</td>\r\n                                                    </tr>\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                                <tab heading=\"Código Fonte\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h3>HTML</h3>\r\n                                            <pre class=\"prettyprint linenums\"><code class=\"language-html\">{{codigoUtilizado}}</code></pre>\r\n\r\n                                            <h3>COMPONENT</h3>\r\n                                            <pre class=\"prettyprint linenums\"><code class=\"language-javascript\">{{codigoUtilizadoComponent}}</code></pre>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                            </tabset>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n"
 
 /***/ },
 /* 892 */
 /***/ function(module, exports) {
 
-module.exports = "<section>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n                <h1 class=\"section-heading\">Select Simples</h1>\r\n                <div class=\"section-paragraph\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n\r\n                            <template #exibirDiferente let-valor>\r\n                                ID: {{valor.id}}<br>\r\n                                Nome: {{valor.nome}}\r\n                            </template>\r\n\r\n                            Valor selecionado: {{valorSelecionado | json}}\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-3\">\r\n                            <select2-select\r\n                                [valores]=\"valores\"\r\n                                [(ngModel)]=\"valorSelecionado\"\r\n                                [templateResultado]=\"exibirDiferente\"\r\n                                (onAbrir)=\"log('onAbrir', $event)\"\r\n                                (onFechar)=\"log('onFechar', $event)\"\r\n                                (ngModelChange)=\"log('change', $event)\"\r\n                                (onBuscar)=\"log('onBuscar', $event)\"\r\n                                (onSelecionarItem)=\"log('onSelecionarItem', $event)\"\r\n                                (onLimpar)=\"log('onLimpar', $event)\"\r\n                            >\r\n                            </select2-select>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-4\">\r\n                            <h4>Logs</h4>\r\n                            <log [logs]=\"logs\"></log>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <tabset>\r\n                                <tab heading='Documentação'>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Inputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Padrão</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>minimoCaracteres</strong></td>\r\n                                                        <td>number</td>\r\n                                                        <td>0</td>\r\n                                                        <td>Quantidade de mínimo para realizar a busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>placeholder</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>Selecione</td>\r\n                                                        <td>Placeholder quando não houver item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>disabled</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>false</td>\r\n                                                        <td>Indica se é somente leitura o select</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template da lista de itens exibidos</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSelecionado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template quando selecionar um item</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSemResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td>{{ {pesquisa:'Valor Pesquisado'} }}</td>\r\n                                                        <td>Template quando não houver item na busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceId</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>id</td>\r\n                                                        <td>O valor da posição que se encontra o id primario</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceNome</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>nome</td>\r\n                                                        <td>O valor da posição que se encontra o nome a ser exibido</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>valores</strong></td>\r\n                                                        <td>array</td>\r\n                                                        <td></td>\r\n                                                        <td>Array com itens a ser exibido</td>\r\n                                                    </tr>\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Outputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Saída</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>onAbrir</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando abre o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onBuscar</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando faz alguma busca informando o que foi digitado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onSelecionarItem</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando seleciona um item passando o item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onLimpar</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando limpa o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onFechar</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando fecha o elemento</td>\r\n                                                    </tr>\r\n\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                                <tab heading=\"Código Fonte\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <pre class=\"prettyprint linenums\"><code class=\"language-html\">{{codigoUtilizado}}</code></pre>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                            </tabset>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n"
+module.exports = "<section>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n                <h1 class=\"section-heading\">Select Simples</h1>\r\n                <div class=\"section-paragraph\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n\r\n                            <template #exibirDiferente let-valor>\r\n                                ID: {{valor.id}}<br>\r\n                                Nome: {{valor.nome}}\r\n                            </template>\r\n\r\n                            Valor selecionado: {{valorSelecionado | json}}\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-3\">\r\n                            <select2-select\r\n                                [valores]=\"valores\"\r\n                                [(ngModel)]=\"valorSelecionado\"\r\n                                [templateResultado]=\"exibirDiferente\"\r\n                                (onAbrir)=\"log('onAbrir', $event)\"\r\n                                (onFechar)=\"log('onFechar', $event)\"\r\n                                (ngModelChange)=\"log('change', $event)\"\r\n                                (onBuscar)=\"log('onBuscar', $event)\"\r\n                                (onSelecionarItem)=\"log('onSelecionarItem', $event)\"\r\n                                (onLimpar)=\"log('onLimpar', $event)\"\r\n                            >\r\n                            </select2-select>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-4\">\r\n                            <h4>Logs</h4>\r\n                            <log [logs]=\"logs\"></log>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <tabset>\r\n                                <tab heading='Documentação'>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Inputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Padrão</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>minimoCaracteres</strong></td>\r\n                                                        <td>number</td>\r\n                                                        <td>0</td>\r\n                                                        <td>Quantidade de mínimo para realizar a busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>placeholder</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>Selecione</td>\r\n                                                        <td>Placeholder quando não houver item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>disabled</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>false</td>\r\n                                                        <td>Indica se é somente leitura o select</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template da lista de itens exibidos</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSelecionado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td></td>\r\n                                                        <td>Template quando selecionar um item</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>templateSemResultado</strong></td>\r\n                                                        <td>TemplateRef</td>\r\n                                                        <td>{{ {pesquisa:'Valor Pesquisado'} | json }}</td>\r\n                                                        <td>Template quando não houver item na busca</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceId</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>id</td>\r\n                                                        <td>O valor da posição que se encontra o id primario</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>indiceNome</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td>nome</td>\r\n                                                        <td>O valor da posição que se encontra o nome a ser exibido</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>valores</strong></td>\r\n                                                        <td>array</td>\r\n                                                        <td></td>\r\n                                                        <td>Array com itens a ser exibido</td>\r\n                                                    </tr>\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <h2>Outputs</h2>\r\n                                            <table class=\"table table-bordered\">\r\n                                                <thead>\r\n                                                    <tr>\r\n                                                        <th><strong>Nome</strong></th>\r\n                                                        <th>Tipo</th>\r\n                                                        <th>Valor Saída</th>\r\n                                                        <th>Descrição</th>\r\n                                                    </tr>\r\n                                                </thead>\r\n                                                <tbody>\r\n                                                    <tr>\r\n                                                        <td><strong>onAbrir</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando abre o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onBuscar</strong></td>\r\n                                                        <td>string</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando faz alguma busca informando o que foi digitado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onSelecionarItem</strong></td>\r\n                                                        <td>object</td>\r\n                                                        <td></td>\r\n                                                        <td>Dispara quando seleciona um item passando o item selecionado</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onLimpar</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando limpa o elemento</td>\r\n                                                    </tr>\r\n                                                    <tr>\r\n                                                        <td><strong>onFechar</strong></td>\r\n                                                        <td>boolean</td>\r\n                                                        <td>true</td>\r\n                                                        <td>Dispara quando fecha o elemento</td>\r\n                                                    </tr>\r\n\r\n                                                </tbody>\r\n                                            </table>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                                <tab heading=\"Código Fonte\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <pre class=\"prettyprint linenums\"><code class=\"language-html\">{{codigoUtilizado}}</code></pre>\r\n                                        </div>\r\n                                    </div>\r\n                                </tab>\r\n                            </tabset>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n"
 
 /***/ },
 /* 893 */

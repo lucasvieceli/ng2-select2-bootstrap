@@ -12,6 +12,7 @@ export class SimplesComponent {
     {id: 4, nome: 'Thiago'},
     {id: 5, nome: 'Isadora'},
     {id: 6, nome: 'Mirella'},
+    {id: 7, nome: 102},
   ];
   codigoUtilizado = `
     <!--caso queira mudar a exibição-->

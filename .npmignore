@@ -30,5 +30,17 @@ Desktop.ini
 
 e2e/*
 *.bat
-*.ts
 docs/*
+
+
+nbproject
+manifest.mf
+build.xml
+*.ts
+!*.d.ts
+tests
+.github
+coverage
+!*.metadata.json
+!bundles/*.js
+*.ngFactory.ts

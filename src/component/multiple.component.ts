@@ -183,7 +183,7 @@ export class MultipleComponent extends Select implements ControlValueAccessor{
         
         this.onBuscar.emit(this.valorPesquisado);
         this.valoresExibir = this._valores.filter(item => {
-            let pesquisa = item[this.indiceNome].toLocaleLowerCase().indexOf(this.valorPesquisado.toLocaleLowerCase());
+            let pesquisa = item[this.indiceNome].toString().toLocaleLowerCase().indexOf(this.valorPesquisado.toString().toLocaleLowerCase());
             //verifica se o item da lista original ja n esta add na lista data
             let jaFoiAdicionado = this.data.findIndex(procurar => procurar[this.indiceId] == item[this.indiceId]);
             if (pesquisa !== -1 && jaFoiAdicionado === -1) {
