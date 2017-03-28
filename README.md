@@ -12,4 +12,5 @@ Log Alterações
 	 - Corrigido a busca do select simples
  - 0.1.36
      - Corrigido a busca do select simples e multiple, quando digitava somente números, dava erro
- 
+ - 0.1.37
+     - Adicionado URLSearchParams  recursivamente, para pode adicionar objetos e arrays nos parametros
