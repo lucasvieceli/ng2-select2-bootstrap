@@ -15,24 +15,39 @@ export class SelectService {
 
   getResultados(url, parametros){
     let informar  = new URLSearchParams();
-
-    if (parametros) {
-      for (let parametro in parametros) {
-        if(typeof parametros[parametro] == 'object' ){
-          for(let sub of parametros[parametro]) {
-            informar.append(parametro+'[]', sub);
-          }
-        }else {
-          informar.append(parametro, parametros[parametro]);
-        }
-      }
-    }
+    this.paramns(parametros, informar);
 
     return this.http
                .get(url,{headers:this.headers, search : informar})
                .map(res=>res.json())
   }
-  
-  
+
+  paramns(a , urlParams){
+    for ( let prefix in a ) {
+      this.buildParams( prefix, a[ prefix ], urlParams );
+    }
+  }
+
+  buildParams( prefix, obj,  urlParams ){
+    if(obj instanceof Array){
+      for(let i in obj) {
+        this.buildParams( prefix + "[" + ( typeof obj[i] === "object" || Array.isArray(obj[i]) ? i : "" ) + "]", obj[i], urlParams );
+      }
+
+    }else if(obj instanceof Object){
+      for ( let name in obj ) {
+        if(obj[ name ] instanceof Date){
+          obj[ name ] = JSON.stringify(obj[ name ]);
+        }
+        this.buildParams( prefix + "[" + name + "]", obj[ name ], urlParams );
+      }
+    }else{
+
+      urlParams.append(prefix, obj);
+    }
+  }
+
+
+
 
 }
