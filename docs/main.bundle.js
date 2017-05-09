@@ -35413,33 +35413,22 @@ var SelectService = (function () {
     }
     SelectService.prototype.getResultados = function (url, parametros) {
         var informar = new http_1.URLSearchParams();
-        this.paramns(parametros, informar);
+        if (parametros) {
+            for (var parametro in parametros) {
+                if (typeof parametros[parametro] == 'object') {
+                    for (var _i = 0, _a = parametros[parametro]; _i < _a.length; _i++) {
+                        var sub = _a[_i];
+                        informar.append(parametro + '[]', sub);
+                    }
+                }
+                else {
+                    informar.append(parametro, parametros[parametro]);
+                }
+            }
+        }
         return this.http
             .get(url, { headers: this.headers, search: informar })
             .map(function (res) { return res.json(); });
-    };
-    SelectService.prototype.paramns = function (a, urlParams) {
-        for (var prefix in a) {
-            this.buildParams(prefix, a[prefix], urlParams);
-        }
-    };
-    SelectService.prototype.buildParams = function (prefix, obj, urlParams) {
-        if (obj instanceof Array) {
-            for (var i in obj) {
-                this.buildParams(prefix + "[" + (typeof obj[i] === "object" || Array.isArray(obj[i]) ? i : "") + "]", obj[i], urlParams);
-            }
-        }
-        else if (obj instanceof Object) {
-            for (var name in obj) {
-                if (obj[name] instanceof Date) {
-                    obj[name] = JSON.stringify(obj[name]);
-                }
-                this.buildParams(prefix + "[" + name + "]", obj[name], urlParams);
-            }
-        }
-        else {
-            urlParams.append(prefix, obj);
-        }
     };
     SelectService = __decorate([
         core_1.Injectable(), 
@@ -86931,7 +86920,7 @@ module.exports = "\n<!-- Navigation -->\n<nav class=\"navbar navbar-inverse navb
 /* 887 */
 /***/ function(module, exports) {
 
-module.exports = "<section>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n                <h1 class=\"section-heading\">Instalação</h1>\r\n                <div class=\"section-paragraph\">\r\n                    <pre class=\"prettyprint linenums\"><code class=\"language-bash\">npm install ng2-select2-bootstrap --save</code></pre>\r\n                    <p>Adicione os arquivos de css no html: \"select2.min.css\", \"select2.bootstrap.min.css\" \"font-awesome.min.css\" que estão na pasta \"node_modules/ng2-select2-bootstrap\"</p>\r\n                    <pre class=\"prettyprint linenums\"><code class=\"language-html\">{{codigoCss}}</code></pre>\r\n                    <p>Adicione Ng2Select2Bootstrap no seu AppModule:</p>\r\n                    <pre class=\"prettyprint linenums\"><code class=\"language-javascript\">{{codigoModule}}</code></pre>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n"
+module.exports = "<section>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-12\">\r\n                <h1 class=\"section-heading\">Instalação</h1>\r\n                <div class=\"section-paragraph\">\r\n                    <pre class=\"prettyprint linenums\"><code class=\"language-bash\">npm install ng2-select2-bootstrap --save</code></pre>\r\n                    <p>Adicione os arquivos de css ao html: \"select2.min.css\", \"select2.bootstrap.min.css\" \"font-awesome.min.css\" que estão na pasta \"node_modules/ng2-select2-bootstrap\"</p>\r\n                    <pre class=\"prettyprint linenums\"><code class=\"language-html\">{{codigoCss}}</code></pre>\r\n                    <p>Adicione Ng2Select2Bootstrap no seu AppModule:</p>\r\n                    <pre class=\"prettyprint linenums\"><code class=\"language-javascript\">{{codigoModule}}</code></pre>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n"
 
 /***/ },
 /* 888 */
