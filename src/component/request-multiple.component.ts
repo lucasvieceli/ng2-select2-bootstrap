@@ -126,11 +126,11 @@ export class RequestMultipleComponent extends Select implements OnDestroy{
     @Output() onProcessaParametros = new EventEmitter<any>();
     @ViewChild('campoBusca') campoBusca : ElementRef;
 
-    private pagina          : number = 1;
-    private quantidadePadrao: number = 0;
-    private buscando        : boolean = false;
-    private semResultado    : boolean = false;
-    private subscrebeBusca  : any;
+    public pagina          : number = 1;
+    public quantidadePadrao: number = 0;
+    public buscando        : boolean = false;
+    public semResultado    : boolean = false;
+    public subscrebeBusca  : any;
 
 
     constructor(

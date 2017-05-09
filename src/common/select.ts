@@ -2,14 +2,14 @@ import {ElementRef, NgZone, EventEmitter, TemplateRef, OnInit} from "@angular/co
 import {ControlValueAccessor} from "@angular/forms";
 
 export class Select  implements ControlValueAccessor, OnInit{
-    protected indiceId      : string = 'id';
-    protected indiceNome    : string = 'nome';
-    protected minimoCaracteres : number = 0;
-    protected exibirMensagemCaracteresMinimo : boolean = true;
-    protected aberto        : boolean = false;
-    protected focus         : boolean = false;
-    protected disabled      : boolean = false;
-    protected campoBusca    : ElementRef;
+    public indiceId      : string = 'id';
+    public indiceNome    : string = 'nome';
+    public minimoCaracteres : number = 0;
+    public exibirMensagemCaracteresMinimo : boolean = true;
+    public aberto        : boolean = false;
+    public focus         : boolean = false;
+    public disabled      : boolean = false;
+    public campoBusca    : ElementRef;
     templateResultado        : TemplateRef<any>;
     templateSelecionado      : TemplateRef<any>;
     templateSemResultado     : TemplateRef<any>;
