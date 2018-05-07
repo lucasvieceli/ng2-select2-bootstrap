@@ -1,26 +1,25 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "noImplicitAny": false,
-    "module": "commonjs",
-    "target": "ES5",
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
-    "declaration": true,
-    "outDir": "./",
+    "target": "es5",
     "typeRoots": [
       "node_modules/@types"
-    ]
-  },
-  "files": [
-    "index.ts"
-  ],
-  "exclude": [
-    "node_modules",
- 
-    "**/*.spec.ts"
-  ],
-  "angularCompilerOptions": {
-    "strictMetadataEmit": true
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "paths": {
+      "ng2-select2-bootstrap": [
+        "dist/ng2-select2-bootstrap"
+      ]
+    }
   }
 }
