@@ -1,16 +1,27 @@
-**ng2-select2-bootstrap**
+# Vieceli
 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
-[Acesse documentação para mais informações](https://lucasvieceli.github.io/ng2-select2-bootstrap)
-------------------------------------------------------------------------
+## Development server
 
-Log Alterações
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
- - 0.1.32 - Adicionado @input 'disabled' em todos os components, padrão valor false
- - 0.1.33
-	 - Adicionado validação se é um array no retorno da busca do select request e multiple;
-	 - Corrigido a busca do select simples
- - 0.1.36
-     - Corrigido a busca do select simples e multiple, quando digitava somente números, dava erro
- - 0.1.37
-     - Adicionado URLSearchParams  recursivamente, para pode adicionar objetos e arrays nos parametros
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

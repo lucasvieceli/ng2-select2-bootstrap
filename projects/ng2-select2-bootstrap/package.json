@@ -1,0 +1,26 @@
+{
+  "name": "ng2-select2-bootstrap",
+  "version": "0.1.39",
+"repository": {
+    "type": "git",
+    "url": "https://github.com/lucasvieceli/ng2-select2-bootstrap"
+  },
+  "author": {
+    "name": "lucas vieceli",
+    "email": "vieceli46@hotmail.com"
+  },
+  "keywords": [
+    "angular2",
+    "select2",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucasvieceli/ng2-select2-bootstrap/issues"
+  },
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+	"@angular/forms": "^6.0.0-rc.0 || ^6.0.0"
+  }
+}
